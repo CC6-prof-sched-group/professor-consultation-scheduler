@@ -18,7 +18,7 @@ class Profile(models.Model):
     department = models.CharField(max_length=100, blank=True)
     bio = models.TextField(blank=True)
     profile_picture = models.ImageField(upload_to='profiles/', blank=True, null=True)
-    google_calendar_token = models.JSONField(blank=Truee, null=True)
+    google_calendar_token = models.JSONField(blank=True, null=True)
 
     def __str__(self):
         return f"Profile of {self.user.username}"
