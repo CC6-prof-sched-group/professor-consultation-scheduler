@@ -15,8 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import RedirectView
+from rest_framework.routers import DefaultRouter
+from accounts.views import AuthViewSet, ProfileViewSet
+from consultations.views import ConsultationSlotViewSet, BookingViewSet, ConsultationNoteViewSet, google_calendar_auth, google_calendar_callback
+
+router = DefaultRouter()
+router.register(r'auth', AuthViewSet, basename='auth')
+router.register(r'profiles', ProfileViewSet, basename='profile')
+router.register(r'slots', ConsultationSlotViewSet, basename='consultationslot')
+router.register(r'bookings', BookingViewSet, basename='booking')
+router.register(r'notes', ConsultationNoteViewSet, basename='consultationnote')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+    path('api/google/auth/', google_calendar_auth, name='google-auth'),
+    path('api/google/callback/', google_calendar_callback, name='google-callback'),
+    path('', RedirectView.as_view(url='/api/', permanent=False)),
 ]
