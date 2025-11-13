@@ -1,13 +1,11 @@
 from django.shortcuts import render
 from rest_framework.decorators import action, api_view, permission_classes
-from rest_framework import viewsets, status, permissions
 from rest_framework.response import Response
 from django.utils import timezone
 from django.db.models import Q
 from .models import ConsultationSlot, Booking, ConsultationNote
 from .serializers import ConsultationSlotSerializer, BookingSerializer, ConsultationNoteSerializer
 from rest_framework.permissions import IsAuthenticated
-from .permissions import IsProfessor, IsStudent
 from .google_calendar import get_google_auth_flow, get_calendar_service
 from notifications.task import send_booking_confirmation_email, send_booking_notification_to_professor, send_cancellation_email
 
@@ -178,6 +176,41 @@ class BookingViewSet(viewsets.ModelViewSet):
         booking.slot.save()
         
         return Response({'message': 'Booking marked as completed'})
+    
+    def perform_create(self, serializer):
+        booking = serializer.save()
+        
+        # Send emails asynchronously
+        send_booking_confirmation_email.delay(booking.id)
+        send_booking_notification_to_professor.delay(booking.id)
+    
+    @action(detail=True, methods=['post'])
+    def cancel(self, request, pk=None):
+        booking = self.get_object()
+        
+        if booking.student != request.user and booking.slot.professor != request.user:
+            return Response(
+                {'error': 'You cannot cancel this booking'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+        
+        cancelled_by = "student" if booking.student == request.user else "professor"
+        
+        booking.status = 'cancelled'
+        booking.save()
+        
+        # Send cancellation email
+        send_cancellation_email.delay(booking.id, cancelled_by)
+        
+        # Update slot status if no more active bookings
+        active_bookings = booking.slot.bookings.filter(
+            status__in=['pending', 'confirmed']
+        ).count()
+        if active_bookings == 0:
+            booking.slot.status = 'available'
+            booking.slot.save()
+        
+        return Response({'message': 'Booking cancelled'})
 
 class ConsultationNoteViewSet(viewsets.ModelViewSet):
     serializer_class = ConsultationNoteSerializer
