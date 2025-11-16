@@ -14,3 +14,69 @@ INFO 2025-11-16 20:06:47,761 basehttp "POST /accounts/google/login/ HTTP/1.1" 30
 INFO 2025-11-16 20:07:14,079 basehttp "GET /accounts/google/login/callback/?state=vsz7nWdX2fMTGPiR&code=4/0Ab32j93n1OMTbHQGd0Yj1yQIvdHctwxY59uv9dO_O_fMdzHikacJQgm1m2ehTy20wVsxiw&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email%20openid%20https://www.googleapis.com/auth/calendar&authuser=0&prompt=consent HTTP/1.1" 302 0
 WARNING 2025-11-16 20:07:14,130 log Not Found: /accounts/profile/
 WARNING 2025-11-16 20:07:14,131 basehttp "GET /accounts/profile/ HTTP/1.1" 404 12106
+INFO 2025-11-16 21:51:02,007 autoreload Watching for file changes with StatReloader
+INFO 2025-11-16 21:51:04,233 basehttp "GET / HTTP/1.1" 200 3660
+WARNING 2025-11-16 21:51:04,434 log Not Found: /favicon.ico
+WARNING 2025-11-16 21:51:04,435 basehttp "GET /favicon.ico HTTP/1.1" 404 4682
+ERROR 2025-11-16 21:51:08,738 log Internal Server Error: /api/professors/
+Traceback (most recent call last):
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 731, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 709, in get_context
+    'filter_form': self.get_filter_form(data, view, request),
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 641, in get_filter_form
+    html = backend().to_html(request, queryset, view)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django_filters\rest_framework\backends.py", line 81, in to_html
+    template = loader.get_template(self.template)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: django_filters/rest_framework/form.html
+ERROR 2025-11-16 21:51:08,743 basehttp "GET /api/professors/ HTTP/1.1" 500 116638
+ERROR 2025-11-16 21:51:14,314 log Internal Server Error: /api/consultations/
+Traceback (most recent call last):
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 731, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 709, in get_context
+    'filter_form': self.get_filter_form(data, view, request),
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 641, in get_filter_form
+    html = backend().to_html(request, queryset, view)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django_filters\rest_framework\backends.py", line 81, in to_html
+    template = loader.get_template(self.template)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: django_filters/rest_framework/form.html
+ERROR 2025-11-16 21:51:14,318 basehttp "GET /api/consultations/ HTTP/1.1" 500 116668
+INFO 2025-11-16 21:51:17,886 basehttp "GET /api/auth/user/ HTTP/1.1" 200 10676
+INFO 2025-11-16 21:51:17,912 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,913 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,914 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,915 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,916 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,917 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,919 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,920 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,920 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,921 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,921 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-11-16 21:51:17,939 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2025-11-16 22:02:46,265 basehttp "GET / HTTP/1.1" 200 3660

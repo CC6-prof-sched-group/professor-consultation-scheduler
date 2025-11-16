@@ -1,0 +1,41 @@
+# Python Bytecode and cache
+*.pyc
+*~$
+__pycache__/
+*.orig
+.mypy_cache/
+.pytest_cache/
+.venv
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.ENV/
+
+# Distribution/Packaging
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Django-specific files
+*.log
+*.pot
+db.sqlite3
+media/
+staticfiles/
+
+# Configuration and Secret Files
+# IMPORTANT: Use environment variables instead of hardcoding secrets.
+# If you use a .env file to store your SECRET_KEY and other config, ignore it.
+.env
+.flaskenv
+local_settings.py
+
+# IDE and OS-specific files
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
