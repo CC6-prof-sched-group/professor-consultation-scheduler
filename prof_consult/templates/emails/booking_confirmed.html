@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Consultation Confirmed</title>
+</head>
+<body>
+    <h2>Consultation Confirmed</h2>
+    <p>Dear {{ user.get_full_name|default:user.email }},</p>
+    
+    <p>Your consultation has been confirmed by the professor:</p>
+    
+    <ul>
+        <li><strong>Title:</strong> {{ consultation.title }}</li>
+        <li><strong>Professor:</strong> {{ consultation.professor.get_full_name|default:consultation.professor.email }}</li>
+        <li><strong>Date:</strong> {{ consultation.scheduled_date }}</li>
+        <li><strong>Time:</strong> {{ consultation.scheduled_time }}</li>
+        <li><strong>Duration:</strong> {{ consultation.duration }} minutes</li>
+        {% if consultation.location %}
+        <li><strong>Location:</strong> {{ consultation.location }}</li>
+        {% endif %}
+        {% if consultation.meeting_link %}
+        <li><strong>Meeting Link:</strong> <a href="{{ consultation.meeting_link }}">{{ consultation.meeting_link }}</a></li>
+        {% endif %}
+    </ul>
+    
+    <p>The consultation has been added to your Google Calendar.</p>
+    
+    <p>Best regards,<br>{{ site_name }}</p>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+Reminder: Consultation Tomorrow
+
+Dear {{ user.get_full_name|default:user.email }},
+
+This is a reminder that you have a consultation scheduled for tomorrow:
+
+Title: {{ consultation.title }}
+{% if user.is_student %}Professor{% else %}Student{% endif %}: 
+{% if user.is_student %}{{ consultation.professor.get_full_name|default:consultation.professor.email }}
+{% else %}{{ consultation.student.get_full_name|default:consultation.student.email }}{% endif %}
+Date: {{ consultation.scheduled_date }}
+Time: {{ consultation.scheduled_time }}
+Duration: {{ consultation.duration }} minutes
+{% if consultation.location %}
+Location: {{ consultation.location }}
+{% endif %}
+{% if consultation.meeting_link %}
+Meeting Link: {{ consultation.meeting_link }}
+{% endif %}
+
+See you tomorrow!
+
+Best regards,
+{{ site_name }}
+

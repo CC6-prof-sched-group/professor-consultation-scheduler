@@ -1,0 +1,16 @@
+INFO 2025-11-16 19:32:01,423 autoreload Watching for file changes with StatReloader
+INFO 2025-11-16 20:03:04,883 autoreload Watching for file changes with StatReloader
+INFO 2025-11-16 20:03:07,029 basehttp "GET / HTTP/1.1" 200 3187
+INFO 2025-11-16 20:03:11,916 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-16 20:03:14,248 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-16 20:03:19,624 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 200 1412
+INFO 2025-11-16 20:03:21,544 basehttp "POST /accounts/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-11-16 20:03:27,664 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-16 20:04:26,200 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-16 20:04:31,176 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 20:06:45,716 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-16 20:06:46,670 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-16 20:06:47,761 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 20:07:14,079 basehttp "GET /accounts/google/login/callback/?state=vsz7nWdX2fMTGPiR&code=4/0Ab32j93n1OMTbHQGd0Yj1yQIvdHctwxY59uv9dO_O_fMdzHikacJQgm1m2ehTy20wVsxiw&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email%20openid%20https://www.googleapis.com/auth/calendar&authuser=0&prompt=consent HTTP/1.1" 302 0
+WARNING 2025-11-16 20:07:14,130 log Not Found: /accounts/profile/
+WARNING 2025-11-16 20:07:14,131 basehttp "GET /accounts/profile/ HTTP/1.1" 404 12106

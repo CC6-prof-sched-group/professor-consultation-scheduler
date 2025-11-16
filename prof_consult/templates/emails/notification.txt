@@ -1,0 +1,16 @@
+Consultation Notification
+
+Dear {{ user.get_full_name|default:user.email }},
+
+You have a new notification regarding your consultation:
+
+Type: {{ message_type }}
+{% if consultation %}
+Title: {{ consultation.title }}
+Date: {{ consultation.scheduled_date }}
+Time: {{ consultation.scheduled_time }}
+{% endif %}
+
+Best regards,
+{{ site_name }}
+

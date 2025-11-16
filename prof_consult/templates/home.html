@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Professor Consultation Scheduler{% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 40px 0;">
+    <h1>Welcome to Professor Consultation Scheduler</h1>
+    <p style="font-size: 18px; color: #666;">Book consultations with professors easily and efficiently</p>
+    
+    {% if not user.is_authenticated %}
+        <div style="margin-top: 30px;">
+            <a href="/accounts/google/login/" style="background-color: #4285f4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">
+                Login with Google
+            </a>
+        </div>
+    {% else %}
+        <div style="margin-top: 30px;">
+            <h2>Quick Actions</h2>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+                {% if user.is_student %}
+                    <a href="/api/professors/" style="background-color: #27ae60; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
+                        Browse Professors
+                    </a>
+                    <a href="/api/consultations/" style="background-color: #3498db; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
+                        My Consultations
+                    </a>
+                {% elif user.is_professor %}
+                    <a href="/api/consultations/" style="background-color: #3498db; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
+                        My Consultations
+                    </a>
+                    <a href="/api/professors/{{ user.professor_profile.id }}/" style="background-color: #27ae60; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
+                        My Profile
+                    </a>
+                {% elif user.is_admin %}
+                    <a href="/admin/" style="background-color: #e74c3c; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
+                        Admin Dashboard
+                    </a>
+                    <a href="/api/admin/statistics/" style="background-color: #3498db; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
+                        Statistics
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<div style="margin-top: 60px; padding: 40px; background-color: white; border-radius: 8px;">
+    <h2>Features</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div style="padding: 20px; border: 1px solid #ddd; border-radius: 4px;">
+            <h3>📅 Easy Booking</h3>
+            <p>Students can easily book consultations with professors based on availability.</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid #ddd; border-radius: 4px;">
+            <h3>📧 Email Notifications</h3>
+            <p>Automatic email notifications for booking confirmations, reminders, and updates.</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid #ddd; border-radius: 4px;">
+            <h3>📆 Google Calendar</h3>
+            <p>Automatic integration with Google Calendar for seamless scheduling.</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid #ddd; border-radius: 4px;">
+            <h3>⭐ Rating System</h3>
+            <p>Students can rate completed consultations to help improve the service.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

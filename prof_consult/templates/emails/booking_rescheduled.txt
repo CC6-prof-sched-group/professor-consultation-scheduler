@@ -1,0 +1,22 @@
+Consultation Rescheduled
+
+Dear {{ user.get_full_name|default:user.email }},
+
+The following consultation has been rescheduled:
+
+Title: {{ consultation.title }}
+{% if user.is_student %}Professor{% else %}Student{% endif %}: 
+{% if user.is_student %}{{ consultation.professor.get_full_name|default:consultation.professor.email }}
+{% else %}{{ consultation.student.get_full_name|default:consultation.student.email }}{% endif %}
+New Date: {{ consultation.scheduled_date }}
+New Time: {{ consultation.scheduled_time }}
+Duration: {{ consultation.duration }} minutes
+{% if consultation.location %}
+Location: {{ consultation.location }}
+{% endif %}
+
+The consultation has been updated in your Google Calendar.
+
+Best regards,
+{{ site_name }}
+

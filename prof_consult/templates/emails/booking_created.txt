@@ -1,0 +1,23 @@
+New Consultation Booking
+
+Dear {{ user.get_full_name|default:user.email }},
+
+A new consultation has been booked:
+
+Title: {{ consultation.title }}
+Professor: {{ consultation.professor.get_full_name|default:consultation.professor.email }}
+Date: {{ consultation.scheduled_date }}
+Time: {{ consultation.scheduled_time }}
+Duration: {{ consultation.duration }} minutes
+{% if consultation.location %}
+Location: {{ consultation.location }}
+{% endif %}
+Description: {{ consultation.description }}
+
+Status: {{ consultation.get_status_display }}
+
+You will be notified when the professor confirms this consultation.
+
+Best regards,
+{{ site_name }}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Consultation Notification</title>
+</head>
+<body>
+    <h2>Consultation Notification</h2>
+    <p>Dear {{ user.get_full_name|default:user.email }},</p>
+    
+    <p>You have a new notification regarding your consultation:</p>
+    
+    <ul>
+        <li><strong>Type:</strong> {{ message_type }}</li>
+        {% if consultation %}
+        <li><strong>Title:</strong> {{ consultation.title }}</li>
+        <li><strong>Date:</strong> {{ consultation.scheduled_date }}</li>
+        <li><strong>Time:</strong> {{ consultation.scheduled_time }}</li>
+        {% endif %}
+    </ul>
+    
+    <p>Best regards,<br>{{ site_name }}</p>
+</body>
+</html>
+

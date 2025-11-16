@@ -1,0 +1,23 @@
+Consultation Confirmed
+
+Dear {{ user.get_full_name|default:user.email }},
+
+Your consultation has been confirmed by the professor:
+
+Title: {{ consultation.title }}
+Professor: {{ consultation.professor.get_full_name|default:consultation.professor.email }}
+Date: {{ consultation.scheduled_date }}
+Time: {{ consultation.scheduled_time }}
+Duration: {{ consultation.duration }} minutes
+{% if consultation.location %}
+Location: {{ consultation.location }}
+{% endif %}
+{% if consultation.meeting_link %}
+Meeting Link: {{ consultation.meeting_link }}
+{% endif %}
+
+The consultation has been added to your Google Calendar.
+
+Best regards,
+{{ site_name }}
+

@@ -1,13 +1,44 @@
-asgiref==3.10.0
-Django==5.2.7
-djangorestframework==3.16.1
-python-dotenv==1.2.1
-sqlparse==0.5.3
-tzdata==2025.2
-google-auth==2.25.2
-google-auth-oauthlib==1.2.0
-google-auth-httplib2==0.2.0
-google-api-python-client==2.110.0
-celery==5.3.4
-redis==5.0.1
-django-cors-headers==4.3.1
+# Django and Core
+Django>=5.0,<6.0
+djangorestframework>=3.14.0
+django-cors-headers>=4.3.0
+django-filter>=23.0
+
+# Database
+psycopg2-binary>=2.9.9
+dj-database-url>=2.1.0
+
+# Authentication
+django-allauth>=0.57.0
+cryptography>=41.0.0
+
+# Google Calendar Integration
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+google-api-python-client>=2.100.0
+
+# Celery and Redis
+celery>=5.3.0
+redis>=5.0.0
+django-celery-beat>=2.5.0
+django-celery-results>=2.5.0
+
+# Environment Variables
+python-decouple>=3.8
+python-dotenv>=1.0.0
+
+# Email
+django-anymail>=10.2
+
+# Utilities
+pytz>=2023.3
+python-dateutil>=2.8.2
+
+# Development
+django-debug-toolbar>=4.2.0
+pytest>=7.4.0
+pytest-django>=4.7.0
+pytest-cov>=4.1.0
+factory-boy>=3.3.0
+

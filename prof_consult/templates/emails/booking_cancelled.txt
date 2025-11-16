@@ -1,0 +1,24 @@
+Consultation Cancelled
+
+Dear {{ user.get_full_name|default:user.email }},
+
+The following consultation has been cancelled:
+
+Title: {{ consultation.title }}
+{% if user.is_student %}Professor{% else %}Student{% endif %}: 
+{% if user.is_student %}{{ consultation.professor.get_full_name|default:consultation.professor.email }}
+{% else %}{{ consultation.student.get_full_name|default:consultation.student.email }}{% endif %}
+Date: {{ consultation.scheduled_date }}
+Time: {{ consultation.scheduled_time }}
+{% if consultation.cancellation_reason %}
+Reason: {{ consultation.cancellation_reason }}
+{% endif %}
+{% if reason %}
+Reason: {{ reason }}
+{% endif %}
+
+If you have any questions, please contact the {% if user.is_student %}professor{% else %}student{% endif %}.
+
+Best regards,
+{{ site_name }}
+

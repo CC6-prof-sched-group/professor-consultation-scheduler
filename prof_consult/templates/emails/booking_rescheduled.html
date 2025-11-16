@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Consultation Rescheduled</title>
+</head>
+<body>
+    <h2>Consultation Rescheduled</h2>
+    <p>Dear {{ user.get_full_name|default:user.email }},</p>
+    
+    <p>The following consultation has been rescheduled:</p>
+    
+    <ul>
+        <li><strong>Title:</strong> {{ consultation.title }}</li>
+        <li><strong>{% if user.is_student %}Professor{% else %}Student{% endif %}:</strong> 
+            {% if user.is_student %}{{ consultation.professor.get_full_name|default:consultation.professor.email }}
+            {% else %}{{ consultation.student.get_full_name|default:consultation.student.email }}{% endif %}</li>
+        <li><strong>New Date:</strong> {{ consultation.scheduled_date }}</li>
+        <li><strong>New Time:</strong> {{ consultation.scheduled_time }}</li>
+        <li><strong>Duration:</strong> {{ consultation.duration }} minutes</li>
+        {% if consultation.location %}
+        <li><strong>Location:</strong> {{ consultation.location }}</li>
+        {% endif %}
+    </ul>
+    
+    <p>The consultation has been updated in your Google Calendar.</p>
+    
+    <p>Best regards,<br>{{ site_name }}</p>
+</body>
+</html>
+

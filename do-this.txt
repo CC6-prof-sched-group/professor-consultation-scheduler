@@ -1,0 +1,45 @@
+create a django project 
+
+what is it: it is a proffesor consultation scheduler
+what it does: it allows students to book consultations with professors
+what it looks like: it has a home page with a list of professors and a list of consultations
+what it has: it has a home page with a list of professors and a list of consultations
+
+features:
+- students can book consultations with professors
+- professors can see their consultations and book consultations
+- administrators can see all consultations and book consultations
+- administrators can see all professors and students
+- administrators can see all consultations
+- administrators can see all professors and students
+- google login
+- google calendar integration
+- email notifications
+- email reminders
+- email confirmations
+- email cancellations
+- email reschedules
+- email reminders
+- email confirmations
+- email cancellations
+- email reschedules
+- booking status tracking (pending, confirmed, cancelled, completed, no_show)
+- booking cancellation and rescheduling
+- booking confirmation and reminders
+- booking notifications
+- booking reminders
+- booking confirmations
+- booking cancellations
+- booking reschedules
+- Consultation notes and ratings system
+- OAuth2 authentication flow with Google
+- Create consultation events in Google Calendar
+- Update and delete calendar events
+- Sync consultations with Google Calendar
+- Email confirmation when booking is created
+- Email notification to professor for new bookings
+- 24-hour reminder emails before consultation
+- Booking cancellation notifications
+
+use django rest framework for the api
+
