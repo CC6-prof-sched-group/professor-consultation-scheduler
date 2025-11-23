@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security Settings
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-z&je=#v1=nx&4kqqz==79+*+l9*(jtl=8es1a9g+7q3(wx!37*')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -219,11 +219,10 @@ REST_FRAMEWORK = {
 }
 
 # CORS Settings
-CORS_ALLOWED_ORIGINS = config(
-    'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:3000,http://127.0.0.1:3000',
-    cast=Csv()
-)
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+]
 CORS_ALLOW_CREDENTIALS = True
 
 # Email Settings

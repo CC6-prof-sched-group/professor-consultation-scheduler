@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block title %}Professors - Professor Consultation Scheduler{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="display-5 fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Available Professors
+            </h1>
+            <p class="lead text-muted">Find and schedule consultations with your professors</p>
+        </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <form method="get" class="row mb-4 slide-in-up">
+        <div class="col-md-8">
+            <div class="input-group shadow-sm">
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text" name="search" class="form-control border-start-0" 
+                       placeholder="Search professors by name or department..."
+                       value="{{ search_query }}"
+                       id="professorSearch">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <select name="department" class="form-select shadow-sm">
+                <option value="">All Departments</option>
+                {% for dept in departments %}
+                    <option value="{{ dept }}" {% if dept == department_filter %}selected{% endif %}>
+                        {{ dept }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-1">
+            <button type="submit" class="btn btn-primary w-100 shadow-sm">
+                <i class="bi bi-funnel"></i>
+            </button>
+        </div>
+    </form>
+
+    <!-- Professors List -->
+    {% if professors %}
+        <div class="row g-4">
+            {% for professor in professors %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm hover-lift professor-card animate-on-scroll" data-department="{{ professor.department|lower }}">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px;">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="card-title mb-0">
+                                    {% if professor.professor_profile.title %}
+                                        {{ professor.professor_profile.title }}
+                                    {% endif %}
+                                    {{ professor.get_full_name }}
+                                </h5>
+                                <small class="text-muted">
+                                    {{ professor.department|default:"Department N/A" }}
+                                </small>
+                            </div>
+                        </div>
+                        
+                        {% if professor.bio %}
+                            <p class="card-text text-muted small">
+                                {{ professor.bio|truncatewords:15 }}
+                            </p>
+                        {% else %}
+                            <p class="card-text text-muted small">
+                                No bio available.
+                            </p>
+                        {% endif %}
+                        
+                        <div class="mb-3">
+                            <span class="badge bg-success me-1">
+                                <i class="bi bi-check-circle"></i> Available
+                            </span>
+                            {% if professor.avg_rating > 0 %}
+                                <span class="badge bg-info">
+                                    <i class="bi bi-star-fill"></i> {{ professor.avg_rating }}
+                                </span>
+                            {% endif %}
+                            {% if professor.total_consultations > 0 %}
+                                <span class="badge bg-secondary">
+                                    {{ professor.total_consultations }} consult{{ professor.total_consultations|pluralize }}
+                                </span>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-primary">
+                                    <i class="bi bi-calendar-plus"></i> Book Consultation
+                                </a>
+                            {% else %}
+                                <a href="{% url 'login' %}" class="btn btn-primary">
+                                    <i class="bi bi-box-arrow-in-right"></i> Login to Book
+                                </a>
+                            {% endif %}
+                            <a href="{% url 'professor_profile' professor.id %}" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-eye"></i> View Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            <i class="bi bi-info-circle"></i> 
+            No professors found matching your criteria.
+            {% if search_query or department_filter %}
+                <a href="{% url 'professors_list' %}" class="alert-link">Clear filters</a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

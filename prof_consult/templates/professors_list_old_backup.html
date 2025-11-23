@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}Professors - Professor Consultation Scheduler{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="display-5 fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Available Professors
+            </h1>
+            <p class="lead text-muted">Find and schedule consultations with your professors</p>
+        </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Search professors by name or department...">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <select class="form-select">
+                <option selected>All Departments</option>
+                <option value="1">Computer Science</option>
+                <option value="2">Mathematics</option>
+                <option value="3">Engineering</option>
+                <option value="4">Business</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Professors List -->
+    <div class="row g-4">
+        {% for i in "123456" %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="card-title mb-0">Prof. John Doe</h5>
+                            <small class="text-muted">Computer Science</small>
+                        </div>
+                    </div>
+                    
+                    <p class="card-text text-muted small">
+                        Specializes in Algorithms, Data Structures, and Machine Learning
+                    </p>
+                    
+                    <div class="mb-3">
+                        <span class="badge bg-success me-1">
+                            <i class="bi bi-check-circle"></i> Available
+                        </span>
+                        <span class="badge bg-info">
+                            <i class="bi bi-star-fill"></i> 4.8
+                        </span>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-primary">
+                            <i class="bi bi-calendar-plus"></i> Book Consultation
+                        </a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-eye"></i> View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}

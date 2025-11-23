@@ -80,3 +80,131 @@ INFO 2025-11-16 21:51:17,921 basehttp "GET /static/rest_framework/js/load-ajax-f
 INFO 2025-11-16 21:51:17,921 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
 INFO 2025-11-16 21:51:17,939 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
 INFO 2025-11-16 22:02:46,265 basehttp "GET / HTTP/1.1" 200 3660
+INFO 2025-11-23 22:24:40,161 autoreload Watching for file changes with StatReloader
+INFO 2025-11-23 22:24:48,669 basehttp "GET / HTTP/1.1" 200 7059
+INFO 2025-11-23 22:24:49,006 basehttp "GET /static/css/custom.css HTTP/1.1" 200 3731
+INFO 2025-11-23 22:24:49,013 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223516
+WARNING 2025-11-23 22:24:49,548 log Not Found: /favicon.ico
+WARNING 2025-11-23 22:24:49,548 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
+INFO 2025-11-23 22:24:55,095 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-23 22:24:58,111 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-23 22:25:22,517 basehttp "GET / HTTP/1.1" 200 9888
+INFO 2025-11-23 22:25:22,548 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223516
+INFO 2025-11-23 22:25:22,551 basehttp "GET /static/css/custom.css HTTP/1.1" 200 3731
+WARNING 2025-11-23 22:25:23,320 log Not Found: /favicon.ico
+WARNING 2025-11-23 22:25:23,320 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
+INFO 2025-11-23 22:25:26,443 basehttp "GET /professors/ HTTP/1.1" 200 5576
+INFO 2025-11-23 22:25:29,397 basehttp "GET / HTTP/1.1" 200 9888
+INFO 2025-11-23 22:25:34,276 basehttp "GET / HTTP/1.1" 200 9888
+INFO 2025-11-23 22:25:35,894 basehttp "GET /consultations/ HTTP/1.1" 200 5754
+INFO 2025-11-23 22:25:37,854 basehttp "GET /consultations/?status=past HTTP/1.1" 200 5686
+INFO 2025-11-23 22:25:38,402 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 5687
+INFO 2025-11-23 22:25:39,201 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 5754
+INFO 2025-11-23 22:25:39,506 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 5754
+INFO 2025-11-23 22:25:45,651 basehttp "GET /consultations/book/ HTTP/1.1" 200 12556
+INFO 2025-11-23 22:25:56,041 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-23 22:25:56,252 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3708
+INFO 2025-11-23 22:25:56,264 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:25:56,265 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:25:56,267 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:25:56,289 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:25:56,290 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:25:56,291 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:25:56,295 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:26:00,515 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3872
+INFO 2025-11-23 22:26:02,319 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3872
+INFO 2025-11-23 22:26:15,890 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3871
+INFO 2025-11-23 22:26:21,203 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3871
+INFO 2025-11-23 22:26:39,945 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3882
+INFO 2025-11-23 22:27:24,199 autoreload Watching for file changes with StatReloader
+INFO 2025-11-23 22:27:25,926 basehttp "GET / HTTP/1.1" 200 9888
+INFO 2025-11-23 22:27:25,960 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:29,964 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-23 22:27:30,002 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3708
+INFO 2025-11-23 22:27:43,031 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-23 22:27:43,092 basehttp "GET /admin/ HTTP/1.1" 200 21917
+INFO 2025-11-23 22:27:43,110 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:43,119 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:43,119 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,889 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 20425
+INFO 2025-11-23 22:27:48,905 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,910 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,912 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,913 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,914 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,915 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,915 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,918 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,919 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,920 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,930 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:48,941 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-11-23 22:27:58,288 basehttp "GET /admin/django_celery_beat/crontabschedule/ HTTP/1.1" 200 20082
+INFO 2025-11-23 22:27:58,360 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-23 22:28:00,980 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 21778
+INFO 2025-11-23 22:28:01,002 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-23 22:28:01,018 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-11-23 22:28:03,154 basehttp "GET /admin/professors/professorprofile/add/ HTTP/1.1" 200 30095
+INFO 2025-11-23 22:28:03,171 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:28:03,176 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-11-23 22:28:03,177 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-23 22:28:03,183 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-11-23 22:28:03,186 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-11-23 23:46:34,360 autoreload Watching for file changes with StatReloader
+INFO 2025-11-23 23:46:36,391 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-23 23:46:36,766 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7105
+INFO 2025-11-23 23:46:36,780 basehttp "GET /static/css/custom.css HTTP/1.1" 200 3731
+INFO 2025-11-23 23:46:36,787 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223516
+INFO 2025-11-23 23:46:36,795 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-11-23 23:46:36,815 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+WARNING 2025-11-23 23:46:37,384 log Not Found: /favicon.ico
+WARNING 2025-11-23 23:46:37,384 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
+INFO 2025-11-23 23:46:38,829 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-23 23:46:40,515 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-23 23:46:59,787 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:46:59,819 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:46:59,825 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:46:59,825 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7105
+INFO 2025-11-23 23:46:59,825 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-11-23 23:46:59,827 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+WARNING 2025-11-23 23:47:00,210 log Not Found: /favicon.ico
+WARNING 2025-11-23 23:47:00,211 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
+INFO 2025-11-23 23:47:06,717 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:47:06,934 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:47:07,446 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:47:21,266 basehttp "GET /professors/ HTTP/1.1" 200 6074
+INFO 2025-11-23 23:47:28,198 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6074
+INFO 2025-11-23 23:47:28,213 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:47:28,216 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-23 23:47:28,217 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:47:28,902 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6074
+INFO 2025-11-23 23:47:31,368 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:50:05,788 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:50:05,814 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:50:05,816 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-23 23:50:05,819 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-11-23 23:50:07,945 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:50:07,963 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:50:08,810 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:50:08,824 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:50:11,716 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:50:11,735 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:50:13,637 basehttp "GET / HTTP/1.1" 200 10483
+INFO 2025-11-23 23:50:13,653 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-23 23:53:44,832 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
+INFO 2025-11-23 23:53:46,014 autoreload Watching for file changes with StatReloader
+INFO 2025-11-23 23:57:31,503 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
+INFO 2025-11-23 23:57:32,599 autoreload Watching for file changes with StatReloader
+INFO 2025-11-23 23:59:04,957 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
+INFO 2025-11-23 23:59:06,050 autoreload Watching for file changes with StatReloader
+INFO 2025-11-24 00:00:29,800 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
+INFO 2025-11-24 00:00:30,889 autoreload Watching for file changes with StatReloader
+INFO 2025-11-24 00:01:27,336 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
+INFO 2025-11-24 00:01:29,422 autoreload Watching for file changes with StatReloader
+INFO 2025-11-24 00:01:42,231 autoreload Watching for file changes with StatReloader
+INFO 2025-11-24 00:01:49,860 autoreload Watching for file changes with StatReloader
+INFO 2025-11-24 00:02:24,007 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
+INFO 2025-11-24 00:02:24,215 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
+INFO 2025-11-24 00:02:24,250 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
+INFO 2025-11-24 00:02:25,383 autoreload Watching for file changes with StatReloader
+INFO 2025-11-24 00:02:49,805 autoreload Watching for file changes with StatReloader
