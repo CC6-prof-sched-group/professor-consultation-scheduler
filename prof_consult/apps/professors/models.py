@@ -7,6 +7,14 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 import json
 
 
+class ProfessorStatus(models.TextChoices):
+    """Professor availability status choices."""
+    AVAILABLE = 'AVAILABLE', 'Available'
+    BUSY = 'BUSY', 'Busy'
+    AWAY = 'AWAY', 'Away'
+    ON_LEAVE = 'ON_LEAVE', 'On Leave'
+
+
 class ProfessorProfile(models.Model):
     """
     Professor profile with consultation preferences and availability.
@@ -64,6 +72,12 @@ class ProfessorProfile(models.Model):
         default=15,
         validators=[MinValueValidator(0), MaxValueValidator(120)],
         help_text="Buffer time between consultations in minutes (0-120)"
+    )
+    status = models.CharField(
+        max_length=20,
+        choices=ProfessorStatus.choices,
+        default=ProfessorStatus.AVAILABLE,
+        help_text="Current availability status"
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

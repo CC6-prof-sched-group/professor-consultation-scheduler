@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}My Consultations - Professor Consultation Scheduler{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="display-5 fw-bold">
+                <i class="bi bi-calendar-check text-primary"></i> My Consultations
+            </h1>
+            <p class="lead text-muted">View and manage your scheduled consultation sessions</p>
+        </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <ul class="nav nav-tabs mb-4" id="consultationTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link {% if status_filter == 'upcoming' or not status_filter %}active{% endif %}" 
+               href="?status=upcoming">
+                <i class="bi bi-clock"></i> Upcoming
+            </a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link {% if status_filter == 'past' %}active{% endif %}" 
+               href="?status=past">
+                <i class="bi bi-check-circle"></i> Past
+            </a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link {% if status_filter == 'cancelled' %}active{% endif %}" 
+               href="?status=cancelled">
+                <i class="bi bi-x-circle"></i> Cancelled
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="consultationTabsContent">
+        <div class="tab-pane fade show active" role="tabpanel">
+            {% if consultations %}
+                <div class="row g-4">
+                    {% for consultation in consultations %}
+                    <div class="col-12">
+                        <div class="card shadow-sm hover-lift consultation-card animate-on-scroll" data-status="{{ consultation.status|lower }}">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 text-center">
+                                        <div class="display-6 fw-bold text-primary">{{ consultation.scheduled_date|date:"d" }}</div>
+                                        <div class="text-muted">{{ consultation.scheduled_date|date:"M Y"|upper }}</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="card-title mb-2">
+                                            <i class="bi bi-person-circle"></i> 
+                                            {% if user.role == 'STUDENT' %}
+                                                {{ consultation.professor.get_full_name }}
+                                            {% else %}
+                                                {{ consultation.student.get_full_name }}
+                                            {% endif %}
+                                        </h5>
+                                        <p class="card-text mb-2">
+                                            <i class="bi bi-clock text-muted"></i> 
+                                            {{ consultation.scheduled_time|time:"g:i A" }} 
+                                            ({{ consultation.duration }} min)
+                                        </p>
+                                        <p class="card-text mb-0">
+                                            <i class="bi bi-geo-alt text-muted"></i> 
+                                            {{ consultation.location|default:"Location TBD" }}
+                                        </p>
+                                        <p class="card-text mb-0 mt-2">
+                                            <strong>{{ consultation.title }}</strong>
+                                        </p>
+                                        {% if consultation.status == 'PENDING' %}
+                                            <span class="badge bg-warning mt-2">Pending</span>
+                                        {% elif consultation.status == 'CONFIRMED' %}
+                                            <span class="badge bg-success mt-2">Confirmed</span>
+                                        {% elif consultation.status == 'COMPLETED' %}
+                                            <span class="badge bg-info mt-2">Completed</span>
+                                        {% elif consultation.status == 'CANCELLED' %}
+                                            <span class="badge bg-danger mt-2">Cancelled</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                        {% if status_filter == 'upcoming' or not status_filter %}
+                                            <div class="btn-group" role="group">
+                                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                                    <i class="bi bi-eye"></i> View
+                                                </a>
+                                                {% if consultation.status != 'CANCELLED' %}
+                                                    <a href="#" class="btn btn-outline-warning btn-sm">
+                                                        <i class="bi bi-pencil"></i> Reschedule
+                                                    </a>
+                                                    <a href="#" class="btn btn-outline-danger btn-sm">
+                                                        <i class="bi bi-x-circle"></i> Cancel
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                            {% if consultation.google_calendar_event_id %}
+                                                <div class="mt-2">
+                                                    <span class="badge bg-success">
+                                                        <i class="bi bi-google"></i> In Calendar
+                                                    </span>
+                                                </div>
+                                            {% else %}
+                                                <div class="mt-2">
+                                                    <a href="#" class="btn btn-success btn-sm w-100">
+                                                        <i class="bi bi-google"></i> Add to Calendar
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        {% elif status_filter == 'past' %}
+                                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                                <i class="bi bi-eye"></i> View Details
+                                            </a>
+                                            {% if consultation.rating %}
+                                                <div class="mt-2">
+                                                    <span class="text-warning">
+                                                        {% for i in "12345" %}
+                                                            {% if forloop.counter <= consultation.rating %}
+                                                                <i class="bi bi-star-fill"></i>
+                                                            {% else %}
+                                                                <i class="bi bi-star"></i>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </span>
+                                                </div>
+                                            {% else %}
+                                                <a href="#" class="btn btn-warning btn-sm mt-2">
+                                                    <i class="bi bi-star"></i> Rate Consultation
+                                                </a>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="alert alert-info" role="alert">
+                    <i class="bi bi-info-circle"></i> 
+                    {% if status_filter == 'upcoming' %}
+                        No upcoming consultations. <a href="{% url 'book_consultation' %}" class="alert-link">Book one now!</a>
+                    {% elif status_filter == 'past' %}
+                        No past consultations yet.
+                    {% elif status_filter == 'cancelled' %}
+                        No cancelled consultations.
+                    {% else %}
+                        No consultations found.
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

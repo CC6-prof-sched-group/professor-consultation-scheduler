@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% block title %}Professor Profile - Professor Consultation Scheduler{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Profile Header -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 48px;">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                </div>
+                <div class="col-md-7 mt-3 mt-md-0">
+                    <h2 class="mb-2">
+                        {% if profile.title %}{{ profile.title }}{% endif %}
+                        {{ professor.get_full_name }}
+                    </h2>
+                    <p class="text-muted mb-2">
+                        <i class="bi bi-building"></i> {{ professor.department|default:"Department N/A" }}
+                    </p>
+                    <p class="text-muted mb-2">
+                        <i class="bi bi-envelope"></i> {{ professor.email }}
+                    </p>
+                    {% if profile.office_location %}
+                    <p class="text-muted mb-3">
+                        <i class="bi bi-geo-alt"></i> {{ profile.office_location }}
+                    </p>
+                    {% endif %}
+                    <div>
+                        <span class="badge bg-success me-2">
+                            <i class="bi bi-check-circle"></i> Available
+                        </span>
+                        {% if avg_rating > 0 %}
+                        <span class="badge bg-info">
+                            <i class="bi bi-star-fill"></i> {{ avg_rating }} Rating ({{ rating_count }} review{{ rating_count|pluralize }})
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-primary btn-lg w-100 mb-2">
+                            <i class="bi bi-calendar-plus"></i> Book Consultation
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-primary btn-lg w-100 mb-2">
+                            <i class="bi bi-box-arrow-in-right"></i> Login to Book
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-8">
+            <!-- About Section -->
+            {% if professor.bio %}
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> About</h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">{{ professor.bio }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Specializations -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-bookmark-star"></i> Areas of Expertise</h5>
+                </div>
+                <div class="card-body">
+                    <span class="badge bg-primary me-2 mb-2">Data Structures</span>
+                    <span class="badge bg-primary me-2 mb-2">Algorithms</span>
+                    <span class="badge bg-primary me-2 mb-2">Machine Learning</span>
+                    <span class="badge bg-primary me-2 mb-2">Artificial Intelligence</span>
+                    <span class="badge bg-primary me-2 mb-2">Python Programming</span>
+                    <span class="badge bg-primary me-2 mb-2">Database Systems</span>
+                </div>
+            </div>
+
+            <!-- Office Hours -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-clock"></i> Office Hours</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Monday</strong></td>
+                                    <td>2:00 PM - 4:00 PM</td>
+                                    <td>Room 304, CS Building</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wednesday</strong></td>
+                                    <td>10:00 AM - 12:00 PM</td>
+                                    <td>Room 304, CS Building</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Friday</strong></td>
+                                    <td>1:00 PM - 3:00 PM</td>
+                                    <td>Online (Google Meet)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-4">
+            <!-- Quick Stats -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-graph-up"></i> Statistics</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span>Total Consultations</span>
+                            <strong>{{ total_consultations }}</strong>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span>This Month</span>
+                            <strong>{{ this_month_consultations }}</strong>
+                        </div>
+                        <div class="progress">
+                            {% widthratio this_month_consultations total_consultations 100 as month_percentage %}
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ month_percentage }}%"></div>
+                        </div>
+                    </div>
+                    {% if avg_rating > 0 %}
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span>Average Rating</span>
+                            <strong>{{ avg_rating }}/5.0</strong>
+                        </div>
+                        <div class="progress">
+                            {% widthratio avg_rating 5 100 as rating_percentage %}
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: {{ rating_percentage }}%"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Recent Reviews -->
+            {% if recent_reviews %}
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0"><i class="bi bi-star-fill"></i> Recent Reviews</h5>
+                </div>
+                <div class="card-body">
+                    {% for review in recent_reviews %}
+                    <div {% if not forloop.last %}class="mb-3"{% endif %}>
+                        <div class="d-flex justify-content-between mb-1">
+                            <strong>{{ review.student.get_full_name }}</strong>
+                            <span class="text-warning">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= review.rating %}★{% else %}☆{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <p class="small text-muted mb-0">"{{ review.feedback|truncatewords:20 }}"</p>
+                        <small class="text-muted">{{ review.completed_at|timesince }} ago</small>
+                    </div>
+                    {% if not forloop.last %}<hr>{% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

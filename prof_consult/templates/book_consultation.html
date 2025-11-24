@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Consultation - Professor Consultation Scheduler{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg scale-in">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-calendar-plus bounce"></i> Book a Consultation
+                    </h3>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post" id="bookingForm" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        <!-- Professor Selection -->
+                        <div class="mb-4">
+                            <label for="professor" class="form-label fw-bold">
+                                <i class="bi bi-person"></i> Select Professor
+                            </label>
+                            <select class="form-select form-select-lg" id="professor" name="professor" required>
+                                <option value="">Choose a professor...</option>
+                                {% for professor in professors %}
+                                <option value="{{ professor.id }}">{{ professor.get_full_name }} - {{ professor.department }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Date Selection -->
+                        <div class="mb-4">
+                            <label for="date" class="form-label fw-bold">
+                                <i class="bi bi-calendar3"></i> Consultation Date
+                            </label>
+                            <input type="date" class="form-control form-control-lg" id="date" name="date" required>
+                        </div>
+
+                        <!-- Time Slot Selection -->
+                        <div class="mb-4">
+                            <label for="time" class="form-label fw-bold">
+                                <i class="bi bi-clock"></i> Time Slot
+                            </label>
+                            <select class="form-select form-select-lg" id="time" name="time" required>
+                                <option value="">Choose a time slot...</option>
+                                <option value="09:00">9:00 AM - 10:00 AM</option>
+                                <option value="10:00">10:00 AM - 11:00 AM</option>
+                                <option value="11:00">11:00 AM - 12:00 PM</option>
+                                <option value="14:00">2:00 PM - 3:00 PM</option>
+                                <option value="15:00">3:00 PM - 4:00 PM</option>
+                                <option value="16:00">4:00 PM - 5:00 PM</option>
+                            </select>
+                        </div>
+
+                        <!-- Consultation Type -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">
+                                <i class="bi bi-geo-alt"></i> Consultation Type
+                            </label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type" id="inPerson" value="in_person" checked>
+                                    <label class="form-check-label" for="inPerson">
+                                        In-Person
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type" id="online" value="online">
+                                    <label class="form-check-label" for="online">
+                                        Online (Google Meet)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Topic/Subject -->
+                        <div class="mb-4">
+                            <label for="subject" class="form-label fw-bold">
+                                <i class="bi bi-bookmark"></i> Topic/Subject
+                            </label>
+                            <input type="text" class="form-control form-control-lg" id="subject" name="subject" placeholder="e.g., Data Structures - Binary Trees" required>
+                        </div>
+
+                        <!-- Additional Notes -->
+                        <div class="mb-4">
+                            <label for="notes" class="form-label fw-bold">
+                                <i class="bi bi-chat-text"></i> Additional Notes (Optional)
+                            </label>
+                            <textarea class="form-control" id="notes" name="notes" rows="4" placeholder="Any specific questions or topics you'd like to discuss..."></textarea>
+                            <div class="form-text">Please provide any relevant details that might help the professor prepare for the consultation.</div>
+                        </div>
+
+                        <!-- Notification Preferences -->
+                        <div class="mb-4">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <i class="bi bi-bell"></i> Notification Preferences
+                                    </h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="emailNotif" name="email_notification" checked>
+                                        <label class="form-check-label" for="emailNotif">
+                                            Send email notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="calendarAdd" name="add_to_calendar" checked>
+                                        <label class="form-check-label" for="calendarAdd">
+                                            Add to Google Calendar
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="reminder" name="reminder" checked>
+                                        <label class="form-check-label" for="reminder">
+                                            Send reminder 24 hours before
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Buttons -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-check-circle"></i> Confirm Booking
+                            </button>
+                            <a href="{% url 'home' %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Booking Guidelines -->
+            <div class="card mt-4 border-info">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> Booking Guidelines</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0">
+                        <li>Book at least 24 hours in advance</li>
+                        <li>Cancellations must be made at least 6 hours before the scheduled time</li>
+                        <li>Please arrive 5 minutes early for in-person consultations</li>
+                        <li>For online consultations, you'll receive a Google Meet link via email</li>
+                        <li>Maximum consultation duration is 1 hour</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
