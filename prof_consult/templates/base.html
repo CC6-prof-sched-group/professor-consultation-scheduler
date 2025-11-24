@@ -57,15 +57,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="bi bi-calendar2-week"></i> My Consultations
+                            <a class="nav-link" href="{% url 'dashboard' %}">
+                                <i class="bi bi-speedometer2"></i> Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{% url 'consultations_list' %}">
+                                <i class="bi bi-calendar2-week"></i> Consultations
+                            </a>
+                        </li>
+                        {% if user.role != 'PROFESSOR' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'professors_list' %}">
                                 <i class="bi bi-people"></i> Professors
                             </a>
                         </li>
+                        {% endif %}
                     {% endif %}
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -75,9 +82,14 @@
                                 <i class="bi bi-person-circle"></i> {{ user.email }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'api-user' %}">
-                                    <i class="bi bi-person"></i> Profile
+                                <li><a class="dropdown-item" href="{% url 'profile_settings' %}">
+                                    <i class="bi bi-person"></i> Profile Settings
                                 </a></li>
+                                {% if user.role == 'PROFESSOR' %}
+                                <li><a class="dropdown-item" href="{% url 'professor_availability_settings' %}">
+                                    <i class="bi bi-calendar-week"></i> Manage Availability
+                                </a></li>
+                                {% endif %}
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{% url 'api-logout' %}">
                                     <i class="bi bi-box-arrow-right"></i> Logout

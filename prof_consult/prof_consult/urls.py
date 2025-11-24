@@ -35,6 +35,12 @@ urlpatterns = [
     path('professors/<int:professor_id>/', frontend_views.professor_profile, name='professor_profile'),
     path('profile/settings/', frontend_views.profile_settings, name='profile_settings'),
     
+    # Professor Dashboard
+    path('professor/dashboard/', frontend_views.professor_dashboard, name='professor_dashboard'),
+    path('professor/availability/', frontend_views.professor_availability_settings, name='professor_availability_settings'),
+    path('professor/consultation/<int:consultation_id>/action/', frontend_views.professor_consultation_action, name='professor_consultation_action'),
+    path('professor/status/change/', frontend_views.professor_change_status, name='professor_change_status'),
+    
     # API URLs
     path('api/', include(router.urls)),
     path('api/auth/token/', views.obtain_auth_token, name='api-token'),

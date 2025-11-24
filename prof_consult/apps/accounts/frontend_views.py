@@ -14,6 +14,7 @@ from apps.accounts.models import User, Role
 from apps.consultations.models import Consultation, ConsultationStatus
 from apps.professors.models import ProfessorProfile
 from apps.notifications.models import Notification
+import json
 
 
 def home(request):
@@ -41,16 +42,20 @@ def login_view(request):
 def dashboard(request):
     """
     User dashboard view.
-    Displays statistics, upcoming consultations, and recent activity.
+    Redirects to appropriate dashboard based on user role.
     """
     user = request.user
     
+    # Redirect professors to professor dashboard
+    if user.role == Role.PROFESSOR:
+        return redirect('professor_dashboard')
+    
+    # Student dashboard
     # Get consultations based on user role
     if user.role == Role.STUDENT:
         consultations = Consultation.objects.filter(student=user)
-    elif user.role == Role.PROFESSOR:
-        consultations = Consultation.objects.filter(professor=user)
     else:
+        # Admin view - show all
         consultations = Consultation.objects.all()
     
     # Calculate statistics
@@ -344,3 +349,220 @@ def custom_404(request, exception):
 def custom_500(request):
     """Custom 500 error page."""
     return render(request, '500.html', status=500)
+
+
+@login_required
+def professor_dashboard(request):
+    """
+    Professor dashboard view.
+    Shows consultation requests, statistics, and availability management.
+    """
+    user = request.user
+    
+    # Ensure user is a professor
+    if user.role != Role.PROFESSOR:
+        messages.error(request, 'Access denied. This page is for professors only.')
+        return redirect('dashboard')
+    
+    # Get or create professor profile
+    try:
+        profile = user.professor_profile
+    except ProfessorProfile.DoesNotExist:
+        profile = ProfessorProfile.objects.create(user=user)
+    
+    # Get consultations for professor
+    consultations = Consultation.objects.filter(professor=user)
+    
+    # Calculate statistics
+    total_consultations = consultations.count()
+    pending_requests = consultations.filter(status=ConsultationStatus.PENDING).count()
+    confirmed_upcoming = consultations.filter(
+        status=ConsultationStatus.CONFIRMED,
+        scheduled_date__gte=timezone.now().date()
+    ).count()
+    completed_this_month = consultations.filter(
+        status=ConsultationStatus.COMPLETED,
+        scheduled_date__year=timezone.now().year,
+        scheduled_date__month=timezone.now().month
+    ).count()
+    
+    # Get pending consultation requests (need action)
+    pending_consultations = consultations.filter(
+        status=ConsultationStatus.PENDING
+    ).order_by('scheduled_date', 'scheduled_time')[:10]
+    
+    # Get upcoming confirmed consultations
+    upcoming_consultations = consultations.filter(
+        status=ConsultationStatus.CONFIRMED,
+        scheduled_date__gte=timezone.now().date()
+    ).order_by('scheduled_date', 'scheduled_time')[:10]
+    
+    # Get recent notifications
+    notifications = Notification.objects.filter(
+        user=user
+    ).order_by('-created_at')[:5]
+    
+    # Calculate average rating
+    avg_rating = consultations.filter(
+        rating__isnull=False
+    ).aggregate(Avg('rating'))['rating__avg']
+    
+    context = {
+        'profile': profile,
+        'total_consultations': total_consultations,
+        'pending_requests': pending_requests,
+        'confirmed_upcoming': confirmed_upcoming,
+        'completed_this_month': completed_this_month,
+        'pending_consultations': pending_consultations,
+        'upcoming_consultations': upcoming_consultations,
+        'notifications': notifications,
+        'avg_rating': round(avg_rating, 1) if avg_rating else 0,
+        'available_days_json': json.dumps(profile.available_days) if profile.available_days else '{}',
+    }
+    
+    return render(request, 'professor_dashboard.html', context)
+
+
+@login_required
+def professor_availability_settings(request):
+    """
+    View for professors to manage their availability settings.
+    """
+    user = request.user
+    
+    # Ensure user is a professor
+    if user.role != Role.PROFESSOR:
+        messages.error(request, 'Access denied. This page is for professors only.')
+        return redirect('dashboard')
+    
+    # Get or create professor profile
+    try:
+        profile = user.professor_profile
+    except ProfessorProfile.DoesNotExist:
+        profile = ProfessorProfile.objects.create(user=user)
+    
+    if request.method == 'POST':
+        try:
+            # Update consultation preferences
+            profile.consultation_duration_default = int(request.POST.get('consultation_duration', 30))
+            profile.buffer_time_between_consultations = int(request.POST.get('buffer_time', 15))
+            profile.max_advance_booking_days = int(request.POST.get('max_advance_booking_days', 30))
+            profile.office_location = request.POST.get('office_location', '')
+            profile.title = request.POST.get('title', '')
+            profile.department = request.POST.get('department', '')
+            
+            # Update availability
+            available_days = {}
+            days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+            for day in days:
+                enabled = request.POST.get(f'{day}_enabled')
+                if enabled == 'on':
+                    start_time = request.POST.get(f'{day}_start')
+                    end_time = request.POST.get(f'{day}_end')
+                    if start_time and end_time:
+                        available_days[day] = [{
+                            'start': start_time,
+                            'end': end_time
+                        }]
+            
+            profile.available_days = available_days
+            profile.save()
+            
+            messages.success(request, 'Availability settings updated successfully!')
+            return redirect('professor_dashboard')
+            
+        except Exception as e:
+            messages.error(request, f'Error updating settings: {str(e)}')
+    
+    context = {
+        'profile': profile,
+        'available_days_json': json.dumps(profile.available_days) if profile.available_days else '{}',
+    }
+    
+    return render(request, 'professor_availability_settings.html', context)
+
+
+@login_required
+def professor_consultation_action(request, consultation_id):
+    """
+    Handle professor actions on consultations (confirm/cancel).
+    """
+    user = request.user
+    
+    # Ensure user is a professor
+    if user.role != Role.PROFESSOR:
+        messages.error(request, 'Access denied.')
+        return redirect('dashboard')
+    
+    consultation = get_object_or_404(Consultation, id=consultation_id, professor=user)
+    
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        
+        if action == 'confirm':
+            consultation.status = ConsultationStatus.CONFIRMED
+            consultation.confirmed_at = timezone.now()
+            consultation.save()
+            messages.success(request, 'Consultation confirmed!')
+            
+            # Create notification for student
+            Notification.objects.create(
+                user=consultation.student,
+                message=f'Your consultation with {user.get_full_name()} has been confirmed.',
+                notification_type='CONSULTATION_CONFIRMED'
+            )
+            
+        elif action == 'cancel':
+            reason = request.POST.get('reason', '')
+            consultation.status = ConsultationStatus.CANCELLED
+            consultation.cancelled_at = timezone.now()
+            consultation.cancellation_reason = reason
+            consultation.save()
+            messages.success(request, 'Consultation cancelled.')
+            
+            # Create notification for student
+            Notification.objects.create(
+                user=consultation.student,
+                message=f'Your consultation with {user.get_full_name()} has been cancelled.',
+                notification_type='CONSULTATION_CANCELLED'
+            )
+        
+        return redirect('professor_dashboard')
+    
+    return redirect('professor_dashboard')
+
+
+@login_required
+def professor_change_status(request):
+    """
+    Change professor's availability status.
+    """
+    user = request.user
+    
+    # Ensure user is a professor
+    if user.role != Role.PROFESSOR:
+        messages.error(request, 'Access denied.')
+        return redirect('dashboard')
+    
+    # Get or create professor profile
+    try:
+        profile = user.professor_profile
+    except ProfessorProfile.DoesNotExist:
+        profile = ProfessorProfile.objects.create(user=user)
+    
+    if request.method == 'POST':
+        new_status = request.POST.get('status')
+        
+        # Import ProfessorStatus from models
+        from apps.professors.models import ProfessorStatus
+        
+        # Validate status
+        valid_statuses = [choice[0] for choice in ProfessorStatus.choices]
+        if new_status in valid_statuses:
+            profile.status = new_status
+            profile.save()
+            messages.success(request, f'Status updated to {ProfessorStatus(new_status).label}!')
+        else:
+            messages.error(request, 'Invalid status selected.')
+    
+    return redirect('professor_dashboard')
