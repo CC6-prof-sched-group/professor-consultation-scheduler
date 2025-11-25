@@ -75,6 +75,15 @@ def dashboard(request):
         status__in=[ConsultationStatus.PENDING, ConsultationStatus.CONFIRMED],
         scheduled_date__gte=timezone.now().date()
     ).order_by('scheduled_date', 'scheduled_time')[:5]
+    # Avoid N+1 queries when rendering user names and social account data
+    try:
+        upcoming_consultations = upcoming_consultations.select_related('student', 'professor').prefetch_related(
+            'student__socialaccount_set', 'professor__socialaccount_set'
+        )
+    except Exception:
+        # If slicing produced a list-like object that doesn't support queryset methods,
+        # skip prefetching (best-effort optimization).
+        pass
     
     # Get recent notifications
     notifications = Notification.objects.filter(
@@ -180,7 +189,7 @@ def book_consultation(request):
     professors = User.objects.filter(
         role=Role.PROFESSOR,
         is_active=True
-    ).select_related('professor_profile')
+    ).select_related('professor_profile').prefetch_related('socialaccount_set')
     
     context = {
         'professors': professors,
@@ -201,7 +210,7 @@ def professors_list(request):
     professors = User.objects.filter(
         role=Role.PROFESSOR,
         is_active=True
-    ).select_related('professor_profile')
+    ).select_related('professor_profile').prefetch_related('socialaccount_set')
     
     # Apply search filter
     if search_query:
@@ -287,6 +296,10 @@ def professor_profile(request, professor_id):
         rating__isnull=False,
         feedback__isnull=False
     ).exclude(feedback='').order_by('-completed_at')[:5]
+    try:
+        recent_reviews = recent_reviews.select_related('student').prefetch_related('student__socialaccount_set')
+    except Exception:
+        pass
     
     context = {
         'professor': professor,

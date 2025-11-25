@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load user_extras %}
 
 {% block title %}My Consultations - Professor Consultation Scheduler{% endblock %}
 
@@ -52,9 +53,9 @@
                                         <h5 class="card-title mb-2">
                                             <i class="bi bi-person-circle"></i> 
                                             {% if user.role == 'STUDENT' %}
-                                                {{ consultation.professor.get_full_name }}
+                                                {{ consultation.professor|display_name }}
                                             {% else %}
-                                                {{ consultation.student.get_full_name }}
+                                                {{ consultation.student|display_name }}
                                             {% endif %}
                                         </h5>
                                         <p class="card-text mb-2">
