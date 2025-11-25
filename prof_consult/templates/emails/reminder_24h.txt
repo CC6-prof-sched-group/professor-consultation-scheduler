@@ -1,13 +1,14 @@
+{% load user_extras %}
 Reminder: Consultation Tomorrow
 
-Dear {{ user.get_full_name|default:user.email }},
+Dear {{ user|display_name }},
 
 This is a reminder that you have a consultation scheduled for tomorrow:
 
 Title: {{ consultation.title }}
 {% if user.is_student %}Professor{% else %}Student{% endif %}: 
-{% if user.is_student %}{{ consultation.professor.get_full_name|default:consultation.professor.email }}
-{% else %}{{ consultation.student.get_full_name|default:consultation.student.email }}{% endif %}
+{% if user.is_student %}{{ consultation.professor|display_name }}
+{% else %}{{ consultation.student|display_name }}{% endif %}
 Date: {{ consultation.scheduled_date }}
 Time: {{ consultation.scheduled_time }}
 Duration: {{ consultation.duration }} minutes

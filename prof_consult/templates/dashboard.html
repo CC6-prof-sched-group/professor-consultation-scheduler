@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
+{% load user_extras %}
 
 {% block title %}Dashboard - Professor Consultation Scheduler{% endblock %}
-
 {% block content %}
 <div class="container my-5">
     <!-- Dashboard Header -->
@@ -10,7 +10,7 @@
             <h1 class="display-5 fw-bold">
                 <i class="bi bi-speedometer2 text-primary"></i> Dashboard
             </h1>
-            <p class="lead text-muted">Welcome back, {{ user.email }}</p>
+            <p class="lead text-muted">Welcome back, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}</p>
         </div>
     </div>
 
@@ -93,9 +93,9 @@
                                     <div>
                                         <h6 class="mb-1">
                                             {% if user.role == 'STUDENT' %}
-                                                {{ consultation.professor.get_full_name }}
+                                                {{ consultation.professor|display_name }}
                                             {% else %}
-                                                {{ consultation.student.get_full_name }}
+                                                {{ consultation.student|display_name }}
                                             {% endif %}
                                         </h6>
                                         <small class="text-muted">
@@ -156,9 +156,9 @@
                                     </strong>
                                     with 
                                     {% if user.role == 'STUDENT' %}
-                                        {{ activity.professor.get_full_name }}
+                                        {{ activity.professor|display_name }}
                                     {% else %}
-                                        {{ activity.student.get_full_name }}
+                                        {{ activity.student|display_name }}
                                     {% endif %}
                                 </p>
                                 <small class="text-muted">{{ activity.updated_at|timesince }} ago</small>
