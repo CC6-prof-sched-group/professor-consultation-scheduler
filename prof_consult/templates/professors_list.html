@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load user_extras %}
 
 {% block title %}Professors - Professor Consultation Scheduler{% endblock %}
 
@@ -59,7 +60,7 @@
                                     {% if professor.professor_profile.title %}
                                         {{ professor.professor_profile.title }}
                                     {% endif %}
-                                    {{ professor.get_full_name }}
+                                    {{ professor|display_name }}
                                 </h5>
                                 <small class="text-muted">
                                     {{ professor.department|default:"Department N/A" }}

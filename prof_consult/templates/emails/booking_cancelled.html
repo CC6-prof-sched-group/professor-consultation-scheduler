@@ -1,3 +1,4 @@
+{% load user_extras %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,15 +7,15 @@
 </head>
 <body>
     <h2>Consultation Cancelled</h2>
-    <p>Dear {{ user.get_full_name|default:user.email }},</p>
+    <p>Dear {{ user|display_name }},</p>
     
     <p>The following consultation has been cancelled:</p>
     
     <ul>
         <li><strong>Title:</strong> {{ consultation.title }}</li>
         <li><strong>{% if user.is_student %}Professor{% else %}Student{% endif %}:</strong> 
-            {% if user.is_student %}{{ consultation.professor.get_full_name|default:consultation.professor.email }}
-            {% else %}{{ consultation.student.get_full_name|default:consultation.student.email }}{% endif %}</li>
+            {% if user.is_student %}{{ consultation.professor|display_name }}
+            {% else %}{{ consultation.student|display_name }}{% endif %}</li>
         <li><strong>Date:</strong> {{ consultation.scheduled_date }}</li>
         <li><strong>Time:</strong> {{ consultation.scheduled_time }}</li>
         {% if consultation.cancellation_reason %}

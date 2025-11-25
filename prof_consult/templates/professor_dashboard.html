@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load user_extras %}
 
 {% block title %}Professor Dashboard - Professor Consultation Scheduler{% endblock %}
 
@@ -10,7 +11,7 @@
             <h1 class="display-5 fw-bold">
                 <i class="bi bi-mortarboard text-primary"></i> Professor Dashboard
             </h1>
-            <p class="lead text-muted">Welcome back, {{ user.get_full_name|default:user.email }}</p>
+            <p class="lead text-muted">Welcome back, {{ user|display_name }}</p>
         </div>
         <div class="col-auto d-flex gap-2">
             <!-- Status Selector -->
@@ -145,7 +146,7 @@
                                             <small class="text-muted">{{ consultation.scheduled_date|date:"M"|upper }}</small>
                                         </div>
                                         <div>
-                                            <h6 class="mb-1">{{ consultation.student.get_full_name|default:consultation.student.email }}</h6>
+                                            <h6 class="mb-1">{{ consultation.student|display_name }}</h6>
                                             <small class="text-muted">
                                                 <i class="bi bi-clock"></i> {{ consultation.scheduled_time|time:"g:i A" }}
                                                 <span class="mx-2">|</span>
@@ -229,7 +230,7 @@
                                         <small class="text-muted">{{ consultation.scheduled_date|date:"M"|upper }}</small>
                                     </div>
                                     <div>
-                                        <h6 class="mb-1">{{ consultation.student.get_full_name|default:consultation.student.email }}</h6>
+                                        <h6 class="mb-1">{{ consultation.student|display_name }}</h6>
                                         <small class="text-muted">
                                             <i class="bi bi-clock"></i> {{ consultation.scheduled_time|time:"g:i A" }}
                                             ({{ consultation.duration }} min)
@@ -265,7 +266,7 @@
                 <div class="card-body">
                     <div class="text-center mb-3">
                         <i class="bi bi-person-circle" style="font-size: 4rem; opacity: 0.5;"></i>
-                        <h5 class="mt-2">{{ user.get_full_name|default:user.email }}</h5>
+                        <h5 class="mt-2">{{ user|display_name }}</h5>
                         {% if profile.title %}
                         <p class="text-muted mb-1">{{ profile.title }}</p>
                         {% endif %}

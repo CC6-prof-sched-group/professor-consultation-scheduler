@@ -492,3 +492,935 @@ INFO 2025-11-24 23:46:57,297 basehttp "GET / HTTP/1.1" 200 10854
 INFO 2025-11-24 23:48:39,875 basehttp "GET /professors/ HTTP/1.1" 200 27760
 INFO 2025-11-24 23:48:54,793 basehttp "GET /dashboard/ HTTP/1.1" 200 14249
 INFO 2025-11-24 23:49:01,811 basehttp "GET /consultations/ HTTP/1.1" 200 13774
+INFO 2025-11-25 22:09:14,855 autoreload Watching for file changes with StatReloader
+ERROR 2025-11-25 22:09:21,732 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'user_extras'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'user_extras' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+allauth
+cache
+i18n
+l10n
+log
+rest_framework
+socialaccount
+static
+tz
+ERROR 2025-11-25 22:09:21,759 basehttp "GET / HTTP/1.1" 500 199559
+INFO 2025-11-25 22:15:34,133 autoreload Watching for file changes with StatReloader
+INFO 2025-11-25 22:15:38,366 basehttp "GET / HTTP/1.1" 200 10882
+INFO 2025-11-25 22:15:39,044 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-11-25 22:15:39,085 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+INFO 2025-11-25 22:15:39,105 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-11-25 22:15:39,108 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
+INFO 2025-11-25 22:15:39,111 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
+INFO 2025-11-25 22:23:42,494 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\templatetags\__init__.py changed, reloading.
+INFO 2025-11-25 22:23:48,801 autoreload Watching for file changes with StatReloader
+INFO 2025-11-25 22:24:30,380 autoreload Watching for file changes with StatReloader
+INFO 2025-11-25 22:24:34,574 basehttp "GET / HTTP/1.1" 200 10912
+INFO 2025-11-25 22:24:34,811 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:24:34,839 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:24:34,851 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:24:34,852 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:24:34,855 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:26:15,620 basehttp "GET / HTTP/1.1" 200 10912
+INFO 2025-11-25 22:38:04,722 autoreload Watching for file changes with StatReloader
+INFO 2025-11-25 22:38:15,134 basehttp "GET /admin/ HTTP/1.1" 200 21931
+INFO 2025-11-25 22:38:15,207 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,224 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,230 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,234 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,237 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,238 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,247 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,276 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:15,277 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,807 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 25430
+INFO 2025-11-25 22:38:20,848 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,876 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,883 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,890 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,894 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,896 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,900 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,907 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,909 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,912 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,919 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:20,942 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:21,034 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:38:21,108 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:21,109 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:21,113 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-11-25 22:38:29,666 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 21373
+INFO 2025-11-25 22:38:29,697 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:38:34,936 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 21373
+INFO 2025-11-25 22:38:34,980 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:38:38,529 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 21373
+INFO 2025-11-25 22:38:38,577 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:38:40,034 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 25430
+INFO 2025-11-25 22:38:40,081 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:38:50,955 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 20367
+INFO 2025-11-25 22:38:51,010 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:38:55,209 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 25430
+INFO 2025-11-25 22:38:55,257 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:38:57,413 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 21465
+INFO 2025-11-25 22:39:01,739 basehttp "GET /admin/django_celery_results/taskresult/ HTTP/1.1" 200 22378
+INFO 2025-11-25 22:39:01,791 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:39:03,059 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 21465
+INFO 2025-11-25 22:39:56,458 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 21002
+INFO 2025-11-25 22:39:56,534 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:39:59,910 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 21373
+INFO 2025-11-25 22:39:59,945 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:40:02,270 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 25430
+INFO 2025-11-25 22:40:02,313 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:40:07,265 basehttp "GET /admin/accounts/user/add/ HTTP/1.1" 200 26624
+INFO 2025-11-25 22:40:07,440 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:40:07,773 basehttp "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-11-25 22:40:07,776 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-11-25 22:40:07,809 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-11-25 22:40:07,814 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2025-11-25 22:40:07,843 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-11-25 22:40:07,891 basehttp "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-11-25 22:41:01,549 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 25430
+INFO 2025-11-25 22:41:01,600 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-25 22:41:14,411 basehttp "POST /admin/logout/ HTTP/1.1" 200 3568
+INFO 2025-11-25 22:41:19,596 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-25 22:41:19,633 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:41:19,646 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:41:19,647 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:41:19,649 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:41:19,651 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:41:25,200 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-25 22:41:27,983 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-25 22:41:50,641 basehttp "POST /accounts/login/ HTTP/1.1" 200 2718
+INFO 2025-11-25 22:41:56,830 basehttp - Broken pipe from ('127.0.0.1', 58215)
+INFO 2025-11-25 22:41:57,888 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-11-25 22:41:57,950 log Not Found: /accounts/profile/
+WARNING 2025-11-25 22:41:57,953 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+INFO 2025-11-25 22:42:08,708 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-11-25 22:44:10,739 basehttp "GET /admin/ HTTP/1.1" 200 22073
+INFO 2025-11-25 22:44:18,675 basehttp "GET / HTTP/1.1" 200 10912
+INFO 2025-11-25 22:44:25,819 basehttp "GET / HTTP/1.1" 200 10912
+INFO 2025-11-25 22:44:29,670 basehttp "GET /admin/ HTTP/1.1" 200 21931
+INFO 2025-11-25 22:44:34,012 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 25430
+INFO 2025-11-25 22:44:34,070 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-11-25 22:46:15,949 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 976, in do_if
+    nodelist = parser.parse(("endif",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 976, in do_if
+    nodelist = parser.parse(("endif",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'username'
+ERROR 2025-11-25 22:46:15,967 basehttp "GET / HTTP/1.1" 500 261674
+ERROR 2025-11-25 22:46:46,067 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 976, in do_if
+    nodelist = parser.parse(("endif",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 976, in do_if
+    nodelist = parser.parse(("endif",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'user_name'
+ERROR 2025-11-25 22:46:46,075 basehttp "GET / HTTP/1.1" 500 261691
+INFO 2025-11-25 22:49:43,023 basehttp "GET / HTTP/1.1" 200 10874
+INFO 2025-11-25 22:49:43,070 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:49:43,087 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:49:43,088 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:49:43,091 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:49:43,094 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:58:00,727 basehttp "GET / HTTP/1.1" 200 10882
+INFO 2025-11-25 22:58:00,817 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:58:00,819 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:58:00,826 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:58:00,828 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-25 22:58:00,829 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-25 22:58:58,623 basehttp "GET /dashboard/ HTTP/1.1" 200 11346
+INFO 2025-11-25 22:59:01,738 basehttp "GET / HTTP/1.1" 200 10882
+INFO 2025-11-25 22:59:04,133 basehttp "GET /dashboard/ HTTP/1.1" 200 11346
+INFO 2025-11-25 22:59:17,259 basehttp "GET / HTTP/1.1" 200 10882
+INFO 2025-11-25 22:59:18,439 basehttp "GET /dashboard/ HTTP/1.1" 200 11346
+INFO 2025-11-25 22:59:20,293 basehttp "GET / HTTP/1.1" 200 10882
+INFO 2025-11-25 22:59:20,787 basehttp "GET /dashboard/ HTTP/1.1" 200 11346
+INFO 2025-11-25 22:59:30,456 basehttp "GET / HTTP/1.1" 200 10882
+INFO 2025-11-25 23:19:34,946 basehttp "GET /dashboard/ HTTP/1.1" 200 11346
+INFO 2025-11-25 23:19:35,026 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-25 23:19:35,029 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-25 23:19:35,034 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-25 23:19:35,034 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-25 23:19:35,035 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-25 23:19:45,714 basehttp "GET / HTTP/1.1" 200 10882
+INFO 2025-11-25 23:34:16,978 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\templatetags\user_extras.py changed, reloading.
+INFO 2025-11-25 23:34:23,072 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:06:07,260 basehttp "GET / HTTP/1.1" 200 10844
+INFO 2025-11-26 00:06:07,402 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:06:07,416 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:06:07,416 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:06:07,425 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:06:07,430 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-26 00:08:57,115 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\templatetags\user_extras.py changed, reloading.
+INFO 2025-11-26 00:09:02,701 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:11:50,455 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-11-26 00:11:54,724 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:12:42,255 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-11-26 00:12:46,396 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:12:52,986 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-11-26 00:12:56,636 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:17:03,485 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-11-26 00:17:06,479 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:19:30,043 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:19:35,935 basehttp "GET / HTTP/1.1" 200 10844
+INFO 2025-11-26 00:20:41,818 basehttp "GET /dashboard/ HTTP/1.1" 200 11308
+INFO 2025-11-26 00:20:41,882 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:20:41,892 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:20:41,899 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:20:41,900 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-26 00:20:41,902 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+WARNING 2025-11-26 00:21:04,960 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-11-26 00:21:04,962 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10517
+INFO 2025-11-26 00:21:09,143 basehttp "GET / HTTP/1.1" 200 10844
+INFO 2025-11-26 00:21:14,605 basehttp "GET /admin/ HTTP/1.1" 200 21931
+INFO 2025-11-26 00:21:17,185 basehttp "POST /admin/logout/ HTTP/1.1" 200 3568
+INFO 2025-11-26 00:21:21,427 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-26 00:21:21,646 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+INFO 2025-11-26 00:21:21,686 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:21:27,883 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-26 00:21:32,174 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-26 00:21:59,784 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-26 00:21:59,848 basehttp "GET /admin/ HTTP/1.1" 200 21931
+INFO 2025-11-26 00:22:02,712 basehttp "GET / HTTP/1.1" 200 10844
+INFO 2025-11-26 00:22:14,274 basehttp "GET /dashboard/ HTTP/1.1" 200 11308
+ERROR 2025-11-26 00:22:18,726 log Internal Server Error: /professors/
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 255, in professors_list
+    return render(request, 'professors_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-11-26 00:22:18,745 basehttp "GET /professors/ HTTP/1.1" 500 284098
+INFO 2025-11-26 00:22:26,465 basehttp "GET / HTTP/1.1" 200 10844
+ERROR 2025-11-26 00:22:29,429 log Internal Server Error: /consultations/
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 146, in consultations_list
+    return render(request, 'consultations.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-11-26 00:22:29,442 basehttp "GET /consultations/ HTTP/1.1" 500 339447
+INFO 2025-11-26 00:23:16,433 basehttp "GET /dashboard/ HTTP/1.1" 200 11308
+ERROR 2025-11-26 00:23:19,172 log Internal Server Error: /consultations/
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 146, in consultations_list
+    return render(request, 'consultations.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-11-26 00:23:19,202 basehttp "GET /consultations/ HTTP/1.1" 500 339457
+INFO 2025-11-26 00:26:35,566 autoreload C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\templatetags\user_extras.py changed, reloading.
+INFO 2025-11-26 00:26:41,357 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:34:42,665 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:46:40,024 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 00:46:45,477 basehttp "GET /dashboard/ HTTP/1.1" 200 11308
+INFO 2025-11-26 00:46:45,616 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:46:45,629 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:46:45,630 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:46:45,632 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-26 00:46:45,633 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-26 00:46:49,026 basehttp "GET / HTTP/1.1" 200 10844
+ERROR 2025-11-26 00:46:56,729 log Internal Server Error: /consultations/
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 146, in consultations_list
+    return render(request, 'consultations.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-11-26 00:46:56,754 basehttp "GET /consultations/ HTTP/1.1" 500 339447
+INFO 2025-11-26 00:48:41,541 basehttp "GET / HTTP/1.1" 200 10844
+INFO 2025-11-26 00:48:45,986 basehttp "GET /consultations/ HTTP/1.1" 200 6456
+ERROR 2025-11-26 00:48:49,593 log Internal Server Error: /professors/
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 255, in professors_list
+    return render(request, 'professors_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-11-26 00:48:49,604 basehttp "GET /professors/ HTTP/1.1" 500 284088
+INFO 2025-11-26 00:51:55,158 basehttp "GET /professors/ HTTP/1.1" 200 6440
+INFO 2025-11-26 00:52:07,129 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6440
+INFO 2025-11-26 00:52:11,754 basehttp "GET / HTTP/1.1" 200 10844
+INFO 2025-11-26 00:52:18,648 basehttp "GET /consultations/ HTTP/1.1" 200 6456
+INFO 2025-11-26 00:52:20,972 basehttp "GET /consultations/ HTTP/1.1" 200 6456
+INFO 2025-11-26 00:52:22,246 basehttp "GET /consultations/book/ HTTP/1.1" 200 13313
+INFO 2025-11-26 00:52:27,150 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6388
+INFO 2025-11-26 00:52:27,832 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6389
+INFO 2025-11-26 00:52:28,439 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6456
+INFO 2025-11-26 00:52:33,310 basehttp "GET /consultations/book/ HTTP/1.1" 200 13313
+INFO 2025-11-26 00:52:40,778 basehttp "GET /dashboard/ HTTP/1.1" 200 11308
+INFO 2025-11-26 00:52:43,162 basehttp "GET /consultations/ HTTP/1.1" 200 6456
+INFO 2025-11-26 00:52:48,737 basehttp "GET /consultations/book/ HTTP/1.1" 200 13313
+INFO 2025-11-26 00:52:50,707 basehttp "GET /professors/ HTTP/1.1" 200 6440
+INFO 2025-11-26 00:52:52,673 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6388
+INFO 2025-11-26 00:52:59,325 basehttp "GET /consultations/ HTTP/1.1" 200 6456
+INFO 2025-11-26 00:53:00,831 basehttp "GET /professors/ HTTP/1.1" 200 6440
+INFO 2025-11-26 00:53:02,450 basehttp "GET /dashboard/ HTTP/1.1" 200 11308
+INFO 2025-11-26 00:53:03,394 basehttp "GET / HTTP/1.1" 200 10844
+INFO 2025-11-26 00:55:13,922 basehttp "GET /dashboard/ HTTP/1.1" 200 11308
