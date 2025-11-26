@@ -813,3 +813,143 @@ Traceback (most recent call last):
     )
 TypeError: Notification() got unexpected keyword arguments: 'message'
 ERROR 2025-11-26 21:23:44,260 basehttp "POST /professor/consultation/104/action/ HTTP/1.1" 500 106168
+INFO 2025-11-26 21:26:31,555 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 21:26:33,763 basehttp "GET / HTTP/1.1" 200 11903
+INFO 2025-11-26 21:26:40,543 basehttp "GET /consultations/ HTTP/1.1" 200 10459
+INFO 2025-11-26 21:26:44,456 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6856
+INFO 2025-11-26 21:26:45,054 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6857
+INFO 2025-11-26 21:26:45,330 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6856
+INFO 2025-11-26 21:26:45,583 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 10459
+INFO 2025-11-26 21:26:46,100 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-26 21:26:46,123 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 154396
+INFO 2025-11-26 22:18:43,474 basehttp "GET /professors/ HTTP/1.1" 200 30557
+INFO 2025-11-26 22:18:44,371 basehttp "GET /professors/ HTTP/1.1" 200 30557
+INFO 2025-11-26 22:18:44,836 basehttp "GET /professors/ HTTP/1.1" 200 30557
+INFO 2025-11-26 22:18:46,000 basehttp "GET /consultations/book/?professor=69 HTTP/1.1" 200 14892
+INFO 2025-11-26 22:18:58,354 basehttp "POST /consultations/book/?professor=69 HTTP/1.1" 302 0
+INFO 2025-11-26 22:18:58,369 basehttp "GET /consultations/ HTTP/1.1" 200 18404
+INFO 2025-11-26 22:19:02,666 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 158905
+INFO 2025-11-26 22:19:05,059 basehttp "POST /professor/consultation/105/action/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:19:05,077 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 156227
+INFO 2025-11-26 22:19:13,723 basehttp "GET /consultations/ HTTP/1.1" 200 18008
+INFO 2025-11-26 22:20:29,597 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 14213
+INFO 2025-11-26 22:20:38,267 basehttp "GET /consultations/ HTTP/1.1" 200 14213
+INFO 2025-11-26 22:20:39,188 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:20:39,209 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 155873
+ERROR 2025-11-26 22:20:43,531 log Internal Server Error: /professor/availability/
+Traceback (most recent call last):
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 546, in professor_availability_settings
+    return render(request, 'professor_availability_settings.html', context)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'split'
+ERROR 2025-11-26 22:20:43,546 basehttp "GET /professor/availability/ HTTP/1.1" 500 258376
+INFO 2025-11-26 22:20:46,158 basehttp "GET / HTTP/1.1" 200 11265
+INFO 2025-11-26 22:26:06,445 basehttp "GET /profile/settings/ HTTP/1.1" 200 24765
+INFO 2025-11-26 22:26:12,666 basehttp "POST /profile/convert-to-professor/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:26:12,688 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 153927
+INFO 2025-11-26 22:27:02,155 basehttp "GET / HTTP/1.1" 200 11265
+INFO 2025-11-26 22:27:03,166 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:27:03,188 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 155873
+INFO 2025-11-26 22:27:05,154 basehttp "GET /consultations/ HTTP/1.1" 200 14213
+INFO 2025-11-26 22:27:05,973 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:27:05,993 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 155873
+INFO 2025-11-26 22:27:06,508 basehttp "GET / HTTP/1.1" 200 11265
+INFO 2025-11-26 22:27:13,215 basehttp "GET /profile/settings/ HTTP/1.1" 200 23594
+INFO 2025-11-26 22:27:33,913 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-26 22:27:34,183 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
+INFO 2025-11-26 22:27:34,195 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-11-26 22:27:34,202 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223516
+INFO 2025-11-26 22:27:34,232 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+INFO 2025-11-26 22:27:34,315 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+WARNING 2025-11-26 22:27:34,820 log Not Found: /favicon.ico
+WARNING 2025-11-26 22:27:34,820 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-11-26 22:29:50,423 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-26 22:29:52,201 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:30:05,040 basehttp "GET /accounts/google/login/callback/?state=1Mb17hlsPLSAjCqw&code=4/0Ab32j90a_Q7FZ6CGBU2llLlEudhKy1OBLdfBHqCTVHWQ58JGVHjSpimPFOCS_aSIdAxthA&scope=email%20profile%20https://www.googleapis.com/auth/calendar%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email%20openid&authuser=0&prompt=consent HTTP/1.1" 302 0
+WARNING 2025-11-26 22:30:05,053 log Not Found: /accounts/profile/
+WARNING 2025-11-26 22:30:05,054 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+WARNING 2025-11-26 22:30:10,866 log Not Found: /profile/
+WARNING 2025-11-26 22:30:10,867 basehttp "GET /profile/ HTTP/1.1" 404 6983
+INFO 2025-11-26 22:30:14,826 basehttp "GET / HTTP/1.1" 200 11688
+INFO 2025-11-26 22:30:19,202 basehttp "GET /dashboard/ HTTP/1.1" 200 11788
+INFO 2025-11-26 22:30:20,107 basehttp "GET /consultations/ HTTP/1.1" 200 6939
+INFO 2025-11-26 22:30:22,175 basehttp "GET /dashboard/ HTTP/1.1" 200 11788
+INFO 2025-11-26 22:30:23,946 basehttp "GET / HTTP/1.1" 200 11324
+INFO 2025-11-26 22:30:25,176 basehttp "GET /professors/ HTTP/1.1" 200 32872
+INFO 2025-11-26 22:30:35,069 basehttp "GET /consultations/book/?professor=3 HTTP/1.1" 200 14998
+INFO 2025-11-26 22:30:50,143 basehttp "POST /consultations/book/?professor=3 HTTP/1.1" 302 0
+INFO 2025-11-26 22:30:50,154 basehttp "GET /consultations/ HTTP/1.1" 200 10863
+INFO 2025-11-26 22:30:57,356 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:30:57,377 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 157961
+INFO 2025-11-26 22:30:59,397 basehttp "POST /professor/consultation/106/action/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:30:59,416 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 155227
+INFO 2025-11-26 22:39:01,449 basehttp "GET /consultations/ HTTP/1.1" 200 10467
+INFO 2025-11-26 22:39:03,808 basehttp "GET /consultations/ HTTP/1.1" 200 10467
+INFO 2025-11-26 22:39:05,722 basehttp "GET /dashboard/ HTTP/1.1" 200 13715
+INFO 2025-11-26 22:39:10,508 basehttp "GET /consultations/ HTTP/1.1" 200 10467
+INFO 2025-11-26 22:39:13,174 basehttp "GET /professors/ HTTP/1.1" 200 32872
+INFO 2025-11-26 22:39:14,957 basehttp "GET /consultations/book/?professor=69 HTTP/1.1" 200 14998
+INFO 2025-11-26 22:39:38,267 basehttp "POST /consultations/book/?professor=69 HTTP/1.1" 302 0
+INFO 2025-11-26 22:39:38,277 basehttp "GET /consultations/ HTTP/1.1" 200 14613
+INFO 2025-11-26 22:39:46,636 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:39:46,661 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 160374
+INFO 2025-11-26 22:39:48,792 basehttp "POST /professor/consultation/107/action/ HTTP/1.1" 302 0
+INFO 2025-11-26 22:39:48,815 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 157696
+INFO 2025-11-26 22:47:30,503 tasks Sent email notification 18 to srclsgm43@gmail.com
