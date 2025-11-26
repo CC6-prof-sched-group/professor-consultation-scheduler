@@ -570,10 +570,12 @@ def professor_consultation_action(request, consultation_id):
             messages.success(request, 'Consultation confirmed!')
             
             # Create notification for student
+            from apps.notifications.models import NotificationType, MessageType
             Notification.objects.create(
                 user=consultation.student,
-                message=f'Your consultation with {user.get_full_name()} has been confirmed.',
-                notification_type='CONSULTATION_CONFIRMED'
+                consultation=consultation,
+                notification_type=NotificationType.IN_APP,
+                message_type=MessageType.BOOKING_CONFIRMED
             )
             
         elif action == 'cancel':
@@ -585,10 +587,12 @@ def professor_consultation_action(request, consultation_id):
             messages.success(request, 'Consultation cancelled.')
             
             # Create notification for student
+            from apps.notifications.models import NotificationType, MessageType
             Notification.objects.create(
                 user=consultation.student,
-                message=f'Your consultation with {user.get_full_name()} has been cancelled.',
-                notification_type='CONSULTATION_CANCELLED'
+                consultation=consultation,
+                notification_type=NotificationType.IN_APP,
+                message_type=MessageType.CANCELLED
             )
         
         return redirect('professor_dashboard')
