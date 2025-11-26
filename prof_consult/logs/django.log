@@ -553,3 +553,263 @@ INFO 2025-11-26 20:22:36,158 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
 INFO 2025-11-26 20:22:36,161 basehttp "GET / HTTP/1.1" 200 7525
 INFO 2025-11-26 20:22:37,528 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
 INFO 2025-11-26 20:22:41,040 basehttp "GET /accounts/signup/ HTTP/1.1" 200 2785
+INFO 2025-11-26 21:05:31,611 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 21:05:33,831 basehttp "GET / HTTP/1.1" 200 11320
+INFO 2025-11-26 21:05:45,992 basehttp "GET /admin/ HTTP/1.1" 200 21917
+INFO 2025-11-26 21:05:46,004 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,005 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,006 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,032 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,032 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,032 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,037 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,046 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:46,047 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,310 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 20425
+INFO 2025-11-26 21:05:50,332 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,333 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,333 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,334 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,337 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,340 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,340 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,341 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,341 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,341 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,348 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:50,360 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-11-26 21:05:54,932 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22022
+INFO 2025-11-26 21:05:54,979 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-26 21:05:55,188 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-11-26 21:06:01,689 basehttp "GET /admin/django_celery_results/taskresult/ HTTP/1.1" 200 22364
+INFO 2025-11-26 21:06:01,709 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-26 21:06:01,730 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-11-26 21:06:04,248 basehttp "GET /admin/django_celery_results/groupresult/ HTTP/1.1" 200 21649
+INFO 2025-11-26 21:06:04,267 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-26 21:06:06,911 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 22729
+INFO 2025-11-26 21:06:06,930 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-26 21:08:03,981 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-26 21:08:05,941 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-26 21:08:20,003 basehttp "GET /accounts/google/login/callback/?state=HuOgFKJHfgF7nsMv&code=4/0Ab32j91zhvXqYAMV8L75WQ6r-hWTx32ppkIHJfzMHQg5ODGslv4daBXhxvqZnKz4AsYStw&scope=email%20profile%20https://www.googleapis.com/auth/calendar%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email%20openid&authuser=0&prompt=consent HTTP/1.1" 302 0
+WARNING 2025-11-26 21:08:20,015 log Not Found: /accounts/profile/
+WARNING 2025-11-26 21:08:20,015 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+INFO 2025-11-26 21:08:25,008 basehttp "GET / HTTP/1.1" 200 11685
+INFO 2025-11-26 21:08:27,221 basehttp "GET /profile/settings/ HTTP/1.1" 200 23576
+INFO 2025-11-26 21:10:26,614 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-11-26 21:10:28,855 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 21:10:35,319 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
+INFO 2025-11-26 21:10:37,554 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 21:10:56,383 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
+INFO 2025-11-26 21:10:57,484 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 21:11:06,793 basehttp "GET /profile/settings/ HTTP/1.1" 200 24926
+INFO 2025-11-26 21:11:14,680 basehttp "POST /profile/convert-to-professor/ HTTP/1.1" 302 0
+ERROR 2025-11-26 21:11:15,086 log Internal Server Error: /professor/dashboard/
+Traceback (most recent call last):
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 487, in professor_dashboard
+    return render(request, 'professor_dashboard.html', context)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'split'
+ERROR 2025-11-26 21:11:15,093 basehttp "GET /professor/dashboard/ HTTP/1.1" 500 246737
+WARNING 2025-11-26 21:11:21,750 log Not Found: /professor
+WARNING 2025-11-26 21:11:21,751 basehttp "GET /professor HTTP/1.1" 404 6986
+INFO 2025-11-26 21:12:53,436 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\templatetags\user_extras.py changed, reloading.
+INFO 2025-11-26 21:12:55,711 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 21:22:07,313 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\templatetags\user_extras.py changed, reloading.
+INFO 2025-11-26 21:22:08,457 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 21:22:15,735 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 153446
+INFO 2025-11-26 21:22:24,959 basehttp "GET /profile/settings/ HTTP/1.1" 200 23594
+ERROR 2025-11-26 21:22:26,009 log Internal Server Error: /professor/availability/
+Traceback (most recent call last):
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 546, in professor_availability_settings
+    return render(request, 'professor_availability_settings.html', context)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'split'
+ERROR 2025-11-26 21:22:26,024 basehttp "GET /professor/availability/ HTTP/1.1" 500 258373
+INFO 2025-11-26 21:22:35,832 basehttp "GET / HTTP/1.1" 200 11265
+INFO 2025-11-26 21:22:38,171 basehttp "GET /consultations/ HTTP/1.1" 200 6924
+INFO 2025-11-26 21:22:40,211 basehttp "GET /consultations/book/ HTTP/1.1" 200 14879
+WARNING 2025-11-26 21:22:57,402 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-11-26 21:22:57,403 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10503
+INFO 2025-11-26 21:23:01,334 basehttp "GET / HTTP/1.1" 200 11320
+INFO 2025-11-26 21:23:03,970 basehttp "GET /professors/ HTTP/1.1" 200 30557
+INFO 2025-11-26 21:23:05,902 basehttp "GET /consultations/book/?professor=69 HTTP/1.1" 200 14892
+INFO 2025-11-26 21:23:20,835 basehttp "POST /consultations/book/?professor=69 HTTP/1.1" 302 0
+INFO 2025-11-26 21:23:20,849 basehttp "GET /consultations/ HTTP/1.1" 200 14644
+INFO 2025-11-26 21:23:25,892 basehttp "GET / HTTP/1.1" 200 11265
+INFO 2025-11-26 21:23:29,167 basehttp "GET /profile/settings/ HTTP/1.1" 200 23594
+INFO 2025-11-26 21:23:32,346 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-26 21:23:32,371 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 157484
+ERROR 2025-11-26 21:23:35,239 log Internal Server Error: /professor/consultation/104/action/
+Traceback (most recent call last):
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 573, in professor_consultation_action
+    Notification.objects.create(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user=consultation.student,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        message=f'Your consultation with {user.get_full_name()} has been confirmed.',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        notification_type='CONSULTATION_CONFIRMED'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Notification() got unexpected keyword arguments: 'message'
+ERROR 2025-11-26 21:23:35,246 basehttp "POST /professor/consultation/104/action/ HTTP/1.1" 500 105917
+ERROR 2025-11-26 21:23:44,256 log Internal Server Error: /professor/consultation/104/action/
+Traceback (most recent call last):
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 573, in professor_consultation_action
+    Notification.objects.create(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user=consultation.student,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        message=f'Your consultation with {user.get_full_name()} has been confirmed.',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        notification_type='CONSULTATION_CONFIRMED'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Notification() got unexpected keyword arguments: 'message'
+ERROR 2025-11-26 21:23:44,260 basehttp "POST /professor/consultation/104/action/ HTTP/1.1" 500 106168

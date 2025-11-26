@@ -62,3 +62,15 @@ def display_name(user):
         return conditional_escape(user.email or '')
     except Exception:
         return ''
+
+
+@register.filter(is_safe=True)
+def split(value, delimiter=','):
+    """Split a string by a delimiter.
+    
+    Usage: {{ "a,b,c"|split:"," }}
+    Returns: ['a', 'b', 'c']
+    """
+    if not value:
+        return []
+    return value.split(delimiter)
