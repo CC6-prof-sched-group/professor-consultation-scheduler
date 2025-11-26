@@ -492,3 +492,12 @@ INFO 2025-11-24 23:46:57,297 basehttp "GET / HTTP/1.1" 200 10854
 INFO 2025-11-24 23:48:39,875 basehttp "GET /professors/ HTTP/1.1" 200 27760
 INFO 2025-11-24 23:48:54,793 basehttp "GET /dashboard/ HTTP/1.1" 200 14249
 INFO 2025-11-24 23:49:01,811 basehttp "GET /consultations/ HTTP/1.1" 200 13774
+INFO 2025-11-26 19:42:32,339 autoreload Watching for file changes with StatReloader
+INFO 2025-11-26 19:42:43,263 basehttp "GET / HTTP/1.1" 200 10854
+INFO 2025-11-26 19:42:43,289 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-26 19:42:43,298 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-26 19:42:43,298 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-26 19:42:43,301 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-26 19:42:43,304 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-11-26 19:42:43,526 log Not Found: /favicon.ico
+WARNING 2025-11-26 19:42:43,527 basehttp "GET /favicon.ico HTTP/1.1" 404 6791
