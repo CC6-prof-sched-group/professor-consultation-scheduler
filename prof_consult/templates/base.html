@@ -91,9 +91,14 @@
                                 </a></li>
                                 {% endif %}
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{% url 'api-logout' %}">
-                                    <i class="bi bi-box-arrow-right"></i> Logout
-                                </a></li>
+                                <li>
+                                    <form method="post" action="{% url 'api-logout' %}" style="margin: 0;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="dropdown-item" style="border: none; background: none; text-align: left; width: 100%; cursor: pointer;">
+                                            <i class="bi bi-box-arrow-right"></i> Logout
+                                        </button>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     {% else %}
