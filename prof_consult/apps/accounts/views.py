@@ -183,6 +183,8 @@ class LogoutView(rest_views.APIView):
     def post(self, request):
         """Logout and delete token."""
         from rest_framework.authtoken.models import Token
+        from django.contrib.auth import logout
+        from django.shortcuts import redirect
         
         try:
             token = Token.objects.get(user=request.user)
@@ -190,8 +192,11 @@ class LogoutView(rest_views.APIView):
         except Token.DoesNotExist:
             pass
         
-        from django.contrib.auth import logout
         logout(request)
+        
+        # Redirect to home page for frontend requests
+        if request.META.get('HTTP_ACCEPT', '').find('text/html') != -1:
+            return redirect('home')
         
         return Response({'message': 'Successfully logged out.'})
 
