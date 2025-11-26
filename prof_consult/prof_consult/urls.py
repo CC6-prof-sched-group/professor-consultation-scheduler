@@ -34,6 +34,7 @@ urlpatterns = [
     path('professors/', frontend_views.professors_list, name='professors_list'),
     path('professors/<int:professor_id>/', frontend_views.professor_profile, name='professor_profile'),
     path('profile/settings/', frontend_views.profile_settings, name='profile_settings'),
+    path('profile/convert-to-professor/', frontend_views.convert_to_professor, name='convert_to_professor'),
     
     # Professor Dashboard
     path('professor/dashboard/', frontend_views.professor_dashboard, name='professor_dashboard'),
