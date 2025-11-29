@@ -354,6 +354,57 @@ def profile_settings(request):
     return render(request, 'profile_settings.html', context)
 
 
+@login_required
+def convert_to_professor(request):
+    """
+    Convert a student account to a professor account for testing purposes.
+    Creates a professor profile and changes the user's role.
+    """
+    if request.method != 'POST':
+        messages.error(request, 'Invalid request method.')
+        return redirect('profile_settings')
+    
+    user = request.user
+    
+    # Check if user is already a professor
+    if user.role == Role.PROFESSOR:
+        messages.info(request, 'You are already a professor!')
+        return redirect('profile_settings')
+    
+    # Check if user is an admin (admins shouldn't be converted)
+    if user.role == Role.ADMIN:
+        messages.error(request, 'Admin accounts cannot be converted to professor accounts.')
+        return redirect('profile_settings')
+    
+    try:
+        # Change user role to professor
+        user.role = Role.PROFESSOR
+        user.save()
+        
+        # Create professor profile if it doesn't exist
+        if not hasattr(user, 'professor_profile'):
+            ProfessorProfile.objects.create(
+                user=user,
+                title='Prof.',
+                department=user.department or 'General',
+                office_location='Office TBD',
+                consultation_duration_default=60,
+                max_advance_booking_days=30,
+                buffer_time_between_consultations=15,
+                status='AVAILABLE'
+            )
+        
+        messages.success(request, 
+            'Your account has been successfully converted to a professor account! '
+            'You can now access the professor dashboard and set your availability.'
+        )
+        return redirect('professor_dashboard')
+        
+    except Exception as e:
+        messages.error(request, f'Error converting account: {str(e)}')
+        return redirect('profile_settings')
+
+
 def custom_404(request, exception):
     """Custom 404 error page."""
     return render(request, '404.html', status=404)
@@ -519,10 +570,12 @@ def professor_consultation_action(request, consultation_id):
             messages.success(request, 'Consultation confirmed!')
             
             # Create notification for student
+            from apps.notifications.models import NotificationType, MessageType
             Notification.objects.create(
                 user=consultation.student,
-                message=f'Your consultation with {user.get_full_name()} has been confirmed.',
-                notification_type='CONSULTATION_CONFIRMED'
+                consultation=consultation,
+                notification_type=NotificationType.IN_APP,
+                message_type=MessageType.BOOKING_CONFIRMED
             )
             
         elif action == 'cancel':
@@ -534,10 +587,12 @@ def professor_consultation_action(request, consultation_id):
             messages.success(request, 'Consultation cancelled.')
             
             # Create notification for student
+            from apps.notifications.models import NotificationType, MessageType
             Notification.objects.create(
                 user=consultation.student,
-                message=f'Your consultation with {user.get_full_name()} has been cancelled.',
-                notification_type='CONSULTATION_CANCELLED'
+                consultation=consultation,
+                notification_type=NotificationType.IN_APP,
+                message_type=MessageType.CANCELLED
             )
         
         return redirect('professor_dashboard')
