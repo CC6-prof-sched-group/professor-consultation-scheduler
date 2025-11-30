@@ -103,9 +103,17 @@
                                                 </div>
                                             {% else %}
                                                 <div class="mt-2">
-                                                    <a href="#" class="btn btn-success btn-sm w-100">
+                                                    <button type="button" 
+                                                        class="btn btn-success btn-sm w-100 btn-add-calendar"
+                                                        data-title="{{ consultation.title|escapejs }}"
+                                                        data-description="{{ consultation.description|default:''|escapejs }}"
+                                                        data-date="{{ consultation.scheduled_date|date:'Ymd' }}"
+                                                        data-time="{{ consultation.scheduled_time|time:'Hi' }}"
+                                                        data-duration="{{ consultation.duration }}"
+                                                        data-location="{{ consultation.location|default:''|escapejs }}"
+                                                        data-meeting-link="{{ consultation.meeting_link|default:''|escapejs }}">
                                                         <i class="bi bi-google"></i> Add to Calendar
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             {% endif %}
                                         {% elif status_filter == 'past' %}
@@ -326,27 +334,50 @@
         }).catch(() => { btn.disabled = false; alert('Network error while rescheduling'); });
     });
 
-    document.querySelectorAll('.add-to-calendar-btn').forEach(btn => {
-        btn.addEventListener('click', async (e) => {
-            e.preventDefault();
-            const consultationId = btn.dataset.consultationId;
+    // Simple Add to Google Calendar handler (prefill event)
+    document.querySelectorAll('.btn-add-calendar').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const title = btn.dataset.title || 'Consultation';
+            let details = btn.dataset.description || '';
+            const meeting = btn.dataset.meetingLink || '';
+            if (meeting) details += `\n\nMeeting Link: ${meeting}`;
+            const date = btn.dataset.date; // YYYYMMDD
+            const time = btn.dataset.time; // HHMM
+            const duration = parseInt(btn.dataset.duration) || 60;
+            const location = btn.dataset.location || '';
 
-            const response = await fetch(`/api/consultations/${consultationId}/add_to_calendar/`, {
-                method: 'POST',
-                headers: {
-                    'X-CSRFToken': '{{ csrf_token }}', // only if needed
-                    'Content-Type': 'application/json'
-                }
+            if (!date || !time){ alert('Invalid consultation date/time for calendar event'); return; }
+
+            const year = parseInt(date.slice(0,4), 10);
+            const month = parseInt(date.slice(4,6), 10) - 1;
+            const day = parseInt(date.slice(6,8), 10);
+            const hour = parseInt(time.slice(0,2), 10);
+            const minute = parseInt(time.slice(2,4), 10);
+
+            const startUtc = new Date(Date.UTC(year, month, day, hour, minute));
+            const endUtc = new Date(startUtc.getTime() + duration * 60000);
+
+            function fmtCal(d){
+                const Y = d.getUTCFullYear().toString().padStart(4,'0');
+                const M = (d.getUTCMonth()+1).toString().padStart(2,'0');
+                const D = d.getUTCDate().toString().padStart(2,'0');
+                const h = d.getUTCHours().toString().padStart(2,'0');
+                const m = d.getUTCMinutes().toString().padStart(2,'0');
+                const s = d.getUTCSeconds().toString().padStart(2,'0');
+                return `${Y}${M}${D}T${h}${m}${s}Z`;
+            }
+
+            const dates = `${fmtCal(startUtc)}/${fmtCal(endUtc)}`;
+            const params = new URLSearchParams({
+                action: 'TEMPLATE',
+                text: title,
+                details: details,
+                dates: dates,
+                location: location
             });
 
-            const data = await response.json();
-
-            if (response.ok && data.event_url) {
-                // Open Google Calendar event in a new tab
-                window.open(data.event_url, '_blank');
-            } else {
-                alert(data.detail || 'Failed to add to Google Calendar');
-            }
+            const url = `https://calendar.google.com/calendar/render?${params.toString()}`;
+            window.open(url, '_blank');
         });
     });
 })();
