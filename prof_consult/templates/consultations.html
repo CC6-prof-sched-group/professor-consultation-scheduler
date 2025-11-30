@@ -1,9 +1,105 @@
 {% extends 'base.html' %}
 {% load user_extras %}
 
-{% block title %}My Consultations - Professor Consultation Scheduler{% endblock %}
+{% block title %}My Consultations - ConsultEase{% endblock %}
 
 {% block content %}
+
+<style>
+    /* Tabs */
+    .nav-tabs .nav-link {
+        font-weight: 600;
+        color: #2C577E;
+        border-radius: 6px 6px 0 0;
+    }
+    .nav-tabs .nav-link.active {
+        background-color: #274572 !important;
+        color: white !important;
+    }
+    .nav-tabs .nav-link:hover {
+        background-color: #5389DA20;
+        color: #274572;
+    }
+
+    /* Cards */
+    .consultation-card {
+        border: 1px solid #e5e9f0;
+        border-left: 6px solid #5389DA;
+        transition: 0.2s ease;
+        border-radius: 10px;
+    }
+    .consultation-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(39, 69, 114, 0.15);
+        background-color: #f7faff;
+    }
+
+    /* Date section */
+    .text-primary {
+        color: #5389DA !important;
+    }
+    .date-block strong {
+        color: #274572;
+    }
+
+    /* Status badges recolored to match palette */
+    .badge.bg-warning { background-color: #DDCF49 !important; color: #274572 !important; }
+    .badge.bg-success { background-color: #41ab3b !important; color: white !important; }
+    .badge.bg-info    { background-color: #5389DA !important; }
+    .badge.bg-danger  { background-color: #a71d2a !important; }
+
+    /* Buttons */
+    .btn-primary {
+        background-color: #5389DA !important;
+        border-color: #5389DA !important;
+    }
+    .btn-outline-primary {
+        border-color: #5389DA !important;
+        color: #5389DA !important;
+    }
+    .btn-outline-primary:hover {
+        background-color: #5389DA !important;
+        color: white !important;
+    }
+    .btn-warning {
+        background-color: #DDCF49 !important;
+        border: none !important;
+        color: white !important;
+    }
+    .btn-warning:hover {
+        filter: brightness(0.9);
+    }
+
+    .btn-danger {
+        background-color: #a71d2a !important;
+        border: none !important;
+    }
+
+    /* Smooth spacing */
+    .card-body p { margin-bottom: 3px; }
+    h5.card-title { margin-bottom: 6px; }
+
+    /* Alert styling */
+    .alert-info {
+        border: none !important;
+        background-color: #5389DA10 !important;
+        color: #274572 !important;
+        border-left: 5px solid #5389DA !important;
+    }
+
+    /* Modal tweaks */
+    .modal-content {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 4px 30px rgba(39, 69, 114, 0.2);
+    }
+    .modal-header {
+        background-color: #f4f8fc;
+        border-bottom: 1px solid #e0e6ef;
+    }
+</style>
+
+
 <div class="container my-5">
     <div class="row mb-4">
         <div class="col">
@@ -35,6 +131,8 @@
             </a>
         </li>
     </ul>
+
+    {{ block.super }}
 
     <div class="tab-content" id="consultationTabsContent">
         <div class="tab-pane fade show active" role="tabpanel">
@@ -117,12 +215,12 @@
                                                 </div>
                                             {% endif %}
                                         {% elif status_filter == 'past' %}
+                                        <div class="d-flex align-items-center gap-1">
                                             <a href="{% url 'consultation_detail' consultation.id %}" class="btn btn-outline-primary btn-sm">
                                                 <i class="bi bi-eye"></i> View Details
                                             </a>
                                             {% if consultation.rating %}
-                                                <div class="mt-2">
-                                                    <span class="text-warning">
+                                                <span class="text-warning d-flex align-items-center">
                                                         {% for i in "12345" %}
                                                             {% if forloop.counter <= consultation.rating %}
                                                                 <i class="bi bi-star-fill"></i>
@@ -131,12 +229,12 @@
                                                             {% endif %}
                                                         {% endfor %}
                                                     </span>
-                                                </div>
                                             {% else %}
-                                                <a href="#" class="btn btn-warning btn-sm mt-2">
+                                                <a href="#" class="btn btn-warning btn-sm">
                                                     <i class="bi bi-star"></i> Rate Consultation
                                                 </a>
                                             {% endif %}
+                                        </div>
                                         {% endif %}
                                     </div>
                                 </div>

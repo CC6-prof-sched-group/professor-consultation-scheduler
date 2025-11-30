@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% load user_extras %}
 
-{% block title %}Professor Profile - Professor Consultation Scheduler{% endblock %}
+{% block title %}Professor Profile - ConsultEase{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <!-- Profile Header -->
-    <div class="card shadow-sm mb-4">
+    <div class="card shadow-sm mb-4" style="border: none;">
         <div class="card-body">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center">
-                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 48px;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 48px; background: linear-gradient(135deg, #74D3D3 0%, #20C8D4 100%); color: #274572;">
                         <i class="bi bi-person-fill"></i>
                     </div>
                 </div>
                 <div class="col-md-7 mt-3 mt-md-0">
-                    <h2 class="mb-2">
+                    <h2 class="mb-2" style="color: #274572;">
                         {% if profile.title %}{{ profile.title }}{% endif %}
                         {{ professor|display_name }}
                     </h2>
@@ -35,7 +35,7 @@
                             <i class="bi bi-check-circle"></i> Available
                         </span>
                         {% if avg_rating > 0 %}
-                        <span class="badge bg-info">
+                        <span class="badge" style="background-color: #5389DA; color: white;">
                             <i class="bi bi-star-fill"></i> {{ avg_rating }} Rating ({{ rating_count }} review{{ rating_count|pluralize }})
                         </span>
                         {% endif %}
@@ -43,11 +43,11 @@
                 </div>
                 <div class="col-md-3 text-md-end mt-3 mt-md-0">
                     {% if user.is_authenticated %}
-                        <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-primary btn-lg w-100 mb-2">
+                        <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-lg w-100 mb-2" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                             <i class="bi bi-calendar-plus"></i> Book Consultation
                         </a>
                     {% else %}
-                        <a href="{% url 'login' %}" class="btn btn-primary btn-lg w-100 mb-2">
+                        <a href="{% url 'login' %}" class="btn btn-lg w-100 mb-2" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                             <i class="bi bi-box-arrow-in-right"></i> Login to Book
                         </a>
                     {% endif %}
@@ -61,9 +61,9 @@
         <div class="col-md-8">
             <!-- About Section -->
             {% if professor.bio %}
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> About</h5>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #5389DA;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-info-circle" style="color: #5389DA;"></i> About</h5>
                 </div>
                 <div class="card-body">
                     <p class="mb-0">{{ professor.bio }}</p>
@@ -72,24 +72,24 @@
             {% endif %}
 
             <!-- Specializations -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0"><i class="bi bi-bookmark-star"></i> Areas of Expertise</h5>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #74D3D3;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-bookmark-star" style="color: #74D3D3;"></i> Areas of Expertise</h5>
                 </div>
                 <div class="card-body">
-                    <span class="badge bg-primary me-2 mb-2">Data Structures</span>
-                    <span class="badge bg-primary me-2 mb-2">Algorithms</span>
-                    <span class="badge bg-primary me-2 mb-2">Machine Learning</span>
-                    <span class="badge bg-primary me-2 mb-2">Artificial Intelligence</span>
-                    <span class="badge bg-primary me-2 mb-2">Python Programming</span>
-                    <span class="badge bg-primary me-2 mb-2">Database Systems</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Data Structures</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Algorithms</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Machine Learning</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Artificial Intelligence</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Python Programming</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Database Systems</span>
                 </div>
             </div>
 
             <!-- Office Hours -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0"><i class="bi bi-clock"></i> Office Hours</h5>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #5389DA;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-clock" style="color: #5389DA;"></i> Office Hours</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -127,9 +127,9 @@
         <!-- Right Column -->
         <div class="col-md-4">
             <!-- Quick Stats -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0"><i class="bi bi-graph-up"></i> Statistics</h5>
+            <div class="card shadow-sm mb-4" style="border: none;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-graph-up" style="color: #5389DA;"></i> Statistics</h5>
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
@@ -138,7 +138,7 @@
                             <strong>{{ total_consultations }}</strong>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                            <div class="progress-bar" role="progressbar" style="width: 100%; background-color: #74D3D3;"></div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="progress">
                             {% widthratio this_month_consultations total_consultations 100 as month_percentage %}
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ month_percentage }}%"></div>
+                            <div class="progress-bar" role="progressbar" style="width: {{ month_percentage }}%; background-color: #5389DA;"></div>
                         </div>
                     </div>
                     {% if avg_rating > 0 %}
@@ -169,8 +169,8 @@
             <!-- Recent Reviews -->
             {% if recent_reviews %}
             <div class="card shadow-sm">
-                <div class="card-header bg-warning text-dark">
-                    <h5 class="mb-0"><i class="bi bi-star-fill"></i> Recent Reviews</h5>
+                <div class="card-header" style="background-color: #DDCF49; color: #274572;">
+                    <h5 class="mb-0"><i class="bi bi-star-fill" style="color: #DDCF49;"></i> Recent Reviews</h5>
                 </div>
                 <div class="card-body">
                     {% for review in recent_reviews %}

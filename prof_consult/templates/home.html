@@ -1,21 +1,29 @@
 {% extends 'base.html' %}
 {% load user_extras %}
 
-{% block title %}Home - Professor Consultation Scheduler{% endblock %}
+{% block title %}Home - ConsultEase{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
 <div class="hero-section text-center gradient-animated">
     <div class="container">
-        <h1 class="display-4 fw-bold mb-4 fade-in">Welcome to Professor Consultation Scheduler</h1>
-        <p class="lead mb-4 fade-in" style="animation-delay: 0.2s;">Book consultations with professors easily and efficiently</p>
+        <h1 class="display-4 fw-bold mb-4 fade-in">
+            Welcome to 
+            <span style="color: #20C8D4;">Consult</span><span style="color: #F9CF3F;">Ease</span>!
+        </h1>
+
+        <p class="lead mb-4 fade-in" style="animation-delay: 0.2s;">
+            Book consultations with professors easily and efficiently
+        </p>
         
         {% if not user.is_authenticated %}
             <a href="/accounts/google/login/" class="btn btn-light btn-lg hover-lift fade-in" style="animation-delay: 0.4s;">
-                <i class="bi bi-google"></i> Login with Google to Get Started
+                <i class="bi bi-google" style="color: #5389DA;"></i> Login with Google to Get Started
             </a>
         {% else %}
-            <p class="fs-5 fade-in" style="animation-delay: 0.3s;">Hello, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}!</p>
+            <p class="fs-5 fade-in" style="animation-delay: 0.3s;">
+                Hello, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}!
+            </p>
         {% endif %}
     </div>
 </div>
@@ -25,96 +33,105 @@
 <div class="container my-5">
     <h2 class="text-center mb-4 slide-in-up">Quick Actions</h2>
     <div class="row g-4 stagger-animation">
+
         {% if user.role == 'STUDENT' %}
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm hover-lift card-clickable">
                     <div class="card-body">
-                        <i class="bi bi-people-fill text-primary float" style="font-size: 3rem;"></i>
+                        <i class="bi bi-people-fill float" style="font-size: 3rem; color: #5389DA;"></i>
                         <h5 class="card-title mt-3">Browse Professors</h5>
                         <p class="card-text">Find and connect with available professors</p>
-                        <a href="{% url 'professors_list' %}" class="btn btn-primary">View Professors</a>
+                        <a href="{% url 'professors_list' %}" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">View Professors</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm hover-lift card-clickable">
                     <div class="card-body">
-                        <i class="bi bi-calendar-check-fill text-success float" style="font-size: 3rem; animation-delay: 0.5s;"></i>
+                        <i class="bi bi-calendar-check-fill float" style="font-size: 3rem; animation-delay: 0.5s; color: #DDCF49;"></i>
                         <h5 class="card-title mt-3">My Consultations</h5>
                         <p class="card-text">View and manage your scheduled consultations</p>
-                        <a href="{% url 'consultations_list' %}" class="btn btn-success">View Schedule</a>
+                        <a href="{% url 'consultations_list' %}" class="btn" style="background-color: #DDCF49; border-color: #DDCF49; color: white;">View Schedule</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm hover-lift card-clickable">
                     <div class="card-body">
-                        <i class="bi bi-calendar-plus-fill text-info float" style="font-size: 3rem; animation-delay: 1s;"></i>
+                        <i class="bi bi-calendar-plus-fill float" style="font-size: 3rem; animation-delay: 1s; color: #74D3D3;"></i>
                         <h5 class="card-title mt-3">Book Consultation</h5>
                         <p class="card-text">Schedule a new consultation session</p>
-                        <a href="{% url 'book_consultation' %}" class="btn btn-info">Book Now</a>
+                        <a href="{% url 'book_consultation' %}" class="btn" style="background-color: #74D3D3; border-color: #74D3D3; color: white;">Book Now</a>
                     </div>
                 </div>
             </div>
+
         {% elif user.role == 'PROFESSOR' %}
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm hover-lift card-clickable">
                     <div class="card-body">
-                        <i class="bi bi-calendar-check-fill text-success float" style="font-size: 3rem;"></i>
+                        <i class="bi bi-calendar-check-fill float" style="font-size: 3rem; color: #74D3D3;"></i>
                         <h5 class="card-title mt-3">My Consultations</h5>
                         <p class="card-text">View and manage your consultation schedule</p>
-                        <a href="{% url 'consultations_list' %}" class="btn btn-success">View Schedule</a>
+                        <a href="{% url 'consultations_list' %}" class="btn" style="background-color: #74D3D3; border-color: #74D3D3; color: #274572;">View Schedule</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm hover-lift card-clickable">
                     <div class="card-body">
-                        <i class="bi bi-person-badge-fill text-primary float" style="font-size: 3rem; animation-delay: 0.5s;"></i>
+                        <i class="bi bi-person-badge-fill float" style="font-size: 3rem; animation-delay: 0.5s; color: #5389DA;"></i>
                         <h5 class="card-title mt-3">My Profile</h5>
                         <p class="card-text">Update your availability and information</p>
-                        <a href="{% url 'profile_settings' %}" class="btn btn-primary">Edit Profile</a>
+                        <a href="{% url 'profile_settings' %}" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">Edit Profile</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm hover-lift card-clickable">
                     <div class="card-body">
-                        <i class="bi bi-clock-history text-info" style="font-size: 3rem;"></i>
+                        <i class="bi bi-clock-history" style="font-size: 3rem; color: #DDCF49;"></i>
                         <h5 class="card-title mt-3">Availability</h5>
                         <p class="card-text">Manage your consultation time slots</p>
-                        <a href="{% url 'profile_settings' %}" class="btn btn-info">Manage</a>
+                        <a href="{% url 'profile_settings' %}" class="btn" style="background-color: #DDCF49; border-color: #DDCF49; color: #274572;">Manage</a>
                     </div>
                 </div>
             </div>
+
         {% elif user.role == 'ADMIN' %}
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm">
                     <div class="card-body">
-                        <i class="bi bi-gear-fill text-danger" style="font-size: 3rem;"></i>
+                        <i class="bi bi-gear-fill" style="font-size: 3rem; color: #274572;"></i>
                         <h5 class="card-title mt-3">Admin Dashboard</h5>
                         <p class="card-text">Manage system settings and users</p>
-                        <a href="/admin/" class="btn btn-danger">Dashboard</a>
+                        <a href="/admin/" class="btn" style="background-color: #274572; border-color: #274572; color: white;">Dashboard</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm">
                     <div class="card-body">
-                        <i class="bi bi-bar-chart-fill text-primary" style="font-size: 3rem;"></i>
+                        <i class="bi bi-bar-chart-fill" style="font-size: 3rem; color: #5389DA;"></i>
                         <h5 class="card-title mt-3">Statistics</h5>
                         <p class="card-text">View system analytics and reports</p>
-                        <a href="/api/admin/statistics/" class="btn btn-primary">View Stats</a>
+                        <a href="/api/admin/statistics/" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">View Stats</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card h-100 text-center shadow-sm">
                     <div class="card-body">
-                        <i class="bi bi-people-fill text-success" style="font-size: 3rem;"></i>
+                        <i class="bi bi-people-fill" style="font-size: 3rem; color: #74D3D3;"></i>
                         <h5 class="card-title mt-3">User Management</h5>
                         <p class="card-text">Manage professors and students</p>
-                        <a href="/admin/" class="btn btn-success">Manage Users</a>
+                        <a href="/admin/" class="btn" style="background-color: #74D3D3; border-color: #74D3D3; color: #274572;">Manage Users</a>
                     </div>
                 </div>
             </div>
@@ -127,85 +144,92 @@
 <div class="container my-5">
     <h2 class="text-center mb-5">Platform Features</h2>
     <div class="row g-4">
+
         <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                     <div class="mb-3">
-                        <i class="bi bi-calendar2-week text-primary" style="font-size: 3rem;"></i>
+                        <i class="bi bi-calendar2-week" style="font-size: 3rem; color: #5389DA;"></i>
                     </div>
                     <h5 class="card-title">Easy Scheduling</h5>
                     <p class="card-text">Book consultation slots with professors in just a few clicks. Real-time availability updates.</p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                     <div class="mb-3">
-                        <i class="bi bi-bell-fill text-warning" style="font-size: 3rem;"></i>
+                        <i class="bi bi-bell-fill" style="font-size: 3rem; color: #DDCF49;"></i>
                     </div>
                     <h5 class="card-title">Smart Notifications</h5>
                     <p class="card-text">Receive email and in-app notifications for upcoming consultations and updates.</p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                     <div class="mb-3">
-                        <i class="bi bi-google text-danger" style="font-size: 3rem;"></i>
+                        <i class="bi bi-google" style="color: #74D3D3; font-size: 3rem;"></i>
                     </div>
                     <h5 class="card-title">Google Integration</h5>
                     <p class="card-text">Seamlessly sync with Google Calendar for better schedule management.</p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                     <div class="mb-3">
-                        <i class="bi bi-shield-check text-success" style="font-size: 3rem;"></i>
+                        <i class="bi bi-shield-check" style="font-size: 3rem; color: #5389DA;"></i>
                     </div>
                     <h5 class="card-title">Secure Access</h5>
                     <p class="card-text">Login securely with your Google account. Your data is protected and private.</p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                     <div class="mb-3">
-                        <i class="bi bi-clock-history text-info" style="font-size: 3rem;"></i>
+                        <i class="bi bi-clock-history" style="font-size: 3rem; color: #DDCF49;"></i>
                     </div>
                     <h5 class="card-title">Flexible Timings</h5>
                     <p class="card-text">Professors can set their own availability and students can book accordingly.</p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                     <div class="mb-3">
-                        <i class="bi bi-chat-dots-fill text-primary" style="font-size: 3rem;"></i>
+                        <i class="bi bi-chat-dots-fill" style="font-size: 3rem; color: #74D3D3;"></i>
                     </div>
                     <h5 class="card-title">Communication</h5>
                     <p class="card-text">Direct messaging and consultation notes for better academic collaboration.</p>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
-<!-- CTA Section -->
 {% if not user.is_authenticated %}
 <div class="bg-light py-5">
     <div class="container text-center">
         <h3 class="mb-4">Ready to Get Started?</h3>
         <p class="lead mb-4">Join our platform and streamline your consultation scheduling today!</p>
-        <a href="/accounts/google/login/" class="btn btn-primary btn-lg">
+        <a href="/accounts/google/login/" class="btn btn-lg" style="background-color: #5389DA; border-color: #5389DA; color: white;">
             <i class="bi bi-google"></i> Sign In with Google
         </a>
     </div>
 </div>
 {% endif %}
+
 {% endblock %}

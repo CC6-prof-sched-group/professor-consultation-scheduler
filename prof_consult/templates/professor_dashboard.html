@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% load user_extras %}
 
-{% block title %}Professor Dashboard - Professor Consultation Scheduler{% endblock %}
+{% block title %}Professor Dashboard - ConsultEase{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <!-- Dashboard Header -->
     <div class="row mb-4">
         <div class="col">
-            <h1 class="display-5 fw-bold">
-                <i class="bi bi-mortarboard text-primary"></i> Professor Dashboard
+            <h1 class="display-4 fw-bold">
+                <i class="bi bi-mortarboard" style="color: #5389DA;"></i> <span style="color: #000000;">Professor Dashboard</span>
             </h1>
             <p class="lead text-muted">Welcome back, {{ user|display_name }}</p>
         </div>
@@ -62,7 +62,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="{% url 'professor_availability_settings' %}" class="btn btn-primary">
+            <a href="{% url 'professor_availability_settings' %}" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                 <i class="bi bi-calendar-week"></i> Manage Availability
             </a>
         </div>
@@ -71,7 +71,7 @@
     <!-- Stats Cards -->
     <div class="row g-4 mb-5 stagger-animation">
         <div class="col-md-3">
-            <div class="card text-white bg-primary shadow hover-lift stat-card">
+            <div class="card text-white shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #5389DA 0%, #274572 100%); border: none;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white bg-warning shadow hover-lift stat-card">
+            <div class="card shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #DDCF49 0%, #f5d84f 100%); border: none; color: #274572;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white bg-success shadow hover-lift stat-card">
+            <div class="card shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #74D3D3 0%, #20C8D4 100%); border: none; color: #274572;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
@@ -110,7 +110,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white bg-info shadow hover-lift stat-card">
+            <div class="card text-white shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #274572 0%, #1a2d47 100%); border: none;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
@@ -128,10 +128,10 @@
         <!-- Left Column -->
         <div class="col-lg-8">
             <!-- Pending Consultation Requests -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-inbox"></i> Pending Requests</h5>
-                    <span class="badge bg-dark">{{ pending_requests }}</span>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #DDCF49;">
+                <div class="card-header d-flex justify-content-between align-items-center" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-inbox" style="color: #DDCF49;"></i> Pending Requests</h5>
+                    <span class="badge" style="background-color: #2C577E; color: white;">{{ pending_requests }}</span>
                 </div>
                 <div class="card-body p-0">
                     {% if pending_consultations %}
@@ -162,11 +162,11 @@
                                     <form method="post" action="{% url 'professor_consultation_action' consultation.id %}" class="d-inline">
                                         {% csrf_token %}
                                         <input type="hidden" name="action" value="confirm">
-                                        <button type="submit" class="btn btn-sm btn-success me-1">
+                                        <button type="submit" class="btn btn-sm" style="background-color: #74D3D3; border-color: #74D3D3; color: #274572;" >
                                             <i class="bi bi-check-circle"></i> Confirm
                                         </button>
                                     </form>
-                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal{{ consultation.id }}">
+                                    <button type="button" class="btn btn-sm" style="background-color: #a71d2a; border-color: #a71d2a; color: white;" data-bs-toggle="modal" data-bs-target="#cancelModal{{ consultation.id }}">
                                         <i class="bi bi-x-circle"></i> Decline
                                     </button>
                                     
@@ -190,7 +190,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-danger">Decline Request</button>
+                                                        <button type="submit" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;">Decline Request</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -213,10 +213,10 @@
             </div>
 
             <!-- Upcoming Confirmed Consultations -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-calendar3"></i> Upcoming Consultations</h5>
-                    <a href="{% url 'consultations_list' %}" class="btn btn-sm btn-light">View All</a>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #74D3D3;">
+                <div class="card-header d-flex justify-content-between align-items-center" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-calendar3" style="color: #74D3D3;"></i> Upcoming Consultations</h5>
+                    <a href="{% url 'consultations_list' %}" class="btn btn-sm" style="background-color: #f8f9fa; border: 1px solid #e9ecef; color: #274572;">View All</a>
                 </div>
                 <div class="card-body p-0">
                     {% if upcoming_consultations %}
@@ -238,7 +238,7 @@
                                             <i class="bi bi-geo-alt"></i> {{ consultation.location|default:"TBD" }}
                                         </small>
                                         <div class="mt-1">
-                                            <span class="badge bg-info">{{ consultation.title }}</span>
+                                            <span class="badge" style="background-color: #5389DA; color: white;">{{ consultation.title }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -260,8 +260,8 @@
         <div class="col-lg-4">
             <!-- Profile Summary -->
             <div class="card shadow-sm mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0"><i class="bi bi-person-badge"></i> Profile Summary</h5>
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-person-badge" style="color: #5389DA;"></i> Profile Summary</h5>
                 </div>
                 <div class="card-body">
                     <div class="text-center mb-3">
@@ -311,34 +311,34 @@
                         <small class="text-muted">Default Duration:</small>
                         <p class="mb-0">{{ profile.consultation_duration_default }} minutes</p>
                     </div>
-                    <a href="{% url 'profile_settings' %}" class="btn btn-outline-primary btn-sm w-100 mt-3">
+                    <a href="{% url 'profile_settings' %}" class="btn" style="border: 1px solid #5389DA; color: #5389DA;" >
                         <i class="bi bi-gear"></i> Edit Profile
                     </a>
                 </div>
             </div>
 
             <!-- Quick Actions -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0"><i class="bi bi-lightning-charge"></i> Quick Actions</h5>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #DDCF49;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-lightning-charge" style="color: #DDCF49;"></i> Quick Actions</h5>
                 </div>
                 <div class="card-body d-grid gap-2">
-                    <a href="{% url 'professor_availability_settings' %}" class="btn btn-primary">
+                    <a href="{% url 'professor_availability_settings' %}" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                         <i class="bi bi-calendar-week"></i> Manage Availability
                     </a>
-                    <a href="{% url 'consultations_list' %}?status=upcoming" class="btn btn-outline-primary">
+                    <a href="{% url 'consultations_list' %}?status=upcoming" class="btn" style="border: 1px solid #5389DA; color: #5389DA; background-color: white;">
                         <i class="bi bi-calendar3"></i> View All Consultations
                     </a>
-                    <a href="{% url 'consultations_list' %}?status=past" class="btn btn-outline-secondary">
+                    <a href="{% url 'consultations_list' %}?status=past" class="btn" style="border: 1px solid #5389DA; color: #5389DA; background-color: white;">
                         <i class="bi bi-clock-history"></i> View History
                     </a>
                 </div>
             </div>
 
             <!-- Notifications -->
-            <div class="card shadow-sm">
-                <div class="card-header bg-warning text-dark">
-                    <h5 class="mb-0"><i class="bi bi-bell"></i> Notifications</h5>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #DDCF49;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-bell" style="color: #DDCF49;"></i> Notifications</h5>
                 </div>
                 <div class="card-body p-0">
                     {% if notifications %}
@@ -369,9 +369,9 @@
     <div class="row mt-4">
         <div class="col-12">
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-calendar-week"></i> Your Availability</h5>
-                    <a href="{% url 'professor_availability_settings' %}" class="btn btn-sm btn-light">
+                <div class="card-header d-flex justify-content-between align-items-center" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-calendar-week" style="color: #74D3D3;"></i> Your Availability</h5>
+                    <a href="{% url 'professor_availability_settings' %}" class="btn btn-sm" style="border: 1px solid #5389DA; color: #5389DA; background-color: transparent;">
                         <i class="bi bi-pencil"></i> Edit
                     </a>
                 </div>
