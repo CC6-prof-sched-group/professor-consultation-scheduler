@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load user_extras %}
+{% load static user_extras %}  <!-- ✅ Added 'static' here -->
 
 {% block title %}Home - Professor Consultation Scheduler{% endblock %}
 
@@ -7,8 +7,12 @@
 <!-- Hero Section -->
 <div class="hero-section text-center gradient-animated">
     <div class="container">
-        <h1 class="display-4 fw-bold mb-4 fade-in">Welcome to Professor Consultation Scheduler</h1>
-        <p class="lead mb-4 fade-in" style="animation-delay: 0.2s;">Book consultations with professors easily and efficiently</p>
+        <!-- Centered Logo Above Title -->
+        <div class="d-flex justify-content-center mb-3 fade-in" style="animation-delay: 0.1s;">
+            <img src="{% static 'images/logo.svg' %}" alt="Consult Ease Logo" height="100">
+        </div>
+        <h1 class="display-4 fw-bold mb-4 fade-in" style="animation-delay: 0.2s;">Welcome to Consult Ease</h1>
+        <p class="lead mb-4 fade-in" style="animation-delay: 0.3s;">Book consultations with professors easily and efficiently</p>
         
         {% if not user.is_authenticated %}
             <a href="/accounts/google/login/" class="btn btn-light btn-lg hover-lift fade-in" style="animation-delay: 0.4s;">

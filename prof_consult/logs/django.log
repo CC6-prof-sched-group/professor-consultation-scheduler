@@ -956,3 +956,2021 @@ INFO 2025-11-26 22:39:48,792 basehttp "POST /professor/consultation/107/action/ 
 INFO 2025-11-26 22:39:48,815 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 157696
 INFO 2025-11-26 22:47:30,503 tasks Sent email notification 18 to srclsgm43@gmail.com
 >>>>>>> ff73f53 (working celery, gmail smtp wow)
+INFO 2025-11-30 00:31:38,600 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 00:32:07,758 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 00:32:13,824 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 00:32:14,272 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-11-30 00:32:14,276 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
+INFO 2025-11-30 00:32:14,277 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+INFO 2025-11-30 00:32:14,279 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-11-30 00:32:14,282 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
+WARNING 2025-11-30 00:32:14,859 log Not Found: /favicon.ico
+WARNING 2025-11-30 00:32:14,860 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+ERROR 2025-11-30 00:32:21,289 log Internal Server Error: /accounts/google/login/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_site
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 102, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\base\views.py", line 15, in dispatch
+    provider = self.get_provider()
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 111, in get_provider
+    return self.adapter.get_provider()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 45, in get_provider
+    return get_adapter(self.request).get_provider(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 212, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 295, in get_app
+    apps = self.list_apps(request, provider=provider, client_id=client_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 240, in list_apps
+    db_apps = SocialApp.objects.on_site(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\models.py", line 35, in on_site
+    site = get_current_site(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\shortcuts.py", line 16, in get_current_site
+    return Site.objects.get_current(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\models.py", line 59, in get_current
+    return self._get_site_by_id(site_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_site
+ERROR 2025-11-30 00:32:21,300 basehttp "GET /accounts/google/login/ HTTP/1.1" 500 190107
+ERROR 2025-11-30 00:32:40,415 log Internal Server Error: /accounts/google/login/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_site
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 102, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\base\views.py", line 15, in dispatch
+    provider = self.get_provider()
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 111, in get_provider
+    return self.adapter.get_provider()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 45, in get_provider
+    return get_adapter(self.request).get_provider(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 212, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 295, in get_app
+    apps = self.list_apps(request, provider=provider, client_id=client_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 240, in list_apps
+    db_apps = SocialApp.objects.on_site(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\models.py", line 35, in on_site
+    site = get_current_site(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\shortcuts.py", line 16, in get_current_site
+    return Site.objects.get_current(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\models.py", line 59, in get_current
+    return self._get_site_by_id(site_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_site
+ERROR 2025-11-30 00:32:40,422 basehttp "GET /accounts/google/login/ HTTP/1.1" 500 190107
+ERROR 2025-11-30 00:34:14,034 log Internal Server Error: /accounts/google/login/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_site
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 102, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\base\views.py", line 15, in dispatch
+    provider = self.get_provider()
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 111, in get_provider
+    return self.adapter.get_provider()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 45, in get_provider
+    return get_adapter(self.request).get_provider(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 212, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 295, in get_app
+    apps = self.list_apps(request, provider=provider, client_id=client_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\adapter.py", line 240, in list_apps
+    db_apps = SocialApp.objects.on_site(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\allauth\socialaccount\models.py", line 35, in on_site
+    site = get_current_site(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\shortcuts.py", line 16, in get_current_site
+    return Site.objects.get_current(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\models.py", line 59, in get_current
+    return self._get_site_by_id(site_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\sites\models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_site
+ERROR 2025-11-30 00:34:14,045 basehttp "GET /accounts/google/login/ HTTP/1.1" 500 190107
+INFO 2025-11-30 00:58:19,180 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 00:58:24,748 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 00:58:24,786 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 00:58:24,788 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 00:58:24,788 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 00:58:24,788 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 00:58:24,788 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-11-30 00:58:24,924 log Not Found: /favicon.ico
+WARNING 2025-11-30 00:58:24,926 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-11-30 00:58:28,975 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 00:58:38,430 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-30 00:58:46,239 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-30 00:59:22,719 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 00:59:24,621 basehttp "GET /accounts/signup/ HTTP/1.1" 200 2785
+INFO 2025-11-30 00:59:29,219 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-30 00:59:44,946 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-11-30 00:59:44,959 log Not Found: /accounts/profile/
+WARNING 2025-11-30 00:59:44,961 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-11-30 00:59:53,274 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-11-30 00:59:54,487 basehttp "GET /accounts/signup/ HTTP/1.1" 302 0
+INFO 2025-11-30 00:59:59,015 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 2201
+INFO 2025-11-30 01:00:04,616 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-30 01:16:09,205 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 10:34:56,888 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 10:35:07,257 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 10:35:07,261 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 10:35:07,288 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:35:07,289 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:35:07,295 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:35:07,305 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:35:07,314 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-11-30 10:35:07,421 log Not Found: /favicon.ico
+WARNING 2025-11-30 10:35:07,421 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-11-30 10:44:50,827 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 10:44:52,574 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-30 10:44:59,311 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-11-30 10:44:59,325 log Not Found: /accounts/profile/
+WARNING 2025-11-30 10:44:59,327 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-11-30 10:45:02,960 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-11-30 10:45:14,430 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-11-30 10:45:14,443 log Not Found: /accounts/profile/
+WARNING 2025-11-30 10:45:14,444 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+WARNING 2025-11-30 10:45:22,603 log Forbidden (CSRF token from POST incorrect.): /accounts/google/login/
+WARNING 2025-11-30 10:45:22,605 basehttp "POST /accounts/google/login/ HTTP/1.1" 403 2503
+INFO 2025-11-30 10:45:23,605 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 2201
+INFO 2025-11-30 10:46:01,639 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
+INFO 2025-11-30 10:46:03,498 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-11-30 10:48:36,454 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 10:49:04,273 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:49:47,989 basehttp "GET /profile/settings/ HTTP/1.1" 200 24777
+INFO 2025-11-30 10:49:54,932 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:49:55,722 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 10:49:58,798 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:50:05,491 basehttp "GET /professors/ HTTP/1.1" 200 6924
+INFO 2025-11-30 10:51:38,236 basehttp "GET / HTTP/1.1" 200 11326
+WARNING 2025-11-30 10:51:49,714 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 10:51:49,716 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 10:51:49,731 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 10:53:54,792 basehttp "GET / HTTP/1.1" 200 11326
+WARNING 2025-11-30 10:53:54,851 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 10:53:54,854 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 10:53:54,910 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 10:58:25,560 basehttp "GET /professors/ HTTP/1.1" 200 6924
+INFO 2025-11-30 10:58:26,716 basehttp "GET /consultations/ HTTP/1.1" 200 6940
+INFO 2025-11-30 10:58:27,457 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:58:37,340 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 11:00:47,733 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 11:04:58,476 basehttp "GET /consultations/book/ HTTP/1.1" 200 13797
+INFO 2025-11-30 11:06:03,004 basehttp "GET /consultations/ HTTP/1.1" 200 6940
+WARNING 2025-11-30 11:06:30,088 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 11:06:30,089 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 11:06:30,109 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 11:06:33,274 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6873
+WARNING 2025-11-30 11:06:33,306 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 11:06:33,307 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 11:06:33,364 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 11:06:36,649 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6872
+WARNING 2025-11-30 11:06:36,709 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 11:06:36,710 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 11:06:36,758 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 11:08:32,219 basehttp "GET / HTTP/1.1" 200 11326
+WARNING 2025-11-30 11:08:35,172 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 11:08:35,174 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 11:08:35,187 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 11:12:00,751 basehttp "GET /professors/ HTTP/1.1" 200 6924
+INFO 2025-11-30 11:12:02,614 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 11:16:56,965 basehttp "GET / HTTP/1.1" 200 22239
+INFO 2025-11-30 11:16:57,006 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:06,796 basehttp "GET /professors/ HTTP/1.1" 200 17837
+INFO 2025-11-30 11:17:06,831 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:07,584 basehttp "GET /consultations/ HTTP/1.1" 200 17853
+INFO 2025-11-30 11:17:07,621 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:08,596 basehttp "GET /dashboard/ HTTP/1.1" 200 22703
+INFO 2025-11-30 11:17:08,628 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:09,278 basehttp "GET / HTTP/1.1" 200 22239
+INFO 2025-11-30 11:17:09,322 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:11,635 basehttp "GET /dashboard/ HTTP/1.1" 200 22703
+INFO 2025-11-30 11:17:11,668 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:13,144 basehttp "GET /consultations/ HTTP/1.1" 200 17853
+INFO 2025-11-30 11:17:13,178 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:13,838 basehttp "GET /professors/ HTTP/1.1" 200 17837
+INFO 2025-11-30 11:17:13,874 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:17,094 basehttp "GET / HTTP/1.1" 200 22239
+INFO 2025-11-30 11:17:17,129 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:19,402 basehttp "GET /profile/settings/ HTTP/1.1" 200 35690
+INFO 2025-11-30 11:17:19,446 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:17:47,899 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:18:17,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:18:47,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:19:17,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:19:47,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:20:17,838 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:20:47,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:21:48,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:22:49,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:23:50,857 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:24:25,362 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:24:47,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:25:17,837 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:25:57,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:26:57,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:27:57,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:28:17,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:28:47,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:29:48,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:30:49,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:31:50,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:32:51,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:33:17,131 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:33:47,856 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:34:17,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:34:57,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:35:29,901 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:35:47,858 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:36:17,856 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:36:57,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:37:57,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:38:57,855 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:39:57,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:40:15,918 basehttp "GET / HTTP/1.1" 200 11394
+INFO 2025-11-30 11:40:15,938 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 11:40:15,941 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 11:40:15,942 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 11:40:15,944 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 11:40:15,944 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-30 11:41:51,837 basehttp "GET / HTTP/1.1" 200 11394
+INFO 2025-11-30 11:41:52,688 basehttp "GET / HTTP/1.1" 200 11394
+INFO 2025-11-30 11:42:10,484 basehttp "GET / HTTP/1.1" 200 11347
+INFO 2025-11-30 11:42:12,430 basehttp "GET /dashboard/ HTTP/1.1" 200 11811
+INFO 2025-11-30 11:42:28,279 basehttp "GET / HTTP/1.1" 200 11347
+INFO 2025-11-30 11:42:31,151 basehttp "GET /dashboard/ HTTP/1.1" 200 11811
+INFO 2025-11-30 11:42:44,085 basehttp "GET / HTTP/1.1" 200 11347
+ERROR 2025-11-30 11:44:16,797 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 214, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: components/notification_bell.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: components/notification_bell.html
+ERROR 2025-11-30 11:44:16,806 basehttp "GET / HTTP/1.1" 500 167049
+ERROR 2025-11-30 11:44:18,329 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 214, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: components/notification_bell.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: components/notification_bell.html
+ERROR 2025-11-30 11:44:18,334 basehttp "GET / HTTP/1.1" 500 167049
+INFO 2025-11-30 11:44:38,156 basehttp "GET / HTTP/1.1" 200 19853
+INFO 2025-11-30 11:44:38,203 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:45:08,211 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:45:24,009 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:45:24,039 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:45:54,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:46:24,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:46:54,836 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:46:58,863 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:46:58,910 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:46:59,806 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:46:59,865 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:47:00,472 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:47:00,500 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:47:10,485 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:47:10,515 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:47:11,014 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:47:11,047 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:47:11,189 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:47:11,217 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:47:11,334 basehttp "GET / HTTP/1.1" 200 19910
+INFO 2025-11-30 11:47:11,364 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:47:41,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:47:46,403 basehttp "GET / HTTP/1.1" 200 19853
+INFO 2025-11-30 11:47:46,435 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:48:16,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:48:29,803 basehttp "GET / HTTP/1.1" 200 19853
+INFO 2025-11-30 11:48:29,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+WARNING 2025-11-30 11:48:41,672 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 11:48:41,673 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 11:48:41,693 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 11:48:43,711 basehttp "GET / HTTP/1.1" 200 19853
+WARNING 2025-11-30 11:48:43,755 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 11:48:43,756 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 11:48:43,788 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 11:48:43,795 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+WARNING 2025-11-30 11:48:51,707 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 11:48:51,707 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 11:48:51,726 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 11:49:13,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:49:43,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:50:13,838 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:50:43,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:51:13,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:51:43,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:52:13,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:52:57,855 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:53:57,855 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:54:46,721 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:55:13,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:55:43,800 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:56:13,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:56:43,839 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:57:44,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:58:45,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:59:27,338 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 11:59:43,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:00:13,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:00:57,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:01:57,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:02:20,056 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:02:43,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:03:13,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:03:43,855 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:04:44,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:05:45,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:06:46,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:07:47,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:08:48,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:19,563 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:20,938 basehttp "GET / HTTP/1.1" 200 19870
+INFO 2025-11-30 12:09:21,011 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:22,313 basehttp "GET / HTTP/1.1" 200 19870
+INFO 2025-11-30 12:09:22,361 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:23,274 basehttp "GET / HTTP/1.1" 200 19870
+INFO 2025-11-30 12:09:23,309 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:23,760 basehttp "GET / HTTP/1.1" 200 19870
+INFO 2025-11-30 12:09:23,794 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:24,096 basehttp "GET / HTTP/1.1" 200 19870
+INFO 2025-11-30 12:09:24,132 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:25,116 basehttp "GET / HTTP/1.1" 200 19870
+INFO 2025-11-30 12:09:25,150 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:09:55,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:10:25,162 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+ERROR 2025-11-30 12:10:26,049 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logo' not found. 'logo' is not a valid view function or pattern name.
+ERROR 2025-11-30 12:10:26,056 basehttp "GET / HTTP/1.1" 500 149450
+ERROR 2025-11-30 12:10:29,713 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 102, in dashboard
+    return render(request, 'dashboard.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logo' not found. 'logo' is not a valid view function or pattern name.
+ERROR 2025-11-30 12:10:29,718 basehttp "GET /dashboard/ HTTP/1.1" 500 158938
+ERROR 2025-11-30 12:10:43,840 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 102, in dashboard
+    return render(request, 'dashboard.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logo.html' not found. 'logo.html' is not a valid view function or pattern name.
+ERROR 2025-11-30 12:10:43,845 basehttp "GET /dashboard/ HTTP/1.1" 500 159058
+ERROR 2025-11-30 12:10:44,526 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 102, in dashboard
+    return render(request, 'dashboard.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logo.html' not found. 'logo.html' is not a valid view function or pattern name.
+ERROR 2025-11-30 12:10:44,531 basehttp "GET /dashboard/ HTTP/1.1" 500 159058
+INFO 2025-11-30 12:10:54,865 basehttp "GET /dashboard/ HTTP/1.1" 200 20317
+INFO 2025-11-30 12:10:54,900 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:11:25,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:11:55,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:12:25,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:12:55,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:13:25,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:13:55,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:14:25,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:14:57,839 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:15:57,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:16:57,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:17:57,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:18:57,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:19:57,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:20:57,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:21:57,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:22:57,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:23:57,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:24:36,637 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:24:37,712 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 12:24:37,764 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:24:37,844 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 218752
+INFO 2025-11-30 12:25:07,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:25:37,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:26:07,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:26:37,855 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:27:07,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:27:37,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:28:07,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:28:52,694 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:28:53,824 basehttp "GET /dashboard/ HTTP/1.1" 200 20317
+INFO 2025-11-30 12:28:53,882 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:28:55,214 basehttp "GET /dashboard/ HTTP/1.1" 200 20317
+INFO 2025-11-30 12:28:55,261 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:29:25,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:29:45,646 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 12:29:45,666 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 102658
+INFO 2025-11-30 12:29:45,681 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:30:15,862 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:30:45,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:31:15,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:31:45,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:32:15,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:32:45,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:33:15,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:33:57,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:34:12,429 basehttp "GET /dashboard/ HTTP/1.1" 200 20317
+INFO 2025-11-30 12:34:12,480 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:34:42,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:35:12,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:35:42,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:36:12,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:36:42,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:37:12,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:37:42,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:38:12,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:38:42,839 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:39:43,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:40:44,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:41:45,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:42:46,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:43:47,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:44:48,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:45:49,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:46:09,678 basehttp "GET /dashboard/ HTTP/1.1" 200 20317
+INFO 2025-11-30 12:46:09,727 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:46:10,468 basehttp "GET /dashboard/ HTTP/1.1" 200 20317
+INFO 2025-11-30 12:46:10,506 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:46:40,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:46:46,507 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 12:46:46,532 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 25751
+INFO 2025-11-30 12:46:46,545 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:47:16,551 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:47:26,043 basehttp "GET / HTTP/1.1" 200 19972
+INFO 2025-11-30 12:47:26,077 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-11-30 12:47:26,110 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:47:26,597 basehttp "GET / HTTP/1.1" 200 19972
+INFO 2025-11-30 12:47:26,642 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:47:56,652 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:48:26,654 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:48:56,651 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:49:26,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:49:56,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:50:03,500 basehttp "GET / HTTP/1.1" 200 19951
+INFO 2025-11-30 12:50:03,524 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 12:50:03,533 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 12:50:03,535 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-11-30 12:50:03,535 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 12:50:03,536 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-30 12:50:03,536 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 12:50:03,555 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:50:33,566 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:51:03,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:51:33,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:52:03,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:52:33,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:53:03,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:53:33,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+ERROR 2025-11-30 12:53:58,549 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 12:53:58,556 basehttp "GET / HTTP/1.1" 500 217011
+INFO 2025-11-30 12:54:17,450 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 12:54:17,475 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-11-30 12:54:17,503 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:54:47,839 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:55:17,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:55:47,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:56:17,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:56:47,855 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:57:17,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+ERROR 2025-11-30 12:57:39,355 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 13: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 12:57:39,359 basehttp "GET / HTTP/1.1" 500 217049
+ERROR 2025-11-30 12:58:27,645 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 12:58:27,651 basehttp "GET / HTTP/1.1" 500 217011
+ERROR 2025-11-30 12:58:28,329 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 12:58:28,335 basehttp "GET / HTTP/1.1" 500 217011
+ERROR 2025-11-30 12:58:57,704 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 12:58:57,711 basehttp "GET / HTTP/1.1" 500 217011
+ERROR 2025-11-30 12:58:58,312 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 12:58:58,318 basehttp "GET / HTTP/1.1" 500 217011
+INFO 2025-11-30 12:59:06,865 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 12:59:06,905 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-11-30 12:59:06,944 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 12:59:36,956 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:00:07,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:00:37,857 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:01:06,950 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:01:36,951 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:02:06,946 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:02:36,949 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:03:06,944 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:03:36,947 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:04:06,945 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:04:36,943 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:05:06,943 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:05:36,941 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:06:07,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:06:37,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:07:38,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:08:39,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:09:40,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:10:41,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:11:42,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:12:43,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:13:44,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:14:45,854 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:15:46,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:16:47,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:17:48,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:18:49,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:19:50,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:20:51,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:21:53,116 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:22:53,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:23:54,968 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:24:56,333 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:25:56,899 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:26:57,940 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:27:57,944 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:28:57,972 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:29:57,985 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:30:58,027 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:31:58,332 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:32:57,969 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:33:57,930 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:34:57,914 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:35:57,942 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:36:58,652 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:37:57,968 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:38:58,039 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:39:58,113 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:40:57,951 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:41:58,040 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:42:58,255 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:43:57,897 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:44:57,928 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:45:57,899 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:46:57,979 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:47:58,108 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:48:57,931 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:49:57,928 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:51:01,307 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:51:59,271 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:52:57,951 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:53:57,920 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:54:57,943 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:55:57,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:56:57,913 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:57:57,962 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:58:57,930 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 13:59:57,993 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:00:57,912 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:01:57,938 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:02:58,271 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:03:57,967 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:04:58,596 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:05:57,953 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:06:58,002 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:07:57,908 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:08:58,043 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:09:57,953 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:10:57,977 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:11:57,975 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:12:06,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:12:36,952 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:13:06,971 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:13:36,945 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:14:06,954 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 14:14:36,951 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 17:57:59,383 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 17:57:59,397 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 17:58:57,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 17:59:34,013 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 17:59:36,960 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:00:06,945 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:00:36,954 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:01:06,957 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:01:36,955 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:02:06,945 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:02:36,958 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:03:06,955 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:03:36,953 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:04:06,945 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:04:36,950 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:05:06,953 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:08:24,734 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:08:36,950 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:09:06,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:09:36,947 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:10:06,946 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:10:36,950 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:11:06,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:11:36,946 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:12:06,946 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:12:36,949 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:13:06,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:13:36,947 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:14:06,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:14:36,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:15:06,947 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:15:36,958 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:16:06,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:16:36,946 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:17:06,955 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:17:41,234 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:17:41,259 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 18:17:41,268 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 18:17:41,269 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 18:17:41,269 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 18:17:41,270 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-11-30 18:17:41,271 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-30 18:17:41,287 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:18:11,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:18:41,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:19:11,844 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:19:41,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:20:11,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+ERROR 2025-11-30 18:20:30,577 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 18:20:30,584 basehttp "GET / HTTP/1.1" 500 218993
+INFO 2025-11-30 18:20:53,496 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:20:53,531 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+ERROR 2025-11-30 18:20:55,750 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 18:20:55,756 basehttp "GET / HTTP/1.1" 500 218856
+INFO 2025-11-30 18:21:17,012 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:21:17,045 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:21:18,079 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:21:18,116 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:21:48,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+ERROR 2025-11-30 18:22:04,693 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 18:22:04,699 basehttp "GET / HTTP/1.1" 500 217067
+INFO 2025-11-30 18:22:10,783 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:22:10,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:22:41,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:23:11,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:23:15,317 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:23:15,349 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:23:16,757 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:23:16,803 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:23:17,293 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:23:17,327 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:23:17,826 basehttp "GET /consultations/ HTTP/1.1" 200 15586
+INFO 2025-11-30 18:23:17,862 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:23:18,532 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:23:18,579 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:23:39,356 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:23:39,390 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+WARNING 2025-11-30 18:23:45,109 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-30 18:23:45,110 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7103
+WARNING 2025-11-30 18:23:45,125 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-11-30 18:24:09,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:24:39,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:25:09,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:25:39,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:26:09,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:26:39,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:27:09,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+ERROR 2025-11-30 18:27:14,912 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 28, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\OneDrive\Desktop\final_proj\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 13: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-11-30 18:27:14,919 basehttp "GET / HTTP/1.1" 500 217091
+INFO 2025-11-30 18:28:27,873 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:28:27,929 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:28:32,604 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:28:32,652 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:28:33,540 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:28:33,575 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:28:34,524 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:28:34,558 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:28:35,912 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:28:35,948 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:28:36,542 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:28:36,579 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:28:44,829 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:28:44,872 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:28:50,724 basehttp "GET / HTTP/1.1" 200 19952
+INFO 2025-11-30 18:28:50,755 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:29:15,575 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:29:15,607 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:29:17,642 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:29:17,676 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:29:27,688 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:29:27,720 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:29:57,727 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:30:27,723 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:30:57,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:31:27,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:31:57,726 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:32:07,104 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:32:07,154 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:32:08,367 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:32:08,425 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:32:38,437 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:33:08,436 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:33:38,852 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:34:08,436 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:34:17,194 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:34:17,241 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:34:47,236 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:35:17,238 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:35:47,249 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:36:17,243 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:36:47,238 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:37:17,247 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:37:47,237 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:38:17,247 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:38:47,241 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:39:17,245 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:39:47,237 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:40:17,243 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:40:47,240 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:41:10,760 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:41:10,816 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:41:40,823 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:42:10,823 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:42:40,820 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:43:10,825 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:43:40,822 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:44:10,822 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:44:40,825 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:45:08,568 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:45:08,636 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:45:38,851 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:08,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:37,929 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:46:37,977 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:39,277 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:46:39,309 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:49,460 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:46:49,494 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:50,447 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:46:50,487 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:53,730 basehttp "GET /consultations/ HTTP/1.1" 200 15586
+INFO 2025-11-30 18:46:53,779 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:55,149 basehttp "GET /consultations/?status=past HTTP/1.1" 200 15518
+INFO 2025-11-30 18:46:55,185 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:46:55,653 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 15519
+INFO 2025-11-30 18:46:55,697 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:47:25,839 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:47:55,692 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:48:25,699 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:48:40,295 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:48:40,364 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:49:10,850 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:49:40,840 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:50:10,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:50:22,889 basehttp "GET /consultations/ HTTP/1.1" 200 15586
+INFO 2025-11-30 18:50:22,950 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:50:39,116 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 18:50:39,182 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:51:09,190 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:51:39,188 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:52:09,190 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:52:39,189 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:53:09,191 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:53:39,192 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:53:54,276 basehttp "GET /consultations/ HTTP/1.1" 200 15586
+INFO 2025-11-30 18:53:54,313 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-11-30 18:53:54,333 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:54:24,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:54:54,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:55:24,347 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:55:54,339 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:17,230 basehttp "GET /consultations/?status=past HTTP/1.1" 200 15518
+INFO 2025-11-30 18:56:17,283 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:18,057 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 15519
+INFO 2025-11-30 18:56:18,133 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:19,171 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 15586
+INFO 2025-11-30 18:56:19,203 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:23,957 basehttp "GET /consultations/book/ HTTP/1.1" 200 22443
+INFO 2025-11-30 18:56:23,997 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:45,150 basehttp "GET /consultations/?status=past HTTP/1.1" 200 15518
+INFO 2025-11-30 18:56:45,185 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:45,514 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 15586
+INFO 2025-11-30 18:56:45,554 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:48,618 basehttp "GET /consultations/book/ HTTP/1.1" 200 22443
+INFO 2025-11-30 18:56:48,654 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:56:58,434 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 18:56:58,482 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:57:01,577 basehttp "GET /professors/ HTTP/1.1" 200 15570
+INFO 2025-11-30 18:57:01,614 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:57:28,490 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:57:58,483 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:58:28,488 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:58:58,486 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:59:28,490 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 18:59:58,485 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:00:28,493 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:00:58,845 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:02:14,304 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:02:28,488 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:02:58,489 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:03:28,489 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:03:58,487 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:04:28,489 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:04:58,485 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:05:28,849 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:24:44,808 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:24:51,596 basehttp "GET /dashboard/ HTTP/1.1" 200 20436
+INFO 2025-11-30 19:24:51,664 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:24:52,437 basehttp "GET /consultations/ HTTP/1.1" 200 15586
+INFO 2025-11-30 19:24:52,481 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:24:59,777 basehttp "GET / HTTP/1.1" 200 20222
+INFO 2025-11-30 19:24:59,814 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:25:29,812 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:25:59,814 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:26:29,821 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:26:59,816 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:27:29,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:27:59,842 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:28:29,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
+INFO 2025-11-30 19:29:30,847 basehttp "GET /api/notifications/ HTTP/1.1" 200 52
