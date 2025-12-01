@@ -1,43 +1,16 @@
 {% extends 'base.html' %}
 {% load user_extras avatar_extras %}
 
-{% block title %}My Profile - ConsultEase{% endblock %}
+{% block title %}My Profile - Professor Consultation Scheduler{% endblock %}
 
 {% block content %}
 <div class="container my-5">
-    <style>
-        /* Small local palette utilities for profile settings */
-        .sidebar .list-group-item.active {
-            background-color: transparent !important;
-            color: #274572 !important;
-            border-left: 4px solid #5389DA !important;
-            font-weight: 600;
-        }
-        .sidebar .list-group-item {
-            color: #274572;
-        }
-        .sidebar .list-group-item:hover {
-            background-color: #5389DA10;
-            color: #274572;
-        }
-        .avatar-bubble {
-            width: 120px; height: 120px; border-radius: 50%;
-            background: linear-gradient(135deg, #74D3D3 0%, #5389DA 100%);
-            color: #ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;
-        }
-        .btn-change-photo { background-color: transparent; border: 1px solid #74D3D3; color: #274572; }
-        .card-top-accent { border-top: 4px solid #5389DA; }
-        .card-top-accent-accent { border-top: 4px solid #74D3D3; }
-        .danger-card { border-color: #a71d2a; }
-        .danger-header { background-color: transparent; border-bottom: 1px solid #e9ecef; color: #a71d2a; padding: 1rem 1.25rem; }
-        .card-header.transparent { background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem; }
-    </style>
     <div class="row">
-        <div class="col-md-3 sidebar">
+        <div class="col-md-3">
             <!-- Sidebar Navigation -->
             <div class="card shadow-sm mb-4">
-                <div class="card-header transparent">
-                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-gear" style="color: #5389DA;"></i> Settings</h5>
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-gear"></i> Settings</h5>
                 </div>
                 <div class="list-group list-group-flush">
                     <a href="#profile" class="list-group-item list-group-item-action active" data-bs-toggle="list">
@@ -60,9 +33,9 @@
             <div class="tab-content">
                 <!-- Profile Information -->
                 <div class="tab-pane fade show active" id="profile">
-                    <div class="card shadow-sm card-top-accent">
-                        <div class="card-header transparent">
-                            <h4 class="mb-0" style="color: #274572;"><i class="bi bi-person-circle" style="color: #5389DA;"></i> Profile Information</h4>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="bi bi-person-circle"></i> Profile Information</h4>
                         </div>
                         <div class="card-body">
                             <form method="post">
@@ -71,14 +44,14 @@
                                 <!-- Profile Picture -->
                                 <div class="text-center mb-4">
                                     {% user_avatar user as avatar_url %}
-                                    <div class="avatar-bubble mx-auto mb-3">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3 overflow-hidden" style="width: 120px; height: 120px;">
                                         {% if avatar_url %}
                                             <img src="{{ avatar_url }}" alt="Avatar" class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;" />
                                         {% else %}
                                             <i class="bi bi-person-fill" style="font-size:48px"></i>
                                         {% endif %}
                                     </div>
-                                    <button type="button" class="btn btn-sm btn-change-photo">
+                                    <button type="button" class="btn btn-sm btn-outline-primary">
                                         <i class="bi bi-camera"></i> Change Photo
                                     </button>
                                 </div>
@@ -122,7 +95,7 @@
                                 </div>
 
                                 <div class="d-grid gap-2">
-                                    <button type="submit" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
+                                    <button type="submit" class="btn btn-primary">
                                         <i class="bi bi-check-circle"></i> Save Changes
                                     </button>
                                 </div>
@@ -134,8 +107,8 @@
                 <!-- Account Settings -->
                 <div class="tab-pane fade" id="account">
                     <div class="card shadow-sm">
-                        <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef;">
-                            <h4 class="mb-0" style="color: #274572;"><i class="bi bi-shield-lock" style="color: #5389DA;"></i> Account Settings</h4>
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="bi bi-shield-lock"></i> Account Settings</h4>
                         </div>
                         <div class="card-body">
                             <!-- Connected Accounts -->
@@ -144,7 +117,7 @@
                                 <div class="list-group-item">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <i class="bi bi-google fs-4" style="color: #5389DA; "></i>
+                                            <i class="bi bi-google text-danger fs-4"></i>
                                             <span class="ms-2"><strong>Google</strong></span>
                                             <br>
                                             <small class="text-muted ms-5">Connected as john.doe@university.edu</small>
@@ -177,15 +150,15 @@
 
                             {% if user.role == 'STUDENT' %}
                             <!-- Testing Tools -->
-                            <div class="card mb-4 card-top-accent-accent" style="border-color: #74D3D3;">
-                                <div class="card-header transparent">
-                                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-tools" style="color: #74D3D3;"></i> Testing Tools</h5>
+                            <div class="card border-info mb-4">
+                                <div class="card-header bg-info text-white">
+                                    <h5 class="mb-0"><i class="bi bi-tools"></i> Testing Tools</h5>
                                 </div>
                                 <div class="card-body">
                                     <p class="text-muted">Convert your student account to a professor account for testing purposes.</p>
                                     <form method="post" action="{% url 'convert_to_professor' %}">
                                         {% csrf_token %}
-                                        <button type="submit" class="btn" style="background-color: #74D3D3; border-color: #74D3D3; color: #ffffff;" onclick="return confirm('Are you sure you want to convert your account to a professor account? This will change your role and create a professor profile.')">
+                                        <button type="submit" class="btn btn-info" onclick="return confirm('Are you sure you want to convert your account to a professor account? This will change your role and create a professor profile.')">
                                             <i class="bi bi-person-badge"></i> Convert to Professor
                                         </button>
                                     </form>
@@ -194,13 +167,13 @@
                             {% endif %}
 
                             <!-- Danger Zone -->
-                            <div class="card danger-card">
-                                <div class="card-header danger-header">
-                                    <h5 class="mb-0"><i class="bi bi-exclamation-triangle" style="color: #a71d2a;"></i> Danger Zone</h5>
+                            <div class="card border-danger">
+                                <div class="card-header bg-danger text-white">
+                                    <h5 class="mb-0">Danger Zone</h5>
                                 </div>
                                 <div class="card-body">
                                     <p class="text-muted">Once you delete your account, there is no going back. Please be certain.</p>
-                                    <button type="button" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                                         <i class="bi bi-trash"></i> Delete Account
                                     </button>
                                 </div>
@@ -212,8 +185,8 @@
                 <!-- Notifications -->
                 <div class="tab-pane fade" id="notifications">
                     <div class="card shadow-sm">
-                        <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef;">
-                            <h4 class="mb-0" style="color: #274572;"><i class="bi bi-bell" style="color: #5389DA;"></i> Notification Preferences</h4>
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="bi bi-bell"></i> Notification Preferences</h4>
                         </div>
                         <div class="card-body">
                             <h5 class="mb-3">Email Notifications</h5>
@@ -266,7 +239,7 @@
                                 </label>
                             </div>
 
-                            <button type="submit" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;" >
+                            <button type="submit" class="btn btn-primary mt-3">
                                 <i class="bi bi-check-circle"></i> Save Preferences
                             </button>
                         </div>
@@ -276,8 +249,8 @@
                 <!-- Preferences -->
                 <div class="tab-pane fade" id="preferences">
                     <div class="card shadow-sm">
-                        <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef;">
-                            <h4 class="mb-0" style="color: #274572;"><i class="bi bi-sliders" style="color: #5389DA;"></i> General Preferences</h4>
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="bi bi-sliders"></i> General Preferences</h4>
                         </div>
                         <div class="card-body">
                             <div class="mb-4">
@@ -304,13 +277,13 @@
                                 <label class="form-label"><strong>Default Consultation Duration</strong></label>
                                 <div class="btn-group w-100" role="group">
                                     <input type="radio" class="btn-check" name="duration" id="duration30" autocomplete="off">
-                                    <label class="btn" for="duration30" style="border: 1px solid #5389DA; color: #5389DA;">30 min</label>
+                                    <label class="btn btn-outline-primary" for="duration30">30 min</label>
 
                                     <input type="radio" class="btn-check" name="duration" id="duration60" autocomplete="off" checked>
-                                    <label class="btn" for="duration60" style="border: 1px solid #5389DA; color: #5389DA;">60 min</label>
+                                    <label class="btn btn-outline-primary" for="duration60">60 min</label>
 
                                     <input type="radio" class="btn-check" name="duration" id="duration90" autocomplete="off">
-                                    <label class="btn" for="duration90" style="border: 1px solid #5389DA; color: #5389DA;">90 min</label>
+                                    <label class="btn btn-outline-primary" for="duration90">90 min</label>
                                 </div>
                             </div>
 
@@ -324,7 +297,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
+                            <button type="submit" class="btn btn-primary">
                                 <i class="bi bi-check-circle"></i> Save Preferences
                             </button>
                         </div>
@@ -339,7 +312,7 @@
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header" style="background-color: #a71d2a; color: white;">
+            <div class="modal-header bg-danger text-white">
                 <h5 class="modal-title" id="deleteModalLabel">Delete Account</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -349,7 +322,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;">Delete My Account</button>
+                <button type="button" class="btn btn-danger">Delete My Account</button>
             </div>
         </div>
     </div>

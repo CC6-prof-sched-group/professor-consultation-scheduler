@@ -1,70 +1,69 @@
 {% extends 'base.html' %}
 {% load user_extras %}
 
-{% block title %}Dashboard - ConsultEase{% endblock %}
+{% block title %}Dashboard - Professor Consultation Scheduler{% endblock %}
 {% block content %}
-
 <div class="container my-5">
     <!-- Dashboard Header -->
-    <div class="row mb-5">
+    <div class="row mb-4">
         <div class="col">
-            <h1 class="display-4 fw-bold">
-                <i class="bi bi-speedometer2" style="color: #5389DA;"></i> Dashboard
+            <h1 class="display-5 fw-bold">
+                <i class="bi bi-speedometer2 text-primary"></i> Dashboard
             </h1>
-            <p class="lead text-muted">Welcome back, <span>{% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}</span></p>
+            <p class="lead text-muted">Welcome back, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}</p>
         </div>
     </div>
 
     <!-- Stats Cards -->
     <div class="row g-4 mb-5 stagger-animation">
         <div class="col-md-3">
-            <div class="card text-white shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #5389DA 0%, #274572 100%); border: none;">
+            <div class="card text-white bg-primary shadow hover-lift stat-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="card-title text-uppercase mb-2" style="font-size: 0.75rem; letter-spacing: 0.5px; opacity: 0.9;">Total Consultations</h6>
-                            <h2 class="mb-0 stat-number" style="font-size: 2.5rem;">{{ total_consultations }}</h2>
+                            <h6 class="card-title text-uppercase mb-1">Total Consultations</h6>
+                            <h2 class="mb-0 stat-number">{{ total_consultations }}</h2>
                         </div>
-                        <i class="bi bi-calendar-check pulse" style="font-size: 3rem; opacity: 0.3;"></i>
+                        <i class="bi bi-calendar-check pulse" style="font-size: 3rem; opacity: 0.5;"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #DDCF49 0%, #F9CF3F 100%); border: none; color: #274572;">
+            <div class="card text-white bg-success shadow hover-lift stat-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="card-title text-uppercase mb-2" style="font-size: 0.75rem; letter-spacing: 0.5px; opacity: 0.8;">Upcoming</h6>
-                            <h2 class="mb-0 stat-number" style="font-size: 2.5rem;">{{ upcoming }}</h2>
+                            <h6 class="card-title text-uppercase mb-1">Upcoming</h6>
+                            <h2 class="mb-0 stat-number">{{ upcoming }}</h2>
                         </div>
-                        <i class="bi bi-clock-history pulse" style="font-size: 3rem; opacity: 0.3;"></i>
+                        <i class="bi bi-clock-history pulse" style="font-size: 3rem; opacity: 0.5;"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #74D3D3 0%, #20C8D4 100%); border: none; color: #274572;">
+            <div class="card text-white bg-warning shadow hover-lift stat-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="card-title text-uppercase mb-2" style="font-size: 0.75rem; letter-spacing: 0.5px; opacity: 0.8;">Pending</h6>
-                            <h2 class="mb-0 stat-number" style="font-size: 2.5rem;">{{ pending }}</h2>
+                            <h6 class="card-title text-uppercase mb-1">Pending</h6>
+                            <h2 class="mb-0 stat-number">{{ pending }}</h2>
                         </div>
-                        <i class="bi bi-hourglass-split pulse" style="font-size: 3rem; opacity: 0.3;"></i>
+                        <i class="bi bi-hourglass-split pulse" style="font-size: 3rem; opacity: 0.5;"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white shadow-lg hover-lift stat-card" style="background: linear-gradient(135deg, #274572 0%, #1a2d47 100%); border: none;">
+            <div class="card text-white bg-info shadow hover-lift stat-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="card-title text-uppercase mb-2" style="font-size: 0.75rem; letter-spacing: 0.5px; opacity: 0.9;">This Month</h6>
-                            <h2 class="mb-0 stat-number" style="font-size: 2.5rem;">{{ this_month }}</h2>
+                            <h6 class="card-title text-uppercase mb-1">This Month</h6>
+                            <h2 class="mb-0 stat-number">{{ this_month }}</h2>
                         </div>
-                        <i class="bi bi-graph-up pulse" style="font-size: 3rem; opacity: 0.3;"></i>
+                        <i class="bi bi-graph-up pulse" style="font-size: 3rem; opacity: 0.5;"></i>
                     </div>
                 </div>
             </div>
@@ -75,10 +74,10 @@
         <!-- Left Column -->
         <div class="col-lg-8">
             <!-- Upcoming Consultations -->
-            <div class="card shadow mb-4" style="border: none; border-top: 4px solid #5389DA;">
-                <div class="card-header text-white d-flex justify-content-between align-items-center" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.5rem;">
-                    <h5 class="mb-0" style="color: #274572; font-weight: 600;"><i class="bi bi-calendar3" style="color: #5389DA;"></i> Upcoming Consultations</h5>
-                    <a href="{% url 'consultations_list' %}" class="btn btn-sm" style="background-color: #5389DA; border-color: #5389DA; color: white; font-size: 0.85rem;">View All</a>
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="bi bi-calendar3"></i> Upcoming Consultations</h5>
+                    <a href="{% url 'consultations_list' %}" class="btn btn-sm btn-light">View All</a>
                 </div>
                 <div class="card-body p-0">
                     {% if upcoming_consultations %}
@@ -124,9 +123,9 @@
             </div>
 
             <!-- Recent Activity -->
-            <div class="card shadow" style="border: none; border-top: 4px solid #5389DA;">
-                <div class="card-header text-white" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.5rem;">
-                    <h5 class="mb-0" style="color: #274572; font-weight: 600;"><i class="bi bi-activity" style="color: #5389DA;"></i> Recent Activity</h5>
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-activity"></i> Recent Activity</h5>
                 </div>
                 <div class="card-body">
                     {% if recent_activity %}
@@ -177,30 +176,27 @@
         <!-- Right Column -->
         <div class="col-lg-4">
             <!-- Quick Actions -->
-            <div class="card shadow mb-4" style="border: none; border-top: 4px solid #DDCF49;">
-                <div class="card-header text-white" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.5rem;">
-                    <h5 class="mb-0" style="color: #274572; font-weight: 600;"><i class="bi bi-lightning-charge" style="color: #DDCF49;"></i> Quick Actions</h5>
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="bi bi-lightning-charge"></i> Quick Actions</h5>
                 </div>
                 <div class="card-body d-grid gap-2">
-                    <a href="{% url 'book_consultation' %}" class="btn py-3 d-flex align-items-center justify-content-center gap-2" style="background-color: #5389DA; border-color: #5389DA; color: white; font-weight: 500; transition: all 0.3s ease;">
-                        <i class="bi bi-calendar-plus fs-5"></i>
-                        <span>Book Consultation</span>
+                    <a href="{% url 'book_consultation' %}" class="btn btn-primary">
+                        <i class="bi bi-calendar-plus"></i> Book New Consultation
                     </a>
-                    <a href="{% url 'professors_list' %}" class="btn py-3 d-flex align-items-center justify-content-center gap-2" style="background-color: #74D3D3; border-color: #74D3D3; color: white; font-weight: 500; transition: all 0.3s ease;">
-                        <i class="bi bi-people fs-5"></i>
-                        <span>Browse Professors</span>
+                    <a href="{% url 'professors_list' %}" class="btn btn-outline-primary">
+                        <i class="bi bi-people"></i> Browse Professors
                     </a>
-                    <a href="{% url 'consultations_list' %}?status=past" class="btn py-3 d-flex align-items-center justify-content-center gap-2" style="background-color: #274572; border-color: #274572; color: white; font-weight: 500; transition: all 0.3s ease;">
-                        <i class="bi bi-clock-history fs-5"></i>
-                        <span>View History</span>
+                    <a href="{% url 'consultations_list' %}?status=past" class="btn btn-outline-secondary">
+                        <i class="bi bi-clock-history"></i> View History
                     </a>
                 </div>
             </div>
 
             <!-- Notifications -->
-            <div class="card shadow mb-4" style="border: none; border-top: 4px solid #5389DA;">
-                <div class="card-header text-white" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.5rem;">
-                    <h5 class="mb-0" style="color: #274572; font-weight: 600;"><i class="bi bi-bell" style="color: #5389DA;"></i> Notifications</h5>
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0"><i class="bi bi-bell"></i> Notifications</h5>
                 </div>
                 <div class="card-body p-0">
                     {% if notifications %}
@@ -226,9 +222,9 @@
             </div>
 
             <!-- Calendar Widget -->
-            <div class="card shadow" style="border: none; border-top: 4px solid #5389DA;">
-                <div class="card-header text-white" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.5rem;">
-                    <h5 class="mb-0" style="color: #274572; font-weight: 600;"><i class="bi bi-calendar3" style="color: #5389DA;"></i> November 2025</h5>
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-calendar3"></i> November 2025</h5>
                 </div>
                 <div class="card-body">
                     <div class="text-center">

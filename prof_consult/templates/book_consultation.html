@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load user_extras %}
 
-{% block title %}Book Consultation - ConsultEase{% endblock %}
+{% block title %}Book Consultation - Professor Consultation Scheduler{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <div class="card shadow-lg scale-in" style="border: none; border-top: 4px solid #5389DA;">
-                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
-                    <h3 class="mb-0" style="color: #274572;">
-                        <i class="bi bi-calendar-plus bounce" style="color: #5389DA;"></i> Book a Consultation
+            <div class="card shadow-lg scale-in">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-calendar-plus bounce"></i> Book a Consultation
                     </h3>
                 </div>
                 <div class="card-body p-4">
@@ -123,7 +123,7 @@
 
                         <!-- Submit Buttons -->
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-lg" style="background-color: #5389DA; border-color: #5389DA; color: white;">
+                            <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="bi bi-check-circle"></i> Confirm Booking
                             </button>
                             <a href="{% url 'home' %}" class="btn btn-outline-secondary">
@@ -135,9 +135,9 @@
             </div>
 
             <!-- Booking Guidelines -->
-            <div class="card mt-4" style="border: none; border-top: 4px solid #74D3D3;">
-                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
-                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-info-circle" style="color: #74D3D3;"></i> Booking Guidelines</h5>
+            <div class="card mt-4 border-info">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> Booking Guidelines</h5>
                 </div>
                 <div class="card-body">
                     <ul class="mb-0">
