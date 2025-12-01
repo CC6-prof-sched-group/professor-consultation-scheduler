@@ -33,3 +33,288 @@ INFO 2025-11-30 20:37:21,888 basehttp "GET / HTTP/1.1" 200 21353
 INFO 2025-11-30 20:37:21,990 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
 INFO 2025-11-30 20:37:24,712 basehttp "GET / HTTP/1.1" 200 21353
 INFO 2025-11-30 20:37:24,818 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:33:07,912 autoreload Watching for file changes with StatReloader
+INFO 2025-12-01 09:33:15,692 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-12-01 09:33:15,765 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,769 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,765 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,779 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,785 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:16,115 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 25757
+INFO 2025-12-01 09:33:16,205 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:33:46,173 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:15,995 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:46,208 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:47,990 basehttp "GET /consultations/ HTTP/1.1" 200 34128
+INFO 2025-12-01 09:34:48,065 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-12-01 09:34:48,130 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:51,653 basehttp "GET /consultations/?status=past HTTP/1.1" 200 29814
+INFO 2025-12-01 09:34:51,754 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:52,582 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 38709
+INFO 2025-12-01 09:34:52,684 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:58,700 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 34128
+INFO 2025-12-01 09:34:58,787 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:35:02,412 basehttp "GET /consultation/5/ HTTP/1.1" 200 23215
+INFO 2025-12-01 09:35:02,490 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:35:33,439 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:36:03,391 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:36:33,426 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:37:03,201 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:37:33,435 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:38:03,405 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:38:33,463 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:39:32,525 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:40:32,397 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:41:32,519 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:42:32,368 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:43:32,408 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:44:32,413 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:45:32,441 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:46:32,475 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:47:32,367 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:48:32,400 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:49:32,417 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:26:02,260 autoreload Watching for file changes with StatReloader
+INFO 2025-12-01 15:34:23,397 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-12-01 15:34:23,444 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-12-01 15:34:23,520 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:34:36,442 basehttp "GET /profile/settings/ HTTP/1.1" 200 36692
+INFO 2025-12-01 15:34:36,554 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:35:00,343 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:00,355 basehttp "GET / HTTP/1.1" 200 8883
+INFO 2025-12-01 15:35:03,728 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:04,190 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+WARNING 2025-12-01 15:35:04,352 log Not Found: /favicon.ico
+WARNING 2025-12-01 15:35:04,355 basehttp "GET /favicon.ico HTTP/1.1" 404 7204
+INFO 2025-12-01 15:35:11,533 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:11,671 basehttp "GET /admin/ HTTP/1.1" 200 21931
+INFO 2025-12-01 15:35:18,647 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-12-01 15:35:18,779 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:35:21,319 basehttp "GET /profile/settings/ HTTP/1.1" 200 36692
+INFO 2025-12-01 15:35:21,404 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:35:40,792 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:40,805 basehttp "GET / HTTP/1.1" 200 8883
+INFO 2025-12-01 15:35:47,427 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:47,447 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+INFO 2025-12-01 15:35:58,935 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:59,000 basehttp "GET /admin/ HTTP/1.1" 200 21910
+INFO 2025-12-01 15:36:08,968 basehttp "GET / HTTP/1.1" 200 21302
+INFO 2025-12-01 15:36:09,067 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:36:20,928 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:36:21,204 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168451
+INFO 2025-12-01 15:36:21,318 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:36:48,548 basehttp "GET / HTTP/1.1" 200 21302
+INFO 2025-12-01 15:36:48,658 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:37:18,834 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:37:49,121 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:38:18,802 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:38:48,839 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:18,838 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:19,480 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:39:19,572 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168451
+INFO 2025-12-01 15:39:19,695 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:21,355 basehttp "GET / HTTP/1.1" 200 21302
+INFO 2025-12-01 15:39:21,445 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:51,097 basehttp "GET / HTTP/1.1" 200 21300
+INFO 2025-12-01 15:39:51,227 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:51,446 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 145337
+INFO 2025-12-01 15:40:21,825 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:40:31,069 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 15:40:31,164 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:40:40,820 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:40:40,979 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168451
+INFO 2025-12-01 15:40:41,070 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:41:11,660 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:41:18,128 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168449
+INFO 2025-12-01 15:41:18,246 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:41:30,354 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168447
+INFO 2025-12-01 15:41:30,465 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:42:00,806 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:42:30,830 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+ERROR 2025-12-01 15:42:42,759 log Internal Server Error: /professor/availability/
+Traceback (most recent call last):
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 582, in professor_availability_settings
+    return render(request, 'professor_availability_settings.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'split'
+ERROR 2025-12-01 15:42:42,784 basehttp "GET /professor/availability/ HTTP/1.1" 500 247758
+INFO 2025-12-01 15:43:00,860 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:43:30,664 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:44:00,667 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:44:30,669 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:00,677 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:13,936 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168424
+INFO 2025-12-01 15:45:14,100 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:44,659 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:53,097 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168436
+INFO 2025-12-01 15:45:53,240 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:46:01,634 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168437
+INFO 2025-12-01 15:46:01,739 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:46:26,738 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168424
+INFO 2025-12-01 15:46:26,859 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:46:46,006 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168412
+INFO 2025-12-01 15:46:46,128 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:47:02,638 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168401
+INFO 2025-12-01 15:47:02,765 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:47:33,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:48:03,819 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:48:14,558 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168487
+INFO 2025-12-01 15:48:14,671 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:48:43,144 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168444
+INFO 2025-12-01 15:48:43,247 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:49:00,684 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 15:49:00,766 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+WARNING 2025-12-01 15:49:14,442 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:49:14,443 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:49:14,514 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+WARNING 2025-12-01 15:49:20,901 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:49:20,906 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:49:20,922 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+WARNING 2025-12-01 15:49:27,170 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:49:27,174 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:49:27,189 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-12-01 15:49:30,964 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:50:01,861 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:50:31,667 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+WARNING 2025-12-01 15:50:35,223 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:50:35,226 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:50:35,254 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-12-01 15:51:00,942 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:51:31,830 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:52:01,325 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:52:31,865 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:53:01,669 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:53:20,946 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 15:53:21,127 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:53:51,126 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:54:21,791 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:54:51,836 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:55:21,820 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:55:51,657 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:56:21,661 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:56:53,554 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:57:25,833 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:58:25,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:59:25,823 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:00:25,860 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:25,830 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:47,929 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 16:01:48,062 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:55,488 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:01:55,612 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:57,784 basehttp "GET /consultations/ HTTP/1.1" 200 34105
+INFO 2025-12-01 16:01:57,879 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:01,168 basehttp "GET /consultations/?status=past HTTP/1.1" 200 29801
+INFO 2025-12-01 16:02:01,281 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:02,225 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 38656
+INFO 2025-12-01 16:02:02,308 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:03,490 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 34105
+INFO 2025-12-01 16:02:03,573 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:07,665 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:02:07,743 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:11,059 basehttp "GET /profile/settings/ HTTP/1.1" 200 35244
+INFO 2025-12-01 16:02:11,180 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:37,892 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:07,921 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:13,310 basehttp "GET /consultations/ HTTP/1.1" 200 34105
+INFO 2025-12-01 16:03:13,423 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:14,475 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:03:14,541 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 16:03:14,624 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:16,766 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:03:16,859 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:22,051 basehttp "GET /consultations/ HTTP/1.1" 200 34105
+INFO 2025-12-01 16:03:22,158 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:45,105 basehttp "PATCH /api/consultations/5/reschedule/ HTTP/1.1" 200 1082
+INFO 2025-12-01 16:03:45,160 basehttp "GET /consultations/ HTTP/1.1" 200 34102
+INFO 2025-12-01 16:03:45,273 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:15,361 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+WARNING 2025-12-01 16:04:32,681 log Bad Request: /api/consultations/5/reschedule/
+WARNING 2025-12-01 16:04:32,683 basehttp "PATCH /api/consultations/5/reschedule/ HTTP/1.1" 400 60
+INFO 2025-12-01 16:04:37,341 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:04:37,425 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171790
+INFO 2025-12-01 16:04:37,545 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:40,544 basehttp "POST /professor/consultation/5/action/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:04:40,624 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168787
+INFO 2025-12-01 16:04:40,734 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:45,478 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:04:45,562 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:46,763 basehttp "GET /consultations/ HTTP/1.1" 200 34106
+INFO 2025-12-01 16:04:46,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:05:16,990 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:05:17,711 basehttp "PATCH /api/consultations/5/reschedule/ HTTP/1.1" 200 1082
+INFO 2025-12-01 16:05:17,768 basehttp "GET /consultations/ HTTP/1.1" 200 34101
+INFO 2025-12-01 16:05:17,858 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:05:20,573 basehttp "GET /consultation/5/ HTTP/1.1" 200 22339
+INFO 2025-12-01 16:05:20,664 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
