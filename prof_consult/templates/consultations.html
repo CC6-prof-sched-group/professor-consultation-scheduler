@@ -1,9 +1,105 @@
 {% extends 'base.html' %}
 {% load user_extras %}
 
-{% block title %}My Consultations - Professor Consultation Scheduler{% endblock %}
+{% block title %}My Consultations - ConsultEase{% endblock %}
 
 {% block content %}
+
+<style>
+    /* Tabs */
+    .nav-tabs .nav-link {
+        font-weight: 600;
+        color: #2C577E;
+        border-radius: 6px 6px 0 0;
+    }
+    .nav-tabs .nav-link.active {
+        background-color: #274572 !important;
+        color: white !important;
+    }
+    .nav-tabs .nav-link:hover {
+        background-color: #5389DA20;
+        color: #274572;
+    }
+
+    /* Cards */
+    .consultation-card {
+        border: 1px solid #e5e9f0;
+        border-left: 6px solid #5389DA;
+        transition: 0.2s ease;
+        border-radius: 10px;
+    }
+    .consultation-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(39, 69, 114, 0.15);
+        background-color: #f7faff;
+    }
+
+    /* Date section */
+    .text-primary {
+        color: #5389DA !important;
+    }
+    .date-block strong {
+        color: #274572;
+    }
+
+    /* Status badges recolored to match palette */
+    .badge.bg-warning { background-color: #DDCF49 !important; color: #274572 !important; }
+    .badge.bg-success { background-color: #41ab3b !important; color: white !important; }
+    .badge.bg-info    { background-color: #5389DA !important; }
+    .badge.bg-danger  { background-color: #a71d2a !important; }
+
+    /* Buttons */
+    .btn-primary {
+        background-color: #5389DA !important;
+        border-color: #5389DA !important;
+    }
+    .btn-outline-primary {
+        border-color: #5389DA !important;
+        color: #5389DA !important;
+    }
+    .btn-outline-primary:hover {
+        background-color: #5389DA !important;
+        color: white !important;
+    }
+    .btn-warning {
+        background-color: #DDCF49 !important;
+        border: none !important;
+        color: white !important;
+    }
+    .btn-warning:hover {
+        filter: brightness(0.9);
+    }
+
+    .btn-danger {
+        background-color: #a71d2a !important;
+        border: none !important;
+    }
+
+    /* Smooth spacing */
+    .card-body p { margin-bottom: 3px; }
+    h5.card-title { margin-bottom: 6px; }
+
+    /* Alert styling */
+    .alert-info {
+        border: none !important;
+        background-color: #5389DA10 !important;
+        color: #274572 !important;
+        border-left: 5px solid #5389DA !important;
+    }
+
+    /* Modal tweaks */
+    .modal-content {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 4px 30px rgba(39, 69, 114, 0.2);
+    }
+    .modal-header {
+        background-color: #f4f8fc;
+        border-bottom: 1px solid #e0e6ef;
+    }
+</style>
+
+
 <div class="container my-5">
     <div class="row mb-4">
         <div class="col">
@@ -35,6 +131,8 @@
             </a>
         </li>
     </ul>
+
+    {{ block.super }}
 
     <div class="tab-content" id="consultationTabsContent">
         <div class="tab-pane fade show active" role="tabpanel">
@@ -82,17 +180,17 @@
                                     </div>
                                     <div class="col-md-4 text-md-end mt-3 mt-md-0">
                                         {% if status_filter == 'upcoming' or not status_filter %}
-                                            <div class="btn-group" role="group">
-                                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                            <div class="btn-group w-100 mb-2" role="group">
+                                                <a href="{% url 'consultation_detail' consultation.id %}" class="btn btn-primary btn-sm">
                                                     <i class="bi bi-eye"></i> View
                                                 </a>
                                                 {% if consultation.status != 'CANCELLED' %}
-                                                    <a href="#" class="btn btn-outline-warning btn-sm">
+                                                    <button type="button" class="btn btn-warning btn-sm btn-reschedule" data-id="{{ consultation.id }}">
                                                         <i class="bi bi-pencil"></i> Reschedule
-                                                    </a>
-                                                    <a href="#" class="btn btn-outline-danger btn-sm">
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-cancel" data-id="{{ consultation.id }}">
                                                         <i class="bi bi-x-circle"></i> Cancel
-                                                    </a>
+                                                    </button>
                                                 {% endif %}
                                             </div>
                                             {% if consultation.google_calendar_event_id %}
@@ -103,18 +201,26 @@
                                                 </div>
                                             {% else %}
                                                 <div class="mt-2">
-                                                    <a href="#" class="btn btn-success btn-sm w-100">
+                                                    <button type="button" 
+                                                        class="btn btn-success btn-sm w-100 btn-add-calendar"
+                                                        data-title="{{ consultation.title|escapejs }}"
+                                                        data-description="{{ consultation.description|default:''|escapejs }}"
+                                                        data-date="{{ consultation.scheduled_date|date:'Ymd' }}"
+                                                        data-time="{{ consultation.scheduled_time|time:'Hi' }}"
+                                                        data-duration="{{ consultation.duration }}"
+                                                        data-location="{{ consultation.location|default:''|escapejs }}"
+                                                        data-meeting-link="{{ consultation.meeting_link|default:''|escapejs }}">
                                                         <i class="bi bi-google"></i> Add to Calendar
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             {% endif %}
                                         {% elif status_filter == 'past' %}
-                                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <div class="d-flex align-items-center gap-1">
+                                            <a href="{% url 'consultation_detail' consultation.id %}" class="btn btn-outline-primary btn-sm">
                                                 <i class="bi bi-eye"></i> View Details
                                             </a>
                                             {% if consultation.rating %}
-                                                <div class="mt-2">
-                                                    <span class="text-warning">
+                                                <span class="text-warning d-flex align-items-center">
                                                         {% for i in "12345" %}
                                                             {% if forloop.counter <= consultation.rating %}
                                                                 <i class="bi bi-star-fill"></i>
@@ -123,12 +229,12 @@
                                                             {% endif %}
                                                         {% endfor %}
                                                     </span>
-                                                </div>
                                             {% else %}
-                                                <a href="#" class="btn btn-warning btn-sm mt-2">
+                                                <a href="#" class="btn btn-warning btn-sm">
                                                     <i class="bi bi-star"></i> Rate Consultation
                                                 </a>
                                             {% endif %}
+                                        </div>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -154,4 +260,224 @@
         </div>
     </div>
 </div>
+<!-- Cancel & Reschedule Modals (used by list inline AJAX) -->
+<div class="modal fade" id="listCancelModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cancel Consultation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="list-cancel-reason" class="form-label">Reason (optional)</label>
+                    <input id="list-cancel-reason" class="form-control" placeholder="Optional reason for cancellation">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="list-confirm-cancel" class="btn btn-danger">Cancel Consultation</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="listRescheduleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Reschedule Consultation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <label for="list-new-date" class="form-label">New Date</label>
+                        <input id="list-new-date" type="date" class="form-control">
+                        <div id="list-reschedule-date-feedback" class="form-text text-danger" style="display:none">Please choose a valid date.</div>
+                    </div>
+                    <div class="col-6">
+                        <label for="list-new-time" class="form-label">New Time</label>
+                        <select id="list-new-time" class="form-select" required>
+                            <option value="" selected>Choose a time slot...</option>
+                            <option value="09:00">9:00 AM - 10:00 AM</option>
+                            <option value="10:00">10:00 AM - 11:00 AM</option>
+                            <option value="11:00">11:00 AM - 12:00 PM</option>
+                            <option value="14:00">2:00 PM - 3:00 PM</option>
+                            <option value="15:00">3:00 PM - 4:00 PM</option>
+                            <option value="16:00">4:00 PM - 5:00 PM</option>
+                        </select>
+                        <div id="list-reschedule-feedback" class="form-text text-danger" style="display:none">Please choose a valid time slot.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="list-confirm-reschedule" class="btn btn-primary" disabled>Reschedule</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+;(function(){
+    // Helper: read CSRF token if present
+    function getAuthHeaders(){
+        const csrfEl = document.querySelector('[name=csrfmiddlewaretoken]');
+        const headers = { 'Content-Type': 'application/json' };
+        if (csrfEl) headers['X-CSRFToken'] = csrfEl.value;
+        return headers;
+    }
+
+    // Keep track of active consultation id when modal is open
+    let activeConsultationId = null;
+
+    // Cancel flow
+    document.querySelectorAll('.btn-cancel').forEach(btn => {
+        btn.addEventListener('click', () => {
+            activeConsultationId = btn.dataset.id;
+            const reasonInput = document.getElementById('list-cancel-reason');
+            if (reasonInput) reasonInput.value = '';
+            const modalEl = document.getElementById('listCancelModal');
+            new bootstrap.Modal(modalEl).show();
+        });
+    });
+
+    document.getElementById('list-confirm-cancel').addEventListener('click', function(){
+        const reason = document.getElementById('list-cancel-reason').value || '';
+        const btn = this; btn.disabled = true;
+        fetch(`/api/consultations/${activeConsultationId}/cancel/`, {
+            method: 'PATCH',
+            headers: getAuthHeaders(),
+            credentials: 'same-origin',
+            body: JSON.stringify({ reason })
+        }).then(async res => {
+            btn.disabled = false;
+            if (res.ok){
+                // hide modal and redirect explicitly to consultations list
+                try{
+                    const modalEl = document.getElementById('listCancelModal');
+                    if (modalEl){
+                        const m = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+                        m.hide();
+                    }
+                } catch (e) {
+                    // ignore
+                }
+                window.location.href = '/consultations/?status=upcoming';
+            } else {
+                const data = await res.json().catch(()=>({}));
+                alert(data.error || 'Failed to cancel consultation');
+            }
+        }).catch(() => { btn.disabled = false; alert('Network error while cancelling'); });
+    });
+
+    // Reschedule flow
+    document.querySelectorAll('.btn-reschedule').forEach(btn => {
+        btn.addEventListener('click', () => {
+            activeConsultationId = btn.dataset.id;
+            // reset inputs
+            const dateEl = document.getElementById('list-new-date');
+            const timeEl = document.getElementById('list-new-time');
+            const feedback = document.getElementById('list-reschedule-feedback');
+            const confirmBtn = document.getElementById('list-confirm-reschedule');
+            if (dateEl) dateEl.value = '';
+            if (timeEl) timeEl.value = '';
+            if (feedback) feedback.style.display = 'none';
+            if (confirmBtn) confirmBtn.disabled = true;
+            const modalEl = document.getElementById('listRescheduleModal');
+            new bootstrap.Modal(modalEl).show();
+
+            // attach listeners to enable confirm button when valid
+            let dateTouched = false;
+            let timeTouched = false;
+
+            function toggleConfirm(){
+                const date = dateEl ? dateEl.value : '';
+                const time = timeEl ? timeEl.value : '';
+                const dateOk = Boolean(date);
+                const timeOk = Boolean(time) && time !== '';
+                if (confirmBtn) confirmBtn.disabled = !(dateOk && timeOk);
+
+                // Show feedback only after the user has interacted with the field
+                if (feedback) feedback.style.display = (timeTouched && !timeOk ? 'block' : 'none');
+                const dateFeedback = document.getElementById('list-reschedule-date-feedback');
+                if (dateFeedback) dateFeedback.style.display = (dateTouched && !dateOk ? 'block' : 'none');
+            }
+
+            if (dateEl) {
+                dateEl.addEventListener('input', function(){ dateTouched = true; toggleConfirm(); });
+                dateEl.addEventListener('blur', function(){ dateTouched = dateTouched || dateEl.value !== ''; toggleConfirm(); });
+            }
+            if (timeEl) {
+                timeEl.addEventListener('change', function(){ timeTouched = true; toggleConfirm(); });
+            }
+        });
+    });
+
+    document.getElementById('list-confirm-reschedule').addEventListener('click', function(){
+        const date = document.getElementById('list-new-date').value;
+        const time = document.getElementById('list-new-time').value;
+        if (!date || !time){ alert('Please provide both date and time'); return; }
+        const btn = this; btn.disabled = true;
+        fetch(`/api/consultations/${activeConsultationId}/reschedule/`, {
+            method: 'PATCH',
+            headers: getAuthHeaders(),
+            credentials: 'same-origin',
+            body: JSON.stringify({ scheduled_date: date, scheduled_time: time })
+        }).then(async res => {
+            btn.disabled = false;
+            if (res.ok){ location.reload(); }
+            else { const data = await res.json().catch(()=>({})); alert(data.error || 'Failed to reschedule consultation'); }
+        }).catch(() => { btn.disabled = false; alert('Network error while rescheduling'); });
+    });
+
+    // Simple Add to Google Calendar handler (prefill event)
+    document.querySelectorAll('.btn-add-calendar').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const title = btn.dataset.title || 'Consultation';
+            let details = btn.dataset.description || '';
+            const meeting = btn.dataset.meetingLink || '';
+            if (meeting) details += `\n\nMeeting Link: ${meeting}`;
+            const date = btn.dataset.date; // YYYYMMDD
+            const time = btn.dataset.time; // HHMM
+            const duration = parseInt(btn.dataset.duration) || 60;
+            const location = btn.dataset.location || '';
+
+            if (!date || !time){ alert('Invalid consultation date/time for calendar event'); return; }
+
+            const year = parseInt(date.slice(0,4), 10);
+            const month = parseInt(date.slice(4,6), 10) - 1;
+            const day = parseInt(date.slice(6,8), 10);
+            const hour = parseInt(time.slice(0,2), 10);
+            const minute = parseInt(time.slice(2,4), 10);
+
+            const startUtc = new Date(Date.UTC(year, month, day, hour, minute));
+            const endUtc = new Date(startUtc.getTime() + duration * 60000);
+
+            function fmtCal(d){
+                const Y = d.getUTCFullYear().toString().padStart(4,'0');
+                const M = (d.getUTCMonth()+1).toString().padStart(2,'0');
+                const D = d.getUTCDate().toString().padStart(2,'0');
+                const h = d.getUTCHours().toString().padStart(2,'0');
+                const m = d.getUTCMinutes().toString().padStart(2,'0');
+                const s = d.getUTCSeconds().toString().padStart(2,'0');
+                return `${Y}${M}${D}T${h}${m}${s}Z`;
+            }
+
+            const dates = `${fmtCal(startUtc)}/${fmtCal(endUtc)}`;
+            const params = new URLSearchParams({
+                action: 'TEMPLATE',
+                text: title,
+                details: details,
+                dates: dates,
+                location: location
+            });
+
+            const url = `https://calendar.google.com/calendar/render?${params.toString()}`;
+            window.open(url, '_blank');
+        });
+    });
+})();
+</script>
 {% endblock %}
