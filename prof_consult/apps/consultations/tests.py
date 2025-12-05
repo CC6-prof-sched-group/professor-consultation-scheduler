@@ -68,6 +68,165 @@ class ConsultationModelTest(TestCase):
         self.assertIsNotNone(self.consultation.cancelled_at)
 
 
+class ConsultationCancellationPolicyTest(TestCase):
+    """Test cancellation and reschedule time limit policy."""
+    
+    def setUp(self):
+        """Set up test data."""
+        self.student = User.objects.create_user(
+            email='student@example.com',
+            username='student',
+            password='testpass123',
+            role='STUDENT'
+        )
+        self.professor = User.objects.create_user(
+            email='professor@example.com',
+            username='professor',
+            password='testpass123',
+            role='PROFESSOR'
+        )
+        # Create professor profile with 4-hour cancellation notice
+        self.professor_profile = ProfessorProfile.objects.create(
+            user=self.professor,
+            title='Dr.',
+            department='Computer Science',
+            cancellation_notice_hours=4
+        )
+    
+    def test_can_cancel_outside_notice_period(self):
+        """Test that consultation can be cancelled outside the notice period."""
+        # Create consultation 24 hours from now
+        future_time = timezone.now() + timedelta(hours=24)
+        consultation = Consultation.objects.create(
+            student=self.student,
+            professor=self.professor,
+            title='Test Consultation',
+            description='Test description',
+            scheduled_date=future_time.date(),
+            scheduled_time=future_time.time(),
+            duration=30,
+            status=ConsultationStatus.CONFIRMED,
+            confirmed_at=timezone.now()
+        )
+        
+        # Should be able to cancel (24 hours > 4 hours notice required)
+        self.assertTrue(consultation.can_be_cancelled())
+    
+    def test_cannot_cancel_within_notice_period(self):
+        """Test that consultation cannot be cancelled within the notice period."""
+        # Create consultation 2 hours from now (less than 4-hour notice)
+        future_time = timezone.now() + timedelta(hours=2)
+        consultation = Consultation.objects.create(
+            student=self.student,
+            professor=self.professor,
+            title='Test Consultation',
+            description='Test description',
+            scheduled_date=future_time.date(),
+            scheduled_time=future_time.time(),
+            duration=30,
+            status=ConsultationStatus.CONFIRMED,
+            confirmed_at=timezone.now()
+        )
+        
+        # Should NOT be able to cancel (2 hours < 4 hours notice required)
+        self.assertFalse(consultation.can_be_cancelled())
+    
+    def test_can_reschedule_outside_notice_period(self):
+        """Test that consultation can be rescheduled outside the notice period."""
+        # Create consultation 24 hours from now
+        future_time = timezone.now() + timedelta(hours=24)
+        consultation = Consultation.objects.create(
+            student=self.student,
+            professor=self.professor,
+            title='Test Consultation',
+            description='Test description',
+            scheduled_date=future_time.date(),
+            scheduled_time=future_time.time(),
+            duration=30,
+            status=ConsultationStatus.CONFIRMED,
+            confirmed_at=timezone.now()
+        )
+        
+        # Should be able to reschedule (24 hours > 4 hours notice required)
+        self.assertTrue(consultation.can_be_rescheduled())
+    
+    def test_cannot_reschedule_within_notice_period(self):
+        """Test that consultation cannot be rescheduled within the notice period."""
+        # Create consultation 2 hours from now (less than 4-hour notice)
+        future_time = timezone.now() + timedelta(hours=2)
+        consultation = Consultation.objects.create(
+            student=self.student,
+            professor=self.professor,
+            title='Test Consultation',
+            description='Test description',
+            scheduled_date=future_time.date(),
+            scheduled_time=future_time.time(),
+            duration=30,
+            status=ConsultationStatus.CONFIRMED,
+            confirmed_at=timezone.now()
+        )
+        
+        # Should NOT be able to reschedule (2 hours < 4 hours notice required)
+        self.assertFalse(consultation.can_be_rescheduled())
+    
+    def test_cancellation_deadline_calculation(self):
+        """Test that cancellation deadline is correctly calculated."""
+        # Create consultation 24 hours from now
+        future_time = timezone.now() + timedelta(hours=24)
+        consultation = Consultation.objects.create(
+            student=self.student,
+            professor=self.professor,
+            title='Test Consultation',
+            description='Test description',
+            scheduled_date=future_time.date(),
+            scheduled_time=future_time.time(),
+            duration=30,
+            status=ConsultationStatus.CONFIRMED,
+            confirmed_at=timezone.now()
+        )
+        
+        deadline = consultation.get_cancellation_deadline()
+        # Deadline should be 4 hours before the scheduled time
+        expected_deadline = consultation.get_scheduled_datetime() - timedelta(hours=4)
+        
+        # Allow 1-second tolerance for execution time
+        time_diff = abs((deadline - expected_deadline).total_seconds())
+        self.assertLess(time_diff, 1)
+    
+    def test_zero_cancellation_notice_hours(self):
+        """Test when professor has 0 cancellation notice hours."""
+        # Create professor with no cancellation notice requirement
+        prof_no_notice = User.objects.create_user(
+            email='professor2@example.com',
+            username='professor2',
+            password='testpass123',
+            role='PROFESSOR'
+        )
+        prof_profile_no_notice = ProfessorProfile.objects.create(
+            user=prof_no_notice,
+            title='Dr.',
+            department='Computer Science',
+            cancellation_notice_hours=0  # No notice required
+        )
+        
+        # Create consultation 1 minute from now
+        future_time = timezone.now() + timedelta(minutes=1)
+        consultation = Consultation.objects.create(
+            student=self.student,
+            professor=prof_no_notice,
+            title='Test Consultation',
+            description='Test description',
+            scheduled_date=future_time.date(),
+            scheduled_time=future_time.time(),
+            duration=30,
+            status=ConsultationStatus.CONFIRMED,
+            confirmed_at=timezone.now()
+        )
+        
+        # Should be able to cancel anytime
+        self.assertTrue(consultation.can_be_cancelled())
+
+
 class ConsultationAPITest(APITestCase):
     """Test Consultation API endpoints."""
     
@@ -88,7 +247,8 @@ class ConsultationAPITest(APITestCase):
         self.professor_profile = ProfessorProfile.objects.create(
             user=self.professor,
             title='Dr.',
-            department='Computer Science'
+            department='Computer Science',
+            cancellation_notice_hours=4
         )
         self.consultation = Consultation.objects.create(
             student=self.student,

@@ -176,10 +176,65 @@ class Consultation(models.Model):
     
     def can_be_cancelled(self):
         """Check if consultation can be cancelled."""
-        return self.status in [
+        if self.status not in [
             ConsultationStatus.PENDING,
             ConsultationStatus.CONFIRMED
-        ]
+        ]:
+            return False
+        
+        # Check if within cancellation notice period
+        return self._check_cancellation_deadline()
+    
+    def can_be_rescheduled(self):
+        """Check if consultation can be rescheduled."""
+        if self.status != ConsultationStatus.CONFIRMED:
+            return False
+        
+        # Check if within reschedule notice period
+        return self._check_cancellation_deadline()
+    
+    def _check_cancellation_deadline(self):
+        """Check if cancellation/reschedule deadline has passed."""
+        from datetime import timedelta
+        
+        # Get consultation datetime
+        consultation_datetime = self.get_datetime()
+        
+        # Get required notice hours from professor profile
+        try:
+            notice_hours = self.professor.professor_profile.cancellation_notice_hours
+        except:
+            notice_hours = 4  # Default fallback
+        
+        # Calculate deadline
+        deadline_datetime = consultation_datetime - timedelta(hours=notice_hours)
+        
+        # Check if current time is before deadline
+        return timezone.now() < deadline_datetime
+    
+    def get_cancellation_deadline(self):
+        """Get the deadline for cancellation/reschedule as datetime."""
+        from datetime import timedelta
+        
+        consultation_datetime = self.get_datetime()
+        try:
+            notice_hours = self.professor.professor_profile.cancellation_notice_hours
+        except:
+            notice_hours = 4  # Default fallback
+        
+        return consultation_datetime - timedelta(hours=notice_hours)
+    
+    def get_hours_until_deadline(self):
+        """Get hours remaining until cancellation deadline."""
+        from datetime import timedelta
+        
+        deadline = self.get_cancellation_deadline()
+        time_remaining = deadline - timezone.now()
+        
+        if time_remaining.total_seconds() <= 0:
+            return 0
+        
+        return round(time_remaining.total_seconds() / 3600, 2)
     
     def confirm(self):
         """Mark consultation as confirmed."""
@@ -216,4 +271,165 @@ class Consultation(models.Model):
             self.save()
             return True
         return False
+
+
+class RequestStatus(models.TextChoices):
+    """Status choices for cancellation/reschedule requests."""
+    REQUESTED = 'REQUESTED', 'Requested'
+    APPROVED = 'APPROVED', 'Approved'
+    REJECTED = 'REJECTED', 'Rejected'
+    CANCELLED = 'CANCELLED', 'Cancelled'
+
+
+class CancellationRecord(models.Model):
+    """Record of a cancellation request or action for an existing consultation.
+
+    This model stores details about who requested the cancellation, when,
+    the reason, and whether the request was approved. Approving a record
+    will mark the related `Consultation` as cancelled via its `cancel()` method.
+    """
+    consultation = models.ForeignKey(
+        Consultation,
+        on_delete=models.CASCADE,
+        related_name='cancellation_records'
+    )
+    requested_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='requested_cancellations'
+    )
+    requested_at = models.DateTimeField(auto_now_add=True)
+    reason = models.TextField(null=True, blank=True)
+    status = models.CharField(
+        max_length=20,
+        choices=RequestStatus.choices,
+        default=RequestStatus.REQUESTED
+    )
+    processed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='processed_cancellations'
+    )
+    processed_at = models.DateTimeField(null=True, blank=True)
+    admin_note = models.TextField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'consultation_cancellations'
+        ordering = ['-requested_at']
+
+    def __str__(self):
+        return f"Cancellation for {self.consultation} by {self.requested_by} ({self.status})"
+
+    def approve(self, user=None, note=None):
+        """Approve this cancellation: mark consultation cancelled and record processor."""
+        # attempt to cancel the consultation using existing business logic
+        approved = False
+        if self.consultation.cancel(reason=self.reason):
+            self.status = RequestStatus.APPROVED
+            approved = True
+        else:
+            # if consultation couldn't be cancelled (deadline), still mark rejected
+            self.status = RequestStatus.REJECTED
+
+        self.processed_by = user
+        self.processed_at = timezone.now()
+        if note:
+            self.admin_note = note
+        self.save()
+        return approved
+
+    def reject(self, user=None, note=None):
+        """Reject this cancellation request without changing the consultation."""
+        self.status = RequestStatus.REJECTED
+        self.processed_by = user
+        self.processed_at = timezone.now()
+        if note:
+            self.admin_note = note
+        self.save()
+
+
+class RescheduleRequest(models.Model):
+    """A request to reschedule a consultation to a new date/time.
+
+    When approved this will update the related `Consultation` scheduled
+    date/time and set its status to `RESCHEDULED`.
+    """
+    consultation = models.ForeignKey(
+        Consultation,
+        on_delete=models.CASCADE,
+        related_name='reschedule_requests'
+    )
+    requested_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='requested_reschedules'
+    )
+    requested_at = models.DateTimeField(auto_now_add=True)
+
+    new_date = models.DateField()
+    new_time = models.TimeField()
+    new_duration = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        validators=[MinValueValidator(15), MaxValueValidator(240)],
+        help_text="Optional new duration in minutes"
+    )
+
+    reason = models.TextField(null=True, blank=True)
+    status = models.CharField(
+        max_length=20,
+        choices=RequestStatus.choices,
+        default=RequestStatus.REQUESTED
+    )
+    processed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='processed_reschedules'
+    )
+    processed_at = models.DateTimeField(null=True, blank=True)
+    admin_note = models.TextField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'consultation_reschedules'
+        ordering = ['-requested_at']
+
+    def __str__(self):
+        return f"Reschedule request for {self.consultation} to {self.new_date} {self.new_time} ({self.status})"
+
+    def approve(self, user=None, note=None):
+        """Approve reschedule: update consultation datetime and status."""
+        # update consultation scheduled fields
+        self.consultation.scheduled_date = self.new_date
+        self.consultation.scheduled_time = self.new_time
+        if self.new_duration:
+            self.consultation.duration = self.new_duration
+        # mark as rescheduled
+        self.consultation.status = ConsultationStatus.RESCHEDULED
+        self.consultation.save()
+
+        self.status = RequestStatus.APPROVED
+        self.processed_by = user
+        self.processed_at = timezone.now()
+        if note:
+            self.admin_note = note
+        self.save()
+        return True
+
+    def reject(self, user=None, note=None):
+        """Reject the reschedule request."""
+        self.status = RequestStatus.REJECTED
+        self.processed_by = user
+        self.processed_at = timezone.now()
+        if note:
+            self.admin_note = note
+        self.save()
+        return True
 

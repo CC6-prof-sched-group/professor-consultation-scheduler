@@ -15,6 +15,10 @@ from apps.consultations.serializers import (
     ConsultationUpdateSerializer, ConsultationActionSerializer,
     ConsultationRateSerializer, ConsultationNotesSerializer
 )
+from apps.consultations.models import CancellationRecord, RescheduleRequest
+from apps.consultations.serializers import (
+    CancellationRecordSerializer, RescheduleRequestSerializer
+)
 from apps.accounts.permissions import (
     IsStudent, IsProfessor, IsAdmin, IsOwnerOrProfessor
 )
@@ -131,10 +135,24 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         
         if not consultation.can_be_cancelled():
-            return Response(
-                {'error': 'This consultation cannot be cancelled.'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
+            # Check if it's a deadline issue
+            deadline = consultation.get_cancellation_deadline()
+            hours_remaining = consultation.get_hours_until_deadline()
+            
+            if consultation.status in [ConsultationStatus.PENDING, ConsultationStatus.CONFIRMED]:
+                return Response(
+                    {
+                        'error': f'This consultation cannot be cancelled within {consultation.professor.professor_profile.cancellation_notice_hours} hours of the scheduled time.',
+                        'cancellation_deadline': deadline.isoformat() if deadline else None,
+                        'hours_remaining': hours_remaining
+                    },
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            else:
+                return Response(
+                    {'error': 'This consultation cannot be cancelled.'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
         
         reason = serializer.validated_data.get('reason', '')
         
@@ -157,9 +175,16 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         """Reschedule a consultation."""
         consultation = self.get_object()
         
-        if consultation.status != ConsultationStatus.CONFIRMED:
+        if not consultation.can_be_rescheduled():
+            deadline = consultation.get_cancellation_deadline()
+            hours_remaining = consultation.get_hours_until_deadline()
+            
             return Response(
-                {'error': 'Only confirmed consultations can be rescheduled.'},
+                {
+                    'error': f'This consultation cannot be rescheduled within {consultation.professor.professor_profile.cancellation_notice_hours} hours of the scheduled time.',
+                    'cancellation_deadline': deadline.isoformat() if deadline else None,
+                    'hours_remaining': hours_remaining
+                },
                 status=status.HTTP_400_BAD_REQUEST
             )
         
@@ -225,6 +250,91 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         
         response_serializer = self.get_serializer(consultation)
         return Response(response_serializer.data)
+
+
+class CancellationRecordViewSet(viewsets.ModelViewSet):
+    """API for creating and managing cancellation records."""
+    queryset = CancellationRecord.objects.all().select_related('consultation', 'requested_by', 'processed_by')
+    serializer_class = CancellationRecordSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        # set requester
+        serializer.save(requested_by=self.request.user)
+
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated])
+    def approve(self, request, pk=None):
+        record = self.get_object()
+        # only professor of the consultation or admin can approve
+        user = request.user
+        is_processor = user.is_admin() or (hasattr(user, 'professor_profile') and record.consultation.professor == user)
+        if not is_processor:
+            return Response({'detail': 'Not permitted.'}, status=status.HTTP_403_FORBIDDEN)
+
+        note = request.data.get('admin_note')
+        approved = record.approve(user=user, note=note)
+        serializer = self.get_serializer(record)
+        return Response(serializer.data, status=status.HTTP_200_OK if approved else status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated])
+    def reject(self, request, pk=None):
+        record = self.get_object()
+        user = request.user
+        is_processor = user.is_admin() or (hasattr(user, 'professor_profile') and record.consultation.professor == user)
+        if not is_processor:
+            return Response({'detail': 'Not permitted.'}, status=status.HTTP_403_FORBIDDEN)
+
+        note = request.data.get('admin_note')
+        record.reject(user=user, note=note)
+        serializer = self.get_serializer(record)
+        return Response(serializer.data)
+
+
+class RescheduleRequestViewSet(viewsets.ModelViewSet):
+    """API for creating and processing reschedule requests."""
+    queryset = RescheduleRequest.objects.all().select_related('consultation', 'requested_by', 'processed_by')
+    serializer_class = RescheduleRequestSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        # Only students or the consultation owner can request reschedule
+        consultation = serializer.validated_data.get('consultation')
+        if not consultation:
+            # serializer will raise error, but ensure safe
+            return serializer.save(requested_by=self.request.user)
+
+        # Check policy: cannot request if consultation disallows reschedule
+        if not consultation.can_be_rescheduled():
+            from rest_framework import serializers as _serializers
+            raise _serializers.ValidationError({'detail': 'This consultation cannot be rescheduled due to the notice period.'})
+
+        serializer.save(requested_by=self.request.user)
+
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated])
+    def approve(self, request, pk=None):
+        req = self.get_object()
+        user = request.user
+        is_processor = user.is_admin() or (hasattr(user, 'professor_profile') and req.consultation.professor == user)
+        if not is_processor:
+            return Response({'detail': 'Not permitted.'}, status=status.HTTP_403_FORBIDDEN)
+
+        note = request.data.get('admin_note')
+        req.approve(user=user, note=note)
+        serializer = self.get_serializer(req)
+        return Response(serializer.data)
+
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated])
+    def reject(self, request, pk=None):
+        req = self.get_object()
+        user = request.user
+        is_processor = user.is_admin() or (hasattr(user, 'professor_profile') and req.consultation.professor == user)
+        if not is_processor:
+            return Response({'detail': 'Not permitted.'}, status=status.HTTP_403_FORBIDDEN)
+
+        note = request.data.get('admin_note')
+        req.reject(user=user, note=note)
+        serializer = self.get_serializer(req)
+        return Response(serializer.data)
     
     @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated, IsStudent])
     def rate(self, request, pk=None):

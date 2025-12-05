@@ -12,6 +12,7 @@ from apps.accounts.views import UserViewSet
 from apps.consultations.views import ConsultationViewSet
 from apps.professors.views import ProfessorProfileViewSet
 from apps.notifications.views import NotificationViewSet
+from apps.consultations.views import CancellationRecordViewSet, RescheduleRequestViewSet
 from apps.accounts import views as auth_views
 from apps.accounts import frontend_views
 
@@ -19,6 +20,8 @@ from apps.accounts import frontend_views
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='user')
 router.register(r'consultations', ConsultationViewSet, basename='consultation')
+router.register(r'consultation-cancellations', CancellationRecordViewSet, basename='consultationcancellation')
+router.register(r'consultation-reschedules', RescheduleRequestViewSet, basename='consultationreschedule')
 router.register(r'professors', ProfessorProfileViewSet, basename='professor')
 router.register(r'notifications', NotificationViewSet, basename='notification')
 

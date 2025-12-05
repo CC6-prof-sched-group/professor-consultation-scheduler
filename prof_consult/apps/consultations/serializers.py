@@ -29,6 +29,9 @@ class ConsultationSerializer(serializers.ModelSerializer):
     is_past = serializers.SerializerMethodField()
     can_be_rated = serializers.SerializerMethodField()
     can_be_cancelled = serializers.SerializerMethodField()
+    can_be_rescheduled = serializers.SerializerMethodField()
+    cancellation_deadline = serializers.SerializerMethodField()
+    hours_until_deadline = serializers.SerializerMethodField()
     
     class Meta:
         model = Consultation
@@ -39,7 +42,8 @@ class ConsultationSerializer(serializers.ModelSerializer):
             'cancelled_at', 'cancellation_reason', 'google_calendar_event_id',
             'meeting_link', 'location', 'notes', 'rating', 'feedback',
             'created_at', 'updated_at', 'datetime', 'is_past',
-            'can_be_rated', 'can_be_cancelled'
+            'can_be_rated', 'can_be_cancelled', 'can_be_rescheduled',
+            'cancellation_deadline', 'hours_until_deadline'
         ]
         read_only_fields = [
             'id', 'status', 'booking_created_at', 'confirmed_at',
@@ -62,6 +66,19 @@ class ConsultationSerializer(serializers.ModelSerializer):
     def get_can_be_cancelled(self, obj):
         """Check if consultation can be cancelled."""
         return obj.can_be_cancelled()
+    
+    def get_can_be_rescheduled(self, obj):
+        """Check if consultation can be rescheduled."""
+        return obj.can_be_rescheduled()
+    
+    def get_cancellation_deadline(self, obj):
+        """Get cancellation deadline datetime."""
+        deadline = obj.get_cancellation_deadline()
+        return deadline.isoformat() if deadline else None
+    
+    def get_hours_until_deadline(self, obj):
+        """Get hours remaining until cancellation deadline."""
+        return obj.get_hours_until_deadline()
     
     def validate(self, data):
         """Validate consultation data."""
@@ -119,4 +136,37 @@ class ConsultationNotesSerializer(serializers.Serializer):
     """Serializer for adding notes to consultations."""
     
     notes = serializers.CharField(help_text="Professor notes after consultation")
+
+
+
+class CancellationRecordSerializer(serializers.ModelSerializer):
+    """Serializer for CancellationRecord model."""
+    consultation = ConsultationSerializer(read_only=True)
+    consultation_id = serializers.PrimaryKeyRelatedField(
+        queryset=Consultation.objects.all(),
+        source='consultation',
+        write_only=True
+    )
+    requested_by = UserSerializer(read_only=True)
+
+    class Meta:
+        model = __import__('apps.consultations.models', fromlist=['CancellationRecord']).CancellationRecord
+        fields = ['id', 'consultation', 'consultation_id', 'requested_by', 'requested_at', 'reason', 'status', 'processed_by', 'processed_at', 'admin_note']
+        read_only_fields = ['id', 'requested_at', 'status', 'processed_by', 'processed_at']
+
+
+class RescheduleRequestSerializer(serializers.ModelSerializer):
+    """Serializer for RescheduleRequest model."""
+    consultation = ConsultationSerializer(read_only=True)
+    consultation_id = serializers.PrimaryKeyRelatedField(
+        queryset=Consultation.objects.all(),
+        source='consultation',
+        write_only=True
+    )
+    requested_by = UserSerializer(read_only=True)
+
+    class Meta:
+        model = __import__('apps.consultations.models', fromlist=['RescheduleRequest']).RescheduleRequest
+        fields = ['id', 'consultation', 'consultation_id', 'requested_by', 'requested_at', 'new_date', 'new_time', 'new_duration', 'reason', 'status', 'processed_by', 'processed_at', 'admin_note']
+        read_only_fields = ['id', 'requested_at', 'status', 'processed_by', 'processed_at']
 

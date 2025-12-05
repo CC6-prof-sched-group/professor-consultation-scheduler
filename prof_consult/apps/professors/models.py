@@ -73,6 +73,11 @@ class ProfessorProfile(models.Model):
         validators=[MinValueValidator(0), MaxValueValidator(120)],
         help_text="Buffer time between consultations in minutes (0-120)"
     )
+    cancellation_notice_hours = models.PositiveIntegerField(
+        default=4,
+        validators=[MinValueValidator(0), MaxValueValidator(720)],
+        help_text="Hours in advance required to cancel/reschedule consultation (0-720)"
+    )
     status = models.CharField(
         max_length=20,
         choices=ProfessorStatus.choices,
