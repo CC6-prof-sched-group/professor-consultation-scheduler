@@ -1,1368 +1,386 @@
-INFO 2025-11-16 19:32:01,423 autoreload Watching for file changes with StatReloader
-INFO 2025-11-16 20:03:04,883 autoreload Watching for file changes with StatReloader
-INFO 2025-11-16 20:03:07,029 basehttp "GET / HTTP/1.1" 200 3187
-INFO 2025-11-16 20:03:11,916 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-11-16 20:03:14,248 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
-INFO 2025-11-16 20:03:19,624 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 200 1412
-INFO 2025-11-16 20:03:21,544 basehttp "POST /accounts/google/login/?process=login HTTP/1.1" 302 0
-INFO 2025-11-16 20:03:27,664 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
-INFO 2025-11-16 20:04:26,200 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-11-16 20:04:31,176 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
-INFO 2025-11-16 20:06:45,716 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-11-16 20:06:46,670 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-11-16 20:06:47,761 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
-INFO 2025-11-16 20:07:14,079 basehttp "GET /accounts/google/login/callback/?state=vsz7nWdX2fMTGPiR&code=4/0Ab32j93n1OMTbHQGd0Yj1yQIvdHctwxY59uv9dO_O_fMdzHikacJQgm1m2ehTy20wVsxiw&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email%20openid%20https://www.googleapis.com/auth/calendar&authuser=0&prompt=consent HTTP/1.1" 302 0
-WARNING 2025-11-16 20:07:14,130 log Not Found: /accounts/profile/
-WARNING 2025-11-16 20:07:14,131 basehttp "GET /accounts/profile/ HTTP/1.1" 404 12106
-INFO 2025-11-16 21:51:02,007 autoreload Watching for file changes with StatReloader
-INFO 2025-11-16 21:51:04,233 basehttp "GET / HTTP/1.1" 200 3660
-WARNING 2025-11-16 21:51:04,434 log Not Found: /favicon.ico
-WARNING 2025-11-16 21:51:04,435 basehttp "GET /favicon.ico HTTP/1.1" 404 4682
-ERROR 2025-11-16 21:51:08,738 log Internal Server Error: /api/professors/
+INFO 2025-11-30 20:30:53,027 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 20:30:58,459 basehttp "GET /consultations/ HTTP/1.1" 200 33993
+INFO 2025-11-30 20:30:58,929 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 304 0
+INFO 2025-11-30 20:30:58,958 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:31:00,284 basehttp "GET / HTTP/1.1" 200 21218
+INFO 2025-11-30 20:31:00,405 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:31:30,615 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:31:41,171 basehttp "GET / HTTP/1.1" 200 21218
+INFO 2025-11-30 20:31:41,329 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:32:11,641 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:32:41,623 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:33:11,607 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:33:41,547 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:34:02,743 basehttp "GET / HTTP/1.1" 200 21218
+INFO 2025-11-30 20:34:02,905 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:34:33,641 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:34:35,086 basehttp "GET / HTTP/1.1" 200 21238
+INFO 2025-11-30 20:34:35,218 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:34:37,829 basehttp "GET / HTTP/1.1" 200 21238
+INFO 2025-11-30 20:34:37,941 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:34:42,060 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:34:44,418 basehttp "GET / HTTP/1.1" 200 21238
+INFO 2025-11-30 20:34:44,511 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:35:15,597 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:35:45,589 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:36:15,597 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:36:45,572 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:37:15,590 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:37:20,562 basehttp "GET /dashboard/ HTTP/1.1" 200 27947
+INFO 2025-11-30 20:37:20,861 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:37:21,026 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 25757
+INFO 2025-11-30 20:37:21,888 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-11-30 20:37:21,990 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-11-30 20:37:24,712 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-11-30 20:37:24,818 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:33:07,912 autoreload Watching for file changes with StatReloader
+INFO 2025-12-01 09:33:15,692 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-12-01 09:33:15,765 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,769 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,765 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,779 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:15,785 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-01 09:33:16,115 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 25757
+INFO 2025-12-01 09:33:16,205 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:33:46,173 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:15,995 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:46,208 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:47,990 basehttp "GET /consultations/ HTTP/1.1" 200 34128
+INFO 2025-12-01 09:34:48,065 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-12-01 09:34:48,130 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:51,653 basehttp "GET /consultations/?status=past HTTP/1.1" 200 29814
+INFO 2025-12-01 09:34:51,754 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:52,582 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 38709
+INFO 2025-12-01 09:34:52,684 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:34:58,700 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 34128
+INFO 2025-12-01 09:34:58,787 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:35:02,412 basehttp "GET /consultation/5/ HTTP/1.1" 200 23215
+INFO 2025-12-01 09:35:02,490 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:35:33,439 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:36:03,391 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:36:33,426 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:37:03,201 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:37:33,435 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:38:03,405 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:38:33,463 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:39:32,525 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:40:32,397 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:41:32,519 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:42:32,368 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:43:32,408 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:44:32,413 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:45:32,441 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:46:32,475 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:47:32,367 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:48:32,400 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 09:49:32,417 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:26:02,260 autoreload Watching for file changes with StatReloader
+INFO 2025-12-01 15:34:23,397 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-12-01 15:34:23,444 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-12-01 15:34:23,520 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:34:36,442 basehttp "GET /profile/settings/ HTTP/1.1" 200 36692
+INFO 2025-12-01 15:34:36,554 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:35:00,343 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:00,355 basehttp "GET / HTTP/1.1" 200 8883
+INFO 2025-12-01 15:35:03,728 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:04,190 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+WARNING 2025-12-01 15:35:04,352 log Not Found: /favicon.ico
+WARNING 2025-12-01 15:35:04,355 basehttp "GET /favicon.ico HTTP/1.1" 404 7204
+INFO 2025-12-01 15:35:11,533 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:11,671 basehttp "GET /admin/ HTTP/1.1" 200 21931
+INFO 2025-12-01 15:35:18,647 basehttp "GET / HTTP/1.1" 200 21353
+INFO 2025-12-01 15:35:18,779 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:35:21,319 basehttp "GET /profile/settings/ HTTP/1.1" 200 36692
+INFO 2025-12-01 15:35:21,404 basehttp "GET /api/notifications/ HTTP/1.1" 200 3138
+INFO 2025-12-01 15:35:40,792 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:40,805 basehttp "GET / HTTP/1.1" 200 8883
+INFO 2025-12-01 15:35:47,427 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:47,447 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+INFO 2025-12-01 15:35:58,935 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:35:59,000 basehttp "GET /admin/ HTTP/1.1" 200 21910
+INFO 2025-12-01 15:36:08,968 basehttp "GET / HTTP/1.1" 200 21302
+INFO 2025-12-01 15:36:09,067 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:36:20,928 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:36:21,204 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168451
+INFO 2025-12-01 15:36:21,318 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:36:48,548 basehttp "GET / HTTP/1.1" 200 21302
+INFO 2025-12-01 15:36:48,658 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:37:18,834 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:37:49,121 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:38:18,802 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:38:48,839 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:18,838 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:19,480 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:39:19,572 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168451
+INFO 2025-12-01 15:39:19,695 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:21,355 basehttp "GET / HTTP/1.1" 200 21302
+INFO 2025-12-01 15:39:21,445 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:51,097 basehttp "GET / HTTP/1.1" 200 21300
+INFO 2025-12-01 15:39:51,227 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:39:51,446 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 145337
+INFO 2025-12-01 15:40:21,825 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:40:31,069 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 15:40:31,164 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:40:40,820 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 15:40:40,979 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168451
+INFO 2025-12-01 15:40:41,070 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:41:11,660 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:41:18,128 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168449
+INFO 2025-12-01 15:41:18,246 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:41:30,354 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168447
+INFO 2025-12-01 15:41:30,465 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:42:00,806 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:42:30,830 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+ERROR 2025-12-01 15:42:42,759 log Internal Server Error: /professor/availability/
 Traceback (most recent call last):
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
-    response = response.render()
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\response.py", line 114, in render
-    self.content = self.rendered_content
-                   ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
-    ret = renderer.render(self.data, accepted_media_type, context)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 731, in render
-    context = self.get_context(data, accepted_media_type, renderer_context)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 709, in get_context
-    'filter_form': self.get_filter_form(data, view, request),
-                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 641, in get_filter_form
-    html = backend().to_html(request, queryset, view)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django_filters\rest_framework\backends.py", line 81, in to_html
-    template = loader.get_template(self.template)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
-    raise TemplateDoesNotExist(template_name, chain=chain)
-django.template.exceptions.TemplateDoesNotExist: django_filters/rest_framework/form.html
-ERROR 2025-11-16 21:51:08,743 basehttp "GET /api/professors/ HTTP/1.1" 500 116638
-ERROR 2025-11-16 21:51:14,314 log Internal Server Error: /api/consultations/
-Traceback (most recent call last):
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
-    response = response.render()
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\response.py", line 114, in render
-    self.content = self.rendered_content
-                   ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
-    ret = renderer.render(self.data, accepted_media_type, context)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 731, in render
-    context = self.get_context(data, accepted_media_type, renderer_context)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 709, in get_context
-    'filter_form': self.get_filter_form(data, view, request),
-                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\rest_framework\renderers.py", line 641, in get_filter_form
-    html = backend().to_html(request, queryset, view)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django_filters\rest_framework\backends.py", line 81, in to_html
-    template = loader.get_template(self.template)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
-    raise TemplateDoesNotExist(template_name, chain=chain)
-django.template.exceptions.TemplateDoesNotExist: django_filters/rest_framework/form.html
-ERROR 2025-11-16 21:51:14,318 basehttp "GET /api/consultations/ HTTP/1.1" 500 116668
-INFO 2025-11-16 21:51:17,886 basehttp "GET /api/auth/user/ HTTP/1.1" 200 10676
-INFO 2025-11-16 21:51:17,912 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,913 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,914 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,915 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,916 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,917 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,919 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,920 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,920 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,921 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,921 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
-INFO 2025-11-16 21:51:17,939 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
-INFO 2025-11-16 22:02:46,265 basehttp "GET / HTTP/1.1" 200 3660
-INFO 2025-11-23 22:24:40,161 autoreload Watching for file changes with StatReloader
-INFO 2025-11-23 22:24:48,669 basehttp "GET / HTTP/1.1" 200 7059
-INFO 2025-11-23 22:24:49,006 basehttp "GET /static/css/custom.css HTTP/1.1" 200 3731
-INFO 2025-11-23 22:24:49,013 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223516
-WARNING 2025-11-23 22:24:49,548 log Not Found: /favicon.ico
-WARNING 2025-11-23 22:24:49,548 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
-INFO 2025-11-23 22:24:55,095 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-11-23 22:24:58,111 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
-INFO 2025-11-23 22:25:22,517 basehttp "GET / HTTP/1.1" 200 9888
-INFO 2025-11-23 22:25:22,548 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223516
-INFO 2025-11-23 22:25:22,551 basehttp "GET /static/css/custom.css HTTP/1.1" 200 3731
-WARNING 2025-11-23 22:25:23,320 log Not Found: /favicon.ico
-WARNING 2025-11-23 22:25:23,320 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
-INFO 2025-11-23 22:25:26,443 basehttp "GET /professors/ HTTP/1.1" 200 5576
-INFO 2025-11-23 22:25:29,397 basehttp "GET / HTTP/1.1" 200 9888
-INFO 2025-11-23 22:25:34,276 basehttp "GET / HTTP/1.1" 200 9888
-INFO 2025-11-23 22:25:35,894 basehttp "GET /consultations/ HTTP/1.1" 200 5754
-INFO 2025-11-23 22:25:37,854 basehttp "GET /consultations/?status=past HTTP/1.1" 200 5686
-INFO 2025-11-23 22:25:38,402 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 5687
-INFO 2025-11-23 22:25:39,201 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 5754
-INFO 2025-11-23 22:25:39,506 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 5754
-INFO 2025-11-23 22:25:45,651 basehttp "GET /consultations/book/ HTTP/1.1" 200 12556
-INFO 2025-11-23 22:25:56,041 basehttp "GET /admin/ HTTP/1.1" 302 0
-INFO 2025-11-23 22:25:56,252 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3708
-INFO 2025-11-23 22:25:56,264 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:25:56,265 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:25:56,267 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:25:56,289 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:25:56,290 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:25:56,291 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:25:56,295 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:26:00,515 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3872
-INFO 2025-11-23 22:26:02,319 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3872
-INFO 2025-11-23 22:26:15,890 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3871
-INFO 2025-11-23 22:26:21,203 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3871
-INFO 2025-11-23 22:26:39,945 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3882
-INFO 2025-11-23 22:27:24,199 autoreload Watching for file changes with StatReloader
-INFO 2025-11-23 22:27:25,926 basehttp "GET / HTTP/1.1" 200 9888
-INFO 2025-11-23 22:27:25,960 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:29,964 basehttp "GET /admin/ HTTP/1.1" 302 0
-INFO 2025-11-23 22:27:30,002 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3708
-INFO 2025-11-23 22:27:43,031 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
-INFO 2025-11-23 22:27:43,092 basehttp "GET /admin/ HTTP/1.1" 200 21917
-INFO 2025-11-23 22:27:43,110 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:43,119 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:43,119 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,889 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 20425
-INFO 2025-11-23 22:27:48,905 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,910 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,912 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,913 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,914 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,915 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,915 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,918 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,919 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,920 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,930 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:48,941 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
-INFO 2025-11-23 22:27:58,288 basehttp "GET /admin/django_celery_beat/crontabschedule/ HTTP/1.1" 200 20082
-INFO 2025-11-23 22:27:58,360 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
-INFO 2025-11-23 22:28:00,980 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 21778
-INFO 2025-11-23 22:28:01,002 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
-INFO 2025-11-23 22:28:01,018 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
-INFO 2025-11-23 22:28:03,154 basehttp "GET /admin/professors/professorprofile/add/ HTTP/1.1" 200 30095
-INFO 2025-11-23 22:28:03,171 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:28:03,176 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
-INFO 2025-11-23 22:28:03,177 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
-INFO 2025-11-23 22:28:03,183 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
-INFO 2025-11-23 22:28:03,186 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
-INFO 2025-11-23 23:46:34,360 autoreload Watching for file changes with StatReloader
-INFO 2025-11-23 23:46:36,391 basehttp "GET / HTTP/1.1" 200 7525
-INFO 2025-11-23 23:46:36,766 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7105
-INFO 2025-11-23 23:46:36,780 basehttp "GET /static/css/custom.css HTTP/1.1" 200 3731
-INFO 2025-11-23 23:46:36,787 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223516
-INFO 2025-11-23 23:46:36,795 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
-INFO 2025-11-23 23:46:36,815 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
-WARNING 2025-11-23 23:46:37,384 log Not Found: /favicon.ico
-WARNING 2025-11-23 23:46:37,384 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
-INFO 2025-11-23 23:46:38,829 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-11-23 23:46:40,515 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
-INFO 2025-11-23 23:46:59,787 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:46:59,819 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:46:59,825 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:46:59,825 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7105
-INFO 2025-11-23 23:46:59,825 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
-INFO 2025-11-23 23:46:59,827 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
-WARNING 2025-11-23 23:47:00,210 log Not Found: /favicon.ico
-WARNING 2025-11-23 23:47:00,211 basehttp "GET /favicon.ico HTTP/1.1" 404 5956
-INFO 2025-11-23 23:47:06,717 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:47:06,934 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:47:07,446 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:47:21,266 basehttp "GET /professors/ HTTP/1.1" 200 6074
-INFO 2025-11-23 23:47:28,198 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6074
-INFO 2025-11-23 23:47:28,213 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:47:28,216 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-11-23 23:47:28,217 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:47:28,902 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6074
-INFO 2025-11-23 23:47:31,368 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:50:05,788 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:50:05,814 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:50:05,816 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-11-23 23:50:05,819 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
-INFO 2025-11-23 23:50:07,945 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:50:07,963 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:50:08,810 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:50:08,824 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:50:11,716 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:50:11,735 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:50:13,637 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-23 23:50:13,653 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-23 23:53:44,832 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
-INFO 2025-11-23 23:53:46,014 autoreload Watching for file changes with StatReloader
-INFO 2025-11-23 23:57:31,503 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
-INFO 2025-11-23 23:57:32,599 autoreload Watching for file changes with StatReloader
-INFO 2025-11-23 23:59:04,957 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
-INFO 2025-11-23 23:59:06,050 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:00:29,800 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
-INFO 2025-11-24 00:00:30,889 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:01:27,336 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
-INFO 2025-11-24 00:01:29,422 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:01:42,231 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:01:49,860 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:02:24,007 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
-INFO 2025-11-24 00:02:24,215 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
-INFO 2025-11-24 00:02:24,250 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\__init__.py changed, reloading.
-INFO 2025-11-24 00:02:25,383 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:02:49,805 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:02:53,151 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:02:53,180 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:02:53,184 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:02:53,185 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:02:53,187 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:02:53,369 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
-INFO 2025-11-24 00:02:57,360 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:03:42,354 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:05:40,349 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:05:40,371 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:05:40,371 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:05:40,371 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:05:40,371 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:05:45,007 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:05:45,486 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:05:46,167 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:05:47,023 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:06:14,502 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:06:17,563 basehttp "GET /professors/ HTTP/1.1" 200 27389
-INFO 2025-11-24 00:06:22,222 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:06:23,588 basehttp "GET /consultations/ HTTP/1.1" 200 6090
-INFO 2025-11-24 00:06:25,335 basehttp "GET /consultations/book/ HTTP/1.1" 200 13934
-INFO 2025-11-24 00:07:06,996 basehttp "POST /consultations/book/ HTTP/1.1" 302 0
-INFO 2025-11-24 00:07:07,006 basehttp "GET /consultations/ HTTP/1.1" 200 10043
-INFO 2025-11-24 00:07:19,523 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:07:19,537 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:07:19,539 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:07:21,494 basehttp "GET /consultations/ HTTP/1.1" 200 9643
-INFO 2025-11-24 00:07:23,339 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6022
-INFO 2025-11-24 00:07:23,926 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6023
-INFO 2025-11-24 00:07:24,497 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 9643
-INFO 2025-11-24 00:07:25,487 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:07:30,206 basehttp "GET /consultations/book/ HTTP/1.1" 200 13934
-INFO 2025-11-24 00:07:39,566 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:07:52,261 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
-INFO 2025-11-24 00:07:52,512 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
-INFO 2025-11-24 00:07:53,493 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:07:53,697 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:07:58,324 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:07:58,340 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:07:58,342 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:07:59,030 basehttp "GET / HTTP/1.1" 200 10483
-INFO 2025-11-24 00:07:59,887 basehttp "GET /consultations/ HTTP/1.1" 200 9643
-INFO 2025-11-24 00:10:01,733 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
-INFO 2025-11-24 00:10:02,115 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
-INFO 2025-11-24 00:10:02,847 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:10:03,188 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:11:55,172 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:11:55,466 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:11:56,230 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:11:56,526 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:12:13,895 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
-INFO 2025-11-24 00:12:14,148 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
-INFO 2025-11-24 00:12:15,014 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:12:15,233 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:19:56,906 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:20:13,113 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 00:20:13,130 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:13,135 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:13,135 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:13,136 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:13,136 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:15,966 basehttp "GET /professors/ HTTP/1.1" 200 27760
-INFO 2025-11-24 00:20:17,973 basehttp "GET /consultations/ HTTP/1.1" 200 10014
-INFO 2025-11-24 00:20:19,004 basehttp "GET /dashboard/ HTTP/1.1" 200 12770
-INFO 2025-11-24 00:20:19,951 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 00:20:24,519 basehttp "GET /profile/settings/ HTTP/1.1" 200 22794
-INFO 2025-11-24 00:20:51,362 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:20:51,435 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:20:51,793 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:20:52,731 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:20:52,766 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:20:53,393 autoreload Watching for file changes with StatReloader
-WARNING 2025-11-24 00:20:54,520 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-11-24 00:20:54,524 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10503
-INFO 2025-11-24 00:20:54,541 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,545 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,547 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,547 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,549 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,549 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,550 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,552 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,553 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,553 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,553 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:20:54,559 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
-INFO 2025-11-24 00:21:05,993 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 00:21:08,862 basehttp "GET /profile/settings/ HTTP/1.1" 200 22794
-INFO 2025-11-24 00:21:51,208 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\professors\models.py changed, reloading.
-INFO 2025-11-24 00:21:51,216 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\professors\models.py changed, reloading.
-INFO 2025-11-24 00:21:51,312 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\professors\models.py changed, reloading.
-INFO 2025-11-24 00:21:52,379 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:21:52,379 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:21:52,397 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:22:11,259 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
-INFO 2025-11-24 00:22:11,328 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
-INFO 2025-11-24 00:22:11,331 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
-INFO 2025-11-24 00:22:12,435 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:22:12,481 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:22:12,484 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:22:44,407 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:22:44,657 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:22:44,680 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:22:45,511 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:22:45,750 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:22:45,767 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:24:26,861 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:24:26,863 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:24:26,863 autoreload D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
-INFO 2025-11-24 00:24:28,009 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:24:28,015 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:24:28,016 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:24:33,257 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 00:24:33,274 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:24:33,277 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:24:33,277 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-24 00:24:33,278 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-11-24 00:24:34,237 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 00:24:36,355 basehttp "GET /profile/settings/ HTTP/1.1" 200 22794
-INFO 2025-11-24 00:27:20,401 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 00:27:38,961 basehttp "GET /profile/settings/ HTTP/1.1" 200 22794
-INFO 2025-11-24 00:27:43,585 basehttp "GET /dashboard/ HTTP/1.1" 200 12770
-INFO 2025-11-24 00:27:49,432 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 15:52:42,918 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 15:52:59,675 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 15:52:59,736 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:52:59,736 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:52:59,740 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:52:59,742 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:52:59,743 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-WARNING 2025-11-24 15:53:00,299 log Not Found: /favicon.ico
-WARNING 2025-11-24 15:53:00,300 basehttp "GET /favicon.ico HTTP/1.1" 404 6791
-INFO 2025-11-24 15:53:04,208 basehttp "GET /professors/ HTTP/1.1" 200 27760
-INFO 2025-11-24 15:53:13,291 basehttp "GET /consultations/book/?professor=68 HTTP/1.1" 200 14305
-WARNING 2025-11-24 15:53:39,957 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-11-24 15:53:39,959 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10503
-INFO 2025-11-24 15:53:40,033 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,034 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,036 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,039 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,042 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,048 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,053 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,056 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,059 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,071 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,088 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:40,101 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
-INFO 2025-11-24 15:53:42,328 basehttp "GET /dashboard/ HTTP/1.1" 200 12770
-INFO 2025-11-24 15:53:43,395 basehttp "GET /consultations/ HTTP/1.1" 200 10014
-INFO 2025-11-24 15:53:44,524 basehttp "GET /professors/ HTTP/1.1" 200 27760
-INFO 2025-11-24 15:53:46,477 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 15:53:50,531 basehttp "GET /profile/settings/ HTTP/1.1" 200 22794
-INFO 2025-11-24 15:55:53,429 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 15:56:30,851 basehttp "GET /consultations/ HTTP/1.1" 200 10014
-INFO 2025-11-24 15:56:31,485 basehttp "GET /dashboard/ HTTP/1.1" 200 12770
-INFO 2025-11-24 22:04:18,772 autoreload Watching for file changes with StatReloader
-INFO 2025-11-24 22:07:51,734 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 22:07:51,760 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:07:51,765 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:07:51,765 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:07:51,766 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:07:51,767 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-WARNING 2025-11-24 22:07:52,339 log Not Found: /favicon.ico
-WARNING 2025-11-24 22:07:52,340 basehttp "GET /favicon.ico HTTP/1.1" 404 6791
-INFO 2025-11-24 22:07:57,926 basehttp "GET /consultations/ HTTP/1.1" 200 10014
-INFO 2025-11-24 22:08:02,791 basehttp "GET /professors/ HTTP/1.1" 200 27760
-ERROR 2025-11-24 22:08:06,375 log Internal Server Error: /professors/67/
-Traceback (most recent call last):
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 289, in professor_profile
-    ).exclude(feedback='').order_by('-completed_at')[:5]
-                           ~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\db\models\query.py", line 1722, in order_by
-    obj.query.add_ordering(*field_names)
-    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\db\models\sql\query.py", line 2305, in add_ordering
-    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
-    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
-    raise FieldError(
-    ...<2 lines>...
-    )
-django.core.exceptions.FieldError: Cannot resolve keyword 'completed_at' into field. Choices are: booking_created_at, cancellation_reason, cancelled_at, confirmed_at, created_at, description, duration, feedback, google_calendar_event_id, id, location, meeting_link, notes, notifications, professor, professor_id, rating, scheduled_date, scheduled_time, status, student, student_id, title, updated_at
-ERROR 2025-11-24 22:08:06,378 log Internal Server Error: /professors/67/
-Traceback (most recent call last):
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 289, in professor_profile
-    ).exclude(feedback='').order_by('-completed_at')[:5]
-                           ~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\db\models\query.py", line 1722, in order_by
-    obj.query.add_ordering(*field_names)
-    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\db\models\sql\query.py", line 2305, in add_ordering
-    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
-    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\User\Von\Documents\Codes\IMPORTANT_DO_THIS_NOW\cc6-group-project\venv\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
-    raise FieldError(
-    ...<2 lines>...
-    )
-django.core.exceptions.FieldError: Cannot resolve keyword 'completed_at' into field. Choices are: booking_created_at, cancellation_reason, cancelled_at, confirmed_at, created_at, description, duration, feedback, google_calendar_event_id, id, location, meeting_link, notes, notifications, professor, professor_id, rating, scheduled_date, scheduled_time, status, student, student_id, title, updated_at
-INFO 2025-11-24 22:08:06,383 basehttp - Broken pipe from ('127.0.0.1', 7079)
-ERROR 2025-11-24 22:08:06,386 basehttp "GET /professors/67/ HTTP/1.1" 500 98937
-INFO 2025-11-24 22:08:47,664 basehttp "GET /dashboard/ HTTP/1.1" 200 12770
-INFO 2025-11-24 22:08:50,006 basehttp "GET /consultations/ HTTP/1.1" 200 10014
-INFO 2025-11-24 22:08:50,907 basehttp "GET /dashboard/ HTTP/1.1" 200 12770
-INFO 2025-11-24 22:08:51,681 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 22:08:53,303 basehttp "GET /dashboard/ HTTP/1.1" 200 12770
-INFO 2025-11-24 22:08:56,529 basehttp "GET /professors/ HTTP/1.1" 200 27760
-INFO 2025-11-24 22:09:00,099 basehttp "GET /consultations/ HTTP/1.1" 200 10014
-INFO 2025-11-24 22:09:00,887 basehttp "GET /professors/ HTTP/1.1" 200 27760
-WARNING 2025-11-24 22:09:03,877 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-11-24 22:09:03,878 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10503
-INFO 2025-11-24 22:09:10,564 basehttp "GET / HTTP/1.1" 200 10854
-INFO 2025-11-24 22:09:12,329 basehttp "GET /admin/ HTTP/1.1" 200 21917
-INFO 2025-11-24 22:09:12,342 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,342 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,342 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,367 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,367 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,368 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,372 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,382 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:12,382 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,536 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 20425
-INFO 2025-11-24 22:09:20,557 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,563 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,566 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,566 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,566 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,568 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,568 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,570 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,572 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,573 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,580 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:20,590 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
-INFO 2025-11-24 22:09:28,638 basehttp "GET /admin/django_celery_beat/clockedschedule/ HTTP/1.1" 200 20080
-INFO 2025-11-24 22:09:28,683 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
-INFO 2025-11-24 22:09:30,559 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 21359
-INFO 2025-11-24 22:09:30,578 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
-INFO 2025-11-24 22:09:30,594 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
-INFO 2025-11-24 22:32:31,492 autoreload Watching for file changes with StatReloader
-INFO 2025-12-01 11:19:24,956 autoreload Watching for file changes with StatReloader
-INFO 2025-12-01 11:31:29,084 autoreload Watching for file changes with StatReloader
-INFO 2025-12-01 11:45:51,128 autoreload Watching for file changes with StatReloader
-INFO 2025-12-01 11:46:41,537 basehttp "GET / HTTP/1.1" 200 7525
-INFO 2025-12-01 11:46:43,008 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
-INFO 2025-12-01 11:46:43,114 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
-INFO 2025-12-01 11:46:43,125 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
-INFO 2025-12-01 11:46:43,479 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
-INFO 2025-12-01 11:46:43,545 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
-WARNING 2025-12-01 11:46:46,004 log Not Found: /favicon.ico
-WARNING 2025-12-01 11:46:46,004 basehttp "GET /favicon.ico HTTP/1.1" 404 6791
-INFO 2025-12-01 11:47:26,567 basehttp "GET / HTTP/1.1" 200 7525
-INFO 2025-12-01 11:47:26,877 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
-INFO 2025-12-01 11:47:26,885 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
-INFO 2025-12-01 11:47:26,885 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
-INFO 2025-12-01 11:47:26,901 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
-INFO 2025-12-01 11:47:26,901 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
-WARNING 2025-12-01 11:47:31,511 log Not Found: /favicon.ico
-WARNING 2025-12-01 11:47:31,594 basehttp "GET /favicon.ico HTTP/1.1" 404 6791
-INFO 2025-12-03 09:30:54,142 autoreload Watching for file changes with StatReloader
-INFO 2025-12-03 09:31:17,445 basehttp "GET / HTTP/1.1" 200 7525
-INFO 2025-12-03 09:31:20,091 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-12-03 09:31:20,091 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-12-03 09:31:20,145 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-12-03 09:31:20,163 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-12-03 09:31:20,171 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-WARNING 2025-12-03 09:31:22,895 log Not Found: /favicon.ico
-WARNING 2025-12-03 09:31:23,013 basehttp "GET /favicon.ico HTTP/1.1" 404 6791
-INFO 2025-12-03 09:32:16,548 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-12-03 09:32:24,605 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-12-03 09:32:29,680 basehttp "POST /accounts/google/login/ HTTP/1.1" 302 0
-INFO 2025-12-03 09:32:33,451 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-12-03 09:32:38,013 basehttp "GET /accounts/signup/ HTTP/1.1" 200 2785
-INFO 2025-12-03 09:33:17,659 basehttp "POST /accounts/signup/ HTTP/1.1" 200 2988
-INFO 2025-12-03 09:33:37,786 basehttp "POST /accounts/signup/ HTTP/1.1" 200 2988
-INFO 2025-12-03 09:33:58,119 basehttp "POST /accounts/signup/ HTTP/1.1" 200 2988
-INFO 2025-12-03 09:33:59,833 basehttp "GET /accounts/signup/ HTTP/1.1" 200 2785
-INFO 2025-12-03 09:34:01,466 basehttp "GET / HTTP/1.1" 200 7525
-INFO 2025-12-03 09:34:05,440 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-12-03 09:34:09,833 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
-INFO 2025-12-03 09:34:42,152 basehttp "POST /accounts/login/ HTTP/1.1" 200 2718
-INFO 2025-12-03 09:36:29,870 basehttp "POST /accounts/login/ HTTP/1.1" 200 2718
-INFO 2025-12-03 09:36:43,553 basehttp "POST /accounts/login/ HTTP/1.1" 200 2718
-INFO 2025-12-03 09:38:05,291 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
-WARNING 2025-12-03 09:38:05,315 log Not Found: /accounts/profile/
-WARNING 2025-12-03 09:38:05,323 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-INFO 2025-12-03 09:41:37,384 basehttp "GET / HTTP/1.1" 200 11240
-INFO 2025-12-03 09:41:51,763 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:41:57,462 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:41:59,229 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-03 09:42:00,062 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:42:01,446 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:42:12,805 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:42:13,854 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:42:14,698 basehttp "GET /dashboard/ HTTP/1.1" 200 11340
-INFO 2025-12-03 09:42:38,505 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:42:39,781 basehttp "GET /dashboard/ HTTP/1.1" 200 11340
-INFO 2025-12-03 09:42:42,549 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:42:49,748 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-03 09:42:51,809 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:42:53,356 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:43:30,991 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:43:42,583 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-03 09:43:58,469 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:44:07,032 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:44:10,606 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:44:13,251 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:44:17,918 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-03 09:44:19,416 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:44:21,468 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:44:22,959 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:44:24,578 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:44:25,275 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-03 09:44:26,384 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:44:27,483 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:44:28,451 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-03 09:44:29,283 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:44:31,435 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-03 09:45:07,784 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:45:16,379 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-03 09:45:19,534 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:22,403 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:45,376 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:45:47,188 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:48,814 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-03 09:45:49,895 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:50,503 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:45:51,488 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:45:53,655 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:54,920 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:55,554 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-03 09:45:56,093 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:45:57,589 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:58,835 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:45:59,535 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:46:02,108 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:46:05,548 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:46:06,946 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:46:10,721 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-03 09:48:50,057 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:48:52,060 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:48:53,341 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:48:55,636 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:48:57,375 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:49:04,345 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:49:05,574 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 09:49:08,791 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 09:49:11,324 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 09:49:13,819 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 09:54:26,403 autoreload C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
-INFO 2025-12-03 09:54:32,791 autoreload Watching for file changes with StatReloader
-INFO 2025-12-03 10:12:16,081 autoreload Watching for file changes with StatReloader
-INFO 2025-12-03 10:12:26,021 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 10:12:28,548 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 10:12:28,588 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 10:12:33,448 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 10:12:33,530 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 10:12:36,218 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-ERROR 2025-12-03 10:12:39,395 log Internal Server Error: /consultations/book/
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
                ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
     return view_func(request, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 189, in book_consultation
-    return render(request, 'book_consultation.html', context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+  File "C:\Users\Kenneth\desktop\pcsvenv\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 582, in professor_availability_settings
+    return render(request, 'professor_availability_settings.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
     content = loader.render_to_string(template_name, context, request, using=using)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
-    return self.template.render(context)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 199, in render
-    len_values = len(values)
-                 ^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
-    self._fetch_all()
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
-    results = compiler.execute_sql(
-              ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
-    cursor.execute(sql, params)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
-    with self.db.wrap_database_errors:
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
-    raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-ERROR 2025-12-03 10:12:39,613 basehttp "GET /consultations/book/ HTTP/1.1" 500 249138
-INFO 2025-12-03 10:12:48,315 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-03 10:12:49,374 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-03 10:12:50,014 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-ERROR 2025-12-03 10:12:52,130 log Internal Server Error: /consultations/book/
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 189, in book_consultation
-    return render(request, 'book_consultation.html', context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\template\defaulttags.py", line 199, in render
-    len_values = len(values)
-                 ^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
-    self._fetch_all()
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
-    results = compiler.execute_sql(
-              ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
-    cursor.execute(sql, params)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
-    with self.db.wrap_database_errors:
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
-    raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-ERROR 2025-12-03 10:12:52,240 basehttp "GET /consultations/book/ HTTP/1.1" 500 249154
-ERROR 2025-12-03 10:13:11,550 log Internal Server Error: /professors/
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 226, in professors_list
-    for professor in professors:
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 386, in __iter__
-    self._fetch_all()
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
-    results = compiler.execute_sql(
-              ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
-    cursor.execute(sql, params)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
-    with self.db.wrap_database_errors:
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
-    raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-ERROR 2025-12-03 10:13:11,657 basehttp "GET /professors/ HTTP/1.1" 500 157146
-INFO 2025-12-03 10:13:20,764 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 10:13:21,758 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 10:13:22,615 basehttp "GET /dashboard/ HTTP/1.1" 200 11340
-INFO 2025-12-03 10:13:23,507 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-ERROR 2025-12-03 10:13:24,640 log Internal Server Error: /professors/
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 226, in professors_list
-    for professor in professors:
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 386, in __iter__
-    self._fetch_all()
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
-    results = compiler.execute_sql(
-              ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
-    cursor.execute(sql, params)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
-    with self.db.wrap_database_errors:
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
-    raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.OperationalError: no such column: professor_profiles.cancellation_notice_hours
-ERROR 2025-12-03 10:13:24,820 basehttp "GET /professors/ HTTP/1.1" 500 157130
-INFO 2025-12-03 10:40:26,030 autoreload Watching for file changes with StatReloader
-INFO 2025-12-03 10:40:52,318 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 10:40:57,922 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-03 10:41:01,181 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 10:41:03,177 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-03 10:42:25,163 autoreload Watching for file changes with StatReloader
-INFO 2025-12-03 10:42:27,246 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-03 10:42:28,603 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-03 10:42:31,891 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-03 10:42:34,192 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-WARNING 2025-12-03 12:12:11,952 services User professor@example.com does not have Google access token.
-ERROR 2025-12-03 12:12:11,952 services Google Calendar service not authenticated.
-ERROR 2025-12-03 12:14:00,666 log Internal Server Error: /api/consultations/1/confirm/
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 855, in connect_check_health
-    sock = self.retry.call_with_retry(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\retry.py", line 116, in call_with_retry
-    return do()
-           ^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 856, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 1306, in _connect
-    raise err
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 1290, in _connect
-    sock.connect(socket_address)
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 127, in reconnect_on_error
-    yield
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 177, in _consume_from
-    self._pubsub.subscribe(key)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\client.py", line 1090, in subscribe
-    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\client.py", line 914, in execute_command
-    self.connection = self.connection_pool.get_connection()
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 2603, in get_connection
-    connection.connect()
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 846, in connect
-    self.connect_check_health(check_health=True)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 855, in connect_check_health
-    sock = self.retry.call_with_retry(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\retry.py", line 116, in call_with_retry
-    return do()
-           ^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 856, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 1306, in _connect
-    raise err
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 1290, in _connect
-    sock.connect(socket_address)
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\kombu\connection.py", line 472, in _reraise_as_library_errors
-    yield
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\app\base.py", line 929, in send_task
-    self.backend.on_task_call(P, task_id)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 378, in on_task_call
-    self.result_consumer.consume_from(task_id)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 169, in consume_from
-    return self.start(task_id)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 147, in start
-    self._consume_from(initial_task_id)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 176, in _consume_from
-    with self.reconnect_on_error():
-  File "C:\Users\CLienT\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
-    self._ensure(self._reconnect_pubsub, ())
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 389, in ensure
-    return retry_over_time(
-           ^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
-    return fun(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\backends\redis.py", line 106, in _reconnect_pubsub
-    metas = self.backend.client.mget(self.subscribed_to)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\commands\core.py", line 2091, in mget
-    return self.execute_command("MGET", *args, **options)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
-    return self._execute_command(*args, **options)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 2603, in get_connection
-    connection.connect()
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 846, in connect
-    self.connect_check_health(check_health=True)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 125, in confirm
-    send_booking_confirmed_notification.delay(consultation.id)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\app\task.py", line 444, in delay
-    return self.apply_async(args, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\app\task.py", line 601, in apply_async
-    return app.send_task(
-           ^^^^^^^^^^^^^^
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\celery\app\base.py", line 927, in send_task
-    with P.connection._reraise_as_library_errors():
-  File "C:\Users\CLienT\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File "C:\Users\CLienT\Desktop\professor-consultation-scheduler\venv\Lib\site-packages\kombu\connection.py", line 476, in _reraise_as_library_errors
-    raise ConnectionError(str(exc)) from exc
-kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
-INFO 2025-12-05 07:44:02,789 autoreload Watching for file changes with StatReloader
-WARNING 2025-12-05 10:23:53,755 services User professor@example.com does not have Google access token.
-ERROR 2025-12-05 10:23:53,756 services Google Calendar service not authenticated.
-INFO 2025-12-05 10:23:55,171 tasks Sent email notification 1 to student@example.com
-INFO 2025-12-05 10:23:55,208 tasks Sent confirmation notification for consultation 1
-INFO 2025-12-05 10:23:57,550 tasks Sent email notification 2 to student@example.com
-INFO 2025-12-05 10:23:57,566 tasks Sent email notification 3 to professor@example.com
-INFO 2025-12-05 10:23:57,567 tasks Created notifications for consultation 3
-WARNING 2025-12-05 11:11:22,000 services User professor@example.com does not have Google access token.
-ERROR 2025-12-05 11:11:22,000 services Google Calendar service not authenticated.
-INFO 2025-12-05 11:11:23,244 tasks Sent email notification 1 to student@example.com
-INFO 2025-12-05 11:11:23,271 tasks Sent confirmation notification for consultation 1
-INFO 2025-12-05 11:11:25,402 tasks Sent email notification 1 to student@example.com
-INFO 2025-12-05 11:11:25,412 tasks Sent email notification 2 to professor@example.com
-INFO 2025-12-05 11:11:25,412 tasks Created notifications for consultation 2
-WARNING 2025-12-05 11:14:12,674 services User professor@example.com does not have Google access token.
-ERROR 2025-12-05 11:14:12,674 services Google Calendar service not authenticated.
-INFO 2025-12-05 11:14:13,706 tasks Sent email notification 1 to student@example.com
-INFO 2025-12-05 11:14:13,727 tasks Sent confirmation notification for consultation 1
-INFO 2025-12-05 11:14:16,034 tasks Sent email notification 1 to student@example.com
-INFO 2025-12-05 11:14:16,044 tasks Sent email notification 2 to professor@example.com
-INFO 2025-12-05 11:14:16,044 tasks Created notifications for consultation 2
-INFO 2025-12-05 11:23:39,637 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 11:23:55,919 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 11:24:01,514 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-INFO 2025-12-05 11:24:01,574 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
-INFO 2025-12-05 11:24:01,576 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
-INFO 2025-12-05 11:24:01,576 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
-INFO 2025-12-05 11:24:01,577 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
-INFO 2025-12-05 11:24:08,039 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 11:24:10,528 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-05 11:24:13,641 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 11:24:15,001 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 11:24:17,097 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 11:24:45,378 basehttp "GET /profile/settings/ HTTP/1.1" 200 22816
-INFO 2025-12-05 11:27:02,023 autoreload Watching for file changes with StatReloader
-WARNING 2025-12-05 11:27:17,447 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:17,447 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-INFO 2025-12-05 11:27:18,024 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
-INFO 2025-12-05 11:27:18,062 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
-INFO 2025-12-05 11:27:18,100 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
-INFO 2025-12-05 11:27:18,176 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
-INFO 2025-12-05 11:27:18,190 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
-INFO 2025-12-05 11:27:18,192 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
-INFO 2025-12-05 11:27:18,258 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
-INFO 2025-12-05 11:27:18,278 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
-INFO 2025-12-05 11:27:18,298 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
-INFO 2025-12-05 11:27:18,329 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
-INFO 2025-12-05 11:27:18,339 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
-INFO 2025-12-05 11:27:18,363 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
-WARNING 2025-12-05 11:27:29,894 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:29,896 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:33,778 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:33,780 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:34,497 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:34,498 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:34,654 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:34,656 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:34,701 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:34,705 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:34,911 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:34,937 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:35,131 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:35,148 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:35,489 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:35,490 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-WARNING 2025-12-05 11:27:35,671 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:27:35,673 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-INFO 2025-12-05 11:27:38,981 basehttp "POST /api/auth/logout/ HTTP/1.1" 200 8532
-WARNING 2025-12-05 11:27:42,355 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:27:42,357 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:27:43,512 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:27:43,513 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:27:44,163 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:27:44,164 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:27:44,392 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:27:44,393 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:27:44,588 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:27:44,590 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:27:45,331 log Forbidden: /api/
-WARNING 2025-12-05 11:27:45,332 basehttp "GET /api/ HTTP/1.1" 403 9655
-INFO 2025-12-05 11:28:15,160 basehttp "GET / HTTP/1.1" 200 7525
-INFO 2025-12-05 11:28:23,325 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-12-05 11:28:28,661 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
-INFO 2025-12-05 11:28:53,612 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
-WARNING 2025-12-05 11:28:53,673 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:53,674 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:55,803 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:55,803 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:57,294 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:57,294 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:57,777 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:57,781 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:57,936 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:57,936 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:58,147 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:58,152 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:58,313 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:58,315 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:58,481 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:58,488 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:58,673 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:58,674 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:58,859 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:58,861 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:59,051 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:59,053 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:59,249 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:59,249 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:59,439 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:59,440 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:59,607 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:59,607 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:28:59,776 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:28:59,776 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-INFO 2025-12-05 11:29:05,012 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
-INFO 2025-12-05 11:29:07,548 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 2199
-INFO 2025-12-05 11:29:14,243 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:14,499 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:15,042 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:15,245 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:15,470 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:15,651 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:15,852 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:16,038 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:16,249 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:16,439 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:16,637 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:16,830 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:17,038 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:17,216 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:17,407 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:17,606 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
-INFO 2025-12-05 11:29:24,374 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 11:29:32,068 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 11:29:36,334 basehttp "GET /profile/settings/ HTTP/1.1" 200 22816
-INFO 2025-12-05 11:30:26,466 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
-INFO 2025-12-05 11:30:26,486 basehttp "GET /profile/settings/ HTTP/1.1" 200 23192
-INFO 2025-12-05 11:30:50,305 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-05 11:30:57,366 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
-INFO 2025-12-05 11:31:15,221 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
-INFO 2025-12-05 11:31:20,107 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 11:31:22,927 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-05 11:31:28,530 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-05 11:31:29,600 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 11:31:32,746 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-05 11:31:33,557 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-05 11:31:34,872 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 11:31:38,914 basehttp "GET /dashboard/ HTTP/1.1" 200 11340
-INFO 2025-12-05 11:31:48,727 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 11:31:49,990 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-05 11:31:55,122 basehttp "GET /dashboard/ HTTP/1.1" 200 11340
-INFO 2025-12-05 11:31:56,557 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 11:31:58,154 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-05 11:31:58,820 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 11:32:00,906 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 11:32:48,633 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-05 11:32:51,682 basehttp "GET /profile/settings/ HTTP/1.1" 200 22832
-INFO 2025-12-05 11:36:47,676 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 11:36:55,571 basehttp "GET /profile/settings/ HTTP/1.1" 200 22834
-INFO 2025-12-05 11:36:59,574 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
-INFO 2025-12-05 11:36:59,588 basehttp "GET /profile/settings/ HTTP/1.1" 200 23194
-INFO 2025-12-05 11:37:03,873 basehttp "GET / HTTP/1.1" 200 9027
-INFO 2025-12-05 11:37:06,605 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 11:37:09,987 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-05 11:37:17,491 basehttp "GET / HTTP/1.1" 200 9027
-INFO 2025-12-05 11:37:18,662 basehttp "GET / HTTP/1.1" 200 9027
-INFO 2025-12-05 11:37:19,690 basehttp "GET / HTTP/1.1" 200 9027
-INFO 2025-12-05 11:37:24,977 basehttp "GET /profile/settings/ HTTP/1.1" 200 22834
-INFO 2025-12-05 11:37:59,141 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
-INFO 2025-12-05 11:37:59,164 basehttp "GET /profile/settings/ HTTP/1.1" 200 23209
-INFO 2025-12-05 11:38:01,506 basehttp "GET / HTTP/1.1" 200 9027
-INFO 2025-12-05 11:38:02,792 basehttp "GET /professors/ HTTP/1.1" 200 6456
-WARNING 2025-12-05 11:38:07,790 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:38:07,790 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10516
-WARNING 2025-12-05 11:38:11,607 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:38:11,617 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10516
-INFO 2025-12-05 11:38:23,814 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 11:38:41,542 basehttp "GET / HTTP/1.1" 200 9027
-WARNING 2025-12-05 11:38:45,132 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 11:38:45,142 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10516
-INFO 2025-12-05 11:38:48,289 basehttp "POST /api/auth/logout/ HTTP/1.1" 200 8532
-WARNING 2025-12-05 11:38:50,043 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:38:50,046 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:38:51,140 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:38:51,141 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:38:55,418 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:38:55,425 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-WARNING 2025-12-05 11:38:56,302 log Forbidden: /api/auth/logout/
-WARNING 2025-12-05 11:38:56,302 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
-INFO 2025-12-05 11:39:14,102 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 11:39:30,091 basehttp "GET / HTTP/1.1" 200 7525
-INFO 2025-12-05 11:39:34,812 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
-INFO 2025-12-05 11:39:43,195 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
-INFO 2025-12-05 11:40:00,523 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
-WARNING 2025-12-05 11:40:00,546 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:40:00,547 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:40:02,593 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:40:02,603 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:40:06,429 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:40:06,429 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-WARNING 2025-12-05 11:40:06,596 log Not Found: /accounts/profile/
-WARNING 2025-12-05 11:40:06,596 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
-INFO 2025-12-05 11:40:24,772 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 11:40:37,054 basehttp "GET / HTTP/1.1" 200 11240
-INFO 2025-12-05 11:40:45,812 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 12:04:20,442 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 12:04:47,074 basehttp "GET /profile/settings/ HTTP/1.1" 200 22816
-INFO 2025-12-05 12:05:12,976 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
-INFO 2025-12-05 12:05:13,030 basehttp "GET /profile/settings/ HTTP/1.1" 200 23186
-INFO 2025-12-05 12:05:34,271 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
-INFO 2025-12-05 12:05:34,288 basehttp "GET /profile/settings/ HTTP/1.1" 200 23202
-INFO 2025-12-05 12:16:45,354 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 12:16:53,298 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 12:17:04,574 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 12:17:06,140 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-05 12:17:10,890 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 12:46:17,610 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 12:46:21,587 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 12:46:23,256 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 13:13:00,216 autoreload C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\views.py changed, reloading.
-INFO 2025-12-05 13:13:04,871 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 13:21:32,190 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 13:21:36,745 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 13:21:41,536 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 13:21:52,680 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 13:21:53,645 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 13:22:10,226 basehttp "GET /api/users/professors/ HTTP/1.1" 200 15037
-INFO 2025-12-05 13:22:10,937 basehttp "GET /static/rest_framework/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
-INFO 2025-12-05 13:38:28,996 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 13:38:35,496 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 13:38:43,759 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 13:38:49,373 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 13:38:52,176 basehttp "GET /profile/settings/ HTTP/1.1" 200 22842
-INFO 2025-12-05 13:39:03,384 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 13:39:07,319 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 13:39:12,604 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 13:39:14,113 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-05 13:39:15,339 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-05 13:39:15,933 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-05 13:39:17,009 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-05 13:39:18,246 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-05 13:39:19,587 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-05 13:39:20,854 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:13:06,876 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 14:13:16,788 basehttp "GET /profile/settings/ HTTP/1.1" 200 22842
-INFO 2025-12-05 14:17:39,249 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:25:45,313 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 14:27:26,595 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 14:27:32,890 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:27:37,901 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:27:38,089 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:27:38,277 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:28:19,053 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:28:19,312 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:28:19,482 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:28:19,720 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:28:20,034 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:28:20,251 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:28:20,446 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:33:58,612 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 14:34:00,802 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-WARNING 2025-12-05 14:34:14,025 log Method Not Allowed: /api/auth/logout/
-WARNING 2025-12-05 14:34:14,026 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
-INFO 2025-12-05 14:34:21,067 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 14:34:24,758 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:40:06,369 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:40:06,562 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:40:06,750 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:40:07,082 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:42:17,702 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:42:17,900 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:43:11,634 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:43:15,635 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:43:15,785 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:43:15,986 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:44:42,003 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 14:44:48,261 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 14:44:53,492 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 14:48:34,391 autoreload C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
-INFO 2025-12-05 14:48:38,352 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 15:12:35,759 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 15:12:47,740 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 15:13:03,710 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
-INFO 2025-12-05 15:13:13,145 basehttp "GET /consultations/ HTTP/1.1" 200 6472
-INFO 2025-12-05 15:13:14,315 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
-INFO 2025-12-05 15:13:15,155 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
-INFO 2025-12-05 15:13:15,891 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-05 15:13:16,799 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
-INFO 2025-12-05 15:13:18,752 basehttp "GET /professors/ HTTP/1.1" 200 6456
-INFO 2025-12-05 15:13:22,576 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
-INFO 2025-12-05 15:13:24,440 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
-INFO 2025-12-05 15:13:25,556 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
-INFO 2025-12-05 15:13:27,036 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
-INFO 2025-12-05 15:13:39,991 basehttp "GET /professors/?search=Computer+Science&department= HTTP/1.1" 200 6561
-INFO 2025-12-05 15:31:26,502 autoreload Watching for file changes with StatReloader
-INFO 2025-12-05 15:31:41,348 basehttp "GET / HTTP/1.1" 200 10876
-INFO 2025-12-05 15:31:48,806 basehttp - Broken pipe from ('127.0.0.1', 50430)
-INFO 2025-12-05 15:31:48,812 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\desktop\pcsvenv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'split'
+ERROR 2025-12-01 15:42:42,784 basehttp "GET /professor/availability/ HTTP/1.1" 500 247758
+INFO 2025-12-01 15:43:00,860 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:43:30,664 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:44:00,667 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:44:30,669 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:00,677 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:13,936 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168424
+INFO 2025-12-01 15:45:14,100 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:44,659 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:45:53,097 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168436
+INFO 2025-12-01 15:45:53,240 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:46:01,634 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168437
+INFO 2025-12-01 15:46:01,739 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:46:26,738 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168424
+INFO 2025-12-01 15:46:26,859 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:46:46,006 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168412
+INFO 2025-12-01 15:46:46,128 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:47:02,638 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168401
+INFO 2025-12-01 15:47:02,765 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:47:33,853 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:48:03,819 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:48:14,558 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168487
+INFO 2025-12-01 15:48:14,671 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:48:43,144 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168444
+INFO 2025-12-01 15:48:43,247 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:49:00,684 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 15:49:00,766 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+WARNING 2025-12-01 15:49:14,442 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:49:14,443 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:49:14,514 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+WARNING 2025-12-01 15:49:20,901 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:49:20,906 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:49:20,922 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+WARNING 2025-12-01 15:49:27,170 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:49:27,174 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:49:27,189 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-12-01 15:49:30,964 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:50:01,861 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:50:31,667 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+WARNING 2025-12-01 15:50:35,223 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-01 15:50:35,226 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7315
+WARNING 2025-12-01 15:50:35,254 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 2002
+INFO 2025-12-01 15:51:00,942 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:51:31,830 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:52:01,325 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:52:31,865 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:53:01,669 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:53:20,946 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 15:53:21,127 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:53:51,126 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:54:21,791 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:54:51,836 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:55:21,820 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:55:51,657 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:56:21,661 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:56:53,554 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:57:25,833 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:58:25,843 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 15:59:25,823 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:00:25,860 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:25,830 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:47,929 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 16:01:48,062 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:55,488 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:01:55,612 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:01:57,784 basehttp "GET /consultations/ HTTP/1.1" 200 34105
+INFO 2025-12-01 16:01:57,879 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:01,168 basehttp "GET /consultations/?status=past HTTP/1.1" 200 29801
+INFO 2025-12-01 16:02:01,281 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:02,225 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 38656
+INFO 2025-12-01 16:02:02,308 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:03,490 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 34105
+INFO 2025-12-01 16:02:03,573 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:07,665 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:02:07,743 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:11,059 basehttp "GET /profile/settings/ HTTP/1.1" 200 35244
+INFO 2025-12-01 16:02:11,180 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:02:37,892 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:07,921 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:13,310 basehttp "GET /consultations/ HTTP/1.1" 200 34105
+INFO 2025-12-01 16:03:13,423 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:14,475 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:03:14,541 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168432
+INFO 2025-12-01 16:03:14,624 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:16,766 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:03:16,859 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:22,051 basehttp "GET /consultations/ HTTP/1.1" 200 34105
+INFO 2025-12-01 16:03:22,158 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:03:45,105 basehttp "PATCH /api/consultations/5/reschedule/ HTTP/1.1" 200 1082
+INFO 2025-12-01 16:03:45,160 basehttp "GET /consultations/ HTTP/1.1" 200 34102
+INFO 2025-12-01 16:03:45,273 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:15,361 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+WARNING 2025-12-01 16:04:32,681 log Bad Request: /api/consultations/5/reschedule/
+WARNING 2025-12-01 16:04:32,683 basehttp "PATCH /api/consultations/5/reschedule/ HTTP/1.1" 400 60
+INFO 2025-12-01 16:04:37,341 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:04:37,425 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171790
+INFO 2025-12-01 16:04:37,545 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:40,544 basehttp "POST /professor/consultation/5/action/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:04:40,624 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168787
+INFO 2025-12-01 16:04:40,734 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:45,478 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:04:45,562 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:04:46,763 basehttp "GET /consultations/ HTTP/1.1" 200 34106
+INFO 2025-12-01 16:04:46,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:05:16,990 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:05:17,711 basehttp "PATCH /api/consultations/5/reschedule/ HTTP/1.1" 200 1082
+INFO 2025-12-01 16:05:17,768 basehttp "GET /consultations/ HTTP/1.1" 200 34101
+INFO 2025-12-01 16:05:17,858 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:05:20,573 basehttp "GET /consultation/5/ HTTP/1.1" 200 22339
+INFO 2025-12-01 16:05:20,664 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:14:22,254 autoreload Watching for file changes with StatReloader
+INFO 2025-12-01 16:14:28,368 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:14:28,434 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-12-01 16:14:28,596 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:14:34,386 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:14:34,516 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:14:34,655 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:14:36,948 basehttp "GET /consultations/ HTTP/1.1" 200 34101
+INFO 2025-12-01 16:14:37,058 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:14:38,422 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:14:38,486 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:14:38,622 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:14:44,033 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:14:44,121 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:14:45,738 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:14:45,797 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:14:45,885 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:15:01,287 basehttp "GET /profile/settings/ HTTP/1.1" 200 35244
+INFO 2025-12-01 16:15:01,387 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:15:23,415 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:15:23,504 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:15:23,636 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:15:43,358 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:15:43,461 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:15:50,365 basehttp "GET /profile/settings/ HTTP/1.1" 200 35244
+INFO 2025-12-01 16:15:50,472 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:15:57,615 basehttp "GET /profile/settings/ HTTP/1.1" 200 35244
+INFO 2025-12-01 16:15:57,732 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:16:03,837 basehttp "GET /consultations/ HTTP/1.1" 200 34101
+INFO 2025-12-01 16:16:03,927 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:16:22,748 basehttp "GET /consultations/?status=past HTTP/1.1" 200 29801
+INFO 2025-12-01 16:16:22,835 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:16:26,409 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:16:26,522 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:16:39,130 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:16:39,231 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:16:39,327 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:16:39,845 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:16:39,920 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:16:41,576 basehttp "GET /consultations/ HTTP/1.1" 200 34101
+INFO 2025-12-01 16:16:41,658 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:16:50,993 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:16:51,072 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:16:51,145 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:17:19,194 basehttp "GET / HTTP/1.1" 200 21298
+INFO 2025-12-01 16:17:19,288 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:17:25,299 basehttp "GET /consultations/ HTTP/1.1" 200 34101
+INFO 2025-12-01 16:17:25,383 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:17:27,616 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-01 16:17:27,707 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:17:27,787 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:17:57,950 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:18:27,781 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:18:58,846 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:19:28,835 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:19:58,666 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:20:28,820 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:20:58,848 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:21:59,783 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:23:00,809 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:24:01,831 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:25:02,841 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:25:41,358 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:25:42,950 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171789
+INFO 2025-12-01 16:25:43,095 basehttp "GET /api/notifications/ HTTP/1.1" 200 2101
+INFO 2025-12-01 16:25:43,319 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 122774

@@ -1,7 +1,7 @@
+{% load user_extras %}
 Consultation Notification
 
-Dear {{ user.get_full_name|default:user.email }},
-
+Dear {{ user|display_name }},
 You have a new notification regarding your consultation:
 
 Type: {{ message_type }}

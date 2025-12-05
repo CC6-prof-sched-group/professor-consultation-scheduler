@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}Availability Settings - Professor Consultation Scheduler{% endblock %}
+{% block title %}Availability Settings - ConsultEase{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <!-- Header -->
     <div class="row mb-4">
         <div class="col">
-            <h1 class="display-5 fw-bold">
-                <i class="bi bi-calendar-week text-primary"></i> Manage Availability
+            <h1 class="display-4 fw-bold">
+                <i class="bi bi-calendar-week" style="color: #5389DA;"></i> <span style="color: #274572;">Manage Availability</span>
             </h1>
             <p class="lead text-muted">Set your available hours and consultation preferences</p>
         </div>
         <div class="col-auto">
-            <a href="{% url 'professor_dashboard' %}" class="btn btn-outline-secondary">
+            <a href="{% url 'professor_dashboard' %}" class="btn" style="border: 1px solid #2C577E; color: #2C577E; background-color: transparent;">
                 <i class="bi bi-arrow-left"></i> Back to Dashboard
             </a>
         </div>
@@ -26,8 +26,8 @@
             <!-- Left Column - Weekly Schedule -->
             <div class="col-lg-8">
                 <div class="card shadow-sm mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0"><i class="bi bi-calendar3"></i> Weekly Schedule</h5>
+                    <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                        <h5 class="mb-0" style="color: #274572;"><i class="bi bi-calendar3" style="color: #5389DA;"></i> Weekly Schedule</h5>
                     </div>
                     <div class="card-body">
                         <p class="text-muted mb-4">
@@ -88,9 +88,9 @@
 
             <!-- Right Column - Settings -->
             <div class="col-lg-4">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-header bg-info text-white">
-                        <h5 class="mb-0"><i class="bi bi-gear"></i> Consultation Settings</h5>
+                <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #74D3D3;">
+                    <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                        <h5 class="mb-0" style="color: #274572;"><i class="bi bi-gear" style="color: #74D3D3;"></i> Consultation Settings</h5>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
@@ -155,10 +155,10 @@
 
                 <!-- Save Button -->
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-lg">
+                    <button type="submit" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white; font-size: 1rem;">
                         <i class="bi bi-save"></i> Save Settings
                     </button>
-                    <a href="{% url 'professor_dashboard' %}" class="btn btn-outline-secondary">
+                    <a href="{% url 'professor_dashboard' %}" class="btn" style="border: 1px solid #2C577E; color: #2C577E; background-color: transparent;">
                         <i class="bi bi-x"></i> Cancel
                     </a>
                 </div>
@@ -233,8 +233,8 @@
     }
     
     .form-check-input:checked {
-        background-color: #0d6efd;
-        border-color: #0d6efd;
+        background-color: #5389DA;
+        border-color: #5389DA;
     }
 </style>
 {% endblock %}

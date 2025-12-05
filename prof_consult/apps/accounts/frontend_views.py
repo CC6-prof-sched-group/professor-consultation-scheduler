@@ -75,6 +75,15 @@ def dashboard(request):
         status__in=[ConsultationStatus.PENDING, ConsultationStatus.CONFIRMED],
         scheduled_date__gte=timezone.now().date()
     ).order_by('scheduled_date', 'scheduled_time')[:5]
+    # Avoid N+1 queries when rendering user names and social account data
+    try:
+        upcoming_consultations = upcoming_consultations.select_related('student', 'professor').prefetch_related(
+            'student__socialaccount_set', 'professor__socialaccount_set'
+        )
+    except Exception:
+        # If slicing produced a list-like object that doesn't support queryset methods,
+        # skip prefetching (best-effort optimization).
+        pass
     
     # Get recent notifications
     notifications = Notification.objects.filter(
@@ -138,6 +147,42 @@ def consultations_list(request):
 
 
 @login_required
+def consultation_detail(request, consultation_id):
+    """
+    Display a single consultation/booking detail for frontend.
+    Permissions: only the student, the professor, or an admin can view.
+    Provides context flags to enable reschedule/cancel actions in the template.
+    """
+    consultation = get_object_or_404(Consultation, id=consultation_id)
+
+    user = request.user
+    # Allow student, professor, or admin
+    if not (
+        user == consultation.student or
+        user == consultation.professor or
+        user.role == Role.ADMIN
+    ):
+        raise Http404()
+
+    can_cancel = False
+    try:
+        can_cancel = consultation.can_be_cancelled()
+    except Exception:
+        # Best-effort: if method not present or errors, default False
+        can_cancel = False
+
+    can_reschedule = consultation.status == ConsultationStatus.CONFIRMED
+
+    context = {
+        'consultation': consultation,
+        'can_cancel': can_cancel,
+        'can_reschedule': can_reschedule,
+    }
+
+    return render(request, 'consultation_detail.html', context)
+
+
+@login_required
 def book_consultation(request):
     """
     Book a new consultation.
@@ -180,7 +225,7 @@ def book_consultation(request):
     professors = User.objects.filter(
         role=Role.PROFESSOR,
         is_active=True
-    ).select_related('professor_profile')
+    ).select_related('professor_profile').prefetch_related('socialaccount_set')
     
     context = {
         'professors': professors,
@@ -201,7 +246,7 @@ def professors_list(request):
     professors = User.objects.filter(
         role=Role.PROFESSOR,
         is_active=True
-    ).select_related('professor_profile')
+    ).select_related('professor_profile').prefetch_related('socialaccount_set')
     
     # Apply search filter
     if search_query:
@@ -287,6 +332,10 @@ def professor_profile(request, professor_id):
         rating__isnull=False,
         feedback__isnull=False
     ).exclude(feedback='').order_by('-completed_at')[:5]
+    try:
+        recent_reviews = recent_reviews.select_related('student').prefetch_related('student__socialaccount_set')
+    except Exception:
+        pass
     
     context = {
         'professor': professor,
@@ -339,6 +388,57 @@ def profile_settings(request):
     }
     
     return render(request, 'profile_settings.html', context)
+
+
+@login_required
+def convert_to_professor(request):
+    """
+    Convert a student account to a professor account for testing purposes.
+    Creates a professor profile and changes the user's role.
+    """
+    if request.method != 'POST':
+        messages.error(request, 'Invalid request method.')
+        return redirect('profile_settings')
+    
+    user = request.user
+    
+    # Check if user is already a professor
+    if user.role == Role.PROFESSOR:
+        messages.info(request, 'You are already a professor!')
+        return redirect('profile_settings')
+    
+    # Check if user is an admin (admins shouldn't be converted)
+    if user.role == Role.ADMIN:
+        messages.error(request, 'Admin accounts cannot be converted to professor accounts.')
+        return redirect('profile_settings')
+    
+    try:
+        # Change user role to professor
+        user.role = Role.PROFESSOR
+        user.save()
+        
+        # Create professor profile if it doesn't exist
+        if not hasattr(user, 'professor_profile'):
+            ProfessorProfile.objects.create(
+                user=user,
+                title='Prof.',
+                department=user.department or 'General',
+                office_location='Office TBD',
+                consultation_duration_default=60,
+                max_advance_booking_days=30,
+                buffer_time_between_consultations=15,
+                status='AVAILABLE'
+            )
+        
+        messages.success(request, 
+            'Your account has been successfully converted to a professor account! '
+            'You can now access the professor dashboard and set your availability.'
+        )
+        return redirect('professor_dashboard')
+        
+    except Exception as e:
+        messages.error(request, f'Error converting account: {str(e)}')
+        return redirect('profile_settings')
 
 
 def custom_404(request, exception):
@@ -506,10 +606,12 @@ def professor_consultation_action(request, consultation_id):
             messages.success(request, 'Consultation confirmed!')
             
             # Create notification for student
+            from apps.notifications.models import NotificationType, MessageType
             Notification.objects.create(
                 user=consultation.student,
-                message=f'Your consultation with {user.get_full_name()} has been confirmed.',
-                notification_type='CONSULTATION_CONFIRMED'
+                consultation=consultation,
+                notification_type=NotificationType.IN_APP,
+                message_type=MessageType.BOOKING_CONFIRMED
             )
             
         elif action == 'cancel':
@@ -521,10 +623,12 @@ def professor_consultation_action(request, consultation_id):
             messages.success(request, 'Consultation cancelled.')
             
             # Create notification for student
+            from apps.notifications.models import NotificationType, MessageType
             Notification.objects.create(
                 user=consultation.student,
-                message=f'Your consultation with {user.get_full_name()} has been cancelled.',
-                notification_type='CONSULTATION_CANCELLED'
+                consultation=consultation,
+                notification_type=NotificationType.IN_APP,
+                message_type=MessageType.CANCELLED
             )
         
         return redirect('professor_dashboard')

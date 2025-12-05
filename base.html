@@ -54,20 +54,14 @@
 
         .custom-navbar .dropdown-menu {
             border: none;
-            background-color: white;
         }
 
         .custom-navbar .dropdown-item {
-            color: #212529 !important;
-            transition: background-color 0.15s ease, color 0.15s ease !important;
-            opacity: 1 !important;
+            color: black !important;
         }
 
-        .custom-navbar .dropdown-item:hover,
-        .custom-navbar .dropdown-item:focus {
-            background-color: #f8f9fa;
-            color: #2780e3 !important;
-            opacity: 1 !important;
+        .custom-navbar .dropdown-item:hover {
+            color: #ffffff !important;
         }
 
         .ce-aqua {
@@ -85,7 +79,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/logo.svg' %}" alt="Consult Ease Logo" height="32" style="margin-right: 8px;">
                 <span class="ce-aqua">Consult</span><span class="ce-gold">Ease</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,7 +113,6 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
-                    {% include 'notification_bell.html' %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person-circle"></i> {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}
@@ -197,4 +189,3 @@
     {% block extra_js %}{% endblock %}
 </body>
 </html>
- 
