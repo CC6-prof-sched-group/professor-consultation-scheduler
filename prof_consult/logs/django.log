@@ -956,3 +956,1610 @@ INFO 2025-11-26 22:39:48,792 basehttp "POST /professor/consultation/107/action/ 
 INFO 2025-11-26 22:39:48,815 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 157696
 INFO 2025-11-26 22:47:30,503 tasks Sent email notification 18 to srclsgm43@gmail.com
 >>>>>>> ff73f53 (working celery, gmail smtp wow)
+INFO 2025-11-30 09:19:24,143 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-30 09:19:31,040 basehttp "GET /static/js/plugin/webfont/webfont.min.js HTTP/1.1" 404 2023
+WARNING 2025-11-30 09:19:31,049 basehttp "GET /static/css/plugins.min.css HTTP/1.1" 404 1984
+WARNING 2025-11-30 09:19:31,062 basehttp "GET /static/css/kaiadmin.min.css HTTP/1.1" 404 1987
+WARNING 2025-11-30 09:19:31,063 basehttp "GET /static/img/profile.jpg HTTP/1.1" 404 1972
+WARNING 2025-11-30 09:19:31,063 basehttp "GET /static/js/core/jquery-3.7.1.min.js HTTP/1.1" 404 2008
+WARNING 2025-11-30 09:19:31,076 basehttp "GET /static/js/core/popper.min.js HTTP/1.1" 404 1990
+WARNING 2025-11-30 09:19:31,076 basehttp "GET /static/js/core/bootstrap.min.js HTTP/1.1" 404 1999
+WARNING 2025-11-30 09:19:31,154 basehttp "GET /static/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js HTTP/1.1" 404 2077
+WARNING 2025-11-30 09:19:31,154 basehttp "GET /static/js/kaiadmin.min.js HTTP/1.1" 404 1981
+WARNING 2025-11-30 09:19:31,171 basehttp "GET /static/img/ejb.png HTTP/1.1" 404 1960
+WARNING 2025-11-30 09:19:31,199 log Not Found: /manifest.json
+WARNING 2025-11-30 09:19:31,199 basehttp "GET /manifest.json HTTP/1.1" 404 6998
+WARNING 2025-11-30 09:19:32,725 log Not Found: /serviceworker.js
+WARNING 2025-11-30 09:19:32,725 basehttp "GET /serviceworker.js HTTP/1.1" 404 7007
+WARNING 2025-11-30 09:20:02,243 log Not Found: /serviceworker.js
+WARNING 2025-11-30 09:20:02,244 basehttp "GET /serviceworker.js HTTP/1.1" 404 7007
+INFO 2025-11-30 09:22:46,084 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 09:22:51,226 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 09:22:51,363 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
+INFO 2025-11-30 09:22:51,370 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
+INFO 2025-11-30 09:22:51,371 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-11-30 09:22:51,373 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-11-30 09:22:51,373 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+WARNING 2025-11-30 09:22:51,673 log Not Found: /favicon.ico
+WARNING 2025-11-30 09:22:51,673 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-11-30 09:22:55,272 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:23:06,328 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:23:18,746 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:23:20,254 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 09:23:21,093 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 09:23:22,927 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:31:28,589 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:42:46,005 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 09:42:52,599 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 09:42:52,746 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:42:52,747 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:42:52,750 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:42:52,750 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:42:52,750 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-11-30 09:42:52,861 log Not Found: /favicon.ico
+WARNING 2025-11-30 09:42:52,861 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-11-30 09:42:56,867 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:47:04,455 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 09:47:08,794 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 09:47:08,885 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:47:08,890 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:47:08,892 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:47:08,892 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 09:47:08,892 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-30 09:47:10,526 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:47:12,466 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:47:13,401 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:47:13,601 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 09:47:53,847 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 09:47:57,168 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 09:47:58,342 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 10:16:57,703 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-30 10:17:03,125 basehttp "GET /static/js/plugin/webfont/webfont.min.js HTTP/1.1" 404 2023
+WARNING 2025-11-30 10:17:03,136 basehttp "GET /static/css/plugins.min.css HTTP/1.1" 404 1984
+WARNING 2025-11-30 10:17:03,142 basehttp "GET /static/css/kaiadmin.min.css HTTP/1.1" 404 1987
+WARNING 2025-11-30 10:17:03,144 basehttp "GET /static/img/profile.jpg HTTP/1.1" 404 1972
+WARNING 2025-11-30 10:17:03,147 basehttp "GET /static/js/core/jquery-3.7.1.min.js HTTP/1.1" 404 2008
+WARNING 2025-11-30 10:17:03,162 basehttp "GET /static/js/core/popper.min.js HTTP/1.1" 404 1990
+WARNING 2025-11-30 10:17:03,162 basehttp "GET /static/js/core/bootstrap.min.js HTTP/1.1" 404 1999
+WARNING 2025-11-30 10:17:03,166 basehttp "GET /static/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js HTTP/1.1" 404 2077
+WARNING 2025-11-30 10:17:03,167 basehttp "GET /static/js/kaiadmin.min.js HTTP/1.1" 404 1981
+WARNING 2025-11-30 10:17:03,207 basehttp "GET /static/img/ejb.png HTTP/1.1" 404 1960
+WARNING 2025-11-30 10:17:03,241 log Not Found: /manifest.json
+WARNING 2025-11-30 10:17:03,241 basehttp "GET /manifest.json HTTP/1.1" 404 6998
+WARNING 2025-11-30 10:17:04,742 log Not Found: /serviceworker.js
+WARNING 2025-11-30 10:17:04,743 basehttp "GET /serviceworker.js HTTP/1.1" 404 7007
+INFO 2025-11-30 10:17:56,191 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 10:18:00,190 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 10:18:00,281 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:18:00,290 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:18:00,291 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:18:00,292 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:18:00,293 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-30 10:18:04,079 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 10:18:08,499 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 10:18:16,226 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 10:18:29,690 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 10:18:31,721 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 10:18:33,085 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-30 10:18:50,823 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-11-30 10:18:50,833 log Not Found: /accounts/profile/
+WARNING 2025-11-30 10:18:50,834 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-11-30 10:19:12,658 basehttp "GET / HTTP/1.1" 200 11691
+INFO 2025-11-30 10:19:22,269 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 10:19:23,394 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:19:24,940 basehttp "GET /consultations/ HTTP/1.1" 200 6940
+INFO 2025-11-30 10:19:26,236 basehttp "GET /professors/ HTTP/1.1" 200 6924
+INFO 2025-11-30 10:19:27,009 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:19:27,959 basehttp "GET /professors/ HTTP/1.1" 200 6924
+INFO 2025-11-30 10:19:28,915 basehttp "GET /consultations/ HTTP/1.1" 200 6940
+INFO 2025-11-30 10:19:29,465 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:19:30,303 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 10:19:31,409 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 10:19:35,525 basehttp "GET /professors/ HTTP/1.1" 200 6924
+INFO 2025-11-30 10:19:45,827 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-11-30 10:19:45,931 basehttp "GET /admin/ HTTP/1.1" 200 21927
+INFO 2025-11-30 10:19:46,096 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-11-30 10:19:46,117 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-11-30 10:19:46,118 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-11-30 10:19:46,118 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-11-30 10:19:46,119 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-11-30 10:19:46,132 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-11-30 10:19:46,145 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-11-30 10:19:46,150 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-11-30 10:19:46,150 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-11-30 10:19:51,982 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 20998
+INFO 2025-11-30 10:19:52,020 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-11-30 10:19:52,027 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-11-30 10:19:52,039 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-11-30 10:19:52,041 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 10:19:52,042 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-11-30 10:19:52,051 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-11-30 10:19:52,051 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-11-30 10:19:52,056 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-11-30 10:19:52,064 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-11-30 10:19:52,082 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-11-30 10:19:52,108 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-11-30 10:19:52,134 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-11-30 10:19:52,160 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-11-30 10:19:52,160 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-11-30 10:28:12,264 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 10:28:12,359 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:28:12,359 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:28:12,361 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:28:12,362 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-11-30 10:28:12,362 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-30 10:28:31,983 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 19:15:29,441 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 19:22:30,258 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 19:22:35,393 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-11-30 19:22:35,502 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-30 19:22:35,503 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-11-30 19:22:35,504 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-11-30 19:22:35,505 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-11-30 19:22:35,505 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+WARNING 2025-11-30 19:22:35,613 log Not Found: /favicon.ico
+WARNING 2025-11-30 19:22:35,614 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-11-30 19:22:41,275 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-11-30 19:22:43,647 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-11-30 19:22:50,418 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-11-30 19:22:50,424 log Not Found: /accounts/profile/
+WARNING 2025-11-30 19:22:50,425 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+WARNING 2025-11-30 19:22:51,917 log Not Found: /accounts/profile/
+WARNING 2025-11-30 19:22:51,918 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-11-30 19:22:53,015 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-11-30 19:23:00,694 log Not Found: /accounts/profile/
+WARNING 2025-11-30 19:23:00,695 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+WARNING 2025-11-30 19:23:01,180 log Not Found: /accounts/profile/
+WARNING 2025-11-30 19:23:01,181 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-11-30 19:23:06,230 basehttp "GET / HTTP/1.1" 200 11691
+INFO 2025-11-30 19:23:14,037 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:23:18,428 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:23:22,542 basehttp "GET /professors/?search=ghostbuster&department=&sort=rating HTTP/1.1" 200 7537
+INFO 2025-11-30 19:23:30,441 basehttp "GET /professors/?search=ghostbuster&department=&sort=reviews HTTP/1.1" 200 7537
+INFO 2025-11-30 19:24:25,283 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 19:24:37,114 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:25:53,531 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-11-30 19:25:53,631 basehttp "GET /admin/ HTTP/1.1" 200 21927
+INFO 2025-11-30 19:25:53,788 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-11-30 19:25:53,792 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-11-30 19:25:53,792 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-11-30 19:25:53,797 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-11-30 19:25:53,800 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-11-30 19:25:53,816 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-11-30 19:25:53,824 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-11-30 19:25:53,834 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-11-30 19:25:53,835 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-11-30 19:26:00,808 basehttp "GET /admin/professors/professorprofile/add/ HTTP/1.1" 200 32775
+INFO 2025-11-30 19:26:00,836 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-11-30 19:26:00,844 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-11-30 19:26:00,856 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:26:00,857 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-11-30 19:26:00,857 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-11-30 19:26:00,859 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2025-11-30 19:26:00,862 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-11-30 19:26:00,879 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-11-30 19:26:00,881 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-11-30 19:26:00,881 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-11-30 19:26:00,896 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-11-30 19:26:00,913 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-11-30 19:26:00,933 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-11-30 19:26:00,957 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-11-30 19:26:43,762 basehttp "POST /admin/professors/professorprofile/add/ HTTP/1.1" 302 0
+INFO 2025-11-30 19:26:43,856 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 24497
+INFO 2025-11-30 19:26:43,876 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:26:43,884 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-11-30 19:26:43,884 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-11-30 19:26:43,906 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-11-30 19:26:43,911 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-11-30 19:26:43,911 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-11-30 19:26:46,944 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 19:26:47,702 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 19:26:50,140 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:26:52,139 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:26:52,643 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:26:53,252 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:26:58,999 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-11-30 19:27:15,349 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22032
+INFO 2025-11-30 19:27:15,367 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:27:15,388 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-11-30 19:27:17,716 basehttp "GET /admin/sites/site/1/change/ HTTP/1.1" 200 21670
+INFO 2025-11-30 19:27:17,732 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:27:19,515 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22032
+INFO 2025-11-30 19:27:22,187 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 24245
+INFO 2025-11-30 19:27:22,207 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:27:51,444 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 19:27:54,786 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 19:27:56,468 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:28:00,977 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-11-30 19:28:03,192 basehttp "GET /consultations/ HTTP/1.1" 200 6940
+INFO 2025-11-30 19:28:03,806 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 19:28:05,656 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 19:28:06,558 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 19:28:08,974 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:28:12,286 basehttp "GET /profile/settings/ HTTP/1.1" 200 24778
+INFO 2025-11-30 19:29:19,496 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:29:25,171 basehttp "GET /dashboard/ HTTP/1.1" 200 11790
+INFO 2025-11-30 19:29:47,607 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:30:51,738 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:32:19,176 basehttp "GET /admin/ HTTP/1.1" 200 22358
+INFO 2025-11-30 19:32:21,298 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 24245
+INFO 2025-11-30 19:32:21,317 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:32:32,314 basehttp "GET /admin/professors/professorprofile/add/ HTTP/1.1" 200 32775
+INFO 2025-11-30 19:32:32,333 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:32:36,547 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 24245
+INFO 2025-11-30 19:32:36,563 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:32:37,761 basehttp "GET /admin/professors/professorprofile/1/change/ HTTP/1.1" 200 33181
+INFO 2025-11-30 19:32:37,776 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:32:48,247 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-11-30 19:34:35,345 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22032
+INFO 2025-11-30 19:34:35,361 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:34:43,559 basehttp "GET /admin/sites/site/1/change/ HTTP/1.1" 200 21670
+INFO 2025-11-30 19:34:43,576 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:34:45,124 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22032
+INFO 2025-11-30 19:34:49,644 basehttp "GET /admin/sites/site/add/ HTTP/1.1" 200 21412
+INFO 2025-11-30 19:34:49,658 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:35:02,458 basehttp "POST /admin/sites/site/add/ HTTP/1.1" 302 0
+INFO 2025-11-30 19:35:02,472 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22546
+INFO 2025-11-30 19:35:02,491 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:35:28,446 autoreload Watching for file changes with StatReloader
+INFO 2025-11-30 19:35:30,983 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 19:35:32,555 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:35:35,029 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-11-30 19:35:41,122 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22345
+INFO 2025-11-30 19:35:51,247 basehttp "GET /admin/sites/site/2/change/ HTTP/1.1" 200 21682
+INFO 2025-11-30 19:35:51,268 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:36:00,955 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 20998
+INFO 2025-11-30 19:36:00,969 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:36:07,661 basehttp "GET /admin/socialaccount/socialaccount/add/ HTTP/1.1" 200 22975
+INFO 2025-11-30 19:36:07,676 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:36:12,262 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 20998
+INFO 2025-11-30 19:36:15,649 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 25416
+INFO 2025-11-30 19:36:15,667 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:36:20,697 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 22345
+INFO 2025-11-30 19:36:20,713 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:36:45,046 basehttp "GET /professors/?search=sponge&department=&sort=name HTTP/1.1" 200 7532
+INFO 2025-11-30 19:36:55,910 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 24245
+INFO 2025-11-30 19:36:55,926 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:36:57,160 basehttp "GET /admin/notifications/notification/add/ HTTP/1.1" 200 29294
+INFO 2025-11-30 19:36:57,177 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:01,255 basehttp "GET /admin/professors/professorprofile/add/ HTTP/1.1" 200 32775
+INFO 2025-11-30 19:37:01,270 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:20,367 basehttp "POST /admin/professors/professorprofile/add/ HTTP/1.1" 200 32991
+INFO 2025-11-30 19:37:20,387 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:25,197 basehttp "POST /admin/professors/professorprofile/add/ HTTP/1.1" 200 33016
+INFO 2025-11-30 19:37:25,218 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:35,163 basehttp "GET /admin/accounts/user/1/change/?_to_field=id&_popup=1 HTTP/1.1" 200 28953
+INFO 2025-11-30 19:37:35,179 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:35,280 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-11-30 19:37:35,280 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-11-30 19:37:35,281 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-11-30 19:37:35,281 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-11-30 19:37:35,318 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-11-30 19:37:35,318 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-11-30 19:37:35,318 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-11-30 19:37:44,147 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 24245
+INFO 2025-11-30 19:37:44,164 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:45,210 basehttp "GET /admin/professors/professorprofile/1/change/ HTTP/1.1" 200 33181
+INFO 2025-11-30 19:37:45,227 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:50,504 basehttp "POST /admin/professors/professorprofile/1/change/ HTTP/1.1" 302 0
+INFO 2025-11-30 19:37:50,527 basehttp "GET /admin/professors/professorprofile/ HTTP/1.1" 200 24473
+INFO 2025-11-30 19:37:50,549 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-30 19:37:53,922 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-11-30 19:42:17,676 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-11-30 19:42:19,608 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-11-30 19:42:33,706 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 19:42:53,371 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-11-30 19:43:07,830 basehttp "GET /professors/?search=dr.sponge&department=&sort=name HTTP/1.1" 200 7535
+INFO 2025-11-30 19:43:10,849 basehttp "GET /professors/?search=dr.sponge&department=&sort=name HTTP/1.1" 200 7535
+INFO 2025-11-30 19:43:13,610 basehttp "GET /professors/?search=dr.sponge&department=&sort=reviews HTTP/1.1" 200 7535
+INFO 2025-11-30 19:43:16,819 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-11-30 19:43:17,819 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-12-01 00:16:47,599 autoreload Watching for file changes with StatReloader
+INFO 2025-12-01 00:16:51,250 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-01 00:16:51,319 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-01 00:16:51,325 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-01 00:16:51,325 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-01 00:16:51,326 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-01 00:16:51,327 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-12-01 00:16:51,427 log Not Found: /favicon.ico
+WARNING 2025-12-01 00:16:51,427 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-01 00:16:56,867 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-01 00:16:58,514 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-01 00:17:10,369 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-01 00:17:10,378 log Not Found: /accounts/profile/
+WARNING 2025-12-01 00:17:10,378 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-01 00:17:15,628 basehttp "GET / HTTP/1.1" 200 11691
+INFO 2025-12-01 00:17:17,573 basehttp "GET /professors/ HTTP/1.1" 200 7437
+INFO 2025-12-01 00:17:24,371 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 7437
+INFO 2025-12-01 00:17:28,531 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-12-02 17:50:03,928 autoreload Watching for file changes with StatReloader
+WARNING 2025-12-02 17:50:10,181 basehttp "GET /static/css/plugins.min.css HTTP/1.1" 404 1984
+WARNING 2025-12-02 17:50:10,181 basehttp "GET /static/css/kaiadmin.min.css HTTP/1.1" 404 1987
+WARNING 2025-12-02 17:50:10,181 basehttp "GET /static/js/plugin/webfont/webfont.min.js HTTP/1.1" 404 2023
+WARNING 2025-12-02 17:50:10,193 basehttp "GET /static/js/core/jquery-3.7.1.min.js HTTP/1.1" 404 2008
+WARNING 2025-12-02 17:50:10,193 basehttp "GET /static/img/profile.jpg HTTP/1.1" 404 1972
+WARNING 2025-12-02 17:50:10,218 basehttp "GET /static/js/core/popper.min.js HTTP/1.1" 404 1990
+WARNING 2025-12-02 17:50:10,219 basehttp "GET /static/js/core/bootstrap.min.js HTTP/1.1" 404 1999
+WARNING 2025-12-02 17:50:10,226 basehttp "GET /static/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js HTTP/1.1" 404 2077
+WARNING 2025-12-02 17:50:10,233 basehttp "GET /static/js/kaiadmin.min.js HTTP/1.1" 404 1981
+WARNING 2025-12-02 17:50:10,272 basehttp "GET /static/img/ejb.png HTTP/1.1" 404 1960
+WARNING 2025-12-02 17:50:10,301 log Not Found: /manifest.json
+WARNING 2025-12-02 17:50:10,302 basehttp "GET /manifest.json HTTP/1.1" 404 6998
+WARNING 2025-12-02 17:50:11,820 log Not Found: /serviceworker.js
+WARNING 2025-12-02 17:50:11,820 basehttp "GET /serviceworker.js HTTP/1.1" 404 7007
+INFO 2025-12-02 17:51:05,219 autoreload Watching for file changes with StatReloader
+INFO 2025-12-02 17:51:08,402 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-02 17:51:08,487 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-02 17:51:08,492 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-02 17:51:08,492 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-02 17:51:08,493 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-02 17:51:08,493 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-12-02 17:51:08,587 log Not Found: /favicon.ico
+WARNING 2025-12-02 17:51:08,588 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-02 17:51:10,811 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-02 17:51:12,112 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-02 17:51:18,592 basehttp "POST /accounts/login/ HTTP/1.1" 200 2714
+INFO 2025-12-02 17:51:32,764 basehttp "POST /accounts/login/ HTTP/1.1" 200 2722
+INFO 2025-12-02 17:51:38,680 basehttp "POST /accounts/login/ HTTP/1.1" 200 2722
+INFO 2025-12-02 17:51:51,222 basehttp "POST /accounts/login/ HTTP/1.1" 200 2722
+INFO 2025-12-02 17:52:01,478 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 200 1412
+INFO 2025-12-02 17:52:02,937 basehttp "POST /accounts/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-12-02 17:52:10,415 basehttp "POST /accounts/login/ HTTP/1.1" 200 2722
+INFO 2025-12-02 17:52:20,044 basehttp "POST /accounts/login/ HTTP/1.1" 200 2706
+INFO 2025-12-02 17:52:28,520 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-02 17:52:29,782 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-02 17:52:31,114 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-02 17:52:40,589 basehttp "POST /accounts/login/ HTTP/1.1" 200 2698
+INFO 2025-12-02 17:54:18,972 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-02 17:54:24,030 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-12-02 17:54:24,046 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-02 17:54:24,066 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+INFO 2025-12-02 17:54:24,207 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-12-02 17:54:24,221 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-12-02 17:54:24,221 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-12-02 17:54:24,226 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-12-02 17:54:24,226 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-12-02 17:54:24,227 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-12-02 17:54:24,230 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-12-02 17:54:31,708 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4354
+INFO 2025-12-02 17:54:37,030 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4354
+INFO 2025-12-02 17:55:54,791 autoreload Watching for file changes with StatReloader
+INFO 2025-12-02 17:55:58,151 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-02 17:55:59,223 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-02 17:56:01,677 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-02 17:56:07,430 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-02 17:56:07,438 log Not Found: /accounts/profile/
+WARNING 2025-12-02 17:56:07,438 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-02 17:56:10,999 basehttp "GET / HTTP/1.1" 200 11691
+INFO 2025-12-02 17:56:13,849 basehttp "GET /professors/ HTTP/1.1" 200 37946
+ERROR 2025-12-02 17:56:18,971 log Internal Server Error: /professors/3/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 313, in professor_profile
+    ).exclude(feedback='').order_by('-completed_at')[:5]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\query.py", line 1727, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 2305, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'completed_at' into field. Choices are: booking_created_at, cancellation_reason, cancelled_at, confirmed_at, created_at, description, duration, feedback, google_calendar_event_id, id, location, meeting_link, notes, notifications, professor, professor_id, rating, scheduled_date, scheduled_time, status, student, student_id, title, updated_at
+ERROR 2025-12-02 17:56:18,975 basehttp "GET /professors/3/ HTTP/1.1" 500 103375
+INFO 2025-12-02 17:56:20,863 basehttp "GET /consultations/book/?professor=3 HTTP/1.1" 200 14999
+ERROR 2025-12-02 17:56:37,170 log Internal Server Error: /professors/61/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 313, in professor_profile
+    ).exclude(feedback='').order_by('-completed_at')[:5]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\query.py", line 1727, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 2305, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'completed_at' into field. Choices are: booking_created_at, cancellation_reason, cancelled_at, confirmed_at, created_at, description, duration, feedback, google_calendar_event_id, id, location, meeting_link, notes, notifications, professor, professor_id, rating, scheduled_date, scheduled_time, status, student, student_id, title, updated_at
+ERROR 2025-12-02 17:56:37,171 basehttp "GET /professors/61/ HTTP/1.1" 500 103402
+ERROR 2025-12-02 17:57:16,160 log Internal Server Error: /professors/61/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 313, in professor_profile
+    ).exclude(feedback='').order_by('-completed_at')[:5]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\query.py", line 1727, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 2305, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'completed_at' into field. Choices are: booking_created_at, cancellation_reason, cancelled_at, confirmed_at, created_at, description, duration, feedback, google_calendar_event_id, id, location, meeting_link, notes, notifications, professor, professor_id, rating, scheduled_date, scheduled_time, status, student, student_id, title, updated_at
+ERROR 2025-12-02 17:57:16,161 basehttp "GET /professors/61/ HTTP/1.1" 500 103402
+INFO 2025-12-02 17:57:24,214 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-12-02 18:05:42,714 basehttp "GET /professors/ HTTP/1.1" 200 37946
+INFO 2025-12-02 18:06:32,182 basehttp "GET /consultations/book/?professor=3 HTTP/1.1" 200 14999
+INFO 2025-12-02 18:07:12,359 basehttp "POST /consultations/book/?professor=3 HTTP/1.1" 302 0
+INFO 2025-12-02 18:07:12,371 basehttp "GET /consultations/ HTTP/1.1" 200 10870
+INFO 2025-12-02 18:07:15,798 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6872
+INFO 2025-12-02 18:07:16,827 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 10470
+INFO 2025-12-02 18:07:18,633 basehttp "GET /professors/ HTTP/1.1" 200 37946
+ERROR 2025-12-02 18:07:27,518 log Internal Server Error: /professors/3/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 313, in professor_profile
+    ).exclude(feedback='').order_by('-completed_at')[:5]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\query.py", line 1727, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 2305, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'completed_at' into field. Choices are: booking_created_at, cancellation_reason, cancelled_at, confirmed_at, created_at, description, duration, feedback, google_calendar_event_id, id, location, meeting_link, notes, notifications, professor, professor_id, rating, scheduled_date, scheduled_time, status, student, student_id, title, updated_at
+ERROR 2025-12-02 18:07:27,520 basehttp "GET /professors/3/ HTTP/1.1" 500 103375
+INFO 2025-12-02 18:26:29,186 autoreload Watching for file changes with StatReloader
+INFO 2025-12-02 18:26:35,784 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-12-02 18:26:37,326 basehttp "GET /professors/ HTTP/1.1" 200 37946
+ERROR 2025-12-02 18:26:39,332 log Internal Server Error: /professors/3/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 327, in professor_profile
+    ).exclude(feedback='').order_by('-completed_at')[:5]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\query.py", line 1727, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 2305, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'completed_at' into field. Choices are: booking_created_at, cancellation_reason, cancelled_at, confirmed_at, created_at, description, duration, feedback, google_calendar_event_id, id, location, meeting_link, notes, notifications, professor, professor_id, rating, scheduled_date, scheduled_time, status, student, student_id, title, updated_at
+ERROR 2025-12-02 18:26:39,334 basehttp "GET /professors/3/ HTTP/1.1" 500 103535
+INFO 2025-12-02 18:32:58,021 autoreload C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-12-02 18:32:59,524 autoreload Watching for file changes with StatReloader
+INFO 2025-12-02 18:33:11,143 autoreload Watching for file changes with StatReloader
+INFO 2025-12-02 18:33:14,680 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-12-02 18:33:15,967 basehttp "GET /professors/ HTTP/1.1" 200 37946
+ERROR 2025-12-02 18:33:16,961 log Internal Server Error: /professors/3/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 357, in professor_profile
+    return render(request, 'professor_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1127, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'int'
+ERROR 2025-12-02 18:33:16,970 basehttp "GET /professors/3/ HTTP/1.1" 500 359789
+INFO 2025-12-02 18:34:00,842 autoreload C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-12-02 18:34:02,294 autoreload Watching for file changes with StatReloader
+INFO 2025-12-02 18:34:11,199 autoreload Watching for file changes with StatReloader
+INFO 2025-12-02 18:34:15,369 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-02 18:34:15,574 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-12-02 18:34:15,579 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+INFO 2025-12-02 18:34:15,581 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-12-02 18:34:15,583 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
+INFO 2025-12-02 18:34:15,585 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
+WARNING 2025-12-02 18:34:16,062 log Not Found: /favicon.ico
+WARNING 2025-12-02 18:34:16,062 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-02 18:34:19,888 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-02 18:34:21,131 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-02 18:34:27,419 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-02 18:34:27,426 log Not Found: /accounts/profile/
+WARNING 2025-12-02 18:34:27,426 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-02 18:34:32,018 basehttp "GET / HTTP/1.1" 200 11691
+INFO 2025-12-02 18:34:33,891 basehttp "GET /professors/ HTTP/1.1" 200 37946
+ERROR 2025-12-02 18:34:35,316 log Internal Server Error: /professors/3/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 357, in professor_profile
+    return render(request, 'professor_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1127, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'int'
+ERROR 2025-12-02 18:34:35,323 basehttp "GET /professors/3/ HTTP/1.1" 500 359801
+INFO 2025-12-02 18:34:46,660 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 37946
+INFO 2025-12-02 18:34:55,090 basehttp "GET /professors/?search=&department=Computer+Science&sort=name HTTP/1.1" 200 17337
+INFO 2025-12-02 18:37:02,043 autoreload C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
+INFO 2025-12-03 08:08:24,326 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 08:08:30,255 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:08:30,333 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:08:30,338 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:08:30,338 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:08:30,339 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:08:30,340 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-12-03 08:08:30,445 log Not Found: /favicon.ico
+WARNING 2025-12-03 08:08:30,445 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-03 08:08:31,854 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:08:34,242 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-03 08:08:43,074 basehttp "POST /accounts/login/ HTTP/1.1" 200 2722
+INFO 2025-12-03 08:08:49,120 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:08:49,129 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:08:49,129 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:08:55,617 basehttp "GET / HTTP/1.1" 200 11691
+INFO 2025-12-03 08:08:56,681 basehttp "GET /professors/ HTTP/1.1" 200 37946
+ERROR 2025-12-03 08:08:58,322 log Internal Server Error: /professors/3/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 357, in professor_profile
+    return render(request, 'professor_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1127, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'int'
+ERROR 2025-12-03 08:08:58,330 basehttp "GET /professors/3/ HTTP/1.1" 500 359790
+INFO 2025-12-03 08:12:35,359 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 08:12:38,506 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:12:38,614 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:12:38,620 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:12:38,620 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:12:38,621 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-03 08:12:38,623 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2025-12-03 08:12:38,708 log Not Found: /favicon.ico
+WARNING 2025-12-03 08:12:38,709 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-03 08:12:39,957 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:12:41,733 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-03 08:12:48,229 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:12:48,236 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:12:48,237 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:12:53,876 basehttp "GET / HTTP/1.1" 200 11691
+INFO 2025-12-03 08:12:55,224 basehttp "GET /professors/ HTTP/1.1" 200 37946
+ERROR 2025-12-03 08:12:56,217 log Internal Server Error: /professors/3/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 357, in professor_profile
+    return render(request, 'professor_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'rating_percentage'
+ERROR 2025-12-03 08:12:56,224 basehttp "GET /professors/3/ HTTP/1.1" 500 247812
+INFO 2025-12-03 08:17:12,617 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 08:17:16,558 basehttp "GET / HTTP/1.1" 200 11326
+INFO 2025-12-03 08:17:18,298 basehttp "GET /professors/ HTTP/1.1" 200 37946
+INFO 2025-12-03 08:17:22,938 basehttp "GET /professors/3/ HTTP/1.1" 200 9454
+INFO 2025-12-03 08:17:36,776 basehttp "GET /professors/61/ HTTP/1.1" 200 10086
+INFO 2025-12-03 08:18:32,168 basehttp "GET /consultations/book/?professor=61 HTTP/1.1" 200 14999
+INFO 2025-12-03 08:18:36,990 basehttp "GET /consultations/book/?professor=61 HTTP/1.1" 200 14999
+INFO 2025-12-03 08:18:55,730 basehttp "POST /consultations/book/?professor=61 HTTP/1.1" 302 0
+INFO 2025-12-03 08:18:55,742 basehttp "GET /consultations/ HTTP/1.1" 200 14628
+INFO 2025-12-03 08:18:59,425 basehttp "GET /profile/settings/ HTTP/1.1" 200 24778
+INFO 2025-12-03 08:19:14,696 basehttp "POST /profile/convert-to-professor/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:19:14,716 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 153442
+INFO 2025-12-03 08:19:32,636 basehttp "GET /profile/settings/ HTTP/1.1" 200 23446
+INFO 2025-12-03 08:20:04,952 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:20:04,956 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:20:05,983 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:20:07,798 basehttp "GET /accounts/signup/ HTTP/1.1" 200 2785
+INFO 2025-12-03 08:20:26,748 basehttp "POST /accounts/signup/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:20:26,756 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:20:26,757 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:20:31,046 basehttp "GET / HTTP/1.1" 200 11715
+INFO 2025-12-03 08:20:35,254 basehttp "GET /accounts/signup/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:20:36,577 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-03 08:20:39,290 basehttp "GET /accounts/logout/ HTTP/1.1" 200 1951
+INFO 2025-12-03 08:20:40,470 basehttp "GET /accounts/logout/ HTTP/1.1" 200 1951
+INFO 2025-12-03 08:20:41,199 basehttp "GET /accounts/logout/ HTTP/1.1" 200 1951
+INFO 2025-12-03 08:20:42,283 basehttp "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:20:42,286 basehttp "GET / HTTP/1.1" 200 7876
+INFO 2025-12-03 08:20:44,136 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:20:45,772 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-03 08:20:55,677 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:20:55,684 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:20:55,684 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:20:59,331 basehttp "GET / HTTP/1.1" 200 11634
+INFO 2025-12-03 08:21:04,970 basehttp "GET /professors/ HTTP/1.1" 200 40706
+INFO 2025-12-03 08:21:07,426 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 15093
+INFO 2025-12-03 08:21:18,510 basehttp "POST /consultations/book/?professor=71 HTTP/1.1" 302 0
+INFO 2025-12-03 08:21:18,526 basehttp "GET /consultations/ HTTP/1.1" 200 10850
+INFO 2025-12-03 08:21:22,704 basehttp "GET /consultations/ HTTP/1.1" 200 10450
+INFO 2025-12-03 08:21:44,912 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:21:44,929 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 157473
+INFO 2025-12-03 08:21:46,908 basehttp "POST /professor/consultation/110/action/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:21:46,926 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 155233
+INFO 2025-12-03 08:21:54,404 basehttp "GET /consultations/ HTTP/1.1" 200 10454
+INFO 2025-12-03 08:22:08,442 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:22:08,457 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 154879
+INFO 2025-12-03 08:22:09,796 basehttp "GET /consultations/ HTTP/1.1" 200 10454
+INFO 2025-12-03 08:23:06,265 basehttp "POST /consultations/book/?professor=71 HTTP/1.1" 302 0
+INFO 2025-12-03 08:23:06,277 basehttp "GET /consultations/ HTTP/1.1" 200 14590
+INFO 2025-12-03 08:23:09,240 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:23:09,258 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 159513
+INFO 2025-12-03 08:23:11,111 basehttp "POST /professor/consultation/111/action/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:23:11,130 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 157223
+ERROR 2025-12-03 08:23:20,926 log Internal Server Error: /professor/availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 589, in professor_availability_settings
+    return render(request, 'professor_availability_settings.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'split'
+ERROR 2025-12-03 08:23:20,932 basehttp "GET /professor/availability/ HTTP/1.1" 500 261737
+INFO 2025-12-03 08:23:28,257 basehttp "GET /consultations/ HTTP/1.1" 200 14194
+INFO 2025-12-03 08:23:36,027 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6858
+INFO 2025-12-03 08:23:36,790 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6859
+INFO 2025-12-03 08:23:37,375 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 14194
+INFO 2025-12-03 08:23:51,685 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6859
+INFO 2025-12-03 08:23:53,079 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 14194
+INFO 2025-12-03 08:23:53,932 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6858
+INFO 2025-12-03 08:23:54,915 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:23:54,931 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 156870
+INFO 2025-12-03 08:23:58,569 basehttp "GET /consultations/ HTTP/1.1" 200 14194
+INFO 2025-12-03 08:25:08,416 basehttp "GET /consultations/ HTTP/1.1" 200 14194
+INFO 2025-12-03 08:25:09,480 basehttp "GET /consultations/ HTTP/1.1" 200 14194
+INFO 2025-12-03 08:25:10,167 basehttp "GET /consultations/ HTTP/1.1" 200 14194
+INFO 2025-12-03 08:25:11,072 basehttp "GET /consultations/ HTTP/1.1" 200 14194
+INFO 2025-12-03 08:25:12,253 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:25:12,269 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 156870
+INFO 2025-12-03 08:25:13,213 basehttp "GET / HTTP/1.1" 200 11269
+INFO 2025-12-03 08:25:19,946 basehttp "GET /consultations/ HTTP/1.1" 200 14194
+INFO 2025-12-03 08:25:26,873 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:25:26,877 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:25:27,798 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:25:29,360 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-03 08:25:38,576 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:25:38,606 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:25:38,607 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:25:56,702 basehttp "GET / HTTP/1.1" 200 11715
+INFO 2025-12-03 08:26:11,168 basehttp "GET /consultations/ HTTP/1.1" 200 6948
+INFO 2025-12-03 08:26:12,306 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6881
+INFO 2025-12-03 08:26:13,111 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6880
+INFO 2025-12-03 08:26:13,936 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6948
+INFO 2025-12-03 08:26:14,643 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6880
+INFO 2025-12-03 08:26:15,056 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6881
+INFO 2025-12-03 08:26:15,722 basehttp "GET /dashboard/ HTTP/1.1" 200 11806
+INFO 2025-12-03 08:26:16,711 basehttp "GET /consultations/ HTTP/1.1" 200 6948
+INFO 2025-12-03 08:26:17,938 basehttp "GET / HTTP/1.1" 200 11342
+INFO 2025-12-03 08:26:20,218 basehttp "GET /professors/ HTTP/1.1" 200 40728
+INFO 2025-12-03 08:26:22,073 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 15115
+INFO 2025-12-03 08:26:46,018 basehttp "POST /consultations/book/?professor=71 HTTP/1.1" 302 0
+INFO 2025-12-03 08:26:46,029 basehttp "GET /consultations/ HTTP/1.1" 200 10871
+INFO 2025-12-03 08:26:51,944 basehttp "GET /consultations/ HTTP/1.1" 200 10471
+WARNING 2025-12-03 08:27:11,859 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:27:11,860 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+WARNING 2025-12-03 08:27:15,626 log Forbidden (CSRF token from POST incorrect.): /accounts/login/
+WARNING 2025-12-03 08:27:15,627 basehttp "POST /accounts/login/ HTTP/1.1" 403 2503
+INFO 2025-12-03 08:27:18,489 basehttp "GET / HTTP/1.1" 200 11269
+INFO 2025-12-03 08:27:25,004 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:27:25,007 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:27:27,658 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:27:28,923 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-03 08:27:37,669 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:27:37,676 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:27:37,677 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:27:45,554 basehttp "GET / HTTP/1.1" 200 11715
+INFO 2025-12-03 08:27:49,900 basehttp "GET /consultations/ HTTP/1.1" 200 10471
+INFO 2025-12-03 08:28:16,726 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:28:16,729 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:28:19,277 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:28:20,560 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-03 08:28:26,303 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:28:26,310 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:28:26,311 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+WARNING 2025-12-03 08:28:27,586 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:28:27,587 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:28:29,499 basehttp "GET / HTTP/1.1" 200 11634
+INFO 2025-12-03 08:28:32,150 basehttp "GET /consultations/ HTTP/1.1" 200 17942
+INFO 2025-12-03 08:28:40,131 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6859
+INFO 2025-12-03 08:28:40,604 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6858
+INFO 2025-12-03 08:28:41,265 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 17942
+INFO 2025-12-03 08:28:44,386 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:28:44,405 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 161377
+INFO 2025-12-03 08:28:48,301 basehttp "POST /professor/consultation/112/action/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:28:48,324 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 158699
+INFO 2025-12-03 08:28:52,950 basehttp "GET /consultations/ HTTP/1.1" 200 17946
+INFO 2025-12-03 08:29:00,353 basehttp "POST /api/auth/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:29:00,355 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:29:17,013 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 08:29:22,276 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-03 08:29:24,383 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-03 08:29:26,522 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-03 08:29:32,219 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-03 08:29:32,227 log Not Found: /accounts/profile/
+WARNING 2025-12-03 08:29:32,228 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-03 08:29:35,015 basehttp "GET / HTTP/1.1" 200 11715
+INFO 2025-12-03 08:29:37,961 basehttp "GET /consultations/ HTTP/1.1" 200 10475
+INFO 2025-12-03 08:29:50,734 basehttp "GET / HTTP/1.1" 200 11342
+INFO 2025-12-03 08:29:55,084 basehttp "GET /professors/ HTTP/1.1" 200 40728
+INFO 2025-12-03 08:29:57,783 basehttp "GET /professors/71/ HTTP/1.1" 200 9476
+INFO 2025-12-03 08:30:26,315 basehttp "GET /admin/consultations/consultation/ HTTP/1.1" 302 0
+INFO 2025-12-03 08:30:26,442 basehttp "GET /admin/login/?next=/admin/consultations/consultation/ HTTP/1.1" 200 3758
+INFO 2025-12-03 08:30:26,598 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-12-03 08:30:26,607 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-12-03 08:30:26,617 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-12-03 08:30:26,618 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-12-03 08:30:26,621 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-12-03 08:30:26,634 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-12-03 08:30:26,645 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-12-05 08:06:26,406 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 08:07:15,368 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 08:07:41,484 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 08:07:45,462 basehttp "GET / HTTP/1.1" 200 8424
+INFO 2025-12-05 08:07:45,562 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-05 08:07:45,563 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-05 08:07:45,565 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-05 08:07:45,566 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-05 08:07:45,566 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+WARNING 2025-12-05 08:07:45,701 log Not Found: /favicon.ico
+WARNING 2025-12-05 08:07:45,701 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-05 08:07:47,166 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-05 08:07:48,791 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-05 08:07:57,705 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-05 08:07:57,715 log Not Found: /accounts/profile/
+WARNING 2025-12-05 08:07:57,716 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-05 08:08:10,208 basehttp "GET / HTTP/1.1" 200 12585
+INFO 2025-12-05 08:08:34,884 basehttp "GET /consultations/ HTTP/1.1" 200 11991
+INFO 2025-12-05 08:08:53,216 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 08:08:57,461 basehttp "GET / HTTP/1.1" 200 12168
+INFO 2025-12-05 08:09:03,569 basehttp "GET /login HTTP/1.1" 301 0
+INFO 2025-12-05 08:09:03,576 basehttp "GET /login/ HTTP/1.1" 302 0
+INFO 2025-12-05 08:09:03,588 basehttp "GET / HTTP/1.1" 200 12168
+WARNING 2025-12-05 08:09:09,573 log Not Found: /logout
+WARNING 2025-12-05 08:09:09,573 basehttp "GET /logout HTTP/1.1" 404 6977
+INFO 2025-12-05 08:09:20,032 basehttp "GET / HTTP/1.1" 200 12168
+INFO 2025-12-05 08:09:23,812 basehttp "GET /profile/settings/ HTTP/1.1" 200 24345
+INFO 2025-12-05 08:09:28,922 basehttp "GET /profile/settings/ HTTP/1.1" 200 24345
+INFO 2025-12-05 08:09:37,484 basehttp "GET / HTTP/1.1" 200 12168
+INFO 2025-12-05 08:09:40,661 basehttp "GET /profile/settings/ HTTP/1.1" 200 24345
+WARNING 2025-12-05 08:09:55,702 log Not Found: /professors/1/
+WARNING 2025-12-05 08:09:55,702 basehttp "GET /professors/1/ HTTP/1.1" 404 3659
+WARNING 2025-12-05 08:09:55,840 log Not Found: /favicon.ico
+WARNING 2025-12-05 08:09:55,840 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-05 12:17:00,755 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 12:17:05,130 basehttp "GET / HTTP/1.1" 200 8424
+WARNING 2025-12-05 12:17:05,309 log Not Found: /favicon.ico
+WARNING 2025-12-05 12:17:05,309 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-05 12:17:06,620 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-05 12:17:08,012 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-05 12:17:15,548 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-05 12:17:15,555 log Not Found: /accounts/profile/
+WARNING 2025-12-05 12:17:15,555 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-05 12:17:19,384 basehttp "GET / HTTP/1.1" 200 12666
+INFO 2025-12-05 12:17:23,949 basehttp "GET /professors/ HTTP/1.1" 200 46489
+INFO 2025-12-05 12:17:27,372 basehttp "GET /professors/3/ HTTP/1.1" 200 10361
+INFO 2025-12-05 12:17:30,927 basehttp "GET /professors/71/ HTTP/1.1" 200 10375
+INFO 2025-12-05 12:17:33,223 basehttp "GET /professors/61/ HTTP/1.1" 200 10993
+INFO 2025-12-05 12:17:35,955 basehttp "GET /professors/63/ HTTP/1.1" 200 10975
+INFO 2025-12-05 12:17:38,345 basehttp "GET /professors/3/ HTTP/1.1" 200 10361
+INFO 2025-12-05 12:18:07,912 basehttp "GET /consultations/book/?professor=64 HTTP/1.1" 200 16014
+INFO 2025-12-05 12:18:09,992 basehttp "GET /professors/64/ HTTP/1.1" 200 10818
+INFO 2025-12-05 12:18:11,855 basehttp "GET /professors/69/ HTTP/1.1" 200 10373
+INFO 2025-12-05 12:18:13,720 basehttp "GET /professors/67/ HTTP/1.1" 200 10971
+INFO 2025-12-05 12:18:16,168 basehttp "GET /professors/71/ HTTP/1.1" 200 10375
+WARNING 2025-12-05 12:18:18,818 log Not Found: /professors/1/
+WARNING 2025-12-05 12:18:18,819 basehttp "GET /professors/1/ HTTP/1.1" 404 3659
+INFO 2025-12-05 12:18:43,176 basehttp "GET /consultations/ HTTP/1.1" 200 7847
+INFO 2025-12-05 12:18:44,343 basehttp "GET /consultations/?status=past HTTP/1.1" 200 10795
+INFO 2025-12-05 12:18:46,780 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 7780
+INFO 2025-12-05 12:18:47,310 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 7847
+INFO 2025-12-05 12:18:48,169 basehttp "GET /consultations/?status=past HTTP/1.1" 200 10795
+INFO 2025-12-05 12:19:10,118 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 7780
+INFO 2025-12-05 12:19:10,742 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 7847
+INFO 2025-12-05 12:19:11,311 basehttp "GET /consultations/?status=past HTTP/1.1" 200 10795
+INFO 2025-12-05 12:19:11,846 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 7847
+INFO 2025-12-05 12:19:12,693 basehttp "GET /dashboard/ HTTP/1.1" 200 13206
+INFO 2025-12-05 12:19:15,521 basehttp "GET / HTTP/1.1" 200 12241
+INFO 2025-12-05 12:19:17,264 basehttp "GET /professors/ HTTP/1.1" 200 46489
+INFO 2025-12-05 12:19:23,752 basehttp "GET /professors/?search=&department=&sort=name HTTP/1.1" 200 46489
+INFO 2025-12-05 12:19:25,034 basehttp "GET /professors/71/ HTTP/1.1" 200 10375
+INFO 2025-12-05 12:19:49,007 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 12:19:51,741 basehttp "GET / HTTP/1.1" 200 12241
+INFO 2025-12-05 12:19:51,885 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
+INFO 2025-12-05 12:19:51,889 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+INFO 2025-12-05 12:19:51,890 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-12-05 12:19:51,891 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-12-05 12:19:51,892 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
+WARNING 2025-12-05 12:19:51,967 log Not Found: /favicon.ico
+WARNING 2025-12-05 12:19:51,967 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-05 12:21:24,438 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 12:21:30,766 basehttp "GET / HTTP/1.1" 200 8424
+WARNING 2025-12-05 12:21:31,116 log Not Found: /favicon.ico
+WARNING 2025-12-05 12:21:31,117 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-05 12:21:32,476 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-05 12:21:34,245 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-05 12:21:41,863 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-05 12:21:41,869 log Not Found: /accounts/profile/
+WARNING 2025-12-05 12:21:41,870 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-05 12:21:45,577 basehttp "GET / HTTP/1.1" 200 12585
+INFO 2025-12-05 12:21:47,458 basehttp "GET /consultations/ HTTP/1.1" 200 11991
+INFO 2025-12-05 12:21:54,133 basehttp "GET /consultations/?status=past HTTP/1.1" 200 13942
+INFO 2025-12-05 12:21:56,843 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 7758
+INFO 2025-12-05 12:21:57,446 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 11991
+INFO 2025-12-05 12:21:59,044 basehttp "GET /consultations/?status=past HTTP/1.1" 200 13942
+INFO 2025-12-05 12:28:04,531 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 12:28:08,778 basehttp "GET / HTTP/1.1" 200 12168
+INFO 2025-12-05 12:28:19,914 basehttp "GET /consultations/ HTTP/1.1" 200 11991
+INFO 2025-12-05 12:28:32,672 basehttp "GET / HTTP/1.1" 200 8424
+WARNING 2025-12-05 12:28:32,795 log Not Found: /favicon.ico
+WARNING 2025-12-05 12:28:32,795 basehttp "GET /favicon.ico HTTP/1.1" 404 6992
+INFO 2025-12-05 12:28:33,902 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-05 12:28:35,194 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-05 12:28:42,018 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-05 12:28:42,025 log Not Found: /accounts/profile/
+WARNING 2025-12-05 12:28:42,026 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14416
+INFO 2025-12-05 12:28:45,200 basehttp "GET / HTTP/1.1" 200 12666
+INFO 2025-12-05 12:28:47,015 basehttp "GET /professors/ HTTP/1.1" 200 46671
+INFO 2025-12-05 12:28:49,250 basehttp "GET /professors/71/ HTTP/1.1" 200 10541
+INFO 2025-12-05 12:29:18,429 basehttp "GET /consultations/ HTTP/1.1" 200 7847
+INFO 2025-12-05 12:29:19,788 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 7780
+ERROR 2025-12-05 12:29:20,321 log Internal Server Error: /consultations/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 153, in consultations_list
+    return render(request, 'consultations.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-12-05 12:29:20,328 basehttp "GET /consultations/?status=past HTTP/1.1" 500 315681
+INFO 2025-12-05 12:29:23,195 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 7847
+ERROR 2025-12-05 12:29:23,911 log Internal Server Error: /consultations/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 153, in consultations_list
+    return render(request, 'consultations.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-12-05 12:29:23,914 basehttp "GET /consultations/?status=past HTTP/1.1" 500 315680
+INFO 2025-12-05 12:29:28,621 basehttp "GET /consultations/ HTTP/1.1" 200 7847
+INFO 2025-12-05 12:29:29,212 basehttp "GET /consultations/ HTTP/1.1" 200 7847
+INFO 2025-12-05 12:29:29,627 basehttp "GET /consultations/ HTTP/1.1" 200 7847
+INFO 2025-12-05 12:29:29,827 basehttp "GET /consultations/ HTTP/1.1" 200 7847
+INFO 2025-12-05 12:29:29,995 basehttp "GET /consultations/ HTTP/1.1" 200 7847
+INFO 2025-12-05 12:29:30,346 basehttp "GET /professors/ HTTP/1.1" 200 46671
+INFO 2025-12-05 12:29:31,721 basehttp "GET /dashboard/ HTTP/1.1" 200 13206
+ERROR 2025-12-05 12:29:37,182 log Internal Server Error: /consultations/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 153, in consultations_list
+    return render(request, 'consultations.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'display_name'
+ERROR 2025-12-05 12:29:37,185 basehttp "GET /consultations/?status=past HTTP/1.1" 500 315660
