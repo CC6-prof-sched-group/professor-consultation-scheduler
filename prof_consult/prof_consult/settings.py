@@ -104,10 +104,10 @@ try:
 except Exception:
     # Fallback to SQLite if dj_database_url fails
     DATABASES = {
-        'default': {
+       'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+            'NAME': BASE_DIR / 'db.sqlite3 ',
+        } 
     }
 
 # Custom User Model
@@ -322,6 +322,3 @@ REST_FRAMEWORK['DEFAULT_THROTTLE_RATES'] = {
     'user': '1000/hour',
 }
 
-# # settings.py
-CONSULTATION_CANCEL_CUTOFF_HOURS = 6
-CONSULTATION_RESCHEDULE_CUTOFF_HOURS = 6

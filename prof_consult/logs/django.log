@@ -1068,3 +1068,301 @@ Traceback (most recent call last):
     raise ConnectionError(str(exc)) from exc
 kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
 INFO 2025-12-05 07:44:02,789 autoreload Watching for file changes with StatReloader
+WARNING 2025-12-05 10:23:53,755 services User professor@example.com does not have Google access token.
+ERROR 2025-12-05 10:23:53,756 services Google Calendar service not authenticated.
+INFO 2025-12-05 10:23:55,171 tasks Sent email notification 1 to student@example.com
+INFO 2025-12-05 10:23:55,208 tasks Sent confirmation notification for consultation 1
+INFO 2025-12-05 10:23:57,550 tasks Sent email notification 2 to student@example.com
+INFO 2025-12-05 10:23:57,566 tasks Sent email notification 3 to professor@example.com
+INFO 2025-12-05 10:23:57,567 tasks Created notifications for consultation 3
+WARNING 2025-12-05 11:11:22,000 services User professor@example.com does not have Google access token.
+ERROR 2025-12-05 11:11:22,000 services Google Calendar service not authenticated.
+INFO 2025-12-05 11:11:23,244 tasks Sent email notification 1 to student@example.com
+INFO 2025-12-05 11:11:23,271 tasks Sent confirmation notification for consultation 1
+INFO 2025-12-05 11:11:25,402 tasks Sent email notification 1 to student@example.com
+INFO 2025-12-05 11:11:25,412 tasks Sent email notification 2 to professor@example.com
+INFO 2025-12-05 11:11:25,412 tasks Created notifications for consultation 2
+WARNING 2025-12-05 11:14:12,674 services User professor@example.com does not have Google access token.
+ERROR 2025-12-05 11:14:12,674 services Google Calendar service not authenticated.
+INFO 2025-12-05 11:14:13,706 tasks Sent email notification 1 to student@example.com
+INFO 2025-12-05 11:14:13,727 tasks Sent confirmation notification for consultation 1
+INFO 2025-12-05 11:14:16,034 tasks Sent email notification 1 to student@example.com
+INFO 2025-12-05 11:14:16,044 tasks Sent email notification 2 to professor@example.com
+INFO 2025-12-05 11:14:16,044 tasks Created notifications for consultation 2
+INFO 2025-12-05 11:23:39,637 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 11:23:55,919 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 11:24:01,514 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-05 11:24:01,574 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-05 11:24:01,576 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-05 11:24:01,576 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-05 11:24:01,577 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-05 11:24:08,039 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 11:24:10,528 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
+INFO 2025-12-05 11:24:13,641 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 11:24:15,001 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 11:24:17,097 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 11:24:45,378 basehttp "GET /profile/settings/ HTTP/1.1" 200 22816
+INFO 2025-12-05 11:27:02,023 autoreload Watching for file changes with StatReloader
+WARNING 2025-12-05 11:27:17,447 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:17,447 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+INFO 2025-12-05 11:27:18,024 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-12-05 11:27:18,062 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-12-05 11:27:18,100 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-12-05 11:27:18,176 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-12-05 11:27:18,190 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-12-05 11:27:18,192 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-12-05 11:27:18,258 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-12-05 11:27:18,278 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-12-05 11:27:18,298 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-12-05 11:27:18,329 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-12-05 11:27:18,339 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2025-12-05 11:27:18,363 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+WARNING 2025-12-05 11:27:29,894 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:29,896 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:33,778 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:33,780 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:34,497 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:34,498 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:34,654 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:34,656 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:34,701 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:34,705 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:34,911 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:34,937 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:35,131 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:35,148 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:35,489 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:35,490 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+WARNING 2025-12-05 11:27:35,671 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:27:35,673 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+INFO 2025-12-05 11:27:38,981 basehttp "POST /api/auth/logout/ HTTP/1.1" 200 8532
+WARNING 2025-12-05 11:27:42,355 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:27:42,357 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:27:43,512 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:27:43,513 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:27:44,163 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:27:44,164 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:27:44,392 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:27:44,393 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:27:44,588 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:27:44,590 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:27:45,331 log Forbidden: /api/
+WARNING 2025-12-05 11:27:45,332 basehttp "GET /api/ HTTP/1.1" 403 9655
+INFO 2025-12-05 11:28:15,160 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-05 11:28:23,325 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-05 11:28:28,661 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-05 11:28:53,612 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-05 11:28:53,673 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:53,674 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:55,803 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:55,803 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:57,294 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:57,294 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:57,777 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:57,781 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:57,936 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:57,936 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:58,147 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:58,152 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:58,313 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:58,315 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:58,481 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:58,488 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:58,673 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:58,674 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:58,859 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:58,861 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:59,051 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:59,053 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:59,249 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:59,249 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:59,439 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:59,440 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:59,607 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:59,607 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:28:59,776 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:28:59,776 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+INFO 2025-12-05 11:29:05,012 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-05 11:29:07,548 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 2199
+INFO 2025-12-05 11:29:14,243 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:14,499 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:15,042 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:15,245 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:15,470 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:15,651 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:15,852 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:16,038 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:16,249 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:16,439 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:16,637 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:16,830 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:17,038 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:17,216 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:17,407 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:17,606 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1977
+INFO 2025-12-05 11:29:24,374 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 11:29:32,068 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 11:29:36,334 basehttp "GET /profile/settings/ HTTP/1.1" 200 22816
+INFO 2025-12-05 11:30:26,466 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
+INFO 2025-12-05 11:30:26,486 basehttp "GET /profile/settings/ HTTP/1.1" 200 23192
+INFO 2025-12-05 11:30:50,305 basehttp "GET /professors/ HTTP/1.1" 200 6456
+INFO 2025-12-05 11:30:57,366 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
+INFO 2025-12-05 11:31:15,221 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
+INFO 2025-12-05 11:31:20,107 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 11:31:22,927 basehttp "GET /professors/ HTTP/1.1" 200 6456
+INFO 2025-12-05 11:31:28,530 basehttp "GET /professors/ HTTP/1.1" 200 6456
+INFO 2025-12-05 11:31:29,600 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 11:31:32,746 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
+INFO 2025-12-05 11:31:33,557 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
+INFO 2025-12-05 11:31:34,872 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 11:31:38,914 basehttp "GET /dashboard/ HTTP/1.1" 200 11340
+INFO 2025-12-05 11:31:48,727 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 11:31:49,990 basehttp "GET /professors/ HTTP/1.1" 200 6456
+INFO 2025-12-05 11:31:55,122 basehttp "GET /dashboard/ HTTP/1.1" 200 11340
+INFO 2025-12-05 11:31:56,557 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 11:31:58,154 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
+INFO 2025-12-05 11:31:58,820 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 11:32:00,906 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 11:32:48,633 basehttp "GET /professors/ HTTP/1.1" 200 6456
+INFO 2025-12-05 11:32:51,682 basehttp "GET /profile/settings/ HTTP/1.1" 200 22832
+INFO 2025-12-05 11:36:47,676 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 11:36:55,571 basehttp "GET /profile/settings/ HTTP/1.1" 200 22834
+INFO 2025-12-05 11:36:59,574 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
+INFO 2025-12-05 11:36:59,588 basehttp "GET /profile/settings/ HTTP/1.1" 200 23194
+INFO 2025-12-05 11:37:03,873 basehttp "GET / HTTP/1.1" 200 9027
+INFO 2025-12-05 11:37:06,605 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 11:37:09,987 basehttp "GET /professors/ HTTP/1.1" 200 6456
+INFO 2025-12-05 11:37:17,491 basehttp "GET / HTTP/1.1" 200 9027
+INFO 2025-12-05 11:37:18,662 basehttp "GET / HTTP/1.1" 200 9027
+INFO 2025-12-05 11:37:19,690 basehttp "GET / HTTP/1.1" 200 9027
+INFO 2025-12-05 11:37:24,977 basehttp "GET /profile/settings/ HTTP/1.1" 200 22834
+INFO 2025-12-05 11:37:59,141 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
+INFO 2025-12-05 11:37:59,164 basehttp "GET /profile/settings/ HTTP/1.1" 200 23209
+INFO 2025-12-05 11:38:01,506 basehttp "GET / HTTP/1.1" 200 9027
+INFO 2025-12-05 11:38:02,792 basehttp "GET /professors/ HTTP/1.1" 200 6456
+WARNING 2025-12-05 11:38:07,790 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:38:07,790 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10516
+WARNING 2025-12-05 11:38:11,607 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:38:11,617 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10516
+INFO 2025-12-05 11:38:23,814 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 11:38:41,542 basehttp "GET / HTTP/1.1" 200 9027
+WARNING 2025-12-05 11:38:45,132 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 11:38:45,142 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10516
+INFO 2025-12-05 11:38:48,289 basehttp "POST /api/auth/logout/ HTTP/1.1" 200 8532
+WARNING 2025-12-05 11:38:50,043 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:38:50,046 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:38:51,140 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:38:51,141 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:38:55,418 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:38:55,425 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+WARNING 2025-12-05 11:38:56,302 log Forbidden: /api/auth/logout/
+WARNING 2025-12-05 11:38:56,302 basehttp "GET /api/auth/logout/ HTTP/1.1" 403 8495
+INFO 2025-12-05 11:39:14,102 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 11:39:30,091 basehttp "GET / HTTP/1.1" 200 7525
+INFO 2025-12-05 11:39:34,812 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-05 11:39:43,195 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-05 11:40:00,523 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-05 11:40:00,546 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:40:00,547 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:40:02,593 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:40:02,603 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:40:06,429 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:40:06,429 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+WARNING 2025-12-05 11:40:06,596 log Not Found: /accounts/profile/
+WARNING 2025-12-05 11:40:06,596 basehttp "GET /accounts/profile/ HTTP/1.1" 404 14215
+INFO 2025-12-05 11:40:24,772 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 11:40:37,054 basehttp "GET / HTTP/1.1" 200 11240
+INFO 2025-12-05 11:40:45,812 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 12:04:20,442 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 12:04:47,074 basehttp "GET /profile/settings/ HTTP/1.1" 200 22816
+INFO 2025-12-05 12:05:12,976 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
+INFO 2025-12-05 12:05:13,030 basehttp "GET /profile/settings/ HTTP/1.1" 200 23186
+INFO 2025-12-05 12:05:34,271 basehttp "POST /profile/settings/ HTTP/1.1" 302 0
+INFO 2025-12-05 12:05:34,288 basehttp "GET /profile/settings/ HTTP/1.1" 200 23202
+INFO 2025-12-05 12:16:45,354 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 12:16:53,298 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 12:17:04,574 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 12:17:06,140 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
+INFO 2025-12-05 12:17:10,890 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 12:46:17,610 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 12:46:21,587 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 12:46:23,256 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 13:13:00,216 autoreload C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\views.py changed, reloading.
+INFO 2025-12-05 13:13:04,871 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 13:21:32,190 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 13:21:36,745 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 13:21:41,536 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 13:21:52,680 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 13:21:53,645 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 13:22:10,226 basehttp "GET /api/users/professors/ HTTP/1.1" 200 15037
+INFO 2025-12-05 13:22:10,937 basehttp "GET /static/rest_framework/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+INFO 2025-12-05 13:38:28,996 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 13:38:35,496 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 13:38:43,759 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 13:38:49,373 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 13:38:52,176 basehttp "GET /profile/settings/ HTTP/1.1" 200 22842
+INFO 2025-12-05 13:39:03,384 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 13:39:07,319 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 13:39:12,604 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 13:39:14,113 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
+INFO 2025-12-05 13:39:15,339 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
+INFO 2025-12-05 13:39:15,933 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
+INFO 2025-12-05 13:39:17,009 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
+INFO 2025-12-05 13:39:18,246 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
+INFO 2025-12-05 13:39:19,587 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
+INFO 2025-12-05 13:39:20,854 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:13:06,876 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 14:13:16,788 basehttp "GET /profile/settings/ HTTP/1.1" 200 22842
+INFO 2025-12-05 14:17:39,249 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:25:45,313 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 14:27:26,595 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 14:27:32,890 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:27:37,901 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:27:38,089 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:27:38,277 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:28:19,053 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:28:19,312 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:28:19,482 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:28:19,720 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:28:20,034 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:28:20,251 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:28:20,446 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:33:58,612 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 14:34:00,802 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+WARNING 2025-12-05 14:34:14,025 log Method Not Allowed: /api/auth/logout/
+WARNING 2025-12-05 14:34:14,026 basehttp "GET /api/auth/logout/ HTTP/1.1" 405 10514
+INFO 2025-12-05 14:34:21,067 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 14:34:24,758 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:40:06,369 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:40:06,562 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:40:06,750 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:40:07,082 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:42:17,702 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:42:17,900 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:43:11,634 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:43:15,635 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:43:15,785 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:43:15,986 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:44:42,003 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 14:44:48,261 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 14:44:53,492 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 14:48:34,391 autoreload C:\Users\CLienT\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\settings.py changed, reloading.
+INFO 2025-12-05 14:48:38,352 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 15:12:35,759 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 15:12:47,740 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 15:13:03,710 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329
+INFO 2025-12-05 15:13:13,145 basehttp "GET /consultations/ HTTP/1.1" 200 6472
+INFO 2025-12-05 15:13:14,315 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 6472
+INFO 2025-12-05 15:13:15,155 basehttp "GET /consultations/?status=past HTTP/1.1" 200 6404
+INFO 2025-12-05 15:13:15,891 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
+INFO 2025-12-05 15:13:16,799 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 6405
+INFO 2025-12-05 15:13:18,752 basehttp "GET /professors/ HTTP/1.1" 200 6456
+INFO 2025-12-05 15:13:22,576 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
+INFO 2025-12-05 15:13:24,440 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
+INFO 2025-12-05 15:13:25,556 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
+INFO 2025-12-05 15:13:27,036 basehttp "GET /professors/?search=&department= HTTP/1.1" 200 6456
+INFO 2025-12-05 15:13:39,991 basehttp "GET /professors/?search=Computer+Science&department= HTTP/1.1" 200 6561
+INFO 2025-12-05 15:31:26,502 autoreload Watching for file changes with StatReloader
+INFO 2025-12-05 15:31:41,348 basehttp "GET / HTTP/1.1" 200 10876
+INFO 2025-12-05 15:31:48,806 basehttp - Broken pipe from ('127.0.0.1', 50430)
+INFO 2025-12-05 15:31:48,812 basehttp "GET /consultations/book/ HTTP/1.1" 200 13329

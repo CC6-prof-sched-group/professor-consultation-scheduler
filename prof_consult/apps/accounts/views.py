@@ -59,6 +59,22 @@ class UserViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+    
+    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
+    def professors(self, request):
+        """Return list of active professors."""
+        professors = User.objects.filter(role="professor", is_active=True)
+        data = [
+            {
+                "id": prof.id,
+                "email": prof.email,
+                "name": prof.get_full_name() if hasattr(prof, "get_full_name") else prof.email,
+                "department": getattr(prof, "department", None),
+            }
+            for prof in professors
+        ]
+        return Response(data)
+
 
 
 class GoogleOAuthView(rest_views.APIView):
@@ -194,6 +210,9 @@ class LogoutView(rest_views.APIView):
         logout(request)
         
         return Response({'message': 'Successfully logged out.'})
+    
+
+
 
 
 # Alias admin views for URL routing
