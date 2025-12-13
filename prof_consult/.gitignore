@@ -1,1 +1,24 @@
 logs/*.log
+
+# Static files (collected by collectstatic)
+staticfiles/
+!staticfiles/.gitkeep
+staticfiles.json
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Media files
+media/
