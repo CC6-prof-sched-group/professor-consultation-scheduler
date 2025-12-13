@@ -65,35 +65,20 @@
                         <span class="badge bg-success me-2">
                             <i class="bi bi-check-circle"></i> Available
                         </span>
-<<<<<<< HEAD
-                        {% if total_consultations > 0 %}
-                        <span class="badge bg-info">
-                            {{ total_consultations }} consultation{{ total_consultations|pluralize }} completed
-=======
                         {% if avg_rating > 0 %}
                         <span class="badge" style="background-color: #5389DA; color: white;">
                             <i class="bi bi-star-fill"></i> {{ avg_rating }} Rating ({{ rating_count }} review{{ rating_count|pluralize }})
->>>>>>> origin/dev
                         </span>
                         {% endif %}
                     </div>
                 </div>
                 <div class="col-md-3 text-md-end mt-3 mt-md-0">
-<<<<<<< HEAD
-                    {% if user.is_authenticated and user != professor %}
-                        <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-primary btn-lg w-100 mb-2">
-                            <i class="bi bi-calendar-plus"></i> Book Consultation
-                        </a>
-                    {% elif not user.is_authenticated %}
-                        <a href="{% url 'login' %}" class="btn btn-primary btn-lg w-100 mb-2">
-=======
                     {% if user.is_authenticated %}
                         <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-lg w-100 mb-2" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                             <i class="bi bi-calendar-plus"></i> Book Consultation
                         </a>
                     {% else %}
                         <a href="{% url 'login' %}" class="btn btn-lg w-100 mb-2" style="background-color: #5389DA; border-color: #5389DA; color: white;">
->>>>>>> origin/dev
                             <i class="bi bi-box-arrow-in-right"></i> Login to Book
                         </a>
                     {% endif %}
@@ -117,33 +102,6 @@
             </div>
             {% endif %}
 
-<<<<<<< HEAD
-            <!-- Recent Reviews Section -->
-            {% if recent_reviews %}
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-chat-quote"></i> Recent Reviews</h5>
-                    <span class="badge bg-dark">{{ rating_counts }} total</span>
-                </div>
-                <div class="card-body">
-                    {% for review in recent_reviews %}
-                    <div class="review-item {% if not forloop.last %}mb-4 pb-3 border-bottom{% endif %}">
-                        <div class="d-flex justify-content-between align-items-start mb-2">
-                            <div>
-                                <strong>{{ review.student|display_name }}</strong>
-                                <div class="mt-1">
-                                    {% star_rating review.rating show_number=False %}
-                                </div>
-                            </div>
-                            <small class="text-muted">{{ review.updated_at|timesince }} ago</small>
-                        </div>
-                        {% if review.feedback %}
-                        <p class="text-muted mb-0">{{ review.feedback }}</p>
-                        {% endif %}
-                        <small class="text-muted">
-                            <i class="bi bi-calendar-check"></i> Consultation: {{ review.title }}
-                        </small>
-=======
             <!-- Specializations -->
             <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #74D3D3;">
                 <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
@@ -192,7 +150,6 @@
                                 </tr>
                             </tbody>
                         </table>
->>>>>>> origin/dev
                     </div>
                     {% endfor %}
                 </div>
@@ -205,17 +162,10 @@
 
         <!-- Right Column -->
         <div class="col-md-4">
-<<<<<<< HEAD
-            <!-- Quick Stats (existing, update to show ratings) -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0"><i class="bi bi-graph-up"></i> Statistics</h5>
-=======
             <!-- Quick Stats -->
             <div class="card shadow-sm mb-4" style="border: none;">
                 <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
                     <h5 class="mb-0" style="color: #274572;"><i class="bi bi-graph-up" style="color: #5389DA;"></i> Statistics</h5>
->>>>>>> origin/dev
                 </div>
                 <div class="card-body">
                     <!-- NEW: Average Rating -->
@@ -262,8 +212,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
 
             <!-- Recent Reviews -->
             {% if recent_reviews %}
@@ -290,7 +238,6 @@
                 </div>
             </div>
             {% endif %}
->>>>>>> origin/dev
         </div>
     </div>
 </div>
