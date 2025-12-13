@@ -1519,3 +1519,5 @@ INFO 2025-12-13 13:50:18,013 basehttp "GET / HTTP/1.1" 200 9782
 INFO 2025-12-13 13:50:25,606 basehttp "GET / HTTP/1.1" 200 9782
 INFO 2025-12-13 13:50:25,842 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 122774
 INFO 2025-12-13 13:50:26,830 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-13 14:51:54,661 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 14:51:56,498 basehttp "GET / HTTP/1.1" 200 9782
