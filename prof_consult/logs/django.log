@@ -1512,3 +1512,594 @@ INFO 2025-12-13 10:37:50,725 basehttp "GET /api/notifications/ HTTP/1.1" 200 110
 INFO 2025-12-13 10:38:20,708 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
 INFO 2025-12-13 10:38:50,710 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
 INFO 2025-12-13 10:39:20,716 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:03,532 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 10:44:06,703 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 10:44:06,805 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-13 10:44:06,829 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+ERROR 2025-12-13 10:44:08,953 log Internal Server Error: /consultations/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py", line 153, in consultations_list
+    return render(request, 'consultations.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 501: 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-12-13 10:44:08,962 basehttp "GET /consultations/ HTTP/1.1" 500 196037
+INFO 2025-12-13 10:44:10,964 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:24,990 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 10:44:27,221 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 10:44:27,329 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:28,870 basehttp "GET /consultations/ HTTP/1.1" 200 30790
+INFO 2025-12-13 10:44:28,898 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:29,800 basehttp "GET /consultations/?status=past HTTP/1.1" 200 72408
+INFO 2025-12-13 10:44:29,827 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:40,644 basehttp "GET /consultation/119/ HTTP/1.1" 200 22377
+INFO 2025-12-13 10:44:40,670 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:55,236 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 10:44:55,271 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:55,881 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 10:44:55,907 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:44:57,987 basehttp "GET /dashboard/ HTTP/1.1" 200 26352
+INFO 2025-12-13 10:44:58,013 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:45:00,196 basehttp "GET /consultations/ HTTP/1.1" 200 30790
+INFO 2025-12-13 10:45:00,225 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:45:01,303 basehttp "GET /dashboard/ HTTP/1.1" 200 26352
+INFO 2025-12-13 10:45:01,328 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:45:03,002 basehttp "GET /consultations/ HTTP/1.1" 200 30790
+INFO 2025-12-13 10:45:03,038 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:45:04,442 basehttp "GET /consultations/?status=cancelled HTTP/1.1" 200 30723
+INFO 2025-12-13 10:45:04,465 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:45:05,074 basehttp "GET /consultations/?status=past HTTP/1.1" 200 72408
+INFO 2025-12-13 10:45:05,103 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:45:15,377 basehttp "GET /professors/ HTTP/1.1" 200 67693
+INFO 2025-12-13 10:45:15,405 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:58:01,914 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 10:59:08,664 autoreload C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
+INFO 2025-12-13 10:59:09,670 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 10:59:48,794 autoreload C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
+INFO 2025-12-13 10:59:49,889 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 11:01:17,340 autoreload C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\urls.py changed, reloading.
+INFO 2025-12-13 11:01:18,729 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 11:02:16,467 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 11:02:16,569 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-13 11:02:16,692 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:02:23,332 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 11:02:23,425 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
+INFO 2025-12-13 11:02:23,485 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:02:23,486 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 122774
+INFO 2025-12-13 11:02:23,613 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 11:02:23,641 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:02:26,087 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 11:02:26,114 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:02:32,103 basehttp "GET /professors/ HTTP/1.1" 200 67693
+INFO 2025-12-13 11:02:32,130 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:02:35,869 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 32727
+INFO 2025-12-13 11:02:35,899 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:02:41,128 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 32727
+INFO 2025-12-13 11:02:41,154 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:03:11,156 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:03:41,148 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+ERROR 2025-12-13 11:04:07,240 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:04:07,243 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:04:11,150 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+ERROR 2025-12-13 11:04:11,243 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:04:11,246 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:04:12,054 basehttp "POST /consultations/book/?professor=71 HTTP/1.1" 302 0
+INFO 2025-12-13 11:04:12,070 basehttp "GET /consultations/ HTTP/1.1" 200 36123
+INFO 2025-12-13 11:04:12,104 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:04:42,103 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:04:47,128 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 11:04:47,165 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-13 11:04:47,182 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:04:58,277 basehttp "GET / HTTP/1.1" 200 22197
+INFO 2025-12-13 11:04:58,290 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-13 11:04:58,296 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-13 11:04:58,305 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-13 11:04:58,311 basehttp "GET /static/images/logo.svg HTTP/1.1" 304 0
+INFO 2025-12-13 11:04:58,311 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-13 11:04:58,326 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+INFO 2025-12-13 11:04:58,347 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:04:58,938 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 122774
+INFO 2025-12-13 11:05:02,237 basehttp "GET /consultations/ HTTP/1.1" 200 35657
+INFO 2025-12-13 11:05:02,288 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:05:08,317 basehttp "GET /consultations/?status=past HTTP/1.1" 200 52952
+INFO 2025-12-13 11:05:08,340 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:05:09,487 basehttp "GET /consultations/?status=upcoming HTTP/1.1" 200 35657
+INFO 2025-12-13 11:05:09,508 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:05:11,461 basehttp "GET / HTTP/1.1" 200 22197
+INFO 2025-12-13 11:05:11,490 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:05:11,985 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-13 11:05:12,004 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 171925
+INFO 2025-12-13 11:05:12,037 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:05:12,721 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 11:05:13,215 basehttp "POST /professor/consultation/121/action/ HTTP/1.1" 302 0
+INFO 2025-12-13 11:05:13,230 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 169104
+INFO 2025-12-13 11:05:13,269 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:05:18,099 basehttp "GET /professor/dashboard/ HTTP/1.1" 200 168698
+INFO 2025-12-13 11:05:18,135 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:05:28,078 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 11:05:28,117 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:05:28,716 basehttp "GET /dashboard/ HTTP/1.1" 200 28316
+INFO 2025-12-13 11:05:28,744 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:05:29,901 basehttp "GET /professors/ HTTP/1.1" 200 67693
+INFO 2025-12-13 11:05:29,937 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:05:31,263 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 32727
+INFO 2025-12-13 11:05:31,288 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+ERROR 2025-12-13 11:05:47,186 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:05:47,188 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:05:48,712 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+ERROR 2025-12-13 11:05:52,388 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:05:52,390 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+ERROR 2025-12-13 11:05:54,082 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:05:54,084 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+ERROR 2025-12-13 11:05:55,478 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:05:55,481 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:06:01,287 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+ERROR 2025-12-13 11:06:01,632 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:06:01,635 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+ERROR 2025-12-13 11:06:05,075 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:06:05,078 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+ERROR 2025-12-13 11:06:05,654 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:06:05,657 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:06:11,438 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 32727
+INFO 2025-12-13 11:06:11,477 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:06:12,581 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 32727
+INFO 2025-12-13 11:06:12,609 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:06:18,717 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+ERROR 2025-12-13 11:06:25,768 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:06:25,771 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+ERROR 2025-12-13 11:06:29,230 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:06:29,232 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:06:42,721 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:06:48,716 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:07:12,718 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+ERROR 2025-12-13 11:07:17,376 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:07:17,378 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+ERROR 2025-12-13 11:07:18,111 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:07:18,113 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:07:18,716 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+ERROR 2025-12-13 11:07:21,640 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:07:21,642 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+ERROR 2025-12-13 11:07:23,189 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-13 11:07:23,191 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101484
+INFO 2025-12-13 11:07:28,817 basehttp "POST /consultations/book/?professor=71 HTTP/1.1" 302 0
+INFO 2025-12-13 11:07:28,830 basehttp "GET /consultations/ HTTP/1.1" 200 41236
+INFO 2025-12-13 11:07:28,851 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-13 11:07:28,865 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:07:48,706 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:07:59,714 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:08:18,720 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-13 11:08:29,716 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-13 11:08:48,713 basehttp "GET /api/notifications/ HTTP/1.1" 200 751

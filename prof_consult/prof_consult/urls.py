@@ -8,6 +8,8 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 
+from apps.consultations import views as consultation_views
+
 from apps.accounts.views import UserViewSet
 from apps.consultations.views import ConsultationViewSet
 from apps.professors.views import ProfessorProfileViewSet
@@ -63,6 +65,7 @@ urlpatterns = [
     path('api/admin/users/<int:pk>/role/', auth_views.AdminUpdateUserRoleView.as_view(), name='admin-update-role'),
     
     path('consultations/rate/<int:consultation_id>/', frontend_views.rate_consultation, name='rate_consultation'),
+    path('api/check-availability/', consultation_views.check_availability, name='check_availability'),
 ]
 
 # Custom error handlers

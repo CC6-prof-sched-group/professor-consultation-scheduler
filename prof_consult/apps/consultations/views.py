@@ -9,6 +9,11 @@ from django.db.models import Q
 from django.utils import timezone
 from django_filters.rest_framework import DjangoFilterBackend
 
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+from datetime import datetime, timedelta
+
 from apps.consultations.models import Consultation, ConsultationStatus
 from apps.consultations.serializers import (
     ConsultationSerializer, ConsultationCreateSerializer,
@@ -26,6 +31,89 @@ from apps.notifications.tasks import (
     send_booking_rescheduled_notification
 )
 
+@login_required
+@require_http_methods(["POST"])
+def check_availability(request):
+    """Check if a professor is available at a specific date/time."""
+    professor_id = request.POST.get('professor_id')
+    date = request.POST.get('date')
+    time = request.POST.get('time')
+    duration = int(request.POST.get('duration', 30))
+    consultation_id = request.POST.get('consultation_id')  # For rescheduling
+    
+    if not all([professor_id, date, time]):
+        return JsonResponse({'available': False, 'message': 'Missing required fields'})
+    
+    try:
+        professor = User.objects.get(id=professor_id, role='PROFESSOR')
+        
+        # Parse the date and time
+        requested_datetime = timezone.make_aware(
+            datetime.strptime(f"{date} {time}", "%Y-%m-%d %H:%M")
+        )
+        requested_end = requested_datetime + timedelta(minutes=duration)
+        
+        # Check if it's in the past
+        if requested_datetime < timezone.now():
+            return JsonResponse({
+                'available': False,
+                'message': 'Cannot book consultations in the past'
+            })
+        
+        # Check professor's availability schedule
+        weekday = requested_datetime.strftime('%A').upper()
+        availability = professor.availability.filter(
+            day_of_week=weekday,
+            is_available=True
+        ).first()
+        
+        if not availability:
+            return JsonResponse({
+                'available': False,
+                'message': f'Professor is not available on {weekday}s'
+            })
+        
+        # Check if time falls within availability hours
+        requested_time = requested_datetime.time()
+        if not (availability.start_time <= requested_time <= availability.end_time):
+            return JsonResponse({
+                'available': False,
+                'message': f'Professor is only available from {availability.start_time.strftime("%I:%M %p")} to {availability.end_time.strftime("%I:%M %p")} on {weekday}s'
+            })
+        
+        # Check for conflicting consultations
+        conflicting = Consultation.objects.filter(
+            professor=professor,
+            scheduled_date=requested_datetime.date(),
+            status__in=['PENDING', 'CONFIRMED']
+        ).exclude(id=consultation_id) if consultation_id else Consultation.objects.filter(
+            professor=professor,
+            scheduled_date=requested_datetime.date(),
+            status__in=['PENDING', 'CONFIRMED']
+        )
+        
+        for consultation in conflicting:
+            existing_start = timezone.make_aware(
+                datetime.combine(consultation.scheduled_date, consultation.scheduled_time)
+            )
+            existing_end = existing_start + timedelta(minutes=consultation.duration)
+            
+            # Check for overlap
+            if (requested_datetime < existing_end and requested_end > existing_start):
+                return JsonResponse({
+                    'available': False,
+                    'message': f'Time slot conflicts with existing consultation at {consultation.scheduled_time.strftime("%I:%M %p")}'
+                })
+        
+        return JsonResponse({
+            'available': True,
+            'message': 'Time slot is available'
+        })
+        
+    except User.DoesNotExist:
+        return JsonResponse({'available': False, 'message': 'Professor not found'})
+    except Exception as e:
+        return JsonResponse({'available': False, 'message': str(e)})
 
 class ConsultationViewSet(viewsets.ModelViewSet):
     """
