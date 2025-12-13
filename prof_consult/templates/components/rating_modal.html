@@ -1,0 +1,181 @@
+{% load user_extras %}
+<!-- Rating Modal Component -->
+<div class="modal fade" id="ratingModal{{ consultation.id }}" tabindex="-1" aria-labelledby="ratingModalLabel{{ consultation.id }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title" id="ratingModalLabel{{ consultation.id }}">
+                    <i class="bi bi-star-fill"></i> Rate Your Consultation
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="{% url 'rate_consultation' consultation.id %}" id="ratingForm{{ consultation.id }}">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <!-- Professor Info -->
+                    <div class="text-center mb-4">
+                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px; font-size: 32px;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h6 class="mt-2 mb-0">{{ consultation.professor|display_name }}</h6>
+                        <small class="text-muted">{{ consultation.title }}</small>
+                    </div>
+
+                    <!-- Star Rating Input -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-center d-block">How was your consultation?</label>
+                        <div class="star-rating-input text-center" id="starRating{{ consultation.id }}">
+                            <input type="hidden" name="rating" id="ratingValue{{ consultation.id }}" value="5" required>
+                            <i class="bi bi-star-fill star-input" data-rating="1" data-consultation="{{ consultation.id }}"></i>
+                            <i class="bi bi-star-fill star-input" data-rating="2" data-consultation="{{ consultation.id }}"></i>
+                            <i class="bi bi-star-fill star-input" data-rating="3" data-consultation="{{ consultation.id }}"></i>
+                            <i class="bi bi-star-fill star-input" data-rating="4" data-consultation="{{ consultation.id }}"></i>
+                            <i class="bi bi-star-fill star-input" data-rating="5" data-consultation="{{ consultation.id }}"></i>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="badge bg-warning text-dark" id="ratingLabel{{ consultation.id }}">Excellent (5 stars)</span>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Text -->
+                    <div class="mb-3">
+                        <label for="feedback{{ consultation.id }}" class="form-label fw-bold">
+                            Share your experience (optional)
+                        </label>
+                        <textarea class="form-control" id="feedback{{ consultation.id }}" name="feedback" rows="4" 
+                                  placeholder="What did you like? What could be improved?">{{ consultation.feedback|default:'' }}</textarea>
+                        <div class="form-text">
+                            <i class="bi bi-info-circle"></i> Your feedback helps other students and professors improve.
+                        </div>
+                    </div>
+
+                    <!-- Anonymous Option -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="anonymous" id="anonymous{{ consultation.id }}">
+                        <label class="form-check-label" for="anonymous{{ consultation.id }}">
+                            Post anonymously (your name won't be shown)
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning">
+                        <i class="bi bi-send"></i> Submit Rating
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Star Rating Input Styles */
+.star-rating-input {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.star-rating-input i {
+    color: #ffc107;
+    transition: all 0.2s ease;
+}
+
+.star-rating-input i:hover {
+    transform: scale(1.2);
+}
+
+.star-rating-input i.bi-star {
+    color: #ddd;
+}
+
+.star-rating-input i.active {
+    animation: starPulse 0.3s ease;
+}
+
+@keyframes starPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get consultation ID from the modal
+    const consultationId = {{ consultation.id }};
+    const starContainer = document.getElementById('starRating' + consultationId);
+    const stars = starContainer.querySelectorAll('.star-input');
+    const ratingInput = document.getElementById('ratingValue' + consultationId);
+    const ratingLabel = document.getElementById('ratingLabel' + consultationId);
+    
+    let currentRating = 5; // Default 5 stars
+    
+    const labels = {
+        1: 'Poor (1 star)',
+        2: 'Fair (2 stars)',
+        3: 'Good (3 stars)',
+        4: 'Very Good (4 stars)',
+        5: 'Excellent (5 stars)'
+    };
+    
+    // Initialize with 5 stars selected
+    updateStars(5);
+    
+    // Click event for each star
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = parseInt(this.getAttribute('data-rating'));
+            currentRating = rating;
+            ratingInput.value = rating;
+            updateStars(rating);
+            
+            // Update label
+            ratingLabel.textContent = labels[rating];
+            ratingLabel.className = 'badge ' + getBadgeClass(rating);
+            
+            // Add animation
+            this.classList.add('active');
+            setTimeout(() => this.classList.remove('active'), 300);
+        });
+        
+        // Hover effect
+        star.addEventListener('mouseenter', function() {
+            const rating = parseInt(this.getAttribute('data-rating'));
+            updateStars(rating, true);
+        });
+    });
+    
+    // Reset to current rating on mouse leave
+    starContainer.addEventListener('mouseleave', function() {
+        updateStars(currentRating);
+    });
+    
+    function updateStars(rating, isHover = false) {
+        stars.forEach(star => {
+            const starRating = parseInt(star.getAttribute('data-rating'));
+            if (starRating <= rating) {
+                star.classList.remove('bi-star');
+                star.classList.add('bi-star-fill');
+                if (!isHover) {
+                    star.style.color = '#ffc107';
+                } else {
+                    star.style.color = '#ffed4e';
+                }
+            } else {
+                star.classList.remove('bi-star-fill');
+                star.classList.add('bi-star');
+                star.style.color = '#ddd';
+            }
+        });
+    }
+    
+    function getBadgeClass(rating) {
+        if (rating >= 4) return 'bg-success';
+        if (rating >= 3) return 'bg-info';
+        if (rating >= 2) return 'bg-warning text-dark';
+        return 'bg-danger';
+    }
+});
+</script>
