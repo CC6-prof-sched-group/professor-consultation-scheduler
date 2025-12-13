@@ -1,24 +1,43 @@
-logs/*.log
+# Python Bytecode and cache
+*.pyc
+*~$
+__pycache__/
+*.orig
+.mypy_cache/
+.pytest_cache/
+.venv
 
-# Static files (collected by collectstatic)
+# Virtual Environments
+venv/
+env/
+.venv/
+.ENV/
+
+# Distribution/Packaging
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Django-specific files
+*.log
+*.pot
+db.sqlite3
+media/
 staticfiles/
 !staticfiles/.gitkeep
 staticfiles.json
 
-# Database
-*.sqlite3
-db.sqlite3
-
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Environment
+# Configuration and Secret Files
+# IMPORTANT: Use environment variables instead of hardcoding secrets.
+# If you use a .env file to store your SECRET_KEY and other config, ignore it.
 .env
-.env.local
-.env.*.local
+.flaskenv
+local_settings.py
 
-# Media files
-media/
+# IDE and OS-specific files
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db

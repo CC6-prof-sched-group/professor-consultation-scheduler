@@ -14,6 +14,7 @@ from apps.professors.views import ProfessorProfileViewSet
 from apps.notifications.views import NotificationViewSet
 from apps.accounts import views as auth_views
 from apps.accounts import frontend_views
+from prof_consult.health_checks import health_check
 
 # API Router
 router = DefaultRouter()
@@ -24,6 +25,7 @@ router.register(r'notifications', NotificationViewSet, basename='notification')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('health/', health_check, name='health-check'),
     
     # Frontend Pages
     path('', frontend_views.home, name='home'),

@@ -28,7 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security Settings
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-z&je=#v1=nx&4kqqz==79+*+l9*(jtl=8es1a9g+7q3(wx!37*')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = ['*']
+
+# Allowed Hosts
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
+
+# Site Domain (for django.contrib.sites and OAuth redirects)
+SITE_DOMAIN = config('SITE_DOMAIN', default='localhost:8000')
 
 # Application definition
 INSTALLED_APPS = [
@@ -160,17 +165,35 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django Allauth Settings
 SITE_ID = 1
+
+# Auto-configure Site domain from environment
+if not DEBUG or config('UPDATE_SITE_DOMAIN', default=False, cast=bool):
+    def update_site_domain():
+        from django.contrib.sites.models import Site
+        try:
+            site = Site.objects.get(id=SITE_ID)
+            if site.domain != SITE_DOMAIN:
+                site.domain = SITE_DOMAIN
+                site.name = SITE_DOMAIN
+                site.save()
+        except Exception:
+            pass
+    
+    import threading
+    threading.Thread(target=update_site_domain, daemon=True).start()
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# Allauth authentication settings (new style for django-allauth 0.65+)
-ACCOUNT_LOGIN_METHODS = {"email"}
-ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
+# Allauth Configuration (django-allauth 65+)
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_UNIQUE_EMAIL = True
 SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Google OAuth2 Settings
