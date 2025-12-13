@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load user_extras %}
+{% load user_extras rating_tags %}
 
 {% block title %}Professor Profile - ConsultEase{% endblock %}
 
@@ -30,6 +30,37 @@
                         <i class="bi bi-geo-alt"></i> {{ profile.office_location }}
                     </p>
                     {% endif %}
+                    
+                    <!-- NEW: Rating Display -->
+                    <div class="mb-3">
+                        {% if rating_counts > 0 %}
+                            <div class="d-flex align-items-center">
+                                {% star_rating avg_rating max_rating=5 show_number=True %}
+                                <span class="ms-2 text-muted">
+                                    Based on {{ rating_counts }} review{{ rating_counts|pluralize }}
+                                </span>
+                            </div>
+                            
+                           <!-- Rating Breakdown -->
+                            <div class="mt-3">
+                                <small class="text-muted d-block mb-2">Rating Distribution:</small>
+                                {% for i in "54321" %}
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="me-2" style="width: 60px;">{{ i }} <i class="bi bi-star-fill text-warning"></i></span>
+                                    <div class="progress flex-grow-1" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="ms-2 text-muted small" style="width: 40px;">0</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="alert alert-info mb-0">
+                                <i class="bi bi-info-circle"></i> No reviews yet. Be the first to review!
+                            </div>
+                        {% endif %}
+                    </div>
+                    
                     <div>
                         <span class="badge bg-success me-2">
                             <i class="bi bi-check-circle"></i> Available
@@ -120,8 +151,13 @@
                             </tbody>
                         </table>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
+            {% endif %}
+
+            <!-- Office Hours (existing code) -->
+            <!-- ... keep your existing office hours section ... -->
         </div>
 
         <!-- Right Column -->
@@ -132,6 +168,29 @@
                     <h5 class="mb-0" style="color: #274572;"><i class="bi bi-graph-up" style="color: #5389DA;"></i> Statistics</h5>
                 </div>
                 <div class="card-body">
+                    <!-- NEW: Average Rating -->
+                    {% if avg_rating > 0 %}
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span>Average Rating</span>
+                            <strong>{{ avg_rating }}/5.0</strong>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" 
+                                style="width: {% widthratio avg_rating 5 100 %}%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span>Total Reviews</span>
+                            <strong>{{ rating_counts }}</strong>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
                     <div class="mb-3">
                         <div class="d-flex justify-content-between align-items-center mb-1">
                             <span>Total Consultations</span>
@@ -141,7 +200,7 @@
                             <div class="progress-bar" role="progressbar" style="width: 100%; background-color: #74D3D3;"></div>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <div class="d-flex justify-content-between align-items-center mb-1">
                             <span>This Month</span>
                             <strong>{{ this_month_consultations }}</strong>
@@ -151,18 +210,6 @@
                             <div class="progress-bar" role="progressbar" style="width: {{ month_percentage }}%; background-color: #5389DA;"></div>
                         </div>
                     </div>
-                    {% if avg_rating > 0 %}
-                    <div>
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <span>Average Rating</span>
-                            <strong>{{ avg_rating }}/5.0</strong>
-                        </div>
-                        <div class="progress">
-                            {% widthratio avg_rating 5 100 as rating_percentage %}
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: {{ rating_percentage }}%"></div>
-                        </div>
-                    </div>
-                    {% endif %}
                 </div>
             </div>
 

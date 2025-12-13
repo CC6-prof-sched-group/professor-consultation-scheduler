@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load user_extras %}
+{% load user_extras rating_tags %}
 
 {% block title %}My Consultations - ConsultEase{% endblock %}
 
@@ -168,6 +168,8 @@
                                         <p class="card-text mb-0 mt-2">
                                             <strong>{{ consultation.title }}</strong>
                                         </p>
+                                        
+                                        <!-- Status Badge -->
                                         {% if consultation.status == 'PENDING' %}
                                             <span class="badge bg-warning mt-2">Pending</span>
                                         {% elif consultation.status == 'CONFIRMED' %}
@@ -177,8 +179,39 @@
                                         {% elif consultation.status == 'CANCELLED' %}
                                             <span class="badge bg-danger mt-2">Cancelled</span>
                                         {% endif %}
+                                        
+                                        <!-- Show existing rating if rated -->
+                                        {% if consultation.rating %}
+                                            <div class="mt-2">
+                                                <small class="text-muted">Your rating:</small>
+                                                {% star_rating consultation.rating show_number=True %}
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                        <!-- Rate Button for Completed Consultations -->
+                                        {% if consultation.status == 'COMPLETED' and user.role == 'STUDENT' %}
+                                            <div class="d-grid gap-2 mb-2">
+                                                <a href="{% url 'consultation_detail' consultation.id %}" class="btn btn-outline-primary btn-sm">
+                                                    <i class="bi bi-eye"></i> View Details
+                                                </a>
+                                                {% if consultation.rating %}
+                                                    <button type="button" class="btn btn-outline-warning btn-sm" 
+                                                            style="color: #ff8c00; border-color: #ff8c00; background-color: white;"
+                                                            data-bs-toggle="modal" data-bs-target="#ratingModal{{ consultation.id }}">
+                                                        <i class="bi bi-pencil"></i> Edit Rating
+                                                    </button>
+                                                {% else %}
+                                                    <button type="button" class="btn btn-sm" 
+                                                            style="color: #ff8c00; border-color: #ff8c00; background-color: white; border-width: 1px; border-style: solid;"
+                                                            data-bs-toggle="modal" data-bs-target="#ratingModal{{ consultation.id }}">
+                                                        <i class="bi bi-star-fill"></i> Rate Consultation
+                                                    </button>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                        
+                                        <!-- Existing action buttons for upcoming -->
                                         {% if status_filter == 'upcoming' or not status_filter %}
                                             <div class="btn-group w-100 mb-2" role="group">
                                                 <a href="{% url 'consultation_detail' consultation.id %}" class="btn btn-primary btn-sm">
@@ -214,33 +247,17 @@
                                                     </button>
                                                 </div>
                                             {% endif %}
-                                        {% elif status_filter == 'past' %}
-                                        <div class="d-flex align-items-center gap-1">
-                                            <a href="{% url 'consultation_detail' consultation.id %}" class="btn btn-outline-primary btn-sm">
-                                                <i class="bi bi-eye"></i> View Details
-                                            </a>
-                                            {% if consultation.rating %}
-                                                <span class="text-warning d-flex align-items-center">
-                                                        {% for i in "12345" %}
-                                                            {% if forloop.counter <= consultation.rating %}
-                                                                <i class="bi bi-star-fill"></i>
-                                                            {% else %}
-                                                                <i class="bi bi-star"></i>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </span>
-                                            {% else %}
-                                                <a href="#" class="btn btn-warning btn-sm">
-                                                    <i class="bi bi-star"></i> Rate Consultation
-                                                </a>
-                                            {% endif %}
-                                        </div>
                                         {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Include Rating Modal for each completed consultation -->
+                    {% if consultation.status == 'COMPLETED' and user.role == 'STUDENT' %}
+                        {% include 'components/rating_modal.html' with consultation=consultation %}
+                    {% endif %}
                     {% endfor %}
                 </div>
             {% else %}
@@ -260,6 +277,7 @@
         </div>
     </div>
 </div>
+{% endblock %}
 <!-- Cancel & Reschedule Modals (used by list inline AJAX) -->
 <div class="modal fade" id="listCancelModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">

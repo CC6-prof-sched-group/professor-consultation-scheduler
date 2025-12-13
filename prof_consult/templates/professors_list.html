@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load user_extras %}
+{% load user_extras rating_tags %}
 
 {% block title %}Professors - ConsultEase{% endblock %}
 
@@ -96,7 +96,7 @@
 
     <!-- Search and Filter (UNCHANGED) -->
     <form method="get" class="row mb-4 slide-in-up">
-        <div class="col-md-8">
+        <div class="col-md-5">
             <div class="input-group shadow-sm">
                 <span class="input-group-text bg-white">
                     <i class="bi bi-search"></i>
@@ -107,7 +107,7 @@
                        id="professorSearch">
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <select name="department" class="form-select shadow-sm">
                 <option value="">All Departments</option>
                 {% for dept in departments %}
@@ -135,7 +135,7 @@
                             <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px; background-color: #5389DA; color: #ffffff;">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <div class="ms-3">
+                            <div class="ms-3 flex-grow-1">
                                 <h5 class="card-title mb-0">
                                     {% if professor.professor_profile.title %}
                                         {{ professor.professor_profile.title }}
@@ -147,6 +147,24 @@
                                 </small>
                             </div>
                         </div>
+                        
+                        <!-- NEW: Rating Display -->
+                        {% if professor.professor_profile %}
+                            <div class="mb-3">
+                                {% if professor.professor_profile.total_reviews > 0 %}
+                                    <div class="d-flex align-items-center mb-2">
+                                        {% star_rating professor.professor_profile.average_rating %}
+                                        <small class="text-muted ms-2">
+                                            ({{ professor.professor_profile.total_reviews }} review{{ professor.professor_profile.total_reviews|pluralize }})
+                                        </small>
+                                    </div>
+                                {% else %}
+                                    <div class="text-muted small mb-2">
+                                        <i class="bi bi-star"></i> No reviews yet
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                         
                         {% if professor.bio %}
                             <p class="card-text text-muted small">
@@ -162,11 +180,6 @@
                             <span class="badge bg-success me-1">
                                 <i class="bi bi-check-circle"></i> Available
                             </span>
-                            {% if professor.avg_rating > 0 %}
-                                <span class="badge bg-info">
-                                    <i class="bi bi-star-fill"></i> {{ professor.avg_rating }}
-                                </span>
-                            {% endif %}
                             {% if professor.total_consultations > 0 %}
                                 <span class="badge bg-secondary">
                                     {{ professor.total_consultations }} consult{{ professor.total_consultations|pluralize }}
@@ -188,6 +201,35 @@
                                 <i class="bi bi-eye"></i> View Profile
                             </a>
                         </div>
+                            {% if professor.professor_profile %}
+                                <div class="mb-3">
+                                    {% if professor.professor_profile.total_reviews > 0 %}
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <div class="d-flex align-items-center">
+                                                {% star_rating professor.professor_profile.average_rating show_number=False %}
+                                                <strong class="ms-2">{{ professor.professor_profile.average_rating }}</strong>
+                                            </div>
+                                            <small class="text-muted">
+                                                {{ professor.professor_profile.total_reviews }} review{{ professor.professor_profile.total_reviews|pluralize }}
+                                            </small>
+                                        </div>
+                                        
+                                        <!-- Rating Progress Bar -->
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" 
+                                                style="width: {{ professor.professor_profile.average_rating|floatformat:0|add:'0'|multiply:20 }}%"
+                                                aria-valuenow="{{ professor.professor_profile.average_rating }}" 
+                                                aria-valuemin="0" 
+                                                aria-valuemax="5">
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="text-muted small">
+                                            <i class="bi bi-star"></i> No reviews yet - be the first!
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
                     </div>
                 </div>
             </div>

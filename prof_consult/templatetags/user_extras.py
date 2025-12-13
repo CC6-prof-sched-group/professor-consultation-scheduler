@@ -1,24 +1,32 @@
-"""Compatibility wrapper for display_name.
-
-This thin wrapper delegates to the canonical implementation in
-`apps.accounts.templatetags.user_extras` so we keep backwards
-compatibility if templates import this module path. Prefer the
-implementation under `apps.accounts`.
-"""
+"""Template tags for user display utilities."""
 
 from django import template
 
 register = template.Library()
 
-try:
-    # import the real implementation
-    from apps.accounts.templatetags.user_extras import display_name as _display_name
-except Exception:
-    _display_name = None
 
-
-@register.filter(is_safe=False)
+@register.filter(name='display_name')
 def display_name(user):
-    if _display_name is None:
-        return ''
-    return _display_name(user)
+    """
+    Returns the display name for a user.
+    For students: first_name last_name
+    For professors: Prof. first_name last_name
+    """
+    if not user:
+        return "Unknown User"
+    
+    # Get first and last name
+    first_name = getattr(user, 'first_name', '')
+    last_name = getattr(user, 'last_name', '')
+    
+    # Build the name
+    if first_name or last_name:
+        full_name = f"{first_name} {last_name}".strip()
+    else:
+        full_name = user.email or user.username
+    
+    # Add prefix for professors
+    if hasattr(user, 'role') and user.role == 'PROFESSOR':
+        return f"Prof. {full_name}"
+    
+    return full_name

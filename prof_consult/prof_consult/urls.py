@@ -61,6 +61,8 @@ urlpatterns = [
     path('api/admin/consultations/', auth_views.AdminConsultationListView.as_view(), name='admin-consultations'),
     path('api/admin/statistics/', auth_views.AdminStatisticsView.as_view(), name='admin-statistics'),
     path('api/admin/users/<int:pk>/role/', auth_views.AdminUpdateUserRoleView.as_view(), name='admin-update-role'),
+    
+    path('consultations/rate/<int:consultation_id>/', frontend_views.rate_consultation, name='rate_consultation'),
 ]
 
 # Custom error handlers
