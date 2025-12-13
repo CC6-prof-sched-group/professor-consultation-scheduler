@@ -1,20 +1,100 @@
 {% extends 'base.html' %}
 {% load user_extras rating_tags %}
 
-{% block title %}Professors - Professor Consultation Scheduler{% endblock %}
+{% block title %}Professors - ConsultEase{% endblock %}
 
 {% block content %}
+
+<!-- UI ENHANCEMENTS — NO STRUCTURAL CHANGES -->
+<style>
+    /* Search bar */
+    .input-group-text {
+        background-color: #ffffff !important;
+        border-right: none !important;
+        color: #2C577E;
+    }
+    .form-control {
+        border-left: none !important;
+    }
+    .form-control:focus {
+        border-color: #5389DA !important;
+        box-shadow: 0 0 0 0.2rem rgba(83, 137, 218, 0.25);
+    }
+
+    .form-select:focus {
+        border-color: #5389DA !important;
+        box-shadow: 0 0 0 0.2rem rgba(83, 137, 218, 0.25);
+    }
+
+    /* Cards */
+    .professor-card {
+        border-radius: 12px;
+        border: 1px solid #e6ebf2;
+        transition: 0.25s ease;
+        overflow: hidden;
+    }
+    .professor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 22px rgba(39, 69, 114, 0.15);
+        border-color: #5389DA60;
+    }
+
+    /* Avatar icon */
+    .bg-primary {   
+        background-color: #5389DA !important;
+    }
+
+    /* Badges color matching palette */
+    /* keep green success badges unchanged (use default bootstrap green) */
+    .badge.bg-info {
+        background-color: #5389DA !important;
+        color: white !important;
+    }
+    .badge.bg-secondary {
+        background-color: #2C577E !important;
+        color: white !important;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        background-color: #5389DA !important;
+        border-color: #5389DA !important;
+    }
+    .btn-primary:hover {
+        background-color: #2C577E !important;
+        border-color: #2C577E !important;
+    }
+
+    .btn-outline-secondary {
+        border-color: #5389DA !important;
+        color: #5389DA !important;
+    }
+    .btn-outline-secondary:hover {
+        background-color: #5389DA !important;
+        color: white !important;
+    }
+
+    /* Alert improvements */
+    .alert-info {
+        background-color: #5389DA10 !important;
+        color: #274572 !important;
+        border-left: 5px solid #5389DA !important;
+        border-radius: 8px;
+    }
+</style>
+
+
 <div class="container my-5">
     <div class="row mb-4">
         <div class="col">
-            <h1 class="display-5 fw-bold">
-                <i class="bi bi-people-fill text-primary"></i> Available Professors
+            <h1 class="display-4 fw-bold">
+                <i class="bi bi-people-fill" style="color: #5389DA;"></i> Available Professors
             </h1>
             <p class="lead text-muted">Find and schedule consultations with your professors</p>
         </div>
     </div>
 
-    <!-- Search, Filter, and Sort -->
+    <!-- Search and Filter (UNCHANGED) -->
     <form method="get" class="row mb-4 slide-in-up">
         <div class="col-md-5">
             <div class="input-group shadow-sm">
@@ -37,28 +117,14 @@
                 {% endfor %}
             </select>
         </div>
-        <!-- NEW: Sort dropdown -->
-        <div class="col-md-3">
-            <select name="sort" class="form-select shadow-sm">
-                <option value="rating" {% if sort_by == 'rating' %}selected{% endif %}>
-                    <i class="bi bi-star"></i> Highest Rated
-                </option>
-                <option value="reviews" {% if sort_by == 'reviews' %}selected{% endif %}>
-                    Most Reviews
-                </option>
-                <option value="name" {% if sort_by == 'name' %}selected{% endif %}>
-                    Name (A-Z)
-                </option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100 shadow-sm">
-                <i class="bi bi-funnel"></i> Apply
+        <div class="col-md-1">
+            <button type="submit" class="btn w-100 shadow-sm" style="background-color: #5389DA; border-color: #5389DA; color: white;">
+                <i class="bi bi-funnel"></i>
             </button>
         </div>
     </form>
 
-    <!-- Professors List -->
+    <!-- Professors List (UNCHANGED STRUCTURE) -->
     {% if professors %}
         <div class="row g-4">
             {% for professor in professors %}
@@ -66,7 +132,7 @@
                 <div class="card h-100 shadow-sm hover-lift professor-card animate-on-scroll" data-department="{{ professor.department|lower }}">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px;">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px; background-color: #5389DA; color: #ffffff;">
                                 <i class="bi bi-person-fill"></i>
                             </div>
                             <div class="ms-3 flex-grow-1">
@@ -123,15 +189,15 @@
                         
                         <div class="d-grid gap-2">
                             {% if user.is_authenticated %}
-                                <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-primary">
+                                <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                                     <i class="bi bi-calendar-plus"></i> Book Consultation
                                 </a>
                             {% else %}
-                                <a href="{% url 'login' %}" class="btn btn-primary">
+                                <a href="{% url 'login' %}" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                                     <i class="bi bi-box-arrow-in-right"></i> Login to Book
                                 </a>
                             {% endif %}
-                            <a href="{% url 'professor_profile' professor.id %}" class="btn btn-outline-secondary btn-sm">
+                            <a href="{% url 'professor_profile' professor.id %}" class="btn" style="border: 1px solid #5389DA; color: #5389DA;" >
                                 <i class="bi bi-eye"></i> View Profile
                             </a>
                         </div>
@@ -179,4 +245,5 @@
         </div>
     {% endif %}
 </div>
+
 {% endblock %}

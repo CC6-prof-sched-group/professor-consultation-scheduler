@@ -154,6 +154,42 @@ def consultations_list(request):
 
 
 @login_required
+def consultation_detail(request, consultation_id):
+    """
+    Display a single consultation/booking detail for frontend.
+    Permissions: only the student, the professor, or an admin can view.
+    Provides context flags to enable reschedule/cancel actions in the template.
+    """
+    consultation = get_object_or_404(Consultation, id=consultation_id)
+
+    user = request.user
+    # Allow student, professor, or admin
+    if not (
+        user == consultation.student or
+        user == consultation.professor or
+        user.role == Role.ADMIN
+    ):
+        raise Http404()
+
+    can_cancel = False
+    try:
+        can_cancel = consultation.can_be_cancelled()
+    except Exception:
+        # Best-effort: if method not present or errors, default False
+        can_cancel = False
+
+    can_reschedule = consultation.status == ConsultationStatus.CONFIRMED
+
+    context = {
+        'consultation': consultation,
+        'can_cancel': can_cancel,
+        'can_reschedule': can_reschedule,
+    }
+
+    return render(request, 'consultation_detail.html', context)
+
+
+@login_required
 def book_consultation(request):
     """
     Book a new consultation.

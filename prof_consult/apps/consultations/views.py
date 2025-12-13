@@ -252,4 +252,3 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         
         response_serializer = self.get_serializer(consultation)
         return Response(response_serializer.data)
-

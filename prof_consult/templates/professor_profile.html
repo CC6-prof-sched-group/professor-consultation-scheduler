@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% load user_extras rating_tags %}
 
-{% block title %}Professor Profile - Professor Consultation Scheduler{% endblock %}
+{% block title %}Professor Profile - ConsultEase{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <!-- Profile Header -->
-    <div class="card shadow-sm mb-4">
+    <div class="card shadow-sm mb-4" style="border: none;">
         <div class="card-body">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center">
-                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 48px;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 48px; background: linear-gradient(135deg, #74D3D3 0%, #20C8D4 100%); color: #274572;">
                         <i class="bi bi-person-fill"></i>
                     </div>
                 </div>
                 <div class="col-md-7 mt-3 mt-md-0">
-                    <h2 class="mb-2">
+                    <h2 class="mb-2" style="color: #274572;">
                         {% if profile.title %}{{ profile.title }}{% endif %}
                         {{ professor|display_name }}
                     </h2>
@@ -65,20 +65,35 @@
                         <span class="badge bg-success me-2">
                             <i class="bi bi-check-circle"></i> Available
                         </span>
+<<<<<<< HEAD
                         {% if total_consultations > 0 %}
                         <span class="badge bg-info">
                             {{ total_consultations }} consultation{{ total_consultations|pluralize }} completed
+=======
+                        {% if avg_rating > 0 %}
+                        <span class="badge" style="background-color: #5389DA; color: white;">
+                            <i class="bi bi-star-fill"></i> {{ avg_rating }} Rating ({{ rating_count }} review{{ rating_count|pluralize }})
+>>>>>>> origin/dev
                         </span>
                         {% endif %}
                     </div>
                 </div>
                 <div class="col-md-3 text-md-end mt-3 mt-md-0">
+<<<<<<< HEAD
                     {% if user.is_authenticated and user != professor %}
                         <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-primary btn-lg w-100 mb-2">
                             <i class="bi bi-calendar-plus"></i> Book Consultation
                         </a>
                     {% elif not user.is_authenticated %}
                         <a href="{% url 'login' %}" class="btn btn-primary btn-lg w-100 mb-2">
+=======
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'book_consultation' %}?professor={{ professor.id }}" class="btn btn-lg w-100 mb-2" style="background-color: #5389DA; border-color: #5389DA; color: white;">
+                            <i class="bi bi-calendar-plus"></i> Book Consultation
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-lg w-100 mb-2" style="background-color: #5389DA; border-color: #5389DA; color: white;">
+>>>>>>> origin/dev
                             <i class="bi bi-box-arrow-in-right"></i> Login to Book
                         </a>
                     {% endif %}
@@ -92,9 +107,9 @@
         <div class="col-md-8">
             <!-- About Section -->
             {% if professor.bio %}
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> About</h5>
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #5389DA;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-info-circle" style="color: #5389DA;"></i> About</h5>
                 </div>
                 <div class="card-body">
                     <p class="mb-0">{{ professor.bio }}</p>
@@ -102,6 +117,7 @@
             </div>
             {% endif %}
 
+<<<<<<< HEAD
             <!-- Recent Reviews Section -->
             {% if recent_reviews %}
             <div class="card shadow-sm mb-4">
@@ -127,6 +143,56 @@
                         <small class="text-muted">
                             <i class="bi bi-calendar-check"></i> Consultation: {{ review.title }}
                         </small>
+=======
+            <!-- Specializations -->
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #74D3D3;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-bookmark-star" style="color: #74D3D3;"></i> Areas of Expertise</h5>
+                </div>
+                <div class="card-body">
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Data Structures</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Algorithms</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Machine Learning</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Artificial Intelligence</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Python Programming</span>
+                    <span class="badge" style="background-color: #5389DA; color: white;" class="me-2 mb-2">Database Systems</span>
+                </div>
+            </div>
+
+            <!-- Office Hours -->
+            <div class="card shadow-sm mb-4" style="border: none; border-top: 4px solid #5389DA;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-clock" style="color: #5389DA;"></i> Office Hours</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Monday</strong></td>
+                                    <td>2:00 PM - 4:00 PM</td>
+                                    <td>Room 304, CS Building</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wednesday</strong></td>
+                                    <td>10:00 AM - 12:00 PM</td>
+                                    <td>Room 304, CS Building</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Friday</strong></td>
+                                    <td>1:00 PM - 3:00 PM</td>
+                                    <td>Online (Google Meet)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+>>>>>>> origin/dev
                     </div>
                     {% endfor %}
                 </div>
@@ -139,10 +205,17 @@
 
         <!-- Right Column -->
         <div class="col-md-4">
+<<<<<<< HEAD
             <!-- Quick Stats (existing, update to show ratings) -->
             <div class="card shadow-sm mb-4">
                 <div class="card-header bg-info text-white">
                     <h5 class="mb-0"><i class="bi bi-graph-up"></i> Statistics</h5>
+=======
+            <!-- Quick Stats -->
+            <div class="card shadow-sm mb-4" style="border: none;">
+                <div class="card-header" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem;">
+                    <h5 class="mb-0" style="color: #274572;"><i class="bi bi-graph-up" style="color: #5389DA;"></i> Statistics</h5>
+>>>>>>> origin/dev
                 </div>
                 <div class="card-body">
                     <!-- NEW: Average Rating -->
@@ -174,7 +247,7 @@
                             <strong>{{ total_consultations }}</strong>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                            <div class="progress-bar" role="progressbar" style="width: 100%; background-color: #74D3D3;"></div>
                         </div>
                     </div>
                     <div>
@@ -184,11 +257,40 @@
                         </div>
                         <div class="progress">
                             {% widthratio this_month_consultations total_consultations 100 as month_percentage %}
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ month_percentage }}%"></div>
+                            <div class="progress-bar" role="progressbar" style="width: {{ month_percentage }}%; background-color: #5389DA;"></div>
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+
+            <!-- Recent Reviews -->
+            {% if recent_reviews %}
+            <div class="card shadow-sm">
+                <div class="card-header" style="background-color: #DDCF49; color: #274572;">
+                    <h5 class="mb-0"><i class="bi bi-star-fill" style="color: #DDCF49;"></i> Recent Reviews</h5>
+                </div>
+                <div class="card-body">
+                    {% for review in recent_reviews %}
+                    <div {% if not forloop.last %}class="mb-3"{% endif %}>
+                        <div class="d-flex justify-content-between mb-1">
+                            <strong>{{ review.student|display_name }}</strong>
+                            <span class="text-warning">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= review.rating %}★{% else %}☆{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <p class="small text-muted mb-0">"{{ review.feedback|truncatewords:20 }}"</p>
+                        <small class="text-muted">{{ review.completed_at|timesince }} ago</small>
+                    </div>
+                    {% if not forloop.last %}<hr>{% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+>>>>>>> origin/dev
         </div>
     </div>
 </div>
