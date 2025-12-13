@@ -61,3 +61,5 @@ def multiply(value, arg):
         return float(value) * float(arg)
     except (ValueError, TypeError):
         return 0
+    
+    #testing
