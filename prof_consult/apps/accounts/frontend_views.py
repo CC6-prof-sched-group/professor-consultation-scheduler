@@ -771,3 +771,28 @@ def rate_consultation(request, consultation_id):
         messages.error(request, f'Error submitting rating: {str(e)}')
     
     return redirect('consultations_list')
+
+@login_required
+def rate_consultation(request, consultation_id):
+    """Handle rating submission for a consultation."""
+    if request.method == 'POST':
+        consultation = get_object_or_404(
+            Consultation, 
+            id=consultation_id,
+            student=request.user,
+            status='COMPLETED'
+        )
+        
+        rating = request.POST.get('rating')
+        review = request.POST.get('review', '')
+        
+        if rating:
+            consultation.rating = int(rating)
+            consultation.review = review
+            consultation.save()
+            
+            messages.success(request, 'Thank you for rating your consultation!')
+        else:
+            messages.error(request, 'Please select a rating.')
+    
+    return redirect('consultations_list')
