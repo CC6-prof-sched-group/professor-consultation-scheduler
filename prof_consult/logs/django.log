@@ -1498,3 +1498,17 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'rate_consultation' not found
 ERROR 2025-12-13 10:31:14,233 basehttp "GET /consultations/?status=past HTTP/1.1" 500 268261
 INFO 2025-12-13 10:32:55,695 autoreload C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\accounts\frontend_views.py changed, reloading.
 INFO 2025-12-13 10:32:56,872 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 10:36:12,185 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 10:36:14,799 basehttp "GET / HTTP/1.1" 200 22270
+INFO 2025-12-13 10:36:14,889 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-13 10:36:14,908 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:36:19,064 basehttp "GET /consultations/ HTTP/1.1" 200 30790
+INFO 2025-12-13 10:36:19,095 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:36:19,962 basehttp "GET /consultations/?status=past HTTP/1.1" 200 77190
+INFO 2025-12-13 10:36:19,989 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:36:50,717 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:37:20,711 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:37:50,725 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:38:20,708 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:38:50,710 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
+INFO 2025-12-13 10:39:20,716 basehttp "GET /api/notifications/ HTTP/1.1" 200 1104
