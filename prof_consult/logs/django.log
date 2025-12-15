@@ -2103,3 +2103,96 @@ INFO 2025-12-13 11:07:59,714 basehttp "GET /api/notifications/ HTTP/1.1" 200 145
 INFO 2025-12-13 11:08:18,720 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
 INFO 2025-12-13 11:08:29,716 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
 INFO 2025-12-13 11:08:48,713 basehttp "GET /api/notifications/ HTTP/1.1" 200 751
+INFO 2025-12-15 22:18:58,818 autoreload Watching for file changes with StatReloader
+WARNING 2025-12-15 22:19:02,293 basehttp "GET /static/js/plugin/webfont/webfont.min.js HTTP/1.1" 404 2023
+WARNING 2025-12-15 22:19:02,304 basehttp "GET /static/css/plugins.min.css HTTP/1.1" 404 1984
+WARNING 2025-12-15 22:19:02,304 basehttp "GET /static/css/kaiadmin.min.css HTTP/1.1" 404 1987
+WARNING 2025-12-15 22:19:02,318 basehttp "GET /static/img/profile.jpg HTTP/1.1" 404 1972
+WARNING 2025-12-15 22:19:02,319 basehttp "GET /static/js/core/jquery-3.7.1.min.js HTTP/1.1" 404 2008
+WARNING 2025-12-15 22:19:02,326 basehttp "GET /static/js/core/popper.min.js HTTP/1.1" 404 1990
+WARNING 2025-12-15 22:19:02,340 basehttp "GET /static/js/core/bootstrap.min.js HTTP/1.1" 404 1999
+WARNING 2025-12-15 22:19:02,340 basehttp "GET /static/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js HTTP/1.1" 404 2077
+WARNING 2025-12-15 22:19:02,340 basehttp "GET /static/js/kaiadmin.min.js HTTP/1.1" 404 1981
+WARNING 2025-12-15 22:19:02,432 basehttp "GET /static/img/ejb.png HTTP/1.1" 404 1960
+WARNING 2025-12-15 22:19:02,433 log Not Found: /manifest.json
+WARNING 2025-12-15 22:19:02,433 basehttp "GET /manifest.json HTTP/1.1" 404 7619
+WARNING 2025-12-15 22:19:03,958 log Not Found: /serviceworker.js
+WARNING 2025-12-15 22:19:03,959 basehttp "GET /serviceworker.js HTTP/1.1" 404 7628
+WARNING 2025-12-15 22:19:05,345 basehttp "GET /static/js/plugin/webfont/webfont.min.js HTTP/1.1" 404 2023
+WARNING 2025-12-15 22:19:05,348 basehttp "GET /static/css/plugins.min.css HTTP/1.1" 404 1984
+WARNING 2025-12-15 22:19:05,352 basehttp "GET /static/css/kaiadmin.min.css HTTP/1.1" 404 1987
+WARNING 2025-12-15 22:19:05,362 basehttp "GET /static/img/profile.jpg HTTP/1.1" 404 1972
+WARNING 2025-12-15 22:19:05,365 basehttp "GET /static/js/core/jquery-3.7.1.min.js HTTP/1.1" 404 2008
+WARNING 2025-12-15 22:19:05,378 basehttp "GET /static/js/core/popper.min.js HTTP/1.1" 404 1990
+WARNING 2025-12-15 22:19:05,378 basehttp "GET /static/js/core/bootstrap.min.js HTTP/1.1" 404 1999
+WARNING 2025-12-15 22:19:05,389 basehttp "GET /static/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js HTTP/1.1" 404 2077
+WARNING 2025-12-15 22:19:05,390 basehttp "GET /static/js/kaiadmin.min.js HTTP/1.1" 404 1981
+WARNING 2025-12-15 22:19:05,406 log Not Found: /manifest.json
+WARNING 2025-12-15 22:19:05,407 basehttp "GET /manifest.json HTTP/1.1" 404 7619
+WARNING 2025-12-15 22:19:05,759 basehttp "GET /static/js/plugin/webfont/webfont.min.js HTTP/1.1" 404 2023
+WARNING 2025-12-15 22:19:05,761 basehttp "GET /static/css/plugins.min.css HTTP/1.1" 404 1984
+WARNING 2025-12-15 22:19:05,768 basehttp "GET /static/img/profile.jpg HTTP/1.1" 404 1972
+WARNING 2025-12-15 22:19:05,768 basehttp "GET /static/css/kaiadmin.min.css HTTP/1.1" 404 1987
+WARNING 2025-12-15 22:19:05,777 basehttp "GET /static/js/core/jquery-3.7.1.min.js HTTP/1.1" 404 2008
+WARNING 2025-12-15 22:19:05,792 basehttp "GET /static/js/core/popper.min.js HTTP/1.1" 404 1990
+WARNING 2025-12-15 22:19:05,793 basehttp "GET /static/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js HTTP/1.1" 404 2077
+WARNING 2025-12-15 22:19:05,793 basehttp "GET /static/js/core/bootstrap.min.js HTTP/1.1" 404 1999
+WARNING 2025-12-15 22:19:05,799 basehttp "GET /static/js/kaiadmin.min.js HTTP/1.1" 404 1981
+WARNING 2025-12-15 22:19:05,813 log Not Found: /manifest.json
+WARNING 2025-12-15 22:19:05,814 basehttp "GET /manifest.json HTTP/1.1" 404 7619
+WARNING 2025-12-15 22:19:07,698 log Not Found: /serviceworker.js
+WARNING 2025-12-15 22:19:07,699 basehttp "GET /serviceworker.js HTTP/1.1" 404 7628
+INFO 2025-12-15 22:19:18,935 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 22:19:21,801 basehttp "GET / HTTP/1.1" 200 9782
+INFO 2025-12-15 22:19:22,019 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 223527
+INFO 2025-12-15 22:19:22,056 basehttp "GET /static/css/custom.css HTTP/1.1" 200 4334
+INFO 2025-12-15 22:19:22,059 basehttp "GET /static/css/animations.css HTTP/1.1" 200 7020
+INFO 2025-12-15 22:19:22,060 basehttp "GET /static/css/enhancements.css HTTP/1.1" 200 7532
+INFO 2025-12-15 22:19:22,063 basehttp "GET /static/js/main.js HTTP/1.1" 200 11050
+INFO 2025-12-15 22:19:22,065 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 25757
+INFO 2025-12-15 22:19:22,482 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 122774
+INFO 2025-12-15 22:19:23,487 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+WARNING 2025-12-15 22:19:23,533 log Not Found: /favicon.ico
+WARNING 2025-12-15 22:19:23,535 basehttp "GET /favicon.ico HTTP/1.1" 404 7613
+INFO 2025-12-15 22:19:24,720 basehttp "GET /accounts/login/ HTTP/1.1" 200 2564
+INFO 2025-12-15 22:19:32,663 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+WARNING 2025-12-15 22:19:32,677 log Not Found: /accounts/profile/
+WARNING 2025-12-15 22:19:32,677 basehttp "GET /accounts/profile/ HTTP/1.1" 404 15037
+INFO 2025-12-15 22:19:36,294 basehttp "GET / HTTP/1.1" 200 22695
+INFO 2025-12-15 22:19:36,350 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-15 22:19:40,053 basehttp "GET /dashboard/ HTTP/1.1" 200 26866
+INFO 2025-12-15 22:19:40,092 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-15 22:19:40,797 basehttp "GET /consultations/ HTTP/1.1" 200 30790
+INFO 2025-12-15 22:19:40,834 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-15 22:19:41,099 basehttp "GET /professors/ HTTP/1.1" 200 67693
+INFO 2025-12-15 22:19:41,127 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+INFO 2025-12-15 22:19:42,575 basehttp "GET /consultations/book/?professor=71 HTTP/1.1" 200 32727
+INFO 2025-12-15 22:19:42,604 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
+ERROR 2025-12-15 22:19:57,347 log Internal Server Error: /api/check-availability/
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 48, in check_availability
+    professor = User.objects.get(id=professor_id, role='PROFESSOR')
+                ^^^^
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\prof_consult\venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frend\OneDrive\Desktop\professor-consultation-scheduler\prof_consult\apps\consultations\views.py", line 113, in check_availability
+    except User.DoesNotExist:
+           ^^^^
+NameError: name 'User' is not defined
+ERROR 2025-12-15 22:19:57,351 basehttp "POST /api/check-availability/ HTTP/1.1" 500 101324
+INFO 2025-12-15 22:20:13,198 basehttp "GET /api/notifications/ HTTP/1.1" 200 1454
