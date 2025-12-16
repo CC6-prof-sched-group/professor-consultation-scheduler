@@ -1,8 +1,7 @@
 """
-Celery tasks for notification system.
+Notification functions for the notification system.
 """
 import logging
-from celery import shared_task
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -16,7 +15,6 @@ from apps.integrations.services import GoogleCalendarService
 logger = logging.getLogger(__name__)
 
 
-@shared_task
 def send_booking_created_notification(consultation_id):
     """
     Send notifications when a booking is created.
@@ -47,15 +45,14 @@ def send_booking_created_notification(consultation_id):
     )
     
     # Send email to student
-    send_email_notification.delay(student_notification.id)
+    send_email_notification(student_notification.id)
     
     # Send email to professor
-    send_email_notification.delay(professor_notification.id)
+    send_email_notification(professor_notification.id)
     
     logger.info(f"Created notifications for consultation {consultation_id}")
 
 
-@shared_task
 def send_booking_confirmed_notification(consultation_id):
     """
     Send notifications when a booking is confirmed.
@@ -83,7 +80,6 @@ def send_booking_confirmed_notification(consultation_id):
     logger.info(f"Sent confirmation notification for consultation {consultation_id}")
 
 
-@shared_task
 def send_booking_cancelled_notification(consultation_id, reason=''):
     """
     Send notifications when a booking is cancelled.
@@ -111,7 +107,6 @@ def send_booking_cancelled_notification(consultation_id, reason=''):
     logger.info(f"Sent cancellation notifications for consultation {consultation_id}")
 
 
-@shared_task
 def send_booking_rescheduled_notification(consultation_id):
     """
     Send notifications when a booking is rescheduled.
@@ -133,12 +128,11 @@ def send_booking_rescheduled_notification(consultation_id):
             notification_type=NotificationType.IN_APP,
             message_type=MessageType.RESCHEDULED
         )
-        send_email_notification.delay(notification.id)
+        send_email_notification(notification.id)
     
     logger.info(f"Sent reschedule notifications for consultation {consultation_id}")
 
 
-@shared_task
 def send_email_notification(notification_id, extra_context=None):
     """
     Send email notification.
@@ -216,7 +210,6 @@ def send_email_notification(notification_id, extra_context=None):
         notification.mark_as_failed()
 
 
-@shared_task
 def send_24h_reminders():
     """
     Send 24-hour reminders for upcoming consultations.

@@ -53,8 +53,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'django_celery_beat',
-    'django_celery_results',
     
     # Local apps
     'apps.accounts',
@@ -166,22 +164,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django Allauth Settings
 SITE_ID = 1
 
-# Auto-configure Site domain from environment
-if not DEBUG or config('UPDATE_SITE_DOMAIN', default=False, cast=bool):
-    def update_site_domain():
-        from django.contrib.sites.models import Site
-        try:
-            site = Site.objects.get(id=SITE_ID)
-            if site.domain != SITE_DOMAIN:
-                site.domain = SITE_DOMAIN
-                site.name = SITE_DOMAIN
-                site.save()
-        except Exception:
-            pass
-    
-    import threading
-    threading.Thread(target=update_site_domain, daemon=True).start()
-
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -269,30 +251,6 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@consultation.com')
-
-# Celery Configuration
-CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')
-CELERY_RESULT_BACKEND = config('CELERY_RESULT_BACKEND', default='redis://localhost:6379/0')
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = TIME_ZONE
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-
-# Celery Beat Schedule (for periodic tasks)
-CELERY_BEAT_SCHEDULE = {
-    'send-24h-reminders': {
-        'task': 'apps.notifications.tasks.send_24h_reminders',
-        'schedule': 3600.0,  # Run every hour
-    },
-    'sync-google-calendar': {
-        'task': 'apps.integrations.tasks.sync_google_calendar_events',
-        'schedule': 1800.0,  # Run every 30 minutes
-    },
-}
-
-# For testing - run tasks synchronously
-CELERY_TASK_ALWAYS_EAGER = config('CELERY_TASK_ALWAYS_EAGER', default=False, cast=bool)
 
 # Logging Configuration
 LOGGING = {

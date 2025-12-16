@@ -1,8 +1,7 @@
 """
-Celery tasks for Google Calendar integration.
+Functions for Google Calendar integration.
 """
 import logging
-from celery import shared_task
 from django.utils import timezone
 from datetime import timedelta
 
@@ -12,7 +11,6 @@ from apps.integrations.services import GoogleCalendarService
 logger = logging.getLogger(__name__)
 
 
-@shared_task
 def sync_google_calendar_events():
     """
     Sync consultation status with Google Calendar events.
