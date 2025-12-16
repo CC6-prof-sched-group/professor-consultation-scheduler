@@ -216,4 +216,6 @@ class Consultation(models.Model):
             self.save()
             return True
         return False
+    rating = models.IntegerField(null=True, blank=True, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    review = models.TextField(blank=True, null=True)
 

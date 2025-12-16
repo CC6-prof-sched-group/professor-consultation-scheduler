@@ -92,7 +92,7 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         )
         
         # Send notifications asynchronously
-        send_booking_created_notification.delay(consultation.id)
+        send_booking_created_notification(consultation.id)
         
         return consultation
     
@@ -118,7 +118,7 @@ class ConsultationViewSet(viewsets.ModelViewSet):
             consultation.save()
         
         # Send confirmation notification
-        send_booking_confirmed_notification.delay(consultation.id)
+        send_booking_confirmed_notification(consultation.id)
         
         serializer = self.get_serializer(consultation)
         return Response(serializer.data)
@@ -147,7 +147,7 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         consultation.cancel(reason=reason)
         
         # Send cancellation notification
-        send_booking_cancelled_notification.delay(consultation.id, reason)
+        send_booking_cancelled_notification(consultation.id, reason)
         
         serializer = self.get_serializer(consultation)
         return Response(serializer.data)
@@ -178,7 +178,7 @@ class ConsultationViewSet(viewsets.ModelViewSet):
             calendar_service.update_event(consultation)
         
         # Send reschedule notification
-        send_booking_rescheduled_notification.delay(consultation.id)
+        send_booking_rescheduled_notification(consultation.id)
         
         serializer = self.get_serializer(consultation)
         return Response(serializer.data)
@@ -252,4 +252,3 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         
         response_serializer = self.get_serializer(consultation)
         return Response(response_serializer.data)
-

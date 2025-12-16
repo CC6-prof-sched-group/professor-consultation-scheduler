@@ -90,6 +90,13 @@ def dashboard(request):
         user=user
     ).order_by('-created_at')[:5]
     
+    top_professors = User.objects.filter(
+        role=Role.PROFESSOR,
+        is_active=True,
+        professor_profile__total_reviews__gt=0
+    ).select_related('professor_profile').prefetch_related('socialaccount_set').order_by(
+        '-professor_profile__average_rating'
+    )[:5]
     context = {
         'total_consultations': total_consultations,
         'upcoming': upcoming,
@@ -144,6 +151,42 @@ def consultations_list(request):
     }
     
     return render(request, 'consultations.html', context)
+
+
+@login_required
+def consultation_detail(request, consultation_id):
+    """
+    Display a single consultation/booking detail for frontend.
+    Permissions: only the student, the professor, or an admin can view.
+    Provides context flags to enable reschedule/cancel actions in the template.
+    """
+    consultation = get_object_or_404(Consultation, id=consultation_id)
+
+    user = request.user
+    # Allow student, professor, or admin
+    if not (
+        user == consultation.student or
+        user == consultation.professor or
+        user.role == Role.ADMIN
+    ):
+        raise Http404()
+
+    can_cancel = False
+    try:
+        can_cancel = consultation.can_be_cancelled()
+    except Exception:
+        # Best-effort: if method not present or errors, default False
+        can_cancel = False
+
+    can_reschedule = consultation.status == ConsultationStatus.CONFIRMED
+
+    context = {
+        'consultation': consultation,
+        'can_cancel': can_cancel,
+        'can_reschedule': can_reschedule,
+    }
+
+    return render(request, 'consultation_detail.html', context)
 
 
 @login_required
@@ -205,6 +248,7 @@ def professors_list(request):
     """
     search_query = request.GET.get('search', '')
     department_filter = request.GET.get('department', '')
+    sort_by = request.GET.get('sort', 'rating')  # NEW: sorting
     
     # Base queryset
     professors = User.objects.filter(
@@ -237,19 +281,26 @@ def professors_list(request):
             professor=professor,
             status=ConsultationStatus.COMPLETED
         ).count()
-        
-        # Calculate average rating
-        avg_rating = Consultation.objects.filter(
-            professor=professor,
-            rating__isnull=False
-        ).aggregate(Avg('rating'))['rating__avg']
-        professor.avg_rating = round(avg_rating, 1) if avg_rating else 0
+    
+    # NEW: Sort professors
+    if sort_by == 'rating':
+        professors = sorted(professors, key=lambda p: (
+            -p.professor_profile.average_rating if hasattr(p, 'professor_profile') else 0,
+            p.last_name or ''
+        ))
+    elif sort_by == 'reviews':
+        professors = sorted(professors, key=lambda p: (
+            -p.professor_profile.total_reviews if hasattr(p, 'professor_profile') else 0
+        ))
+    elif sort_by == 'name':
+        professors = sorted(professors, key=lambda p: p.last_name or p.first_name or '')
     
     context = {
         'professors': professors,
         'departments': [d for d in departments if d],
         'search_query': search_query,
         'department_filter': department_filter,
+        'sort_by': sort_by,
     }
     
     return render(request, 'professors_list.html', context)
@@ -267,10 +318,24 @@ def professor_profile(request, professor_id):
         is_active=True
     )
     
-    try:
-        profile = professor.professor_profile
-    except ProfessorProfile.DoesNotExist:
-        raise Http404("Professor profile not found")
+    profile, created = ProfessorProfile.objects.get_or_create(
+        user=professor,
+        defaults={
+            'title': 'Prof.',
+            'department': professor.department or 'General',
+            'office_location': 'Office TBD',
+            'consultation_duration_default': 60,
+            'max_advance_booking_days': 30,
+            'buffer_time_between_consultations': 15,
+            'status': 'AVAILABLE'
+        }
+    )
+    
+    # Get statistics
+    total_consultations = Consultation.objects.filter(
+        professor=professor,
+        status=ConsultationStatus.COMPLETED
+    ).count()
     
     # Get statistics
     total_consultations = Consultation.objects.filter(
@@ -295,20 +360,34 @@ def professor_profile(request, professor_id):
         professor=professor,
         rating__isnull=False,
         feedback__isnull=False
-    ).exclude(feedback='').order_by('-completed_at')[:5]
+    ).exclude(feedback='').order_by('-updated_at')[:5]
     try:
         recent_reviews = recent_reviews.select_related('student').prefetch_related('student__socialaccount_set')
     except Exception:
         pass
+    
+    from django.db.models import Count
+    rating_counts = {}
+    rating_breakdown = {}
+    
+    if profile.total_reviews > 0:
+        ratings = Consultation.objects.filter(
+            professor=professor,
+            rating__isnull=False
+        ).values('rating').annotate(count=Count('rating'))
+        
+        for item in ratings:
+            rating_counts[item['rating']] = item['count']
+            rating_breakdown[item['rating']] = (item['count'] / profile.total_reviews) * 100
     
     context = {
         'professor': professor,
         'profile': profile,
         'total_consultations': total_consultations,
         'this_month_consultations': this_month_consultations,
-        'avg_rating': round(avg_rating, 1) if avg_rating else 0,
-        'rating_count': recent_reviews.count(),
         'recent_reviews': recent_reviews,
+        'rating_counts': rating_counts,  # NEW
+        'rating_breakdown': rating_breakdown,  # NEW
     }
     
     return render(request, 'professor_profile.html', context)
@@ -634,3 +713,86 @@ def professor_change_status(request):
             messages.error(request, 'Invalid status selected.')
     
     return redirect('professor_dashboard')
+@login_required
+def rate_consultation(request, consultation_id):
+    """
+    Handle consultation rating submission.
+    Students can rate completed consultations.
+    """
+    if request.method != 'POST':
+        messages.error(request, 'Invalid request method.')
+        return redirect('consultations_list')
+    
+    # Get consultation
+    consultation = get_object_or_404(Consultation, id=consultation_id)
+    
+    # Verify student owns this consultation
+    if consultation.student != request.user:
+        messages.error(request, 'You can only rate your own consultations.')
+        return redirect('consultations_list')
+    
+    # Verify consultation is completed
+    if consultation.status != ConsultationStatus.COMPLETED:
+        messages.error(request, 'You can only rate completed consultations.')
+        return redirect('consultations_list')
+    
+    try:
+        # Get rating data
+        rating = int(request.POST.get('rating', 0))
+        feedback = request.POST.get('feedback', '').strip()
+        anonymous = request.POST.get('anonymous') == 'on'
+        
+        # Validate rating
+        if rating < 1 or rating > 5:
+            messages.error(request, 'Rating must be between 1 and 5 stars.')
+            return redirect('consultations_list')
+        
+        # Update consultation
+        consultation.rating = rating
+        consultation.feedback = feedback
+        consultation.save()
+        
+        # The signal will automatically update professor's average rating
+        # But we can also manually trigger it for immediate sync
+        if hasattr(consultation.professor, 'professor_profile'):
+            avg_rating, total_reviews = consultation.professor.professor_profile.calculate_ratings()
+            
+            messages.success(
+                request, 
+                f'Thank you for rating! Your {rating}-star review has been submitted. '
+                f'Professor {consultation.professor|display_name} now has {avg_rating}★ average from {total_reviews} reviews.'
+            )
+        else:
+            messages.success(request, f'Thank you for your {rating}-star rating!')
+        
+    except ValueError:
+        messages.error(request, 'Invalid rating value.')
+    except Exception as e:
+        messages.error(request, f'Error submitting rating: {str(e)}')
+    
+    return redirect('consultations_list')
+
+@login_required
+def rate_consultation(request, consultation_id):
+    """Handle rating submission for a consultation."""
+    if request.method == 'POST':
+        consultation = get_object_or_404(
+            Consultation, 
+            id=consultation_id,
+            student=request.user,
+            status='COMPLETED'
+        )
+        
+        rating = request.POST.get('rating')
+        review = request.POST.get('review', '')
+        
+        if rating:
+            consultation.rating = int(rating)
+            consultation.review = review
+            consultation.save()
+            
+            messages.success(request, 'Thank you for rating your consultation!')
+        else:
+            messages.error(request, 'Please select a rating.')
+    
+    return redirect('consultations_list')

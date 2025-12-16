@@ -22,11 +22,11 @@ wheels/
 
 # Django-specific files
 *.log
-logs/
 *.pot
 db.sqlite3
 media/
 staticfiles/
+!staticfiles/.gitkeep
 staticfiles.json
 
 # Configuration and Secret Files

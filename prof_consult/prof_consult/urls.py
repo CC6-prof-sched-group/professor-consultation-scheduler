@@ -14,6 +14,7 @@ from apps.professors.views import ProfessorProfileViewSet
 from apps.notifications.views import NotificationViewSet
 from apps.accounts import views as auth_views
 from apps.accounts import frontend_views
+from prof_consult.health_checks import health_check
 
 # API Router
 router = DefaultRouter()
@@ -24,12 +25,14 @@ router.register(r'notifications', NotificationViewSet, basename='notification')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('health/', health_check, name='health-check'),
     
     # Frontend Pages
     path('', frontend_views.home, name='home'),
     path('login/', frontend_views.login_view, name='login'),
     path('dashboard/', frontend_views.dashboard, name='dashboard'),
     path('consultations/', frontend_views.consultations_list, name='consultations_list'),
+    path('consultation/<int:consultation_id>/', frontend_views.consultation_detail, name='consultation_detail'),
     path('consultations/book/', frontend_views.book_consultation, name='book_consultation'),
     path('professors/', frontend_views.professors_list, name='professors_list'),
     path('professors/<int:professor_id>/', frontend_views.professor_profile, name='professor_profile'),
@@ -60,6 +63,8 @@ urlpatterns = [
     path('api/admin/consultations/', auth_views.AdminConsultationListView.as_view(), name='admin-consultations'),
     path('api/admin/statistics/', auth_views.AdminStatisticsView.as_view(), name='admin-statistics'),
     path('api/admin/users/<int:pk>/role/', auth_views.AdminUpdateUserRoleView.as_view(), name='admin-update-role'),
+    
+    path('consultations/rate/<int:consultation_id>/', frontend_views.rate_consultation, name='rate_consultation'),
 ]
 
 # Custom error handlers

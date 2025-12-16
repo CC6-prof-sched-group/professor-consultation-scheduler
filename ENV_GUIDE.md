@@ -12,7 +12,18 @@ This file explains the environment variables used by this project, how to obtain
   - Example command (PowerShell): `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"`
   - Paste the printed value into `SECRET_KEY`.
 
-- **`DEBUG`**: `True` or `False`. Use `True` for local development only.
+- **`DEBUG`**: `True` or `False`. Use `True` for local development only. **MUST be `False` in production (Render)**.
+
+- **`ALLOWED_HOSTS`**: Comma-separated list of allowed hostnames.
+  - Development: `localhost,127.0.0.1`
+  - Production (Render): `your-app-name.onrender.com,www.yourdomain.com`
+  - Example: `ALLOWED_HOSTS=consult-ease-lz8p.onrender.com`
+
+- **`SITE_DOMAIN`**: The domain where your app is hosted (used for django-allauth OAuth redirects).
+  - Development: `localhost:8000`
+  - Production (Render): `your-app-name.onrender.com`
+  - Example: `SITE_DOMAIN=consult-ease-lz8p.onrender.com`
+  - **CRITICAL**: This must match your actual domain or Google OAuth will fail with redirect_uri_mismatch errors.
 
 - **`DATABASE_URL`**: Full database connection URL. Two common options:
   - SQLite (development): leave blank or set to `sqlite:///db.sqlite3` (project may already use local `db.sqlite3`).
@@ -25,10 +36,16 @@ This file explains the environment variables used by this project, how to obtain
     1. Visit the Google Cloud Console: `https://console.cloud.google.com/`.
     2. Create/select a project.
     3. Go to **APIs & Services > Credentials** and create **OAuth 2.0 Client IDs**.
-    4. Set Authorized redirect URIs (for local dev):
-       - `http://localhost:8000/accounts/google/login/callback/`
-       - `http://localhost:8000/api/auth/google/callback/`
-    5. Copy the **Client ID** and **Client Secret** and paste them into `.env`.
+    4. Set Authorized redirect URIs:
+       - **Development**: 
+         - `http://localhost:8000/accounts/google/login/callback/`
+         - `http://localhost:8000/api/auth/google/callback/`
+       - **Production (Render)**: 
+         - `https://your-app-name.onrender.com/accounts/google/login/callback/`
+         - `https://your-app-name.onrender.com/api/auth/google/callback/`
+       - Example: `https://consult-ease-lz8p.onrender.com/accounts/google/login/callback/`
+    5. Copy the **Client ID** and **Client Secret** and paste them into `.env` or Render environment variables.
+  - **IMPORTANT**: You must add BOTH local and production redirect URIs to the same OAuth client, or create separate clients for dev/prod.
 
 - **`ENCRYPTION_KEY`**: A symmetric key used by the app to encrypt sensitive fields.
   - How to generate: `python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"`

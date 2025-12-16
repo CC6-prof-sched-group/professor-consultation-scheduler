@@ -1,0 +1,56 @@
+<!-- Quick Rating Component - Inline stars for quick rating -->
+<div class="quick-rating-inline" data-consultation-id="{{ consultation.id }}">
+    <form method="post" action="{% url 'rate_consultation' consultation.id %}" class="d-inline-flex align-items-center gap-2">
+        {% csrf_token %}
+        <small class="text-muted">Quick rate:</small>
+        {% for i in "12345" %}
+            <button type="submit" name="rating" value="{{ i }}" class="btn btn-sm btn-link p-0 quick-star" title="{{ i }} star{{ i|pluralize }}">
+                <i class="bi bi-star text-warning" style="font-size: 1.2rem;"></i>
+            </button>
+        {% endfor %}
+    </form>
+</div>
+
+<style>
+.quick-rating-inline .quick-star {
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+
+.quick-rating-inline .quick-star:hover {
+    transform: scale(1.3);
+}
+
+.quick-rating-inline .quick-star:hover i {
+    color: #ffc107 !important;
+}
+</style>
+
+<script>
+document.querySelectorAll('.quick-star').forEach(btn => {
+    btn.addEventListener('mouseenter', function() {
+        const container = this.closest('.quick-rating-inline');
+        const buttons = container.querySelectorAll('.quick-star');
+        const thisValue = parseInt(this.querySelector('input, button').value || this.getAttribute('value'));
+        
+        buttons.forEach((b, index) => {
+            const icon = b.querySelector('i');
+            if (index < thisValue) {
+                icon.classList.remove('bi-star');
+                icon.classList.add('bi-star-fill');
+            } else {
+                icon.classList.remove('bi-star-fill');
+                icon.classList.add('bi-star');
+            }
+        });
+    });
+    
+    btn.closest('.quick-rating-inline').addEventListener('mouseleave', function() {
+        const buttons = this.querySelectorAll('.quick-star i');
+        buttons.forEach(icon => {
+            icon.classList.remove('bi-star-fill');
+            icon.classList.add('bi-star');
+        });
+    });
+});
+</script>

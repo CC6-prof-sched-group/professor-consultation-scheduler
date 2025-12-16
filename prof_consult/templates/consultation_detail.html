@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Consultation Detail{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card" style="border: none; border-top: 4px solid #5389DA;">
+        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1.25rem;">
+          <h5 class="mb-0" style="color: #274572;"><i class="bi bi-calendar-check" style="color: #5389DA;"></i> Consultation Detail</h5>
+          <small style="color: #666;">#{{ consultation.id }}</small>
+        </div>
+        <div class="card-body">
+          <h4>{{ consultation.title }}</h4>
+          <p class="text-muted">With: {% if request.user == consultation.professor %}Student: {{ consultation.student.get_full_name }}{% else %}Professor: {{ consultation.professor.get_full_name }}{% endif %}</p>
+
+          <dl class="row">
+            <dt class="col-sm-4">Date</dt>
+            <dd class="col-sm-8">{{ consultation.scheduled_date }}</dd>
+
+            <dt class="col-sm-4">Time</dt>
+            <dd class="col-sm-8">{{ consultation.scheduled_time }}</dd>
+
+            <dt class="col-sm-4">Location</dt>
+            <dd class="col-sm-8">{{ consultation.location }}</dd>
+
+            <dt class="col-sm-4">Status</dt>
+            <dd class="col-sm-8">{{ consultation.get_status_display }}</dd>
+
+            <dt class="col-sm-4">Notes</dt>
+            <dd class="col-sm-8">{{ consultation.description|default:'—' }}</dd>
+          </dl>
+
+          <hr />
+
+          <div id="alerts"></div>
+
+          <!-- Reschedule and Cancel forms removed: handled via consultations.html list page -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="consultation-data" data-id="{{ consultation.id }}" style="display:none"></div>
+
+<!-- Confirmation Modals -->
+{% if can_cancel %}
+<div class="modal fade" id="confirmCancelModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Cancellation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to cancel this consultation?</p>
+        <p class="small text-muted">Reason: <span id="cancel-reason-preview"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="confirm-cancel-btn" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;">Yes, Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if can_reschedule %}
+<div class="modal fade" id="confirmRescheduleModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Reschedule</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Reschedule consultation to:</p>
+        <p class="fw-bold" id="reschedule-preview"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="confirm-reschedule-btn" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script>
+(function(){
+  const consultationId = document.getElementById('consultation-data').dataset.id;
+  const alerts = document.getElementById('alerts');
+
+  function showAlert(message, type='success'){
+    alerts.innerHTML = `<div class="alert alert-${type} alert-dismissible" role="alert">${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>`;
+  }
+
+  function getAuthHeaders(){
+    const csrf = document.querySelector('[name=csrfmiddlewaretoken]') ? document.querySelector('[name=csrfmiddlewaretoken]').value : null;
+    const headers = { 'Content-Type': 'application/json' };
+    if (csrf) headers['X-CSRFToken'] = csrf;
+    return headers;
+  }
+
+  // Helper functions to send requests
+  function sendCancel(reason){
+    return fetch(`/api/consultations/${consultationId}/cancel/`, {
+      method: 'PATCH',
+      headers: getAuthHeaders(),
+      credentials: 'same-origin',
+      body: JSON.stringify({ reason })
+    }).then(res => res.json().then(data => ({ status: res.status, body: data })));
+  }
+
+  function sendReschedule(date, time){
+    return fetch(`/api/consultations/${consultationId}/reschedule/`, {
+      method: 'PATCH',
+      headers: getAuthHeaders(),
+      credentials: 'same-origin',
+      body: JSON.stringify({ scheduled_date: date, scheduled_time: time })
+    }).then(res => res.json().then(data => ({ status: res.status, body: data })));
+  }
+
+  // Cancel flow with confirmation modal
+  const cancelForm = document.getElementById('cancel-form');
+  if (cancelForm){
+    const confirmCancelModalEl = document.getElementById('confirmCancelModal');
+    const cancelModal = confirmCancelModalEl ? new bootstrap.Modal(confirmCancelModalEl) : null;
+    const confirmCancelBtn = document.getElementById('confirm-cancel-btn');
+
+    cancelForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const reason = document.getElementById('reason').value || '';
+      const preview = document.getElementById('cancel-reason-preview');
+      if (preview) preview.textContent = reason || 'No reason provided';
+      if (cancelModal) cancelModal.show();
+
+      // Attach one-time handler to confirm button
+      if (confirmCancelBtn){
+        const handler = function(){
+          confirmCancelBtn.disabled = true;
+          sendCancel(reason).then(({status, body}) => {
+            confirmCancelBtn.disabled = false;
+            if (status >= 200 && status < 300){
+              showAlert('Consultation cancelled successfully.', 'success');
+              if (cancelModal) cancelModal.hide();
+              setTimeout(()=> window.location.href = '/consultations/', 900);
+            } else {
+              showAlert(body.error || 'Failed to cancel consultation.', 'danger');
+            }
+          }).catch(() => {
+            confirmCancelBtn.disabled = false;
+            showAlert('Network error while cancelling.', 'danger');
+          });
+          confirmCancelBtn.removeEventListener('click', handler);
+        };
+        confirmCancelBtn.addEventListener('click', handler);
+      }
+    });
+  }
+
+  // Reschedule flow with confirmation modal
+  const rescheduleForm = document.getElementById('reschedule-form');
+  if (rescheduleForm){
+    const confirmRescheduleEl = document.getElementById('confirmRescheduleModal');
+    const rescheduleModal = confirmRescheduleEl ? new bootstrap.Modal(confirmRescheduleEl) : null;
+    const confirmRescheduleBtn = document.getElementById('confirm-reschedule-btn');
+
+    rescheduleForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const date = document.getElementById('new_date').value;
+      const time = document.getElementById('new_time').value;
+      if (!date || !time){
+        showAlert('Please provide both date and time.', 'warning');
+        return;
+      }
+
+      const preview = document.getElementById('reschedule-preview');
+      if (preview) preview.textContent = `${date} ${time}`;
+      if (rescheduleModal) rescheduleModal.show();
+
+      if (confirmRescheduleBtn){
+        const handler = function(){
+          confirmRescheduleBtn.disabled = true;
+          sendReschedule(date, time).then(({status, body}) => {
+            confirmRescheduleBtn.disabled = false;
+            if (status >= 200 && status < 300){
+              showAlert('Consultation rescheduled — awaiting confirmation.', 'success');
+              if (rescheduleModal) rescheduleModal.hide();
+              setTimeout(()=> window.location.href = '/consultations/', 900);
+            } else {
+              showAlert(body.error || 'Failed to reschedule consultation.', 'danger');
+            }
+          }).catch(() => {
+            confirmRescheduleBtn.disabled = false;
+            showAlert('Network error while rescheduling.', 'danger');
+          });
+          confirmRescheduleBtn.removeEventListener('click', handler);
+        };
+        confirmRescheduleBtn.addEventListener('click', handler);
+      }
+    });
+  }
+})();
+</script>
+
+{% endblock %}

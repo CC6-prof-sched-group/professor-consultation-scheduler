@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="star-rating d-inline-flex align-items-center">
+    <div class="stars">
+        {% for star in full_stars %}
+            <i class="bi bi-star-fill text-warning"></i>
+        {% endfor %}
+        
+        {% if has_half_star %}
+            <i class="bi bi-star-half text-warning"></i>
+        {% endif %}
+        
+        {% for star in empty_stars %}
+            <i class="bi bi-star text-warning"></i>
+        {% endfor %}
+    </div>
+    
+    {% if show_number %}
+        <span class="ms-2 text-muted">
+            <strong>{{ rating|floatformat:1 }}</strong>
+        </span>
+    {% endif %}
+</div>
+
+<style>
+.star-rating .stars {
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.star-rating .bi {
+    display: inline-block;
+}
+</style>
