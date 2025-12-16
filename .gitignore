@@ -26,6 +26,8 @@ wheels/
 db.sqlite3
 media/
 staticfiles/
+!staticfiles/.gitkeep
+staticfiles.json
 
 # Configuration and Secret Files
 # IMPORTANT: Use environment variables instead of hardcoding secrets.

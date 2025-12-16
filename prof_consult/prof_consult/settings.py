@@ -28,7 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security Settings
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-z&je=#v1=nx&4kqqz==79+*+l9*(jtl=8es1a9g+7q3(wx!37*')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = ['*']
+
+# Allowed Hosts
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
+
+# Site Domain (for django.contrib.sites and OAuth redirects)
+SITE_DOMAIN = config('SITE_DOMAIN', default='localhost:8000')
 
 # Application definition
 INSTALLED_APPS = [
@@ -48,8 +53,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'django_celery_beat',
-    'django_celery_results',
     
     # Local apps
     'apps.accounts',
@@ -160,14 +163,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django Allauth Settings
 SITE_ID = 1
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# Allauth Configuration (django-allauth 65+)
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_UNIQUE_EMAIL = True
 SOCIALACCOUNT_AUTO_SIGNUP = True
@@ -247,30 +251,6 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@consultation.com')
-
-# Celery Configuration
-CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')
-CELERY_RESULT_BACKEND = config('CELERY_RESULT_BACKEND', default='redis://localhost:6379/0')
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = TIME_ZONE
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-
-# Celery Beat Schedule (for periodic tasks)
-CELERY_BEAT_SCHEDULE = {
-    'send-24h-reminders': {
-        'task': 'apps.notifications.tasks.send_24h_reminders',
-        'schedule': 3600.0,  # Run every hour
-    },
-    'sync-google-calendar': {
-        'task': 'apps.integrations.tasks.sync_google_calendar_events',
-        'schedule': 1800.0,  # Run every 30 minutes
-    },
-}
-
-# For testing - run tasks synchronously
-CELERY_TASK_ALWAYS_EAGER = config('CELERY_TASK_ALWAYS_EAGER', default=False, cast=bool)
 
 # Logging Configuration
 LOGGING = {

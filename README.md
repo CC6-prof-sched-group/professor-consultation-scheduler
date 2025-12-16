@@ -2,6 +2,8 @@
 
 A comprehensive Django-based web application that enables students to book consultations with professors, with role-based access for students, professors, and administrators.
 
+**Live Demo**: https://consult-ease-lz8p.onrender.com
+
 ## Features
 
 - **User Authentication**: Google OAuth2 authentication using django-allauth
@@ -13,6 +15,7 @@ A comprehensive Django-based web application that enables students to book consu
 - **Rating System**: Students can rate completed consultations
 - **Admin Dashboard**: Comprehensive admin interface with statistics
 - **RESTful API**: Full REST API using Django REST Framework
+- **Production Ready**: Configured for deployment on Render.com with PostgreSQL
 
 ## Technology Stack
 

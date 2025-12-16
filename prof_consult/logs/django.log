@@ -1519,3 +1519,22 @@ INFO 2025-12-13 13:50:18,013 basehttp "GET / HTTP/1.1" 200 9782
 INFO 2025-12-13 13:50:25,606 basehttp "GET / HTTP/1.1" 200 9782
 INFO 2025-12-13 13:50:25,842 basehttp "GET /static/img/consultease-favicon.png HTTP/1.1" 200 122774
 INFO 2025-12-13 13:50:26,830 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+INFO 2025-12-13 14:51:54,661 autoreload Watching for file changes with StatReloader
+INFO 2025-12-13 14:51:56,498 basehttp "GET / HTTP/1.1" 200 9782
+INFO 2025-12-16 16:57:04,370 autoreload Watching for file changes with StatReloader
+INFO 2025-12-16 16:57:12,830 basehttp "GET / HTTP/1.1" 200 9782
+INFO 2025-12-16 16:57:12,859 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-12-16 16:57:12,864 basehttp "GET /static/css/animations.css HTTP/1.1" 304 0
+INFO 2025-12-16 16:57:12,864 basehttp "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-16 16:57:12,867 basehttp "GET /static/css/enhancements.css HTTP/1.1" 304 0
+INFO 2025-12-16 16:57:12,876 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2025-12-16 16:57:13,057 basehttp "GET /static/images/logo.svg HTTP/1.1" 200 25757
+INFO 2025-12-16 16:57:14,057 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 1412
+WARNING 2025-12-16 16:57:14,148 log Not Found: /favicon.ico
+WARNING 2025-12-16 16:57:14,149 basehttp "GET /favicon.ico HTTP/1.1" 404 7591
+INFO 2025-12-16 16:57:16,226 basehttp "GET /accounts/signup/ HTTP/1.1" 200 2785
+INFO 2025-12-16 16:57:19,478 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 200 1412
+INFO 2025-12-16 16:57:21,484 basehttp "POST /accounts/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-12-16 16:57:32,538 basehttp "GET /accounts/google/login/callback/?state=MzdcLXmOaRBnJv74&code=4/0ATX87lPtb0L3EkaCBF9hZ5E78r_IRjvU6p84GpmKY341UFsigMGxzNu-YdvSiQOguRJ-FA&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email%20openid&authuser=0&prompt=consent HTTP/1.1" 302 0
+WARNING 2025-12-16 16:57:32,548 log Not Found: /accounts/profile/
+WARNING 2025-12-16 16:57:32,549 basehttp "GET /accounts/profile/ HTTP/1.1" 404 15015
