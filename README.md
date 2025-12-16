@@ -10,12 +10,12 @@ A comprehensive Django-based web application that enables students to book consu
 - **Role-Based Access**: Separate roles for Students, Professors, and Administrators
 - **Consultation Booking**: Students can book consultations with professors
 - **Google Calendar Integration**: Automatic calendar event creation/update/deletion
-- **Email Notifications**: Automated email notifications via Celery (booking created, confirmed, reminders, cancellations, reschedules)
+- **Email Notifications**: Automated email notifications (booking created, confirmed, reminders, cancellations, reschedules)
 - **Real-time Availability**: Professors can set and manage their availability
 - **Rating System**: Students can rate completed consultations
 - **Admin Dashboard**: Comprehensive admin interface with statistics
 - **RESTful API**: Full REST API using Django REST Framework
-- **Production Ready**: Configured for deployment on Render.com with PostgreSQL
+- **Production Ready**: Easy to deploy on standard Django hosts (uses SQLite locally; switch to Postgres for prod)
 
 ## Technology Stack
 
@@ -23,7 +23,7 @@ A comprehensive Django-based web application that enables students to book consu
 - **API**: Django REST Framework
 - **Database**: PostgreSQL (SQLite for development)
 - **Authentication**: django-allauth with Google OAuth2
-- **Task Queue**: Celery with Redis
+- **Task Queue**: Runs notifications synchronously (no Celery/Redis required)
 - **Calendar Integration**: Google Calendar API
 - **Email**: Django email backend (configurable for SMTP)
 
@@ -67,8 +67,8 @@ DATABASE_URL=postgresql://user:password@localhost:5432/consultation_db
 GOOGLE_CLIENT_ID=your-google-client-id
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 ENCRYPTION_KEY=your-encryption-key
-CELERY_BROKER_URL=redis://localhost:6379/0
-CELERY_RESULT_BACKEND=redis://localhost:6379/0
+SITE_NAME=Consultation Scheduler
+SITE_URL=http://localhost:8000
 ```
 
 ### 5. Generate Encryption Key
@@ -121,24 +121,6 @@ python manage.py runserver
 
 The application will be available at `http://localhost:8000`
 
-### Celery Worker (for background tasks)
+### Notes on background work
 
-In a separate terminal:
-
-```bash
-celery -A prof_consult worker -l info
-```
-
-### Celery Beat (for scheduled tasks)
-
-In a separate terminal:
-
-```bash
-celery -A prof_consult beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
-```
-
-### Redis (if not running)
-
-```bash
-redis-server
-```
+Background notifications now run inline with the web process, so no Celery/Redis setup is required. For production-scale usage, you can reintroduce a task queue if needed.
