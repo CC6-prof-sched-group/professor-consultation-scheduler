@@ -178,6 +178,8 @@
                                             <span class="badge bg-info mt-2">Completed</span>
                                         {% elif consultation.status == 'CANCELLED' %}
                                             <span class="badge bg-danger mt-2">Cancelled</span>
+                                        {% elif consultation.status == 'RESCHEDULE_PROPOSED' %}
+                                            <span class="badge bg-warning mt-2" style="background-color: #ffc107 !important; color: #000 !important;">Reschedule Proposed</span>
                                         {% endif %}
                                         
                                         <!-- Show existing rating if rated -->
@@ -211,8 +213,31 @@
                                             </div>
                                         {% endif %}
                                         
+                                        <!-- Actions for Resheludle Proposal -->
+                                        {% if consultation.status == 'RESCHEDULE_PROPOSED' and user.role == 'STUDENT' %}
+                                            <div class="alert alert-warning mb-2 p-2 small">
+                                                <i class="bi bi-exclamation-circle"></i> Professor proposed: <br>
+                                                <strong>{{ consultation.scheduled_time|time:"g:i A" }}</strong>
+                                            </div>
+                                            <form method="post" action="{% url 'student_consultation_action' consultation.id %}" class="mb-2">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="action" value="accept_reschedule">
+                                                <button type="submit" class="btn btn-success btn-sm w-100">
+                                                    <i class="bi bi-check-circle"></i> Accept New Time
+                                                </button>
+                                            </form>
+                                            <form method="post" action="{% url 'student_consultation_action' consultation.id %}" class="mb-2">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="action" value="reject_reschedule">
+                                                <button type="submit" class="btn btn-danger btn-sm w-100">
+                                                    <i class="bi bi-x-circle"></i> Reject
+                                                </button>
+                                            </form>
+                                        {% endif %}
+
                                         <!-- Existing action buttons for upcoming -->
                                         {% if status_filter == 'upcoming' or not status_filter %}
+                                            {% if consultation.status != 'RESCHEDULE_PROPOSED' %}
                                             <div class="btn-group w-100 mb-2" role="group">
                                                 <a href="{% url 'consultation_detail' consultation.id %}" class="btn btn-primary btn-sm">
                                                     <i class="bi bi-eye"></i> View
@@ -229,6 +254,7 @@
                                                     </button>
                                                 {% endif %}
                                             </div>
+                                            {% endif %}
                                             {% if consultation.google_calendar_event_id %}
                                                 <div class="mt-2">
                                                     <span class="badge bg-success">

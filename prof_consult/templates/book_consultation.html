@@ -25,7 +25,7 @@
                             <select class="form-select form-select-lg" id="professor" name="professor" required>
                                 <option value="">Choose a professor...</option>
                                 {% for professor in professors %}
-                                <option value="{{ professor.id }}" {% if selected_professor_id == professor.id|stringformat:"s" %}selected{% endif %}>{{ professor|display_name }} - {{ professor.department }}</option>
+                                <option value="{{ professor.id }}" data-profile-id="{{ professor.professor_profile.id }}" {% if selected_professor_id == professor.id|stringformat:"s" %}selected{% endif %}>{{ professor|display_name }} - {{ professor.department }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -38,20 +38,52 @@
                             <input type="date" class="form-control form-control-lg" id="date" name="date" required>
                         </div>
 
-                        <!-- Time Slot Selection -->
-                        <div class="mb-4">
-                            <label for="time" class="form-label fw-bold">
-                                <i class="bi bi-clock"></i> Time Slot
-                            </label>
-                            <select class="form-select form-select-lg" id="time" name="time" required>
-                                <option value="">Choose a time slot...</option>
-                                <option value="09:00">9:00 AM - 10:00 AM</option>
-                                <option value="10:00">10:00 AM - 11:00 AM</option>
-                                <option value="11:00">11:00 AM - 12:00 PM</option>
-                                <option value="14:00">2:00 PM - 3:00 PM</option>
-                                <option value="15:00">3:00 PM - 4:00 PM</option>
-                                <option value="16:00">4:00 PM - 5:00 PM</option>
-                            </select>
+                        <!-- Time Input and Duration -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label for="time" class="form-label fw-bold">
+                                    <i class="bi bi-clock"></i> Start Time
+                                </label>
+                                <input type="time" class="form-control form-control-lg" id="time" name="time" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="duration" class="form-label fw-bold">
+                                    <i class="bi bi-hourglass-split"></i> Duration
+                                </label>
+                                <select class="form-select form-select-lg" id="duration" name="duration" required>
+                                    <option value="15">15 Minutes</option>
+                                    <option value="30" selected>30 Minutes</option>
+                                    <option value="45">45 Minutes</option>
+                                    <option value="60">1 Hour</option>
+                                    <option value="90">1.5 Hours</option>
+                                    <option value="120">2 Hours</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div id="availabilityHelp" class="form-text mt-2 text-muted"></div>
+                                
+                                <div class="mt-3">
+                                    <button type="button" class="btn btn-link p-0 text-decoration-none" id="toggleSpecialRequest" style="font-size: 0.9rem;">
+                                        Can't find a suitable time? Range restricted? <span class="fw-bold">Request Special Time</span>
+                                    </button>
+                                </div>
+                                
+                                <div id="specialRequestSection" class="mt-3 p-3 bg-light border rounded" style="display: none;">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="is_special_request_input" name="is_special_request" value="true">
+                                        <label class="form-check-label fw-bold text-danger" for="is_special_request_input">
+                                            Request a time outside availability
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="special_request_reason" class="form-label small text-muted">Reason is required for special requests:</label>
+                                        <textarea class="form-control" id="special_request_reason" name="special_request_reason" rows="2" placeholder="e.g., Urgent thesis defense issue..."></textarea>
+                                    </div>
+                                    <div class="small text-muted fst-italic">
+                                        Note: Special requests are subject to professor approval and may be declined if the time is not suitable.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Consultation Type -->
@@ -152,4 +184,223 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const professorSelect = document.getElementById('professor');
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+    const durationSelect = document.getElementById('duration');
+    const helpText = document.getElementById('availabilityHelp');
+    
+    // Disable time input initially
+    timeInput.disabled = true;
+
+    // Set min date to today
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+
+    // Store available ranges for validation
+    let validRanges = [];
+
+    function fetchAvailability() {
+        const selectedOption = professorSelect.options[professorSelect.selectedIndex];
+        const profileId = selectedOption.getAttribute('data-profile-id');
+        const date = dateInput.value;
+
+        if (!profileId || !date) {
+            timeInput.disabled = true;
+            helpText.textContent = '';
+            return;
+        }
+
+        // Show loading state
+        helpText.innerHTML = '<span class="text-primary"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading availability...</span>';
+        timeInput.disabled = true;
+
+        fetch(`/api/professors/${profileId}/availability/?date=${date}`)
+            .then(response => response.json())
+            .then(data => {
+                const bookedSlots = data.booked_slots || [];
+                const availableSlots = data.available_slots || [];
+                
+                if (availableSlots.length === 0) {
+                     helpText.innerHTML = '<span class="text-danger"><i class="bi bi-x-circle"></i> Professor is not available on this day.</span>';
+                     timeInput.disabled = true;
+                     return;
+                }
+
+                // Convert HH:MM to minutes
+                const toMinutes = (timeStr) => {
+                    const [h, m] = timeStr.split(':').map(Number);
+                    return h * 60 + m;
+                };
+
+                // Convert minutes to HH:MM
+                const toTimeStr = (totalMinutes) => {
+                    const h = Math.floor(totalMinutes / 60);
+                    const m = totalMinutes % 60;
+                    return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+                };
+
+                // Calculate valid ranges (Time arithmetic is simplified here for display)
+                // We will display the raw available slots and mention conflicts.
+                // Better approach: Calculate free windows.
+                
+                const busyRanges = bookedSlots.map(slot => ({
+                    start: toMinutes(slot.start.substring(0, 5)),
+                    end: toMinutes(slot.end.substring(0, 5))
+                })).sort((a, b) => a.start - b.start);
+
+                let freeWindows = [];
+                
+                availableSlots.forEach(slot => {
+                    let currentStart = toMinutes(slot.start);
+                    let endLimit = toMinutes(slot.end);
+                    
+                    // Subtract busy ranges from this slot
+                    // This is a simplified 1D boolean operation
+                    // We iterate through busy ranges and "cut" holes in the current availability
+                    
+                    let tempStart = currentStart;
+                    
+                    for (let busy of busyRanges) {
+                        if (busy.end <= tempStart) continue; // Busy range is before current position
+                        if (busy.start >= endLimit) break; // Busy range is after current available slot
+                        
+                        // Overlap found
+                        if (busy.start > tempStart) {
+                            // There is a gap before the busy period
+                            freeWindows.push({start: tempStart, end: busy.start});
+                        }
+                        tempStart = Math.max(tempStart, busy.end);
+                    }
+                    
+                    if (tempStart < endLimit) {
+                        freeWindows.push({start: tempStart, end: endLimit});
+                    }
+                });
+
+                validRanges = freeWindows;
+
+                if (freeWindows.length === 0) {
+                    helpText.innerHTML = '<span class="text-danger">Fully booked on this day.</span>';
+                    timeInput.disabled = true;
+                } else {
+                    timeInput.disabled = false;
+                    // Format windows for display
+                    let windowsHtml = freeWindows.map(w => {
+                        let start = toTimeStr(w.start);
+                        let end = toTimeStr(w.end);
+                        // Format to AM/PM for user friendliness
+                        let startDate = new Date();
+                        startDate.setHours(Math.floor(w.start / 60), w.start % 60);
+                        let endDate = new Date();
+                        endDate.setHours(Math.floor(w.end / 60), w.end % 60);
+                        return `<span class="badge bg-success me-1">${startDate.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})} - ${endDate.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</span>`;
+                    }).join(' ');
+                    
+                    helpText.innerHTML = `<div>Available times:</div><div class="mt-1">${windowsHtml}</div>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                helpText.textContent = 'Error loading availability.';
+            });
+    }
+
+    // Validation on change
+    function validateTime() {
+        if (!timeInput.value || !durationSelect.value) return;
+        
+        const [h, m] = timeInput.value.split(':').map(Number);
+        const startMinutes = h * 60 + m;
+        const durationMinutes = parseInt(durationSelect.value);
+        const endMinutes = startMinutes + durationMinutes;
+        
+        // Validation check: The entire [Start, End] block must fit within ONE valid window.
+        let isValid = validRanges.some(w => startMinutes >= w.start && endMinutes <= w.end);
+        
+        const errorMsg = document.getElementById('time-error-msg');
+        if (errorMsg) errorMsg.remove();
+        
+        if (!isValid) {
+            timeInput.setCustomValidity('Selected time or duration is outside available hours.');
+            const div = document.createElement('div');
+            div.id = 'time-error-msg';
+            div.className = 'text-danger mt-1 fw-bold';
+            div.innerHTML = '<i class="bi bi-exclamation-triangle"></i> Selected time/duration exceeds available slots.';
+            helpText.appendChild(div);
+        } else {
+            timeInput.setCustomValidity('');
+        }
+    }
+
+    timeInput.addEventListener('change', validateTime);
+    durationSelect.addEventListener('change', validateTime);
+
+    professorSelect.addEventListener('change', fetchAvailability);
+    dateInput.addEventListener('change', fetchAvailability);
+
+    // Special Request Logic
+    const toggleBtn = document.getElementById('toggleSpecialRequest');
+    const requestSection = document.getElementById('specialRequestSection');
+    const checkbox = document.getElementById('is_special_request_input');
+    const reasonInput = document.getElementById('special_request_reason');
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            if (requestSection.style.display === 'none') {
+                requestSection.style.display = 'block';
+                toggleBtn.textContent = 'Hide Special Request options';
+            } else {
+                requestSection.style.display = 'none';
+                toggleBtn.innerHTML = 'Can\'t find a suitable time? Range restricted? <span class="fw-bold">Request Special Time</span>';
+                checkbox.checked = false;
+                reasonInput.value = '';
+                validateTime(); // Re-validate to enforce strict mode
+            }
+        });
+    }
+
+    if (checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Bypass validation logic
+                timeInput.setCustomValidity('');
+                const errorMsg = document.getElementById('time-error-msg');
+                if (errorMsg) errorMsg.remove();
+                
+                // Enable time input if it was disabled due to full booking
+                timeInput.disabled = false;
+                reasonInput.required = true;
+            } else {
+                validateTime();
+                reasonInput.required = false;
+            }
+        });
+    }
+
+    // Wrap original validation to respect special request
+    const originalValidate = validateTime;
+    function enhancedValidate() {
+        if (checkbox && checkbox.checked) {
+            timeInput.setCustomValidity('');
+             const errorMsg = document.getElementById('time-error-msg');
+            if (errorMsg) errorMsg.remove();
+            return; // Skip normal validation
+        }
+        originalValidate();
+    }
+    
+    // Override listeners with enhanced
+    timeInput.removeEventListener('change', validateTime);
+    durationSelect.removeEventListener('change', validateTime);
+    timeInput.addEventListener('change', enhancedValidate);
+    durationSelect.addEventListener('change', enhancedValidate);
+
+});
+</script>
 {% endblock %}

@@ -56,9 +56,6 @@ def send_booking_created_notification(consultation_id):
 def send_booking_confirmed_notification(consultation_id):
     """
     Send notifications when a booking is confirmed.
-    
-    Args:
-        consultation_id: ID of the consultation
     """
     try:
         consultation = Consultation.objects.get(id=consultation_id)
@@ -66,18 +63,17 @@ def send_booking_confirmed_notification(consultation_id):
         logger.error(f"Consultation {consultation_id} does not exist.")
         return
     
-    # Notify student
-    notification = Notification.objects.create(
-        user=consultation.student,
-        consultation=consultation,
-        notification_type=NotificationType.IN_APP,
-        message_type=MessageType.BOOKING_CONFIRMED
-    )
+    # Notify both parties
+    for user in [consultation.student, consultation.professor]:
+        notification = Notification.objects.create(
+            user=user,
+            consultation=consultation,
+            notification_type=NotificationType.IN_APP,
+            message_type=MessageType.BOOKING_CONFIRMED
+        )
+        send_email_notification(notification.id)
     
-    # Send email
-    send_email_notification(notification.id)
-    
-    logger.info(f"Sent confirmation notification for consultation {consultation_id}")
+    logger.info(f"Sent confirmation notifications for consultation {consultation_id}")
 
 
 def send_booking_cancelled_notification(consultation_id, reason=''):
@@ -133,6 +129,35 @@ def send_booking_rescheduled_notification(consultation_id):
     logger.info(f"Sent reschedule notifications for consultation {consultation_id}")
 
 
+def send_reschedule_proposal_notification(consultation_id):
+    """
+    Send notifications when a reschedule is proposed.
+    """
+    try:
+        consultation = Consultation.objects.get(id=consultation_id)
+    except Consultation.DoesNotExist:
+        logger.error(f"Consultation {consultation_id} does not exist.")
+        return
+    
+    # Notify both parties (or just student depending on flow, but user wants all emails)
+    # Usually Proposer knows, but system confirmation is good.
+    # Proposal comes from Professor -> Notify Student. Professor gets a "Proposal Sent" confirmation?
+    # User said "all emails are sent to the student and the professor".
+    
+    for user in [consultation.student, consultation.professor]:
+        notification = Notification.objects.create(
+            user=user,
+            consultation=consultation,
+            notification_type=NotificationType.IN_APP,
+            message_type=MessageType.RESCHEDULE_PROPOSED
+        )
+        # Note: We can reuse booking_rescheduled.html or create booking_reschedule_proposed.html
+        # For now, let's map it in send_email_notification
+        send_email_notification(notification.id)
+
+    logger.info(f"Sent reschedule proposal notifications for {consultation_id}")
+
+
 def send_email_notification(notification_id, extra_context=None):
     """
     Send email notification.
@@ -147,10 +172,8 @@ def send_email_notification(notification_id, extra_context=None):
         logger.error(f"Notification {notification_id} does not exist.")
         return
     
-    if notification.notification_type != NotificationType.EMAIL:
-        # Also send email for in-app notifications
-        pass
-    
+    # Always try to send email if notification exists, regardless of type for now (as per requirement)
+
     try:
         consultation = notification.consultation
         user = notification.user
@@ -174,6 +197,7 @@ def send_email_notification(notification_id, extra_context=None):
             MessageType.REMINDER_24H: 'emails/reminder_24h.html',
             MessageType.CANCELLED: 'emails/booking_cancelled.html',
             MessageType.RESCHEDULED: 'emails/booking_rescheduled.html',
+            MessageType.RESCHEDULE_PROPOSED: 'emails/booking_rescheduled.html', # Reuse for now
         }
         
         template_name = template_map.get(notification.message_type, 'emails/notification.html')
@@ -183,6 +207,7 @@ def send_email_notification(notification_id, extra_context=None):
             MessageType.REMINDER_24H: 'Reminder: Consultation Tomorrow',
             MessageType.CANCELLED: 'Consultation Cancelled',
             MessageType.RESCHEDULED: 'Consultation Rescheduled',
+            MessageType.RESCHEDULE_PROPOSED: 'Consultation Reschedule Proposed',
         }
         
         subject = subject_map.get(notification.message_type, 'Consultation Notification')

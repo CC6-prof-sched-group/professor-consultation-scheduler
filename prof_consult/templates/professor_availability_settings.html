@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load user_extras %}
 
 {% block title %}Availability Settings - ConsultEase{% endblock %}
 
@@ -34,13 +35,12 @@
                             <i class="bi bi-info-circle"></i> Set your available time slots for each day of the week.
                         </p>
                         
+                        {{ profile.available_days|json_script:"available-days-data" }}
                         <script>
-                            var availableDays = {{ available_days_json|safe }};
+                            var availableDays = JSON.parse(document.getElementById('available-days-data').textContent);
                         </script>
 
-                        {% for day, display_name in "monday:Monday,tuesday:Tuesday,wednesday:Wednesday,thursday:Thursday,friday:Friday,saturday:Saturday,sunday:Sunday"|split:"," %}
-                        {% with day_display=display_name|split:":"|last %}
-                        {% with day_key=display_name|split:":"|first %}
+                        {% for day_key, day_display in days_mapping %}
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="row align-items-center">
@@ -55,23 +55,17 @@
                                         </div>
                                     </div>
                                     <div class="col-md-9">
-                                        <div class="row g-2 day-inputs" id="{{ day_key }}_inputs" style="display: none;">
-                                            <div class="col-md-5">
-                                                <label class="form-label small">Start Time</label>
-                                                <input type="time" class="form-control" name="{{ day_key }}_start" 
-                                                       id="{{ day_key }}_start" value="09:00">
-                                            </div>
-                                            <div class="col-md-5">
-                                                <label class="form-label small">End Time</label>
-                                                <input type="time" class="form-control" name="{{ day_key }}_end" 
-                                                       id="{{ day_key }}_end" value="17:00">
-                                            </div>
-                                            <div class="col-md-2 d-flex align-items-end">
-                                                <span class="text-muted small">
-                                                    <i class="bi bi-clock"></i>
-                                                </span>
-                                            </div>
+                                        <!-- Container for time slots -->
+                                        <div id="{{ day_key }}_slots_container" style="display: none;">
+                                            <!-- Slots will be added here by JS -->
                                         </div>
+                                        
+                                        <div class="mt-2" id="{{ day_key }}_add_btn_container" style="display: none;">
+                                            <button type="button" class="btn btn-sm btn-outline-primary" onclick="addTimeSlot('{{ day_key }}')">
+                                                <i class="bi bi-plus-circle"></i> Add Slot
+                                            </button>
+                                        </div>
+
                                         <small class="text-muted availability-status" id="{{ day_key }}_status">
                                             Not available
                                         </small>
@@ -79,8 +73,7 @@
                                 </div>
                             </div>
                         </div>
-                        {% endwith %}
-                        {% endwith %}
+
                         {% endfor %}
                     </div>
                 </div>
@@ -174,32 +167,90 @@
         
         days.forEach(function(day) {
             var dayData = availableDays[day];
+            
+            // If we have data for this day
             if (dayData && dayData.length > 0) {
                 // Enable the checkbox
-                document.getElementById(day + '_enabled').checked = true;
-                
-                // Set the time values
-                var slot = dayData[0]; // Take first slot
-                document.getElementById(day + '_start').value = slot.start;
-                document.getElementById(day + '_end').value = slot.end;
-                
-                // Show inputs
-                toggleDayInputs(day);
+                var checkbox = document.getElementById(day + '_enabled');
+                if(checkbox) {
+                    checkbox.checked = true;
+                    // Render existing slots
+                    dayData.forEach(function(slot) {
+                        addTimeSlot(day, slot.start, slot.end);
+                    });
+                    toggleDayInputs(day);
+                }
+            } else {
+                // If checked but no slots (shouldn't happen on load, but good for reset), 
+                // or just to ensure clean state
+                // add one default slot if enabled manually later
             }
         });
     });
 
+    function addTimeSlot(day, startVal, endVal) {
+        var container = document.getElementById(day + '_slots_container');
+        var slotCount = container.children.length;
+        
+        var slotDiv = document.createElement('div');
+        slotDiv.className = 'row g-2 align-items-center mb-2 slot-row';
+        slotDiv.id = day + '_slot_' + slotCount;
+        
+        var startHtml = `
+            <div class="col-5">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-text">Start</span>
+                    <input type="time" class="form-control" name="${day}_start" value="${startVal || '09:00'}" required>
+                </div>
+            </div>
+        `;
+        
+        var endHtml = `
+            <div class="col-5">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-text">End</span>
+                    <input type="time" class="form-control" name="${day}_end" value="${endVal || '17:00'}" required>
+                </div>
+            </div>
+        `;
+        
+        var removeHtml = `
+            <div class="col-2">
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeTimeSlot(this)" title="Remove slot">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        `;
+        
+        slotDiv.innerHTML = startHtml + endHtml + removeHtml;
+        container.appendChild(slotDiv);
+    }
+    
+    function removeTimeSlot(btn) {
+        btn.closest('.slot-row').remove();
+    }
+
     function toggleDayInputs(day) {
         var checkbox = document.getElementById(day + '_enabled');
-        var inputs = document.getElementById(day + '_inputs');
+        var container = document.getElementById(day + '_slots_container');
+        var addBtn = document.getElementById(day + '_add_btn_container');
         var status = document.getElementById(day + '_status');
         
         if (checkbox.checked) {
-            inputs.style.display = 'block';
+            container.style.display = 'block';
+            addBtn.style.display = 'block';
             status.style.display = 'none';
+            
+            // If no slots exist, add a default one
+            if (container.children.length === 0) {
+                addTimeSlot(day);
+            }
         } else {
-            inputs.style.display = 'none';
+            container.style.display = 'none';
+            addBtn.style.display = 'none';
             status.style.display = 'block';
+            // Clear content if unchecked? Or keep it?
+            // Keeping it is better UX if they accidentally uncheck
         }
     }
 

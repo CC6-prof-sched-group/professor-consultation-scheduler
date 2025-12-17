@@ -15,6 +15,7 @@ class ConsultationStatus(models.TextChoices):
     COMPLETED = 'COMPLETED', 'Completed'
     NO_SHOW = 'NO_SHOW', 'No Show'
     RESCHEDULED = 'RESCHEDULED', 'Rescheduled'
+    RESCHEDULE_PROPOSED = 'RESCHEDULE_PROPOSED', 'Reschedule Proposed'
 
 
 class Consultation(models.Model):
@@ -110,6 +111,10 @@ class Consultation(models.Model):
         null=True,
         blank=True,
         help_text="Optional meeting link (for online consultations)"
+    )
+    is_special_request = models.BooleanField(
+        default=False,
+        help_text="True if booking was made outside standard availability"
     )
     location = models.CharField(
         max_length=200,

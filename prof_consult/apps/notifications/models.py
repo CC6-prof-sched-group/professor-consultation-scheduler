@@ -19,6 +19,7 @@ class MessageType(models.TextChoices):
     REMINDER_24H = 'REMINDER_24H', '24-Hour Reminder'
     CANCELLED = 'CANCELLED', 'Cancelled'
     RESCHEDULED = 'RESCHEDULED', 'Rescheduled'
+    RESCHEDULE_PROPOSED = 'RESCHEDULE_PROPOSED', 'Reschedule Proposed'
 
 
 class EmailStatus(models.TextChoices):

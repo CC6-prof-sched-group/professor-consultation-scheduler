@@ -207,6 +207,57 @@ class GoogleCalendarService:
             logger.error(f"Unexpected error deleting Google Calendar event: {str(e)}")
             return False
 
+    def get_free_busy_periods(self, start_time, end_time):
+        """
+        Get free/busy information from Google Calendar.
+        
+        Args:
+            start_time: Start datetime (aware)
+            end_time: End datetime (aware)
+            
+        Returns:
+            List of busy periods [{'start': datetime, 'end': datetime}]
+        """
+        if not self.service:
+            return []
+            
+        try:
+            calendar_id = getattr(settings, 'GOOGLE_CALENDAR_ID', 'primary')
+            
+            body = {
+                "timeMin": start_time.isoformat(),
+                "timeMax": end_time.isoformat(),
+                "timeZone": 'UTC',
+                "items": [{"id": calendar_id}]
+            }
+            
+            events_result = self.service.freebusy().query(body=body).execute()
+            calendars = events_result.get('calendars', {})
+            busy_periods = calendars.get(calendar_id, {}).get('busy', [])
+            
+            # Convert strings to datetime objects
+            cleaned_periods = []
+            for period in busy_periods:
+                # Handle Z suffix for ISO format
+                start_str = period['start'].replace('Z', '+00:00')
+                end_str = period['end'].replace('Z', '+00:00')
+                
+                start = datetime.fromisoformat(start_str)
+                end = datetime.fromisoformat(end_str)
+                cleaned_periods.append({
+                    'start': start,
+                    'end': end
+                })
+                
+            return cleaned_periods
+            
+        except HttpError as e:
+            logger.error(f"Failed to get free/busy info: {str(e)}")
+            return []
+        except Exception as e:
+            logger.error(f"Unexpected error getting free/busy info: {str(e)}")
+            return []
+
 
 def get_google_oauth_flow():
     """Get Google OAuth flow for authentication."""

@@ -13,8 +13,16 @@ import re
 
 from apps.accounts.models import User, Role
 from apps.consultations.models import Consultation, ConsultationStatus
+from apps.consultations.services import ConsultationService
 from apps.professors.models import ProfessorProfile
 from apps.notifications.models import Notification
+from apps.notifications.tasks import (
+    send_booking_created_notification,
+    send_booking_confirmed_notification,
+    send_booking_cancelled_notification,
+    send_booking_rescheduled_notification,
+    send_reschedule_proposal_notification
+)
 import json
 from django.contrib.auth import logout
 
@@ -215,7 +223,11 @@ def consultations_list(request):
     today = timezone.now().date()
     if status_filter == 'upcoming':
         consultations = base_qs.filter(
-            status__in=[ConsultationStatus.PENDING, ConsultationStatus.CONFIRMED],
+            status__in=[
+                ConsultationStatus.PENDING, 
+                ConsultationStatus.CONFIRMED, 
+                ConsultationStatus.RESCHEDULE_PROPOSED
+            ],
             scheduled_date__gte=today
         ).order_by('scheduled_date', 'scheduled_time')
     elif status_filter == 'past':
@@ -293,11 +305,18 @@ def book_consultation(request):
         consultation_type = request.POST.get('type', 'in_person')
         subject = request.POST.get('subject')
         notes = request.POST.get('notes', '')
+        duration = request.POST.get('duration', 30)
+        is_special_request = request.POST.get('is_special_request') == 'true'
+        special_reason = request.POST.get('special_request_reason')
         selected_professor_id = professor_id
         
         # Validate and create consultation
         try:
             professor = User.objects.get(id=professor_id, role=Role.PROFESSOR)
+            
+            # If special request, append reason to notes
+            if is_special_request and special_reason:
+                notes = f"[SPECIAL REQUEST] Reason: {special_reason}\n\n{notes}"
             
             # Create consultation
             consultation = Consultation.objects.create(
@@ -307,9 +326,14 @@ def book_consultation(request):
                 description=notes,
                 scheduled_date=date,
                 scheduled_time=time,
+                duration=duration,
+                is_special_request=is_special_request,
                 status=ConsultationStatus.PENDING,
                 location='Online' if consultation_type == 'online' else professor.professor_profile.office_location
             )
+            
+            # Send notifications (emails + in-app)
+            send_booking_created_notification(consultation.id)
             
             messages.success(request, 'Consultation booked successfully! Waiting for professor confirmation.')
             return redirect('consultations_list')
@@ -687,18 +711,27 @@ def professor_availability_settings(request):
             profile.department = request.POST.get('department', '')
             
             # Update availability
+            # Update availability
             available_days = {}
             days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
             for day in days:
                 enabled = request.POST.get(f'{day}_enabled')
                 if enabled == 'on':
-                    start_time = request.POST.get(f'{day}_start')
-                    end_time = request.POST.get(f'{day}_end')
-                    if start_time and end_time:
-                        available_days[day] = [{
-                            'start': start_time,
-                            'end': end_time
-                        }]
+                    start_times = request.POST.getlist(f'{day}_start')
+                    end_times = request.POST.getlist(f'{day}_end')
+                    
+                    day_slots = []
+                    for s, e in zip(start_times, end_times):
+                        if s and e:
+                            # Basic validation: start < end? 
+                            # We can just save it for now, logic elsewhere handles validity or UI can enforce
+                            day_slots.append({
+                                'start': s,
+                                'end': e
+                            })
+                    
+                    if day_slots:
+                        available_days[day] = day_slots
             
             profile.available_days = available_days
             profile.save()
@@ -709,9 +742,20 @@ def professor_availability_settings(request):
         except Exception as e:
             messages.error(request, f'Error updating settings: {str(e)}')
     
+    days_mapping = [
+        ('monday', 'Monday'),
+        ('tuesday', 'Tuesday'),
+        ('wednesday', 'Wednesday'),
+        ('thursday', 'Thursday'),
+        ('friday', 'Friday'),
+        ('saturday', 'Saturday'),
+        ('sunday', 'Sunday'),
+    ]
+    
     context = {
         'profile': profile,
         'available_days_json': json.dumps(profile.available_days) if profile.available_days else '{}',
+        'days_mapping': days_mapping,
     }
     
     return render(request, 'professor_availability_settings.html', context)
@@ -735,36 +779,21 @@ def professor_consultation_action(request, consultation_id):
         action = request.POST.get('action')
         
         if action == 'confirm':
-            consultation.status = ConsultationStatus.CONFIRMED
-            consultation.confirmed_at = timezone.now()
-            consultation.save()
+            ConsultationService.confirm_consultation(consultation)
             messages.success(request, 'Consultation confirmed!')
-            
-            # Create notification for student
-            from apps.notifications.models import NotificationType, MessageType
-            Notification.objects.create(
-                user=consultation.student,
-                consultation=consultation,
-                notification_type=NotificationType.IN_APP,
-                message_type=MessageType.BOOKING_CONFIRMED
-            )
             
         elif action == 'cancel':
             reason = request.POST.get('reason', '')
-            consultation.status = ConsultationStatus.CANCELLED
-            consultation.cancelled_at = timezone.now()
-            consultation.cancellation_reason = reason
-            consultation.save()
+            ConsultationService.cancel_consultation(consultation, reason, user)
             messages.success(request, 'Consultation cancelled.')
-            
-            # Create notification for student
-            from apps.notifications.models import NotificationType, MessageType
-            Notification.objects.create(
-                user=consultation.student,
-                consultation=consultation,
-                notification_type=NotificationType.IN_APP,
-                message_type=MessageType.CANCELLED
-            )
+
+        elif action == 'reschedule':
+            new_time = request.POST.get('new_time')
+            if new_time:
+                ConsultationService.propose_reschedule(consultation, new_time)
+                messages.success(request, 'Reschedule proposal sent to student.')
+            else:
+                messages.error(request, 'New time is required for rescheduling.')
         
         return redirect('professor_dashboard')
     
@@ -864,29 +893,16 @@ def rate_consultation(request, consultation_id):
     
     return redirect('consultations_list')
 
+
 @login_required
-def rate_consultation(request, consultation_id):
-    """Handle rating submission for a consultation."""
-    if request.method == 'POST':
-        consultation = get_object_or_404(
-            Consultation, 
-            id=consultation_id,
-            student=request.user,
-            status='COMPLETED'
-        )
-        
-        rating = request.POST.get('rating')
-        review = request.POST.get('review', '')
-        
-        if rating:
-            consultation.rating = int(rating)
-            consultation.review = review
-            consultation.save()
-            
-            messages.success(request, 'Thank you for rating your consultation!')
-        else:
-            messages.error(request, 'Please select a rating.')
+def student_consultation_action(request, consultation_id):
+    """
+    Handle student actions on consultations (accept/reject reschedule).
+    """
+    user = request.user
+    consultation = get_object_or_404(Consultation, id=consultation_id, student=user)
     
+<<<<<<< HEAD
     return redirect('consultations_list')
 
 @login_required
@@ -954,3 +970,17 @@ def delete_account(request):
         messages.success(request, 'Your account has been deleted.')
         return redirect('/accounts/login/')
     return redirect('profile_settings')
+=======
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        
+        if action == 'accept_reschedule':
+            ConsultationService.accept_reschedule(consultation)
+            messages.success(request, 'Reschedule accepted! Consultation confirmed.')
+            
+        elif action == 'reject_reschedule':
+            ConsultationService.cancel_consultation(consultation, "Student rejected reschedule proposal.", user)
+            messages.success(request, 'Reschedule rejected. Consultation cancelled.')
+            
+    return redirect('consultation_detail', consultation_id=consultation.id)
+>>>>>>> main
