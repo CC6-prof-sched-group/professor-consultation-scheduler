@@ -179,6 +179,7 @@ SOCIALACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Google OAuth2 Settings
+# Using SocialApplication model (configure via Django Admin at /admin/socialaccount/socialapp/)
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -190,11 +191,6 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
             'prompt': 'consent',
         },
-        'APP': {
-            'client_id': config('GOOGLE_CLIENT_ID', default=''),
-            'secret': config('GOOGLE_CLIENT_SECRET', default=''),
-            'key': '',
-        }
     }
 }
 
