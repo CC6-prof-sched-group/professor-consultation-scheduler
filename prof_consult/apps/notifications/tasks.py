@@ -76,6 +76,59 @@ def send_booking_confirmed_notification(consultation_id):
     logger.info(f"Sent confirmation notifications for consultation {consultation_id}")
 
 
+def send_booking_cancelled_notification(consultation_id, reason=''):
+    """
+    Send notifications when a booking is cancelled.
+    
+    Args:
+        consultation_id: ID of the consultation
+        reason: Reason for cancellation
+    """
+    try:
+        consultation = Consultation.objects.get(id=consultation_id)
+    except Consultation.DoesNotExist:
+        logger.error(f"Consultation {consultation_id} does not exist.")
+        return
+    
+    # Notify both parties
+    for user in [consultation.student, consultation.professor]:
+        notification = Notification.objects.create(
+            user=user,
+            consultation=consultation,
+            notification_type=NotificationType.IN_APP,
+            message_type=MessageType.CANCELLED
+        )
+        send_email_notification(notification.id, extra_context={'reason': reason})
+    
+    logger.info(f"Sent cancellation notifications for consultation {consultation_id}")
+
+
+def send_booking_rescheduled_notification(consultation_id):
+    """
+    Send notifications when a booking is rescheduled.
+    
+    Args:
+        consultation_id: ID of the consultation
+    """
+    try:
+        consultation = Consultation.objects.get(id=consultation_id)
+    except Consultation.DoesNotExist:
+        logger.error(f"Consultation {consultation_id} does not exist.")
+        return
+    
+    # Notify both parties
+    for user in [consultation.student, consultation.professor]:
+        notification = Notification.objects.create(
+            user=user,
+            consultation=consultation,
+            notification_type=NotificationType.IN_APP,
+            message_type=MessageType.RESCHEDULED
+        )
+        send_email_notification(notification.id)
+    
+    logger.info(f"Sent reschedule notifications for consultation {consultation_id}")
+
+
 def send_reschedule_proposal_notification(consultation_id):
     """
     Send notifications when a reschedule is proposed.
