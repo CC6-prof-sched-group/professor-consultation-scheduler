@@ -111,6 +111,3 @@ python manage.py collectstatic --noinput
 # Then reload web app from dashboard
 ```
 
----
-
-Last updated: December 17, 2025

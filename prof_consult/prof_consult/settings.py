@@ -8,6 +8,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
+import socket
 from pathlib import Path
 
 try:
@@ -73,6 +74,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
     
     # Local apps
     'apps.accounts',
@@ -182,7 +184,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django Allauth Settings
-SITE_ID = 1
+# Dynamically select SITE_ID based on environment/hostname, override with env if set
+_SITE_ID_VAL = config('SITE_ID', default=None)
+try:
+    SITE_ID = int(_SITE_ID_VAL) if _SITE_ID_VAL not in (None, '') else None
+except (TypeError, ValueError):
+    SITE_ID = None
+if SITE_ID is None:
+    SITE_ID = 2 if 'pythonanywhere' in socket.gethostname() else 1
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -190,8 +199,16 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # Allauth Configuration (django-allauth 65+)
-ACCOUNT_LOGIN_METHODS = {'email'}
-ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
+# Login/Logout URLs
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_ON_GET = True
+
+# Login methods & signup fields
+ACCOUNT_LOGIN_METHODS = {'username', 'email'}
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_UNIQUE_EMAIL = True
 SOCIALACCOUNT_AUTO_SIGNUP = True
@@ -213,6 +230,17 @@ SOCIALACCOUNT_PROVIDERS = {
         },
     }
 }
+
+# Optionally configure provider app credentials via settings (avoids manual DB SocialApp).
+# If both env vars are present, allauth will use these instead of looking up SocialApp.
+GOOGLE_CLIENT_ID_SETTING = config('GOOGLE_CLIENT_ID', default=None) or config('GOOGLE_OAUTH_CLIENT_ID', default=None)
+GOOGLE_CLIENT_SECRET_SETTING = config('GOOGLE_CLIENT_SECRET', default=None) or config('GOOGLE_OAUTH_CLIENT_SECRET', default=None)
+if GOOGLE_CLIENT_ID_SETTING and GOOGLE_CLIENT_SECRET_SETTING:
+    SOCIALACCOUNT_PROVIDERS['google']['APP'] = {
+        'client_id': GOOGLE_CLIENT_ID_SETTING,
+        'secret': GOOGLE_CLIENT_SECRET_SETTING,
+        'key': ''
+    }
 
 # Encryption Key for sensitive data
 ENCRYPTION_KEY = config('ENCRYPTION_KEY', default=None)

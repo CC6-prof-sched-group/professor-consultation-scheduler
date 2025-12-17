@@ -75,7 +75,7 @@ def send_booking_confirmed_notification(consultation_id):
     )
     
     # Send email
-    send_email_notification.delay(notification.id)
+    send_email_notification(notification.id)
     
     logger.info(f"Sent confirmation notification for consultation {consultation_id}")
 
@@ -102,7 +102,7 @@ def send_booking_cancelled_notification(consultation_id, reason=''):
             notification_type=NotificationType.IN_APP,
             message_type=MessageType.CANCELLED
         )
-        send_email_notification.delay(notification.id, extra_context={'reason': reason})
+        send_email_notification(notification.id, extra_context={'reason': reason})
     
     logger.info(f"Sent cancellation notifications for consultation {consultation_id}")
 
@@ -239,7 +239,7 @@ def send_24h_reminders():
             )
             
             if created:
-                send_email_notification.delay(notification.id)
+                send_email_notification(notification.id)
     
     logger.info(f"Sent 24-hour reminders for {consultations.count()} consultations")
 

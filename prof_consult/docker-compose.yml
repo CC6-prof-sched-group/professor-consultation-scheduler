@@ -20,21 +20,6 @@ services:
       retries: 5
     restart: unless-stopped
 
-  # Redis (Message Broker & Result Backend)
-  redis:
-    image: redis:7-alpine
-    container_name: consultation_redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    restart: unless-stopped
-
   # Django Web Application
   web:
     build: .
@@ -49,54 +34,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-      redis:
-        condition: service_healthy
     environment:
       - DATABASE_URL=postgresql://postgres:castleken@db:5432/consultation_db
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
-    restart: unless-stopped
-
-  # Celery Worker
-  celery:
-    build: .
-    container_name: consultation_celery
-    command: celery -A prof_consult worker --loglevel=info
-    volumes:
-      - .:/app
-    env_file:
-      - .env
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    environment:
-      - DATABASE_URL=postgresql://postgres:castleken@db:5432/consultation_db
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
-    restart: unless-stopped
-
-  # Celery Beat (for scheduled tasks)
-  celery-beat:
-    build: .
-    container_name: consultation_celery_beat
-    command: celery -A prof_consult beat --loglevel=info
-    volumes:
-      - .:/app
-    env_file:
-      - .env
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    environment:
-      - DATABASE_URL=postgresql://postgres:castleken@db:5432/consultation_db
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
     restart: unless-stopped
 
 volumes:
   postgres_data:
-  redis_data:
