@@ -878,11 +878,10 @@ def rate_consultation(request, consultation_id):
         if hasattr(consultation.professor, 'professor_profile'):
             avg_rating, total_reviews = consultation.professor.professor_profile.calculate_ratings()
             
-            display_name = getattr(consultation.professor, 'get_display_name', lambda: str(consultation.professor))()
             messages.success(
                 request, 
                 f'Thank you for rating! Your {rating}-star review has been submitted. '
-                f'Professor {display_name} now has {avg_rating}★ average from {total_reviews} reviews.'
+                f'Professor {consultation.professor|display_name} now has {avg_rating}★ average from {total_reviews} reviews.'
             )
         else:
             messages.success(request, f'Thank you for your {rating}-star rating!')
@@ -967,7 +966,7 @@ def profile_settings(request):
     
     return render(request, 'profile_settings.html', context)
 
-
+@login_required
 def delete_account(request):
     """
     Allows a user to delete their own account.
@@ -981,4 +980,3 @@ def delete_account(request):
         messages.success(request, 'Your account has been deleted.')
         return redirect('/accounts/login/')
     return redirect('profile_settings')
-
