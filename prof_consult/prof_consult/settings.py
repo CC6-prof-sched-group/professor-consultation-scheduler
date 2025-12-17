@@ -191,7 +191,12 @@ try:
 except (TypeError, ValueError):
     SITE_ID = None
 if SITE_ID is None:
-    SITE_ID = 2 if 'pythonanywhere' in socket.gethostname() else 1
+    # Check for PythonAnywhere environment
+    is_pythonanywhere = (
+        'pythonanywhere' in socket.gethostname() or 
+        os.environ.get('PYTHONANYWHERE_DOMAIN') is not None
+    )
+    SITE_ID = 2 if is_pythonanywhere else 1
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
