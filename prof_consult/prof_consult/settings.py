@@ -25,6 +25,15 @@ except ImportError:
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Logging paths and toggles
+LOG_TO_FILE = config('LOG_TO_FILE', default=False, cast=bool)
+LOG_DIR = BASE_DIR / 'logs'
+LOG_FILE = LOG_DIR / 'django.log'
+
+# Create log directory only if file logging is enabled
+if LOG_TO_FILE:
+    LOG_DIR.mkdir(exist_ok=True)
+
 # Security Settings
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-z&je=#v1=nx&4kqqz==79+*+l9*(jtl=8es1a9g+7q3(wx!37*')
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -263,24 +272,27 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs' / 'django.log',
-            'formatter': 'verbose',
-        },
+        # Optional file handler to avoid startup errors on read-only paths
+        **({
+            'file': {
+                'class': 'logging.FileHandler',
+                'filename': str(LOG_FILE),
+                'formatter': 'verbose',
+            }
+        } if LOG_TO_FILE else {})
     },
     'root': {
-        'handlers': ['console'],
+        'handlers': ['console'] + (['file'] if LOG_TO_FILE else []),
         'level': 'INFO',
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console'] + (['file'] if LOG_TO_FILE else []),
             'level': config('DJANGO_LOG_LEVEL', default='INFO'),
             'propagate': False,
         },
         'apps': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console'] + (['file'] if LOG_TO_FILE else []),
             'level': 'DEBUG',
             'propagate': False,
         },
