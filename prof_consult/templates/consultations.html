@@ -337,8 +337,11 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
 <script>
-;(function(){
+document.addEventListener('DOMContentLoaded', function() {
     // Helper: read CSRF token if present
     function getAuthHeaders(){
         const csrfEl = document.querySelector('[name=csrfmiddlewaretoken]');
@@ -357,7 +360,9 @@
             const reasonInput = document.getElementById('list-cancel-reason');
             if (reasonInput) reasonInput.value = '';
             const modalEl = document.getElementById('listCancelModal');
-            new bootstrap.Modal(modalEl).show();
+            if (modalEl) {
+                new bootstrap.Modal(modalEl).show();
+            }
         });
     });
 
@@ -404,7 +409,9 @@
             if (feedback) feedback.style.display = 'none';
             if (confirmBtn) confirmBtn.disabled = true;
             const modalEl = document.getElementById('listRescheduleModal');
-            new bootstrap.Modal(modalEl).show();
+            if (modalEl) {
+                new bootstrap.Modal(modalEl).show();
+            }
 
             // attach listeners to enable confirm button when valid
             let dateTouched = false;
@@ -433,22 +440,25 @@
         });
     });
 
-    document.getElementById('list-confirm-reschedule').addEventListener('click', function(){
-        const date = document.getElementById('list-new-date').value;
-        const time = document.getElementById('list-new-time').value;
-        if (!date || !time){ alert('Please provide both date and time'); return; }
-        const btn = this; btn.disabled = true;
-        fetch(`/api/consultations/${activeConsultationId}/reschedule/`, {
-            method: 'PATCH',
-            headers: getAuthHeaders(),
-            credentials: 'same-origin',
-            body: JSON.stringify({ scheduled_date: date, scheduled_time: time })
-        }).then(async res => {
-            btn.disabled = false;
-            if (res.ok){ location.reload(); }
-            else { const data = await res.json().catch(()=>({})); alert(data.error || 'Failed to reschedule consultation'); }
-        }).catch(() => { btn.disabled = false; alert('Network error while rescheduling'); });
-    });
+    const confirmRescheduleBtn = document.getElementById('list-confirm-reschedule');
+    if (confirmRescheduleBtn) {
+        confirmRescheduleBtn.addEventListener('click', function(){
+            const date = document.getElementById('list-new-date').value;
+            const time = document.getElementById('list-new-time').value;
+            if (!date || !time){ alert('Please provide both date and time'); return; }
+            const btn = this; btn.disabled = true;
+            fetch(`/api/consultations/${activeConsultationId}/reschedule/`, {
+                method: 'PATCH',
+                headers: getAuthHeaders(),
+                credentials: 'same-origin',
+                body: JSON.stringify({ scheduled_date: date, scheduled_time: time })
+            }).then(async res => {
+                btn.disabled = false;
+                if (res.ok){ location.reload(); }
+                else { const data = await res.json().catch(()=>({})); alert(data.error || 'Failed to reschedule consultation'); }
+            }).catch(() => { btn.disabled = false; alert('Network error while rescheduling'); });
+        });
+    }
 
     // Simple Add to Google Calendar handler (prefill event)
     document.querySelectorAll('.btn-add-calendar').forEach(btn => {
@@ -496,5 +506,6 @@
             window.open(url, '_blank');
         });
     });
-})();
+});
 </script>
+{% endblock %}
