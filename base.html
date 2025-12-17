@@ -71,6 +71,19 @@
         .ce-gold {
             color: #DDCF49;
         }
+
+        .navbar-dark .dropdown-menu {
+            z-index: 1050 !important;
+        }
+
+        .navbar-dark .dropdown-menu.show {
+            display: block !important;
+        }
+
+        .navbar-dark .dropdown-menu a,
+        .navbar-dark .dropdown-menu button {
+            pointer-events: auto !important;
+        }
     </style>
     {% block extra_css %}{% endblock %}
 </head>
@@ -114,23 +127,23 @@
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
                                 <i class="bi bi-person-circle"></i> {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'profile_settings' %}">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style="z-index: 1050; pointer-events: auto;">
+                                <li><a class="dropdown-item" href="{% url 'profile_settings' %}" style="pointer-events: auto;">
                                     <i class="bi bi-person"></i> Profile Settings
                                 </a></li>
                                 {% if user.role == 'PROFESSOR' %}
-                                <li><a class="dropdown-item" href="{% url 'professor_availability_settings' %}">
+                                <li><a class="dropdown-item" href="{% url 'professor_availability_settings' %}" style="pointer-events: auto;">
                                     <i class="bi bi-calendar-week"></i> Manage Availability
                                 </a></li>
                                 {% endif %}
                                 <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <form method="post" action="{% url 'api-logout' %}" style="margin: 0;">
+                                <li style="pointer-events: auto;">
+                                    <form method="post" action="{% url 'api-logout' %}" style="margin: 0; pointer-events: auto;">
                                         {% csrf_token %}
-                                        <button type="submit" class="dropdown-item" style="border: none; background: none; text-align: left; width: 100%; cursor: pointer;">
+                                        <button type="submit" class="dropdown-item" style="border: none; background: none; text-align: left; width: 100%; cursor: pointer; padding: 0.5rem 1rem; pointer-events: auto;">
                                             <i class="bi bi-box-arrow-right"></i> Logout
                                         </button>
                                     </form>

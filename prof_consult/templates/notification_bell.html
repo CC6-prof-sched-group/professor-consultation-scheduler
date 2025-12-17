@@ -26,6 +26,26 @@
     text-align: center;
 }
 
+/* Mobile-only compact notification bell */
+@media (max-width: 991.98px) {
+    .notification-bell {
+        margin-right: 0;
+    }
+    .notification-bell .nav-link {
+        padding: 4px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .notification-badge {
+        top: -2px;
+        right: -2px;
+        padding: 1px 4px;
+        font-size: 9px;
+        min-width: 14px;
+    }
+}
+
 .notification-dropdown {
     min-width: 320px;
     max-width: 400px;

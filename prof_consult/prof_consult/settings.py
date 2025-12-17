@@ -194,12 +194,27 @@ ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_UNIQUE_EMAIL = True
+
+# Login/Logout Redirect URLs
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# Social Account Settings - Skip signup form for OAuth users
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+SOCIALACCOUNT_LOGIN_ON_GET = True  # Skip the confirmation page, go directly to Google
+SOCIALACCOUNT_STORE_TOKENS = True  # Store OAuth tokens for API access
+
+# Allow connecting social accounts to existing accounts with same email
+SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
+SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
 
 # Google OAuth2 Settings
-# Using SocialApplication model (configure via Django Admin at /admin/socialaccount/socialapp/)
+# Credentials can be set via environment variables or Django Admin
+GOOGLE_CLIENT_ID = config('GOOGLE_CLIENT_ID', default='')
+GOOGLE_CLIENT_SECRET = config('GOOGLE_CLIENT_SECRET', default='')
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -209,8 +224,15 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
         'AUTH_PARAMS': {
             'access_type': 'offline',
-            'prompt': 'consent',
+            'prompt': 'select_account',
         },
+        'APPS': [
+            {
+                'client_id': GOOGLE_CLIENT_ID,
+                'secret': GOOGLE_CLIENT_SECRET,
+                'key': '',
+            },
+        ] if GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET else [],
     }
 }
 

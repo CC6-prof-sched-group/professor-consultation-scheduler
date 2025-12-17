@@ -218,7 +218,10 @@
                                                     <i class="bi bi-eye"></i> View
                                                 </a>
                                                 {% if consultation.status != 'CANCELLED' %}
-                                                    <button type="button" class="btn btn-warning btn-sm btn-reschedule" data-id="{{ consultation.id }}">
+                                                    <button type="button" class="btn btn-warning btn-sm btn-reschedule" 
+                                                        data-id="{{ consultation.id }}"
+                                                        data-date="{{ consultation.scheduled_date|date:'Y-m-d' }}"
+                                                        data-time="{{ consultation.scheduled_time|time:'H:i' }}">
                                                         <i class="bi bi-pencil"></i> Reschedule
                                                     </button>
                                                     <button type="button" class="btn btn-danger btn-sm btn-cancel" data-id="{{ consultation.id }}">
@@ -261,7 +264,7 @@
                     {% endfor %}
                 </div>
             {% else %}
-                <div class="alert alert-info" role="alert">
+                <div class="alert alert-info alert-permanent" role="alert">
                     <i class="bi bi-info-circle"></i> 
                     {% if status_filter == 'upcoming' %}
                         No upcoming consultations. <a href="{% url 'book_consultation' %}" class="alert-link">Book one now!</a>
@@ -277,7 +280,6 @@
         </div>
     </div>
 </div>
-{% endblock %}
 <!-- Cancel & Reschedule Modals (used by list inline AJAX) -->
 <div class="modal fade" id="listCancelModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
@@ -394,17 +396,47 @@
     document.querySelectorAll('.btn-reschedule').forEach(btn => {
         btn.addEventListener('click', () => {
             activeConsultationId = btn.dataset.id;
-            // reset inputs
+            // Get original booking values from data attributes
+            const originalDate = btn.dataset.date || '';
+            const originalTime = btn.dataset.time || '';
+            
             const dateEl = document.getElementById('list-new-date');
             const timeEl = document.getElementById('list-new-time');
             const feedback = document.getElementById('list-reschedule-feedback');
+            const dateFeedback = document.getElementById('list-reschedule-date-feedback');
             const confirmBtn = document.getElementById('list-confirm-reschedule');
-            if (dateEl) dateEl.value = '';
-            if (timeEl) timeEl.value = '';
+            
+            // Set to original values
+            if (dateEl) dateEl.value = originalDate;
+            if (timeEl) timeEl.value = originalTime;
             if (feedback) feedback.style.display = 'none';
-            if (confirmBtn) confirmBtn.disabled = true;
+            if (dateFeedback) dateFeedback.style.display = 'none';
+            // Enable button if original values exist
+            if (confirmBtn) confirmBtn.disabled = !(originalDate && originalTime);
+            
             const modalEl = document.getElementById('listRescheduleModal');
-            new bootstrap.Modal(modalEl).show();
+            const modal = new bootstrap.Modal(modalEl);
+            
+            // Reset form to original values when modal is hidden (cancelled/closed)
+            function resetForm() {
+                // Get fresh references
+                const dEl = document.getElementById('list-new-date');
+                const tEl = document.getElementById('list-new-time');
+                const fb = document.getElementById('list-reschedule-feedback');
+                const dfb = document.getElementById('list-reschedule-date-feedback');
+                const cb = document.getElementById('list-confirm-reschedule');
+                
+                if (dEl) dEl.value = originalDate;
+                if (tEl) tEl.value = originalTime;
+                if (fb) fb.style.display = 'none';
+                if (dfb) dfb.style.display = 'none';
+                if (cb) cb.disabled = !(originalDate && originalTime);
+                // Remove listener to prevent stacking
+                modalEl.removeEventListener('hidden.bs.modal', resetForm);
+            }
+            modalEl.addEventListener('hidden.bs.modal', resetForm);
+            
+            modal.show();
 
             // attach listeners to enable confirm button when valid
             let dateTouched = false;

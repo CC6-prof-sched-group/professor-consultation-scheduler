@@ -25,7 +25,7 @@
                             <select class="form-select form-select-lg" id="professor" name="professor" required>
                                 <option value="">Choose a professor...</option>
                                 {% for professor in professors %}
-                                <option value="{{ professor.id }}">{{ professor|display_name }} - {{ professor.department }}</option>
+                                <option value="{{ professor.id }}" {% if selected_professor_id == professor.id|stringformat:"s" %}selected{% endif %}>{{ professor|display_name }} - {{ professor.department }}</option>
                                 {% endfor %}
                             </select>
                         </div>

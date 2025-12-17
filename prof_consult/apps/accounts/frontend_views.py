@@ -198,6 +198,8 @@ def book_consultation(request):
     Book a new consultation.
     Displays booking form and handles form submission.
     """
+    selected_professor_id = request.GET.get('professor')
+
     if request.method == 'POST':
         # Get form data
         professor_id = request.POST.get('professor')
@@ -206,6 +208,7 @@ def book_consultation(request):
         consultation_type = request.POST.get('type', 'in_person')
         subject = request.POST.get('subject')
         notes = request.POST.get('notes', '')
+        selected_professor_id = professor_id
         
         # Validate and create consultation
         try:
@@ -239,6 +242,7 @@ def book_consultation(request):
     
     context = {
         'professors': professors,
+        'selected_professor_id': str(selected_professor_id) if selected_professor_id else '',
     }
     
     return render(request, 'book_consultation.html', context)
