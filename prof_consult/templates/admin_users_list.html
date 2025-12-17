@@ -87,16 +87,26 @@
                         <td>{{ user.date_joined|date:"M d, Y" }}</td>
                         <td>
                             <div class="dropdown">
-                                <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-boundary="viewport">
                                     Actions
                                 </button>
                                 <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'admin_user_edit' user.pk %}">
+                                            <i class="bi bi-pencil me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
                                     <li>
                                         <form action="{% url 'admin_user_action' user.pk %}" method="post" class="d-inline">
                                             {% csrf_token %}
                                             <input type="hidden" name="action" value="toggle_active">
                                             <button type="submit" class="dropdown-item">
-                                                {% if user.is_active %}Deactivate{% else %}Activate{% endif %}
+                                                {% if user.is_active %}
+                                                <i class="bi bi-person-x me-2"></i> Deactivate
+                                                {% else %}
+                                                <i class="bi bi-person-check me-2"></i> Activate
+                                                {% endif %}
                                             </button>
                                         </form>
                                     </li>
@@ -105,7 +115,9 @@
                                         <form action="{% url 'admin_user_action' user.pk %}" method="post" class="d-inline">
                                             {% csrf_token %}
                                             <input type="hidden" name="action" value="promote_admin">
-                                            <button type="submit" class="dropdown-item text-danger">Make Admin</button>
+                                            <button type="submit" class="dropdown-item text-danger">
+                                                <i class="bi bi-shield-lock me-2"></i> Make Admin
+                                            </button>
                                         </form>
                                     </li>
                                     {% else %}
@@ -113,7 +125,9 @@
                                         <form action="{% url 'admin_user_action' user.pk %}" method="post" class="d-inline">
                                             {% csrf_token %}
                                             <input type="hidden" name="action" value="demote_admin">
-                                            <button type="submit" class="dropdown-item text-warning">Remove Admin</button>
+                                            <button type="submit" class="dropdown-item text-warning">
+                                                <i class="bi bi-shield-minus me-2"></i> Remove Admin
+                                            </button>
                                         </form>
                                     </li>
                                     {% endif %}

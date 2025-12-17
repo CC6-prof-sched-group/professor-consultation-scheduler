@@ -72,6 +72,7 @@ urlpatterns = [
     path('admin-dashboard/', admin_frontend_views.AdminDashboardView.as_view(), name='admin_dashboard'),
     path('admin-dashboard/users/', admin_frontend_views.AdminUserListView.as_view(), name='admin_users_list'),
     path('admin-dashboard/users/create/', admin_frontend_views.AdminCreateUserView.as_view(), name='admin_user_create'),
+    path('admin-dashboard/users/<int:pk>/edit/', admin_frontend_views.AdminUserUpdateView.as_view(), name='admin_user_edit'),
     path('admin-dashboard/users/<int:pk>/action/', admin_frontend_views.AdminUserActionView.as_view(), name='admin_user_action'),
     path('admin-dashboard/become-admin/', admin_frontend_views.BecomeAdminView.as_view(), name='become_admin'),
 ]

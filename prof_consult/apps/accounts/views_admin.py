@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, ListView, DetailView, View, CreateView
+from django.views.generic import TemplateView, ListView, DetailView, View, CreateView, UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from django.shortcuts import redirect, get_object_or_404
@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.db.models import Count
 from apps.consultations.models import Consultation
 from apps.professors.models import ProfessorProfile
-from .forms_admin import AdminUserCreationForm
+from .forms_admin import AdminUserCreationForm, AdminUserChangeForm
 
 User = get_user_model()
 
@@ -109,4 +109,14 @@ class AdminCreateUserView(LoginRequiredMixin, SuperuserRequiredMixin, CreateView
 
     def form_valid(self, form):
         messages.success(self.request, f"User {form.cleaned_data['email']} created successfully.")
+        return super().form_valid(form)
+
+class AdminUserUpdateView(LoginRequiredMixin, SuperuserRequiredMixin, UpdateView):
+    model = User
+    form_class = AdminUserChangeForm
+    template_name = 'admin_user_edit.html'
+    success_url = reverse_lazy('admin_users_list')
+
+    def form_valid(self, form):
+        messages.success(self.request, f"User {form.cleaned_data['email']} updated successfully.")
         return super().form_valid(form)

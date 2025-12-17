@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Edit User - ConsultEase{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0"><i class="bi bi-pencil-square"></i> Edit User</h4>
+                        <a href="{% url 'admin_users_list' %}" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        {% for field in form %}
+                        <div class="mb-3">
+                            {% if field.name == 'is_active' %}
+                                <div class="form-check form-switch">
+                                    {{ field }}
+                                    <label class="form-check-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                </div>
+                            {% else %}
+                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                {{ field }}
+                            {% endif %}
+                            
+                            {% if field.help_text %}
+                            <div class="form-text">{{ field.help_text }}</div>
+                            {% endif %}
+                            {% if field.errors %}
+                            <div class="text-danger small">
+                                {{ field.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-check-lg"></i> Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
