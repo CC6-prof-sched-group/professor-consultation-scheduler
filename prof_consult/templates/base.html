@@ -117,7 +117,21 @@
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     {% include 'notification_bell.html' %}
-                        <li class="nav-item dropdown">
+                        {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_dashboard' %}">
+                            <i class="bi bi-speedometer2"></i> Admin
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_dashboard' %}">
+                            <i class="bi bi-speedometer2"></i> Admin
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
                                 <i class="bi bi-person-circle"></i> {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}
                             </a>

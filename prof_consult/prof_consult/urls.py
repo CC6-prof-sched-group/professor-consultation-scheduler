@@ -13,7 +13,9 @@ from apps.consultations.views import ConsultationViewSet
 from apps.professors.views import ProfessorProfileViewSet
 from apps.notifications.views import NotificationViewSet
 from apps.accounts import views as auth_views
+from apps.accounts import views as auth_views
 from apps.accounts import frontend_views
+from apps.accounts import views_admin as admin_frontend_views
 from prof_consult.health_checks import health_check
 
 # API Router
@@ -65,6 +67,12 @@ urlpatterns = [
     path('api/admin/users/<int:pk>/role/', auth_views.AdminUpdateUserRoleView.as_view(), name='admin-update-role'),
     
     path('consultations/rate/<int:consultation_id>/', frontend_views.rate_consultation, name='rate_consultation'),
+
+    # Admin Dashboard (Frontend)
+    path('admin-dashboard/', admin_frontend_views.AdminDashboardView.as_view(), name='admin_dashboard'),
+    path('admin-dashboard/users/', admin_frontend_views.AdminUserListView.as_view(), name='admin_users_list'),
+    path('admin-dashboard/users/<int:pk>/action/', admin_frontend_views.AdminUserActionView.as_view(), name='admin_user_action'),
+    path('admin-dashboard/become-admin/', admin_frontend_views.BecomeAdminView.as_view(), name='become_admin'),
 ]
 
 # Custom error handlers
