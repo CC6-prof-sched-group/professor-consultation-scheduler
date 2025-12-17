@@ -121,6 +121,13 @@
                                     </div>
                                 </div>
 
+                                {% if user.role == 'STUDENT' %}
+                                <div class="mb-3">
+                                    <label for="studentId" class="form-label">Student ID</label>
+                                    <input type="text" class="form-control" id="studentId" name="student_id" value="{{ user.student_id|default:'' }}" placeholder="e.g. 202111234">
+                                </div>
+                                {% endif %}
+
                                 <div class="d-grid gap-2">
                                     <button type="submit" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
                                         <i class="bi bi-check-circle"></i> Save Changes
@@ -369,7 +376,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;">Delete My Account</button>
+                <form method="post" action="{% url 'delete_account' %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;">Delete My Account</button>
+                </form>
             </div>
         </div>
     </div>

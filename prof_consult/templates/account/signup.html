@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n socialaccount %}
 
 {% block title %}Sign Up - ConsultEase{% endblock %}
 
 {% block content %}
+<style>
+    body.signup-bg {
+        background: linear-gradient(rgba(30, 34, 44, 0.7), rgba(30, 34, 44, 0.7)),
+            url('/static/img/consultease-login-bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('signup-bg');
+    });
+</script>
 <div class="container">
     <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
         <div class="col-md-6 col-lg-5">
@@ -15,9 +27,52 @@
                         <p class="text-muted">Join ConsultEase to schedule consultations</p>
                     </div>
 
-                    <div class="d-grid gap-3">
-                        <a href="/accounts/google/login/" class="btn btn-lg" style="background-color: #5389DA; color: white;">
-                            <i class="bi bi-google me-2"></i>
+                    <!-- Display form errors if any -->
+                    {% if form.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <div>{{ error }}</div>
+                            {% endfor %}
+                        {% endfor %}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endif %}
+
+                    <!-- Sign Up Form -->
+                    <form method="post" action="{% url 'account_signup' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="signup-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="signup-email" name="email" placeholder="Enter your email" value="{{ form.email.value|default:'' }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signup-username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="signup-username" name="username" placeholder="Choose a username" value="{{ form.username.value|default:'' }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signup-password1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signup-password1" name="password1" placeholder="Create a password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signup-password2" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="signup-password2" name="password2" placeholder="Confirm your password" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-lg" style="background-color: #274572; color: white;">
+                                <i class="bi bi-person-plus me-2"></i>Create Account
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="text-center my-4">
+                        <span class="text-muted">— or —</span>
+                    </div>
+
+                    <!-- Google Sign Up -->
+                    <div class="d-grid">
+                        <a href="{% provider_login_url 'google' %}" class="btn btn-lg btn-outline-secondary">
+                            <i class="bi bi-google me-2" style="color: #5389DA;"></i>
                             Sign up with Google
                         </a>
                     </div>

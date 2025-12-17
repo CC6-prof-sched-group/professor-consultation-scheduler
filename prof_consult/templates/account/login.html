@@ -1,9 +1,40 @@
 {% extends 'base.html' %}
 {% load i18n socialaccount %}
 
-{% block title %}Sign In - ConsultEase{% endblock %}
+{% block title %}Login - ConsultEase{% endblock %}
+
+{% block extra_body %}
+<div id="bg-overlay"></div>
+{% endblock %}
 
 {% block content %}
+<style>
+    body.login-bg {
+        min-height: 100vh;
+        background: linear-gradient(rgba(30, 34, 44, 0.7), rgba(30, 34, 44, 0.7)), url('/static/img/consultease-login-bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+    #bg-overlay {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(rgba(30, 34, 44, 0.7), rgba(30, 34, 44, 0.7));
+        z-index: 0;
+        pointer-events: none;
+    }
+    .container, .card, .alert {
+        position: relative;
+        z-index: 2;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('login-bg');
+    });
+</script>
 <div class="container">
     <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
         <div class="col-md-6 col-lg-5">
@@ -15,9 +46,48 @@
                         <p class="text-muted">Sign in to access your consultation schedule</p>
                     </div>
 
-                    <div class="d-grid gap-3">
-                        <a href="{% provider_login_url 'google' %}" class="btn btn-lg" style="background-color: #5389DA; color: white;">
-                            <i class="bi bi-google me-2"></i>
+                    <!-- Display form errors if any -->
+                    {% if form.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <div>{{ error }}</div>
+                            {% endfor %}
+                        {% endfor %}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endif %}
+
+                    <!-- Sign In Form -->
+                    <form method="post" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">Email or Username</label>
+                            <input type="text" class="form-control" id="login-email" name="login" placeholder="Enter your email or username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="login-password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="remember" name="remember" value="true">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-lg" style="background-color: #274572; color: white;">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="text-center my-4">
+                        <span class="text-muted">— or —</span>
+                    </div>
+
+                    <!-- Google Login -->
+                    <div class="d-grid">
+                        <a href="{% provider_login_url 'google' %}" class="btn btn-lg btn-outline-secondary">
+                            <i class="bi bi-google me-2" style="color: #5389DA;"></i>
                             Continue with Google
                         </a>
                     </div>
@@ -25,6 +95,10 @@
                     <hr class="my-4">
 
                     <div class="text-center">
+                        <p class="text-muted mb-2">
+                            Don't have an account? 
+                            <a href="{% url 'account_signup' %}" class="text-decoration-none fw-bold" style="color: #74D3D3;">Sign up</a>
+                        </p>
                         <p class="small text-muted mb-0">
                             By signing in, you agree to our 
                             <a href="#" class="text-decoration-none" style="color: #5389DA;">Terms of Service</a> and 
@@ -58,4 +132,37 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const loginInput = document.getElementById('login-email');
+    const passwordInput = document.getElementById('login-password');
+    const rememberCheckbox = document.getElementById('remember');
+    const loginForm = document.querySelector('form[action*="login"]');
+    
+    // Load saved credentials on page load
+    const savedLogin = localStorage.getItem('rememberedLogin');
+    const savedPassword = localStorage.getItem('rememberedPassword');
+    const wasRemembered = localStorage.getItem('rememberMe') === 'true';
+    
+    if (wasRemembered) {
+        if (savedLogin) loginInput.value = savedLogin;
+        if (savedPassword) passwordInput.value = atob(savedPassword); // Decode from base64
+        rememberCheckbox.checked = true;
+    }
+    
+    // Save or clear credentials on form submit
+    loginForm.addEventListener('submit', function() {
+        if (rememberCheckbox.checked) {
+            localStorage.setItem('rememberedLogin', loginInput.value);
+            localStorage.setItem('rememberedPassword', btoa(passwordInput.value)); // Encode to base64
+            localStorage.setItem('rememberMe', 'true');
+        } else {
+            localStorage.removeItem('rememberedLogin');
+            localStorage.removeItem('rememberedPassword');
+            localStorage.removeItem('rememberMe');
+        }
+    });
+});
+</script>
 {% endblock %}
