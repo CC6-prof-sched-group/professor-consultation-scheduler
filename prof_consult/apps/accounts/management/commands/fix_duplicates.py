@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
-from allauth.socialaccount.models import SocialAccount
+from allauth.socialaccount.models import SocialAccount, SocialApp
 from allauth.account.models import EmailAddress
 from django.db.models import Count
 
@@ -10,6 +10,14 @@ class Command(BaseCommand):
     help = 'Fixes duplicate accounts and email addresses that cause login errors'
 
     def handle(self, *args, **options):
+        self.stdout.write('Cleaning up SocialApp configuration...')
+        # 0. Delete all SocialApp entries (we rely on settings.py)
+        count, _ = SocialApp.objects.all().delete()
+        if count > 0:
+            self.stdout.write(self.style.SUCCESS(f"Deleted {count} SocialApp entries (using settings.py instead)"))
+        else:
+            self.stdout.write("No SocialApp entries found.")
+
         self.stdout.write('Checking for duplicates (Case-Insensitive)...')
         
         # 1. Check for duplicate emails in User model
