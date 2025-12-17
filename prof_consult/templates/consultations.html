@@ -421,13 +421,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (confirmBtn) confirmBtn.disabled = !(originalDate && originalTime);
             
             const modalEl = document.getElementById('listRescheduleModal');
-            new bootstrap.Modal(modalEl).show();
-
-            if (modalEl) {
-                new bootstrap.Modal(modalEl).show();
-            }
-
-            const modal = new bootstrap.Modal(modalEl);
+            // Get existing modal instance or create new one (prevents duplicate backdrops)
+            const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
             
             // Reset form to original values when modal is hidden (cancelled/closed)
             function resetForm() {
