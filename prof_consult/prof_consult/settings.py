@@ -354,6 +354,12 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    
+    # PythonAnywhere / Reverse Proxy SSL Header
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    
+    # Allauth Protocol
+    ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 # Rate Limiting (using DRF)
 REST_FRAMEWORK['DEFAULT_THROTTLE_CLASSES'] = [
