@@ -1,126 +1,150 @@
-# Professor Consultation Scheduling System
+# ConsultEase - Professor Consultation Scheduling System
 
-A comprehensive Django-based web application that enables students to book consultations with professors, with role-based access for students, professors, and administrators.
+A comprehensive Django-based web application that enables students to book consultations with professors, featuring role-based access, Google Calendar integration, and automated email notifications.
 
-**Live Demo**: https://consult-ease-lz8p.onrender.com
+**Live Demo**: [https://consultease.pythonanywhere.com/](https://consultease.pythonanywhere.com/)
 
 ## Features
 
-- **User Authentication**: Google OAuth2 authentication using django-allauth
-- **Role-Based Access**: Separate roles for Students, Professors, and Administrators
-- **Consultation Booking**: Students can book consultations with professors
-- **Google Calendar Integration**: Automatic calendar event creation/update/deletion
-- **Email Notifications**: Automated email notifications (booking created, confirmed, reminders, cancellations, reschedules)
-- **Real-time Availability**: Professors can set and manage their availability
-- **Rating System**: Students can rate completed consultations
-- **Admin Dashboard**: Comprehensive admin interface with statistics
-- **RESTful API**: Full REST API using Django REST Framework
-- **Production Ready**: Easy to deploy on standard Django hosts (uses SQLite locally; switch to Postgres for prod)
+- **User Authentication**: Secure login/signup via Google OAuth2 (django-allauth).
+- **Role-Based Access**: Specialized dashboards for Students, Professors, and Administrators.
+- **Consultation Booking**: Intuitive booking flow for students to schedule appointments.
+- **Google Calendar Sync**: Automatically creates, updates, and deletes events in users' Google Calendars.
+- **Smart Notifications**: 
+    - Instant email notifications for bookings, confirmations, cancellations, and reschedules.
+    - Automated 24-hour reminder emails (via management command).
+- **Real-time Availability**: Professors manage their weekly schedule and specific slots.
+- **Rating & Feedback**: Students can rate and review completed consultations.
+- **Admin Dashboard**: Centralized management interface with system usage statistics.
+- **RESTful API**: Full API coverage using Django REST Framework.
 
 ## Technology Stack
 
 - **Backend**: Django 5.x
 - **API**: Django REST Framework
-- **Database**: PostgreSQL (SQLite for development)
+- **Database**: PostgreSQL (Production) / SQLite (Development)
 - **Authentication**: django-allauth with Google OAuth2
-- **Task Queue**: Runs notifications synchronously (no Celery/Redis required)
 - **Calendar Integration**: Google Calendar API
-- **Email**: Django email backend (configurable for SMTP)
-
+- **Task Scheduling**: Custom Management Commands (Cron) 
+- **Frontend**: Django Templates + Bootstrap / Custom CSS
 
 ## Installation
 
 ### 1. Clone the Repository
-
 ```bash
 git clone <repository-url>
-cd prof-consult/prof_consult
+cd prof-consult
 ```
 
 ### 2. Create Virtual Environment
-
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
 ```
 
 ### 3. Install Dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Set Up Environment Variables
+### 4. Application Setup
 
-Copy `env.example` to `.env` and fill in the required values:
+1.  **Environment Variables**: rename `env.example` to `.env` and configure:
+    ```env
+    SECRET_KEY=your-secret-key
+    DEBUG=True
+    GOOGLE_CLIENT_ID=your-google-client-id
+    GOOGLE_CLIENT_SECRET=your-google-client-secret
+    ENCRYPTION_KEY=run-python-script-to-generate-this
+    ```
 
-```bash
-cp env.example .env
-```
+2.  **Generate Encryption Key**:
+    ```bash
+    python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+    ```
+    Paste the output into `ENCRYPTION_KEY` in your `.env`.
 
-Edit `.env` with your configuration:
+3.  **Database Migration**:
+    ```bash
+    python manage.py migrate
+    ```
 
-```env
-SECRET_KEY=your-secret-key-here
-DEBUG=True
-DATABASE_URL=postgresql://user:password@localhost:5432/consultation_db
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-ENCRYPTION_KEY=your-encryption-key
-SITE_NAME=Consultation Scheduler
-SITE_URL=http://localhost:8000
-```
+4.  **Create Admin User**:
+    ```bash
+    python manage.py createsuperuser
+    ```
 
-### 5. Generate Encryption Key
-
-Generate an encryption key for sensitive data:
-
-```bash
-python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
-```
-
-Add this to your `.env` file as `ENCRYPTION_KEY`.
-
-### 6. Set Up Database
-
-```bash
-python manage.py migrate
-python manage.py createsuperuser
-```
-
-### 7. Set Up Google OAuth2
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable Google+ API and Google Calendar API
-4. Create OAuth 2.0 credentials
-5. Add authorized redirect URIs:
-   - `http://localhost:8000/accounts/google/login/callback/`
-   - `http://localhost:8000/api/auth/google/callback/`
-6. Copy Client ID and Client Secret to `.env`
-
-### 8. Run Migrations
-
-```bash
-python manage.py migrate
-```
-
-### 9. Create Superuser
-
-```bash
-python manage.py createsuperuser
-```
+### 5. Google OAuth2 Setup
+1.  Go to [Google Cloud Console](https://console.cloud.google.com/).
+2.  Enable **Google+ API** and **Google Calendar API**.
+3.  Create OAuth Credentials.
+4.  Add Redirect URIs:
+    - `http://localhost:8000/accounts/google/login/callback/`
+    - `http://localhost:8000/api/auth/google/callback/`
 
 ## Running the Application
 
 ### Development Server
-
 ```bash
 python manage.py runserver
 ```
+Visit `http://localhost:8000`.
 
-The application will be available at `http://localhost:8000`
+### Background Tasks (Reminders)
+To send 24-hour appointment reminders, run this command manually or set up a cron job:
+```bash
+python manage.py send_reminders
+```
 
-### Notes on background work
+---
 
-Background notifications now run inline with the web process, so no Celery/Redis setup is required. For production-scale usage, you can reintroduce a task queue if needed.
+## Deployment on PythonAnywhere
+
+### 1. Project Setup
+1.  Open a **Bash** console.
+2.  Clone the repo:
+    ```bash
+    git clone https://github.com/CC6-prof-sched-group/professor-consultation-scheduler.git
+    ```
+3.  Create and activate virtual environment:
+    ```bash
+    mkvirtualenv --python=/usr/bin/python3.13 consultease-venv
+    pip install -r requirements.txt
+    ```
+
+### 2. Static Files & Database
+```bash
+# Collect static files
+python manage.py collectstatic
+
+# Run migrations
+python manage.py migrate
+```
+
+### 3. Setting Validated Reminders (Scheduled Tasks)
+Go to the **Tasks** tab in PythonAnywhere and add a daily task to run the reminders:
+```bash
+original_working_directory=/home/yourusername/professor-consultation-scheduler/prof_consult
+/home/yourusername/.virtualenvs/consultease-venv/bin/python manage.py send_reminders
+```
+
+### 4. Web App Configuration
+-   **Source code**: `/home/yourusername/professor-consultation-scheduler/prof_consult`
+-   **WSGI configuration file**: Update with your project settings path.
+-   **Static files**:
+    -   URL: `/static/`
+    -   Path: `/home/yourusername/professor-consultation-scheduler/prof_consult/staticfiles`
+
+
+## Authors
+
+### Project Members
+
+-   [Vougne Froid Alis](https://github.com/VougneFroid)
+-   [Efren Johannes Bucao](https://github.com/Frendsb)
+-   [Kenneth Castillo](https://github.com/CastleKen)
+-   [Kenneth Batoctoy](https://github.com/Kenshta)
+-   [Mark Jayson Galarpe](https://github.com/Markgalarpe)
+-   [Ricalyn Olayvar](https://github.com/RicsOlayvar)
+
+
