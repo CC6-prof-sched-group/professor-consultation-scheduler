@@ -7,9 +7,14 @@
 <div class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2><i class="bi bi-people"></i> Manage Users</h2>
-        <a href="{% url 'admin_dashboard' %}" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left"></i> Back to Dashboard
-        </a>
+        <div>
+            <a href="{% url 'admin_user_create' %}" class="btn btn-success me-2">
+                <i class="bi bi-person-plus"></i> Create User
+            </a>
+            <a href="{% url 'admin_dashboard' %}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
     </div>
 
     <!-- Filters -->
@@ -82,8 +87,8 @@
                         <td>{{ user.date_joined|date:"M d, Y" }}</td>
                         <td>
                             <div class="dropdown">
-                                <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots-vertical"></i>
+                                <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    Actions
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
