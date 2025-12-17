@@ -10,63 +10,86 @@ class Command(BaseCommand):
     help = 'Fixes duplicate accounts and email addresses that cause login errors'
 
     def handle(self, *args, **options):
-        self.stdout.write('Checking for duplicates...')
+        self.stdout.write('Checking for duplicates (Case-Insensitive)...')
         
-        # 1. Check for duplicate emails in User model (should be unique)
-        duplicates = User.objects.values('email').annotate(count=Count('id')).filter(count__gt=1)
-        if duplicates:
-            self.stdout.write(self.style.WARNING(f"Found {duplicates.count()} duplicate emails in User model"))
-            for item in duplicates:
-                email = item['email']
-                users = User.objects.filter(email=email).order_by('date_joined')
-                # Keep the oldest, delete others? Or merge?
-                # For safety, just list them for now, or delete if they have no data.
-                primary = users.first()
-                for user in users[1:]:
-                    self.stdout.write(f"Deleting duplicate user {user.id} ({user.email})")
-                    user.delete()
-        else:
-            self.stdout.write('No duplicate emails in User model.')
-
+        # 1. Check for duplicate emails in User model
+        users = User.objects.all()
+        email_map = {}
+        for user in users:
+            email = user.email.lower().strip()
+            if not email:
+                continue
+            if email in email_map:
+                email_map[email].append(user)
+            else:
+                email_map[email] = [user]
+        
+        for email, user_list in email_map.items():
+            if len(user_list) > 1:
+                self.stdout.write(self.style.WARNING(f"Found {len(user_list)} users with email '{email}'"))
+                # Sort by date joined, keep oldest
+                user_list.sort(key=lambda u: u.date_joined)
+                primary = user_list[0]
+                self.stdout.write(f"  Keeping primary: {primary.id} ({primary.email})")
+                for duplicate in user_list[1:]:
+                    self.stdout.write(f"  Deleting duplicate: {duplicate.id} ({duplicate.email})")
+                    # Move social accounts to primary if needed?
+                    # For now, just delete to clear the error.
+                    duplicate.delete()
+        
         # 2. Check for duplicate SocialAccounts
-        # A user might have multiple social accounts, but (provider, uid) should be unique.
-        social_dupes = SocialAccount.objects.values('provider', 'uid').annotate(count=Count('id')).filter(count__gt=1)
-        if social_dupes:
-            self.stdout.write(self.style.WARNING(f"Found {social_dupes.count()} duplicate SocialAccounts"))
-            for item in social_dupes:
-                accounts = SocialAccount.objects.filter(provider=item['provider'], uid=item['uid']).order_by('date_joined')
-                primary = accounts.first()
-                for acc in accounts[1:]:
-                    self.stdout.write(f"Deleting duplicate social account {acc.id} for {acc.user}")
-                    acc.delete()
-        else:
-            self.stdout.write('No duplicate SocialAccounts.')
+        # Group by (provider, uid)
+        socials = SocialAccount.objects.all()
+        social_map = {}
+        for sa in socials:
+            key = (sa.provider, sa.uid)
+            if key in social_map:
+                social_map[key].append(sa)
+            else:
+                social_map[key] = [sa]
+                
+        for key, sa_list in social_map.items():
+            if len(sa_list) > 1:
+                self.stdout.write(self.style.WARNING(f"Found {len(sa_list)} SocialAccounts for {key}"))
+                # Keep one
+                primary = sa_list[0]
+                for duplicate in sa_list[1:]:
+                    self.stdout.write(f"  Deleting duplicate SocialAccount: {duplicate.id}")
+                    duplicate.delete()
 
-        # 3. Check for duplicate EmailAddresses (allauth)
-        email_dupes = EmailAddress.objects.values('email').annotate(count=Count('id')).filter(count__gt=1)
-        if email_dupes:
-            self.stdout.write(self.style.WARNING(f"Found {email_dupes.count()} duplicate EmailAddresses"))
-            for item in email_dupes:
-                email = item['email']
-                addrs = EmailAddress.objects.filter(email=email).order_by('id')
-                # This is tricky. Different users might claim same email if not verified?
-                # But if verified, it should be unique.
-                # We'll just report for now, or delete unverified ones if verified exists.
-                verified = addrs.filter(verified=True)
-                if verified.exists():
-                    # Delete unverified duplicates
-                    unverified = addrs.filter(verified=False)
-                    for addr in unverified:
-                        self.stdout.write(f"Deleting unverified duplicate email {addr.email} for user {addr.user}")
-                        addr.delete()
-                    
-                    # If multiple verified?
-                    if verified.count() > 1:
-                        self.stdout.write(self.style.ERROR(f"Multiple verified entries for {email}. Manual intervention needed."))
+        # 3. Check for duplicate EmailAddresses
+        emails = EmailAddress.objects.all()
+        e_map = {}
+        for e in emails:
+            email = e.email.lower().strip()
+            if email in e_map:
+                e_map[email].append(e)
+            else:
+                e_map[email] = [e]
+                
+        for email, e_list in e_map.items():
+            if len(e_list) > 1:
+                self.stdout.write(self.style.WARNING(f"Found {len(e_list)} EmailAddresses for '{email}'"))
+                # Prefer verified
+                verified = [e for e in e_list if e.verified]
+                unverified = [e for e in e_list if not e.verified]
+                
+                if verified:
+                    # Keep the first verified one
+                    primary = verified[0]
+                    # Delete all unverified
+                    for d in unverified:
+                        self.stdout.write(f"  Deleting unverified duplicate: {d.id}")
+                        d.delete()
+                    # Delete extra verified?
+                    for d in verified[1:]:
+                        self.stdout.write(f"  Deleting extra verified duplicate: {d.id}")
+                        d.delete()
                 else:
-                    # All unverified. Keep one?
-                    pass
-        else:
-            self.stdout.write('No duplicate EmailAddresses.')
+                    # Keep one unverified
+                    primary = unverified[0]
+                    for d in unverified[1:]:
+                        self.stdout.write(f"  Deleting duplicate unverified: {d.id}")
+                        d.delete()
             
         self.stdout.write(self.style.SUCCESS('Duplicate check completed.'))
