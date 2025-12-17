@@ -145,6 +145,9 @@ def consultations_list(request):
     else:
         consultations = base_qs.order_by('-scheduled_date', '-scheduled_time')
     
+    # Optimize query with select_related to avoid N+1 queries
+    consultations = consultations.select_related('student', 'professor')
+    
     context = {
         'consultations': consultations,
         'status_filter': status_filter,

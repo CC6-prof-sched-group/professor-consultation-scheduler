@@ -13,7 +13,11 @@ def star_rating(rating, max_rating=5, show_number=True):
     
     Usage: {% star_rating professor.average_rating %}
     """
-    rating = float(rating) if rating else 0
+    try:
+        rating = float(rating) if rating else 0
+    except (ValueError, TypeError):
+        rating = 0
+    
     full_stars = int(rating)
     has_half_star = (rating - full_stars) >= 0.5
     empty_stars = max_rating - full_stars - (1 if has_half_star else 0)
@@ -30,7 +34,10 @@ def star_rating(rating, max_rating=5, show_number=True):
 @register.filter
 def rating_class(rating):
     """Get CSS class for rating color."""
-    rating = float(rating) if rating else 0
+    try:
+        rating = float(rating) if rating else 0
+    except (ValueError, TypeError):
+        rating = 0
     if rating >= 4.5:
         return 'text-success'
     elif rating >= 3.5:
@@ -44,7 +51,10 @@ def rating_class(rating):
 @register.filter
 def rating_badge_class(rating):
     """Get badge class for rating."""
-    rating = float(rating) if rating else 0
+    try:
+        rating = float(rating) if rating else 0
+    except (ValueError, TypeError):
+        rating = 0
     if rating >= 4.5:
         return 'bg-success'
     elif rating >= 3.5:
