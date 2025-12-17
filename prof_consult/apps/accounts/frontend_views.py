@@ -12,6 +12,7 @@ from datetime import datetime, timedelta
 
 from apps.accounts.models import User, Role
 from apps.consultations.models import Consultation, ConsultationStatus
+from apps.consultations.services import ConsultationService
 from apps.professors.models import ProfessorProfile
 from apps.notifications.models import Notification
 from apps.notifications.tasks import (
@@ -693,35 +694,19 @@ def professor_consultation_action(request, consultation_id):
         action = request.POST.get('action')
         
         if action == 'confirm':
-            consultation.status = ConsultationStatus.CONFIRMED
-            consultation.confirmed_at = timezone.now()
-            consultation.save()
+            ConsultationService.confirm_consultation(consultation)
             messages.success(request, 'Consultation confirmed!')
-            
-            # Send notifications
-            send_booking_confirmed_notification(consultation.id)
             
         elif action == 'cancel':
             reason = request.POST.get('reason', '')
-            consultation.status = ConsultationStatus.CANCELLED
-            consultation.cancelled_at = timezone.now()
-            consultation.cancellation_reason = reason
-            consultation.save()
+            ConsultationService.cancel_consultation(consultation, reason, user)
             messages.success(request, 'Consultation cancelled.')
-            
-            # Send notifications
-            send_booking_cancelled_notification(consultation.id, reason)
 
         elif action == 'reschedule':
             new_time = request.POST.get('new_time')
             if new_time:
-                consultation.status = ConsultationStatus.RESCHEDULE_PROPOSED
-                consultation.scheduled_time = new_time
-                consultation.save()
+                ConsultationService.propose_reschedule(consultation, new_time)
                 messages.success(request, 'Reschedule proposal sent to student.')
-                
-                # Send notifications
-                send_reschedule_proposal_notification(consultation.id)
             else:
                 messages.error(request, 'New time is required for rescheduling.')
         
@@ -836,22 +821,11 @@ def student_consultation_action(request, consultation_id):
         action = request.POST.get('action')
         
         if action == 'accept_reschedule':
-            consultation.status = ConsultationStatus.CONFIRMED
-            consultation.confirmed_at = timezone.now()
-            consultation.save()
+            ConsultationService.accept_reschedule(consultation)
             messages.success(request, 'Reschedule accepted! Consultation confirmed.')
             
-            # Notify Professor (and student confirmation)
-            send_booking_rescheduled_notification(consultation.id)
-            
         elif action == 'reject_reschedule':
-            consultation.status = ConsultationStatus.CANCELLED
-            consultation.cancelled_at = timezone.now()
-            consultation.cancellation_reason = "Student rejected reschedule proposal."
-            consultation.save()
+            ConsultationService.cancel_consultation(consultation, "Student rejected reschedule proposal.", user)
             messages.success(request, 'Reschedule rejected. Consultation cancelled.')
-            
-            # Notify Professor
-            send_booking_cancelled_notification(consultation.id, "Student rejected reschedule proposal.")
             
     return redirect('consultation_detail', consultation_id=consultation.id)
