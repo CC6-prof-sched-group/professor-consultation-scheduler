@@ -17,6 +17,7 @@ from apps.professors.serializers import (
 )
 from apps.accounts.permissions import IsProfessor, IsProfessorOrReadOnly
 from apps.consultations.models import Consultation, ConsultationStatus
+from apps.integrations.services import GoogleCalendarService
 
 
 class ProfessorProfileViewSet(viewsets.ModelViewSet):
@@ -79,11 +80,34 @@ class ProfessorProfileViewSet(viewsets.ModelViewSet):
         booked_slots = []
         buffer = professor.buffer_time_between_consultations
         
+        
         for time, duration in existing_consultations:
             start = time
             end_time = (timezone.datetime.combine(target_date, start) + 
                        timedelta(minutes=duration + buffer)).time()
             booked_slots.append({'start': start.isoformat(), 'end': end_time.isoformat()})
+            
+        # NEW: Check Google Calendar Availability
+        try:
+            calendar_service = GoogleCalendarService(professor.user)
+            start_of_day = timezone.make_aware(dt.combine(target_date, dt.min.time()))
+            end_of_day = timezone.make_aware(dt.combine(target_date, dt.max.time()))
+            
+            google_busy_periods = calendar_service.get_free_busy_periods(start_of_day, end_of_day)
+            
+            for period in google_busy_periods:
+                # Clamp start/end to the target day to avoid showing wrong times for multi-day events
+                effective_start = max(period['start'], start_of_day)
+                effective_end = min(period['end'], end_of_day)
+                
+                if effective_start < effective_end:
+                    booked_slots.append({
+                        'start': effective_start.time().isoformat(),
+                        'end': effective_end.time().isoformat()
+                    })
+        except Exception as e:
+            # Fallback if Google Calendar fails, just show internal availability
+            print(f"Error checking Google Calendar: {e}")
         
         return Response({
             'professor_id': professor.id,

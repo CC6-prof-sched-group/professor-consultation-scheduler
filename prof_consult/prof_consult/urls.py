@@ -36,6 +36,7 @@ urlpatterns = [
     path('consultations/', frontend_views.consultations_list, name='consultations_list'),
     path('consultation/<int:consultation_id>/', frontend_views.consultation_detail, name='consultation_detail'),
     path('consultations/book/', frontend_views.book_consultation, name='book_consultation'),
+    path('consultations/<int:consultation_id>/action/', frontend_views.student_consultation_action, name='student_consultation_action'),
     path('professors/', frontend_views.professors_list, name='professors_list'),
     path('professors/<int:professor_id>/', frontend_views.professor_profile, name='professor_profile'),
     path('profile/settings/', frontend_views.profile_settings, name='profile_settings'),

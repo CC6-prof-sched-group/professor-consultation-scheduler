@@ -190,6 +190,11 @@
                                                 <span class="mx-2">|</span>
                                                 <i class="bi bi-book"></i> {{ consultation.title }}
                                             </small>
+                                            {% if consultation.is_special_request %}
+                                                <div class="mt-1">
+                                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill"></i> Special Request</span>
+                                                </div>
+                                            {% endif %}
                                             {% if consultation.description %}
                                             <p class="mb-0 small mt-1 text-muted">{{ consultation.description|truncatewords:15 }}</p>
                                             {% endif %}
@@ -204,36 +209,14 @@
                                             <i class="bi bi-check-circle"></i> Confirm
                                         </button>
                                     </form>
+                                    <button type="button" class="btn btn-sm" style="background-color: #ffc107; border-color: #ffc107; color: #000;" data-bs-toggle="modal" data-bs-target="#rescheduleModal{{ consultation.id }}">
+                                        <i class="bi bi-clock-history"></i> Reschedule
+                                    </button>
                                     <button type="button" class="btn btn-sm" style="background-color: #a71d2a; border-color: #a71d2a; color: white;" data-bs-toggle="modal" data-bs-target="#cancelModal{{ consultation.id }}">
                                         <i class="bi bi-x-circle"></i> Decline
                                     </button>
                                     
-                                    <!-- Cancel Modal -->
-                                    <div class="modal fade" id="cancelModal{{ consultation.id }}" tabindex="-1">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Decline Consultation</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                </div>
-                                                <form method="post" action="{% url 'professor_consultation_action' consultation.id %}">
-                                                    {% csrf_token %}
-                                                    <input type="hidden" name="action" value="cancel">
-                                                    <div class="modal-body">
-                                                        <p>Are you sure you want to decline this consultation request?</p>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Reason (optional):</label>
-                                                            <textarea name="reason" class="form-control" rows="3" placeholder="Let the student know why..."></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;">Decline Request</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- Modals moved to bottom of file -->
                                 </div>
                             </div>
                         </div>
@@ -450,4 +433,105 @@
         </div>
     </div>
 </div>
+<!-- Modals for Pending Consultations (Rendered here to avoid nesting issues) -->
+{% for consultation in pending_consultations %}
+    <!-- Reschedule Modal -->
+    <div class="modal fade" id="rescheduleModal{{ consultation.id }}" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Propose New Time</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form method="post" action="{% url 'professor_consultation_action' consultation.id %}" onsubmit="return confirm('Propose this new time to the student?');">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="reschedule">
+                    <div class="modal-body">
+                        <p>Current time: <strong>{{ consultation.scheduled_time|time:"g:i A" }}</strong> on {{ consultation.scheduled_date }}</p>
+                        <div class="mb-3">
+                            <label class="form-label">New Time:</label>
+                            <input type="time" name="new_time" class="form-control" 
+                                    data-day="{{ consultation.scheduled_date|date:'l'|lower }}" 
+                                    onchange="checkAvailability(this, 'warning{{ consultation.id }}')" required>
+                            <div id="warning{{ consultation.id }}" class="form-text text-danger mt-2" style="display: none;">
+                                <i class="bi bi-exclamation-triangle"></i> <strong>Note:</strong> You are not listed as available at this time. Changing to this time represents a spontaneous availability override.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-warning">Propose Time</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Modal -->
+    <div class="modal fade" id="cancelModal{{ consultation.id }}" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Decline Consultation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form method="post" action="{% url 'professor_consultation_action' consultation.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="cancel">
+                    <div class="modal-body">
+                        <p>Are you sure you want to decline this consultation request?</p>
+                        <div class="mb-3">
+                            <label class="form-label">Reason (optional):</label>
+                            <textarea name="reason" class="form-control" rows="3" placeholder="Let the student know why..."></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn" style="background-color: #a71d2a; border-color: #a71d2a; color: white;">Decline Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const PROFESSOR_AVAILABILITY = {{ available_days_json|safe }};
+
+    function checkAvailability(input, warningId) {
+        const time = input.value;
+        const day = input.dataset.day; // e.g., 'monday'
+        const warningEl = document.getElementById(warningId);
+        
+        if (!time || !day) return;
+
+        // Get slots for this day
+        const daySlots = PROFESSOR_AVAILABILITY[day] || [];
+        
+        // Helper to convert time to minutes
+        const toMinutes = (t) => {
+            const [h, m] = t.split(':').map(Number);
+            return h * 60 + m;
+        };
+        
+        const selectedMinutes = toMinutes(time);
+        
+        // Check if selected time falls within ANY available slot
+        
+        let isAvailable = daySlots.some(slot => {
+            const start = toMinutes(slot.start);
+            const end = toMinutes(slot.end);
+            return selectedMinutes >= start && selectedMinutes < end;
+        });
+        
+        if (!isAvailable) {
+            warningEl.style.display = 'block';
+        } else {
+            warningEl.style.display = 'none';
+        }
+    }
+</script>
 {% endblock %}

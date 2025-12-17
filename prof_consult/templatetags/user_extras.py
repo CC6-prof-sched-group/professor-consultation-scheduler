@@ -29,4 +29,16 @@ def display_name(user):
     if hasattr(user, 'role') and user.role == 'PROFESSOR':
         return f"Prof. {full_name}"
     
+    
     return full_name
+
+
+@register.filter(name='split')
+def split(value, arg):
+    """
+    Splits a string by the given separator.
+    Usage: {{ value|split:"," }}
+    """
+    if value:
+        return value.split(arg)
+    return []
