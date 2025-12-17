@@ -1,4 +1,4 @@
-{% load static user_extras %}
+{% load static user_extras avatar_extras socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,12 +55,16 @@
         .custom-navbar .dropdown-menu {
             border: none;
             background-color: white;
+            z-index: 1050 !important;
+            position: absolute !important;
         }
 
         .custom-navbar .dropdown-item {
             color: #212529 !important;
             transition: background-color 0.15s ease, color 0.15s ease !important;
             opacity: 1 !important;
+            pointer-events: auto !important;
+            cursor: pointer !important;
         }
 
         .custom-navbar .dropdown-item:hover,
@@ -70,12 +74,52 @@
             opacity: 1 !important;
         }
 
+        .custom-navbar .dropdown-toggle {
+            cursor: pointer !important;
+        }
+
         .ce-aqua {
             color: #20C8D4;
         }
 
         .ce-gold {
             color: #DDCF49;
+        }
+
+        /* Custom Alert Styles */
+        .alert-success {
+            background: linear-gradient(135deg, rgba(116, 211, 211, 0.15) 0%, rgba(65, 171, 59, 0.15) 100%);
+            border: none;
+            border-left: 4px solid #74D3D3;
+            color: #274572;
+        }
+        .alert-info {
+            background: linear-gradient(135deg, rgba(83, 137, 218, 0.15) 0%, rgba(39, 69, 114, 0.15) 100%);
+            border: none;
+            border-left: 4px solid #5389DA;
+            color: #274572;
+        }
+        .alert-warning {
+            background: linear-gradient(135deg, rgba(221, 207, 73, 0.15) 0%, rgba(255, 193, 7, 0.15) 100%);
+            border: none;
+            border-left: 4px solid #DDCF49;
+            color: #274572;
+        }
+        .alert-danger, .alert-error {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(167, 29, 42, 0.15) 100%);
+            border: none;
+            border-left: 4px solid #dc3545;
+            color: #274572;
+        }
+        .alert {
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(39, 69, 114, 0.1);
+        }
+        .alert .btn-close {
+            opacity: 0.6;
+        }
+        .alert .btn-close:hover {
+            opacity: 1;
         }
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
@@ -84,6 +128,14 @@
                 <img src="{% static 'images/logo.svg' %}" alt="Consult Ease Logo" height="32" style="margin-right: 8px;">
                 <span class="ce-aqua">Consult</span><span class="ce-gold">Ease</span>
             </a>
+            
+            <!-- Mobile: Notification bell outside hamburger menu -->
+            {% if user.is_authenticated %}
+            <div class="d-lg-none d-flex align-items-center ms-auto" style="margin-right: 0.25rem !important;">
+                {% include 'notification_bell.html' %}
+            </div>
+            {% endif %}
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -116,14 +168,10 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
-                    {% include 'notification_bell.html' %}
-                        {% if user.is_superuser %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admin_dashboard' %}">
-                            <i class="bi bi-speedometer2"></i> Admin
-                        </a>
-                    </li>
-                    {% endif %}
+                    <!-- Desktop: Notification bell inside navbar (hidden on mobile since it's outside) -->
+                    <div class="d-none d-lg-block">
+                        {% include 'notification_bell.html' %}
+                    </div>
                     {% if user.is_superuser %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'admin_dashboard' %}">
@@ -132,8 +180,14 @@
                     </li>
                     {% endif %}
                     <li class="nav-item dropdown">
+                        {% user_avatar user as avatar_url %}
                             <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
-                                <i class="bi bi-person-circle"></i> {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}
+                                {% if avatar_url %}
+                                <img src="{{ avatar_url }}" alt="Profile" class="rounded-circle" style="width: 24px; height: 24px; object-fit: cover;">
+                                {% else %}
+                                <i class="bi bi-person-circle"></i>
+                                {% endif %}
+                                {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{% url 'dashboard' %}">
@@ -152,7 +206,10 @@
                                 {% endif %}
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
-                                    <form method="post" action="{% url 'api-logout' %}" style="margin: 0; padding: 0;">
+                                    <a class="dropdown-item" href="#" onclick="document.getElementById('logoutForm').submit(); return false;">
+                                        <i class="bi bi-box-arrow-right"></i> Logout
+                                    </a>
+                                    <form id="logoutForm" method="post" action="{% url 'api-logout' %}" style="display: none;">
                                         {% csrf_token %}
                                         <button type="submit" class="dropdown-item" style="border: none; background: none; padding: 0.5rem 1rem; text-align: left; width: 100%; cursor: pointer; display: block; color: inherit; font-size: inherit;">
                                             <i class="bi bi-box-arrow-right"></i> Logout
@@ -163,7 +220,7 @@
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/accounts/google/login/">
+                            <a class="nav-link" href="{% provider_login_url 'google' %}">
                                 <i class="bi bi-google"></i> Login with Google
                             </a>
                         </li>
@@ -175,11 +232,11 @@
 
     <!-- Messages -->
     {% if messages %}
-        <div class="container mt-3">
+        <div class="container mt-3" id="messagesContainer">
             {% for message in messages %}
                 <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
                     {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="setTimeout(function(){ var container = document.getElementById('messagesContainer'); if(container && container.querySelectorAll('.alert').length <= 1) container.remove(); }, 150);"></button>
                 </div>
             {% endfor %}
         </div>
@@ -234,6 +291,14 @@
                 {% endif %}
             {% endfor %}
         {% endif %}
+        
+        // Initialize all dropdowns manually
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdownElements = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+            dropdownElements.forEach(function(element) {
+                new bootstrap.Dropdown(element);
+            });
+        });
     </script>
 </body>
 </html>

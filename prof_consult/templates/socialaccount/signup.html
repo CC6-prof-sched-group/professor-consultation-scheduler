@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}Complete Sign Up - ConsultEase{% endblock %}
+
+{% block extra_css %}
+<style>
+    .signup-form input,
+    .signup-form select,
+    .signup-form textarea {
+        width: 100% !important;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+    }
+    .signup-form input:focus,
+    .signup-form select:focus,
+    .signup-form textarea:focus {
+        border-color: #5389DA;
+        box-shadow: 0 0 0 0.25rem rgba(83, 137, 218, 0.25);
+        outline: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0" style="border-top: 4px solid #74D3D3 !important;">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <i class="bi bi-person-plus" style="font-size: 4rem; color: #74D3D3;"></i>
+                        <h2 class="mt-3 fw-bold" style="color: #274572;">Complete Your Profile</h2>
+                        <p class="text-muted">Just a few more details to finish setting up your account.</p>
+                    </div>
+
+                    <form method="post" class="signup-form">
+                        {% csrf_token %}
+                        {% if form %}
+                            {% for field in form %}
+                                <div class="mb-3">
+                                    <label for="{{ field.id_for_label }}" class="form-label fw-bold">{{ field.label }}</label>
+                                    {{ field }}
+                                    {% if field.errors %}
+                                        <div class="text-danger small mt-1">{{ field.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        
+                        <div class="d-grid gap-3 mt-4">
+                            <button type="submit" class="btn btn-lg" style="background-color: #5389DA; color: white;">
+                                <i class="bi bi-check-circle me-2"></i>
+                                Complete Sign Up
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

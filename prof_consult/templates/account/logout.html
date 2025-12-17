@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}Logged Out - ConsultEase{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="min-height: 60vh;">
+        <div class="col-md-6 col-lg-5 text-center">
+            <div class="card shadow-lg border-0" style="border-top: 4px solid #74D3D3 !important;">
+                <div class="card-body p-5">
+                    <i class="bi bi-check-circle" style="font-size: 5rem; color: #74D3D3;"></i>
+                    <h2 class="mt-4 fw-bold" style="color: #274572;">You've been logged out</h2>
+                    <p class="text-muted mb-4">Thank you for using ConsultEase. See you next time!</p>
+                    
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'home' %}" class="btn btn-lg" style="background-color: #5389DA; color: white;">
+                            <i class="bi bi-house me-2"></i>
+                            Return to Home
+                        </a>
+                        <a href="{% url 'account_login' %}" class="btn btn-lg btn-outline-secondary">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>
+                            Sign In Again
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

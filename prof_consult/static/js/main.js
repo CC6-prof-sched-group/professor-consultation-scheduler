@@ -268,12 +268,20 @@ function showNoResultsMessage(context, show) {
 
 // Notification handling
 function initNotifications() {
-    // Auto-dismiss alerts
+    // Auto-dismiss alerts after 5 seconds
     const alerts = document.querySelectorAll('.alert:not(.alert-permanent)');
+    
     alerts.forEach(alert => {
         setTimeout(() => {
-            const bsAlert = new bootstrap.Alert(alert);
-            bsAlert.close();
+            // Fade out then remove
+            alert.classList.remove('show');
+            setTimeout(() => {
+                alert.remove();
+                const container = document.getElementById('messagesContainer');
+                if (container) {
+                    container.remove();
+                }
+            }, 150);
         }, 5000);
     });
 
