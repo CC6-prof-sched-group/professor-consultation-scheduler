@@ -55,6 +55,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv(
 
 # Site Domain (for django.contrib.sites and OAuth redirects)
 SITE_DOMAIN = config('SITE_DOMAIN', default='localhost:8000')
+SITE_NAME = 'ConsultEase'
 
 # Application definition
 INSTALLED_APPS = [

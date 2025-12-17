@@ -21,9 +21,7 @@
         {% if consultation.cancellation_reason %}
         <li><strong>Reason:</strong> {{ consultation.cancellation_reason }}</li>
         {% endif %}
-        {% if reason %}
-        <li><strong>Reason:</strong> {{ reason }}</li>
-        {% endif %}
+
     </ul>
     
     <p>If you have any questions, please contact the {% if user.is_student %}professor{% else %}student{% endif %}.</p>

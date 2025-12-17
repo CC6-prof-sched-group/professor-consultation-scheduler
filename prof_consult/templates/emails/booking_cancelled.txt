@@ -14,9 +14,7 @@ Time: {{ consultation.scheduled_time }}
 {% if consultation.cancellation_reason %}
 Reason: {{ consultation.cancellation_reason }}
 {% endif %}
-{% if reason %}
-Reason: {{ reason }}
-{% endif %}
+
 
 If you have any questions, please contact the {% if user.is_student %}professor{% else %}student{% endif %}.
 
