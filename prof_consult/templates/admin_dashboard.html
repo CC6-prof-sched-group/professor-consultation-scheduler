@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Admin Dashboard - ConsultEase{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-5 fw-bold text-primary">
+            <i class="bi bi-speedometer2"></i> Admin Dashboard
+        </h1>
+        <div>
+            <a href="{% url 'admin_users_list' %}" class="btn btn-outline-primary">
+                <i class="bi bi-people"></i> Manage Users
+            </a>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-primary text-white h-100">
+                <div class="card-body text-center">
+                    <h1 class="display-4 fw-bold">{{ total_users }}</h1>
+                    <p class="lead mb-0">Total Users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-info text-white h-100">
+                <div class="card-body text-center">
+                    <h1 class="display-4 fw-bold">{{ total_students }}</h1>
+                    <p class="lead mb-0">Students</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-success text-white h-100">
+                <div class="card-body text-center">
+                    <h1 class="display-4 fw-bold">{{ total_professors }}</h1>
+                    <p class="lead mb-0">Professors</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-warning text-dark h-100">
+                <div class="card-body text-center">
+                    <h1 class="display-4 fw-bold">{{ total_consultations }}</h1>
+                    <p class="lead mb-0">Consultations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Recent Users -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0"><i class="bi bi-person-plus"></i> Newest Users</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    {% for user in recent_users %}
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="fw-bold">{{ user.get_full_name|default:user.username }}</span>
+                            <br>
+                            <small class="text-muted">{{ user.email }}</small>
+                        </div>
+                        <span class="badge {% if user.role == 'PROFESSOR' %}bg-success{% elif user.role == 'ADMIN' %}bg-danger{% else %}bg-info{% endif %}">
+                            {{ user.role }}
+                        </span>
+                    </div>
+                    {% empty %}
+                    <div class="list-group-item text-center text-muted">No users found.</div>
+                    {% endfor %}
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <a href="{% url 'admin_users_list' %}" class="text-decoration-none">View All Users</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Consultations -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0"><i class="bi bi-calendar-event"></i> Recent Consultations</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    {% for consultation in recent_consultations %}
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-1">{{ consultation.title }}</h6>
+                            <small class="text-muted">{{ consultation.created_at|timesince }} ago</small>
+                        </div>
+                        <p class="mb-1 small">
+                            {{ consultation.student.get_full_name }} with {{ consultation.professor.get_full_name }}
+                        </p>
+                        <span class="badge bg-secondary">{{ consultation.status }}</span>
+                    </div>
+                    {% empty %}
+                    <div class="list-group-item text-center text-muted">No consultations yet.</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

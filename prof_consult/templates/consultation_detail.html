@@ -90,13 +90,21 @@
 </div>
 {% endif %}
 
+{% endblock %}
+
+{% block extra_js %}
 <script>
-(function(){
-  const consultationId = document.getElementById('consultation-data').dataset.id;
+document.addEventListener('DOMContentLoaded', function() {
+  const consultationData = document.getElementById('consultation-data');
+  if (!consultationData) return;
+  
+  const consultationId = consultationData.dataset.id;
   const alerts = document.getElementById('alerts');
 
   function showAlert(message, type='success'){
-    alerts.innerHTML = `<div class="alert alert-${type} alert-dismissible" role="alert">${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>`;
+    if (alerts) {
+        alerts.innerHTML = `<div class="alert alert-${type} alert-dismissible" role="alert">${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>`;
+    }
   }
 
   function getAuthHeaders(){
@@ -205,7 +213,6 @@
       }
     });
   }
-})();
+});
 </script>
-
 {% endblock %}

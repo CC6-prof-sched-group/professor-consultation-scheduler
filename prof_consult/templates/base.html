@@ -122,10 +122,6 @@
             opacity: 1;
         }
     </style>
-    {% block extra_css %}{% endblock %}
-</head>
-<body>
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
@@ -176,8 +172,22 @@
                     <div class="d-none d-lg-block">
                         {% include 'notification_bell.html' %}
                     </div>
-                        <li class="nav-item dropdown">
-                            {% user_avatar user as avatar_url %}
+                        {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_dashboard' %}">
+                            <i class="bi bi-speedometer2"></i> Admin
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_dashboard' %}">
+                            <i class="bi bi-speedometer2"></i> Admin
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item dropdown">
+                        {% user_avatar user as avatar_url %}
                             <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
                                 {% if avatar_url %}
                                 <img src="{{ avatar_url }}" alt="Profile" class="rounded-circle" style="width: 24px; height: 24px; object-fit: cover;">
@@ -187,10 +197,16 @@
                                 {% if user.first_name %}{{ user.first_name }}{% else %}{{ user|display_name }}{% endif %}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'dashboard' %}">
+                                    <i class="bi bi-speedometer2"></i> Dashboard
+                                </a></li>
                                 <li><a class="dropdown-item" href="{% url 'profile_settings' %}">
                                     <i class="bi bi-person"></i> Profile Settings
                                 </a></li>
                                 {% if user.role == 'PROFESSOR' %}
+                                <li><a class="dropdown-item" href="{% url 'professor_dashboard' %}">
+                                    <i class="bi bi-briefcase"></i> Professor Dashboard
+                                </a></li>
                                 <li><a class="dropdown-item" href="{% url 'professor_availability_settings' %}">
                                     <i class="bi bi-calendar-week"></i> Manage Availability
                                 </a></li>
@@ -202,6 +218,9 @@
                                     </a>
                                     <form id="logoutForm" method="post" action="{% url 'api-logout' %}" style="display: none;">
                                         {% csrf_token %}
+                                        <button type="submit" class="dropdown-item" style="border: none; background: none; padding: 0.5rem 1rem; text-align: left; width: 100%; cursor: pointer; display: block; color: inherit; font-size: inherit;">
+                                            <i class="bi bi-box-arrow-right"></i> Logout
+                                        </button>
                                     </form>
                                 </li>
                             </ul>
@@ -256,7 +275,6 @@
     <script src="{% static 'js/main.js' %}"></script>
     
     {% block extra_js %}{% endblock %}
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="ratingToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header bg-success text-white">
                 <i class="bi bi-check-circle-fill me-2"></i>
