@@ -16,8 +16,19 @@ try:
 except ImportError:
     # Fallback if python-decouple is not installed
     def config(key, default=None, cast=None):
-        return os.environ.get(key, default)
-    Csv = lambda x, default=[]: x.split(',') if x else default
+        value = os.environ.get(key, default)
+        if cast and value is not None:
+            return cast(value)
+        return value
+    
+    def Csv(cast=str):
+        """Fallback CSV parser that returns a callable"""
+        def cast_csv(x):
+            if not x:
+                return []
+            return [cast(item.strip()) for item in x.split(',') if item.strip()]
+        return cast_csv
+    
     def dj_database_url_config(default, **kwargs):
         return {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': Path(__file__).resolve().parent.parent / 'db.sqlite3'}}
     dj_database_url = lambda default, **kwargs: dj_database_url_config(default, **kwargs)
