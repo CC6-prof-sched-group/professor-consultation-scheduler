@@ -878,10 +878,11 @@ def rate_consultation(request, consultation_id):
         if hasattr(consultation.professor, 'professor_profile'):
             avg_rating, total_reviews = consultation.professor.professor_profile.calculate_ratings()
             
+            display_name = getattr(consultation.professor, 'get_display_name', lambda: str(consultation.professor))()
             messages.success(
                 request, 
                 f'Thank you for rating! Your {rating}-star review has been submitted. '
-                f'Professor {consultation.professor|display_name} now has {avg_rating}★ average from {total_reviews} reviews.'
+                f'Professor {display_name} now has {avg_rating}★ average from {total_reviews} reviews.'
             )
         else:
             messages.success(request, f'Thank you for your {rating}-star rating!')
@@ -902,8 +903,18 @@ def student_consultation_action(request, consultation_id):
     user = request.user
     consultation = get_object_or_404(Consultation, id=consultation_id, student=user)
     
-<<<<<<< HEAD
-    return redirect('consultations_list')
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        
+        if action == 'accept_reschedule':
+            ConsultationService.accept_reschedule(consultation)
+            messages.success(request, 'Reschedule accepted! Consultation confirmed.')
+            
+        elif action == 'reject_reschedule':
+            ConsultationService.cancel_consultation(consultation, "Student rejected reschedule proposal.", user)
+            messages.success(request, 'Reschedule rejected. Consultation cancelled.')
+            
+    return redirect('consultation_detail', consultation_id=consultation.id)
 
 @login_required
 def profile_settings(request):
@@ -970,17 +981,4 @@ def delete_account(request):
         messages.success(request, 'Your account has been deleted.')
         return redirect('/accounts/login/')
     return redirect('profile_settings')
-=======
-    if request.method == 'POST':
-        action = request.POST.get('action')
-        
-        if action == 'accept_reschedule':
-            ConsultationService.accept_reschedule(consultation)
-            messages.success(request, 'Reschedule accepted! Consultation confirmed.')
-            
-        elif action == 'reject_reschedule':
-            ConsultationService.cancel_consultation(consultation, "Student rejected reschedule proposal.", user)
-            messages.success(request, 'Reschedule rejected. Consultation cancelled.')
-            
-    return redirect('consultation_detail', consultation_id=consultation.id)
->>>>>>> main
+
