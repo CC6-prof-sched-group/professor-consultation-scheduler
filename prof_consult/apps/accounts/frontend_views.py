@@ -9,6 +9,7 @@ from django.db.models import Q, Count, Avg
 from django.utils import timezone
 from django.http import Http404
 from datetime import datetime, timedelta
+import re
 
 from apps.accounts.models import User, Role
 from apps.consultations.models import Consultation, ConsultationStatus
@@ -23,6 +24,7 @@ from apps.notifications.tasks import (
     send_reschedule_proposal_notification
 )
 import json
+from django.contrib.auth import logout
 
 
 def home(request):
@@ -36,13 +38,96 @@ def home(request):
     return render(request, 'home.html', context)
 
 
+@login_required
+def profile_setup(request):
+    """
+    Profile setup page for first-time users.
+    Allows users to select their role (Student or Professor) and complete their profile.
+    """
+    user = request.user
+    
+    # Check if user has already completed profile setup
+    if user.profile_setup_completed:
+        return redirect('home')
+    
+    if request.method == 'POST':
+        # Get form data
+        first_name = request.POST.get('first_name', '').strip()
+        last_name = request.POST.get('last_name', '').strip()
+        role = request.POST.get('role', 'STUDENT')
+        department = request.POST.get('department', '').strip()
+        student_id = request.POST.get('student_id', '').strip()
+        
+        # Validate required fields
+        if not first_name or not last_name:
+            messages.error(request, 'First name and last name are required.')
+            return render(request, 'account/profile_setup.html', {'user': user})
+        if role == 'STUDENT' and not student_id:
+            messages.error(request, 'Student ID is required for students.')
+            return render(request, 'account/profile_setup.html', {'user': user})
+        if role == 'STUDENT' and not student_id.isdigit():
+            messages.error(request, 'Student ID must be exactly 9 digits (e.g. 202111234).')
+            return render(request, 'account/profile_setup.html', {'user': user})
+        if role == 'STUDENT' and len(student_id) != 9:
+            messages.error(request, 'Student ID must be exactly 9 digits (e.g. 202111234).')
+            return render(request, 'account/profile_setup.html', {'user': user})
+        
+        # Update user profile
+        user.first_name = first_name
+        user.last_name = last_name
+        user.department = department
+        user.profile_setup_completed = True  # Mark setup as complete
+        # Format student_id as XXXX-X-XXXX
+        if role == 'STUDENT':
+            formatted_id = f"{student_id[:4]}-{student_id[4]}-{student_id[5:]}"
+            user.student_id = formatted_id
+        else:
+            user.student_id = None
+        
+        # Set role
+        if role == 'PROFESSOR':
+            user.role = Role.PROFESSOR
+            user.save()
+            # Create professor profile if it doesn't exist
+            ProfessorProfile.objects.get_or_create(
+                user=user,
+                defaults={
+                    'department': department,
+                    'title': 'Professor',
+                }
+            )
+        else:
+            user.role = Role.STUDENT
+            user.save()
+        # No welcome message here; just redirect
+        return redirect('home')
+    
+    return render(request, 'account/profile_setup.html', {'user': user})
+
+
 def login_view(request):
     """
     Login page view.
     Redirects to home if already authenticated.
+    After login, redirect to profile setup if first time user, else to home.
     """
     if request.user.is_authenticated:
+        # If user is logged in, check if profile setup is complete
+        if not request.user.profile_setup_completed:
+            return redirect('profile_setup')
         return redirect('home')
+    if request.method == 'POST':
+        from django.contrib.auth import authenticate, login
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            login(request, user)
+            if not user.profile_setup_completed:
+                return redirect('profile_setup')
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid email or password.')
     return render(request, 'login.html')
 
 
@@ -829,3 +914,69 @@ def student_consultation_action(request, consultation_id):
             messages.success(request, 'Reschedule rejected. Consultation cancelled.')
             
     return redirect('consultation_detail', consultation_id=consultation.id)
+
+@login_required
+def profile_settings(request):
+    """
+    User profile and settings page.
+    Allows users to update their profile information and preferences.
+    """
+    user = request.user
+    
+    if request.method == 'POST':
+        # Handle form submission
+        tab = request.POST.get('tab', 'profile')
+
+        if tab == 'profile':
+            # Update profile information
+            user.first_name = request.POST.get('first_name', user.first_name)
+            user.last_name = request.POST.get('last_name', user.last_name)
+            user.department = request.POST.get('department', user.department)
+            user.bio = request.POST.get('bio', user.bio)
+
+            # Update student ID if student
+            if user.role == 'STUDENT':
+                student_id = request.POST.get('student_id', '').strip().replace('-', '')
+                if student_id:
+                    if not student_id.isdigit() or len(student_id) != 9:
+                        messages.error(request, 'Student ID must be exactly 9 digits (e.g. 202111234).')
+                        return redirect('profile_settings')
+                    formatted_id = f"{student_id[:4]}-{student_id[4]}-{student_id[5:]}"
+                    user.student_id = formatted_id
+                else:
+                    user.student_id = ''
+
+            user.save()
+            messages.success(request, 'Profile updated successfully!')
+
+        elif tab == 'notifications':
+            # Update notification preferences
+            # This would update user preferences model if you have one
+            messages.success(request, 'Notification preferences updated!')
+
+        return redirect('profile_settings')
+    
+    # Get connected accounts
+    social_accounts = user.socialaccount_set.all() if hasattr(user, 'socialaccount_set') else []
+    
+    context = {
+        'user': user,
+        'social_accounts': social_accounts,
+    }
+    
+    return render(request, 'profile_settings.html', context)
+
+@login_required
+def delete_account(request):
+    """
+    Allows a user to delete their own account.
+    """
+    if not request.user.is_authenticated:
+        return redirect('login')
+    if request.method == 'POST':
+        user = request.user
+        logout(request)
+        user.delete()
+        messages.success(request, 'Your account has been deleted.')
+        return redirect('/accounts/login/')
+    return redirect('profile_settings')

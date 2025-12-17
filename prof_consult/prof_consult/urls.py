@@ -13,9 +13,9 @@ from apps.consultations.views import ConsultationViewSet
 from apps.professors.views import ProfessorProfileViewSet
 from apps.notifications.views import NotificationViewSet
 from apps.accounts import views as auth_views
-from apps.accounts import views as auth_views
 from apps.accounts import frontend_views
 from apps.accounts import views_admin as admin_frontend_views
+from apps.accounts.custom_signup import CustomSignupView
 from prof_consult.health_checks import health_check
 
 # API Router
@@ -39,8 +39,10 @@ urlpatterns = [
     path('consultations/<int:consultation_id>/action/', frontend_views.student_consultation_action, name='student_consultation_action'),
     path('professors/', frontend_views.professors_list, name='professors_list'),
     path('professors/<int:professor_id>/', frontend_views.professor_profile, name='professor_profile'),
+    path('profile/setup/', frontend_views.profile_setup, name='profile_setup'),
     path('profile/settings/', frontend_views.profile_settings, name='profile_settings'),
     path('profile/convert-to-professor/', frontend_views.convert_to_professor, name='convert_to_professor'),
+    path('profile/delete/', frontend_views.delete_account, name='delete_account'),
     
     # Professor Dashboard
     path('professor/dashboard/', frontend_views.professor_dashboard, name='professor_dashboard'),
@@ -53,7 +55,9 @@ urlpatterns = [
     path('api/auth/token/', views.obtain_auth_token, name='api-token'),
     path('api/auth/user/', UserViewSet.as_view({'get': 'me'}), name='api-user'),
     
-    # Authentication URLs
+
+    # Override allauth signup URL with custom view
+    path('accounts/signup/', CustomSignupView.as_view(), name='account_signup'),
     path('accounts/', include('allauth.urls')),
     
     # API Authentication

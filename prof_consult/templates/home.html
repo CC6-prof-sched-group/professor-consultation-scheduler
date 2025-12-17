@@ -17,8 +17,8 @@
         </p>
         
         {% if not user.is_authenticated %}
-            <a href="{% provider_login_url 'google' %}" class="btn btn-light btn-lg hover-lift fade-in" style="animation-delay: 0.4s;">
-                <i class="bi bi-google" style="color: #5389DA;"></i> Login with Google to Get Started
+            <a href="{% url 'account_login' %}" class="btn btn-light btn-lg hover-lift fade-in" style="animation-delay: 0.4s;">
+                <i class="bi bi-box-arrow-in-right" style="color: #5389DA;"></i> Login to Get Started
             </a>
         {% else %}
             <p class="fs-5 fade-in" style="animation-delay: 0.3s;">

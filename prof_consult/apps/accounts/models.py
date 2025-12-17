@@ -136,10 +136,20 @@ class User(AbstractUser):
         blank=True,
         help_text="User's department"
     )
+    student_id = models.CharField(
+        max_length=32,
+        null=True,
+        blank=True,
+        help_text="Student ID (required for students)"
+    )
     bio = models.TextField(
         null=True,
         blank=True,
         help_text="User biography"
+    )
+    profile_setup_completed = models.BooleanField(
+        default=False,
+        help_text="Whether user has completed initial profile setup (role selection)"
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

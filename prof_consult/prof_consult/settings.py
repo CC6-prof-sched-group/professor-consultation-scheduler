@@ -204,6 +204,11 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+# Session Configuration
+SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Allow persistent sessions
+SESSION_SAVE_EVERY_REQUEST = True  # Refresh session on every request
+
 # Allauth Configuration (django-allauth 65+)
 # Login/Logout URLs
 LOGIN_URL = '/accounts/login/'
@@ -217,9 +222,12 @@ ACCOUNT_LOGIN_METHODS = {'username', 'email'}
 ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_SESSION_REMEMBER = None  # None = show checkbox, True = always remember, False = never
+ACCOUNT_LOGIN_ON_SIGNUP = False  # Don't auto-login after signup, redirect to login page
+ACCOUNT_ADAPTER = 'apps.accounts.adapter.CustomAccountAdapter'  # Custom adapter for redirects
 
 # Login/Logout Redirect URLs
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/profile/setup/'  # First-time users go to profile setup
 LOGOUT_REDIRECT_URL = '/'
 
 # Social Account Settings - Skip signup form for OAuth users
