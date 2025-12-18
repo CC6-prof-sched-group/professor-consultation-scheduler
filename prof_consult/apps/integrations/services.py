@@ -83,11 +83,11 @@ class GoogleCalendarService:
                 'description': consultation.description,
                 'start': {
                     'dateTime': start_datetime.isoformat(),
-                    'timeZone': 'UTC',
+                    'timeZone': 'Asia/Manila',
                 },
                 'end': {
                     'dateTime': end_datetime.isoformat(),
-                    'timeZone': 'UTC',
+                    'timeZone': 'Asia/Manila',
                 },
                 'attendees': [
                     {'email': consultation.student.email},
@@ -149,9 +149,9 @@ class GoogleCalendarService:
             event['summary'] = f'Consultation: {consultation.title}'
             event['description'] = consultation.description
             event['start']['dateTime'] = start_datetime.isoformat()
-            event['start']['timeZone'] = 'UTC'
+            event['start']['timeZone'] = 'Asia/Manila'
             event['end']['dateTime'] = end_datetime.isoformat()
-            event['end']['timeZone'] = 'UTC'
+            event['end']['timeZone'] = 'Asia/Manila'
             
             if consultation.location:
                 event['location'] = consultation.location
@@ -227,7 +227,7 @@ class GoogleCalendarService:
             body = {
                 "timeMin": start_time.isoformat(),
                 "timeMax": end_time.isoformat(),
-                "timeZone": 'UTC',
+                "timeZone": 'Asia/Manila',
                 "items": [{"id": calendar_id}]
             }
             
