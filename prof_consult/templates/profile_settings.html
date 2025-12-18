@@ -307,53 +307,65 @@
                             <h4 class="mb-0" style="color: #274572;"><i class="bi bi-sliders" style="color: #5389DA;"></i> General Preferences</h4>
                         </div>
                         <div class="card-body">
-                            <div class="mb-4">
-                                <label for="timezone" class="form-label"><strong>Timezone</strong></label>
-                                <select class="form-select" id="timezone">
-                                    <option selected>UTC (Coordinated Universal Time)</option>
-                                    <option>EST (Eastern Standard Time)</option>
-                                    <option>PST (Pacific Standard Time)</option>
-                                    <option>CST (Central Standard Time)</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label for="language" class="form-label"><strong>Language</strong></label>
-                                <select class="form-select" id="language">
-                                    <option selected>English</option>
-                                    <option>Spanish</option>
-                                    <option>French</option>
-                                    <option>German</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label"><strong>Default Consultation Duration</strong></label>
-                                <div class="btn-group w-100" role="group">
-                                    <input type="radio" class="btn-check" name="duration" id="duration30" autocomplete="off">
-                                    <label class="btn" for="duration30" style="border: 1px solid #5389DA; color: #5389DA;">30 min</label>
-
-                                    <input type="radio" class="btn-check" name="duration" id="duration60" autocomplete="off" checked>
-                                    <label class="btn" for="duration60" style="border: 1px solid #5389DA; color: #5389DA;">60 min</label>
-
-                                    <input type="radio" class="btn-check" name="duration" id="duration90" autocomplete="off">
-                                    <label class="btn" for="duration90" style="border: 1px solid #5389DA; color: #5389DA;">90 min</label>
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="tab" value="preferences">
+                                
+                                <div class="mb-4">
+                                    <label for="timezone" class="form-label"><strong>Timezone</strong></label>
+                                    <select class="form-select" id="timezone" name="timezone">
+                                        <option selected>Asia/Manila (Philippine Time)</option>
+                                        <option>UTC (Coordinated Universal Time)</option>
+                                        <option>EST (Eastern Standard Time)</option>
+                                        <option>PST (Pacific Standard Time)</option>
+                                        <option>CST (Central Standard Time)</option>
+                                    </select>
                                 </div>
-                            </div>
 
-                            <div class="mb-4">
-                                <label class="form-label"><strong>Calendar Sync</strong></label>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="syncGoogle" checked>
-                                    <label class="form-check-label" for="syncGoogle">
-                                        Automatically sync with Google Calendar
-                                    </label>
+                                <div class="mb-4">
+                                    <label for="language" class="form-label"><strong>Language</strong></label>
+                                    <select class="form-select" id="language" name="language">
+                                        <option selected>English</option>
+                                        <option>Spanish</option>
+                                        <option>French</option>
+                                        <option>German</option>
+                                    </select>
                                 </div>
-                            </div>
 
-                            <button type="submit" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
-                                <i class="bi bi-check-circle"></i> Save Preferences
-                            </button>
+                                <div class="mb-4">
+                                    <label class="form-label"><strong>Default Consultation Duration</strong></label>
+                                    <div class="btn-group w-100" role="group">
+                                        <input type="radio" class="btn-check" name="duration" id="duration30" value="30" autocomplete="off" 
+                                            {% if user.professor_profile.consultation_duration_default == 30 %}checked{% endif %}>
+                                        <label class="btn" for="duration30" style="border: 1px solid #5389DA; color: #5389DA;">30 min</label>
+
+                                        <input type="radio" class="btn-check" name="duration" id="duration60" value="60" autocomplete="off"
+                                            {% if not user.professor_profile or user.professor_profile.consultation_duration_default == 60 %}checked{% endif %}>
+                                        <label class="btn" for="duration60" style="border: 1px solid #5389DA; color: #5389DA;">60 min</label>
+
+                                        <input type="radio" class="btn-check" name="duration" id="duration90" value="90" autocomplete="off"
+                                            {% if user.professor_profile.consultation_duration_default == 90 %}checked{% endif %}>
+                                        <label class="btn" for="duration90" style="border: 1px solid #5389DA; color: #5389DA;">90 min</label>
+                                    </div>
+                                    {% if user.role != 'PROFESSOR' %}
+                                        <div class="form-text text-muted small mt-1">Default duration setting applies to Professors only.</div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label"><strong>Calendar Sync</strong></label>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="syncGoogle" name="sync_google" checked>
+                                        <label class="form-check-label" for="syncGoogle">
+                                            Automatically sync with Google Calendar
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn" style="background-color: #5389DA; border-color: #5389DA; color: white;">
+                                    <i class="bi bi-check-circle"></i> Save Preferences
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

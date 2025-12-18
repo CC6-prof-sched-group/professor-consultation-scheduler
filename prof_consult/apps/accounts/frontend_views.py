@@ -535,6 +535,22 @@ def profile_settings(request):
             # Update notification preferences
             # This would update user preferences model if you have one
             messages.success(request, 'Notification preferences updated!')
+            
+        elif tab == 'preferences':
+            # Handle general preferences
+            
+            # Save duration if user is a professor
+            if user.role == Role.PROFESSOR:
+                duration = request.POST.get('duration')
+                if duration:
+                    try:
+                        profile = user.professor_profile
+                        profile.consultation_duration_default = int(duration)
+                        profile.save()
+                    except Exception:
+                        pass
+            
+            messages.success(request, 'Preferences saved! (Note: Only Duration is currently persistent)')
         
         return redirect('profile_settings')
     

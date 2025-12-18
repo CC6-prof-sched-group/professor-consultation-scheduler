@@ -3,6 +3,10 @@ Google Calendar integration service.
 """
 import logging
 from datetime import datetime, timedelta
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    from backports.zoneinfo import ZoneInfo
 from django.conf import settings
 from django.utils import timezone
 from google.oauth2.credentials import Credentials
@@ -75,7 +79,10 @@ class GoogleCalendarService:
             return None
         
         try:
-            start_datetime = consultation.get_datetime()
+            # Force Manila timezone interpretation
+            manila_tz = ZoneInfo("Asia/Manila")
+            start_dt_naive = datetime.combine(consultation.scheduled_date, consultation.scheduled_time)
+            start_datetime = start_dt_naive.replace(tzinfo=manila_tz)
             end_datetime = start_datetime + timedelta(minutes=consultation.duration)
             
             event = {
@@ -138,7 +145,10 @@ class GoogleCalendarService:
             return False
         
         try:
-            start_datetime = consultation.get_datetime()
+            # Force Manila timezone interpretation
+            manila_tz = ZoneInfo("Asia/Manila")
+            start_dt_naive = datetime.combine(consultation.scheduled_date, consultation.scheduled_time)
+            start_datetime = start_dt_naive.replace(tzinfo=manila_tz)
             end_datetime = start_datetime + timedelta(minutes=consultation.duration)
             
             event = self.service.events().get(

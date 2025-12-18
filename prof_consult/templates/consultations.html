@@ -532,14 +532,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!date || !time){ alert('Invalid consultation date/time for calendar event'); return; }
 
-            const year = parseInt(date.slice(0,4), 10);
-            const month = parseInt(date.slice(4,6), 10) - 1;
-            const day = parseInt(date.slice(6,8), 10);
-            const hour = parseInt(time.slice(0,2), 10);
-            const minute = parseInt(time.slice(2,4), 10);
+            // Construct ISO string with Manila offset to get correct absolute time
+            const yearStr = date.slice(0,4);
+            const monthStr = date.slice(4,6);
+            const dayStr = date.slice(6,8);
+            const hourStr = time.slice(0,2);
+            const minuteStr = time.slice(2,4);
 
-            const startUtc = new Date(Date.UTC(year, month, day, hour, minute));
-            const endUtc = new Date(startUtc.getTime() + duration * 60000);
+            // Create date object forcing text to be interpreted as Manila Time (+08:00)
+            const startManila = new Date(`${yearStr}-${monthStr}-${dayStr}T${hourStr}:${minuteStr}:00+08:00`);
+            const endManila = new Date(startManila.getTime() + duration * 60000);
 
             function fmtCal(d){
                 const Y = d.getUTCFullYear().toString().padStart(4,'0');
@@ -551,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return `${Y}${M}${D}T${h}${m}${s}Z`;
             }
 
-            const dates = `${fmtCal(startUtc)}/${fmtCal(endUtc)}`;
+            const dates = `${fmtCal(startManila)}/${fmtCal(endManila)}`;
             const params = new URLSearchParams({
                 action: 'TEMPLATE',
                 text: title,
