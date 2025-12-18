@@ -335,7 +335,7 @@ def book_consultation(request):
             # Send notifications (emails + in-app)
             send_booking_created_notification(consultation.id)
             
-            messages.success(request, 'Consultation booked successfully! Waiting for professor confirmation.')
+            messages.success(request, 'Consultation booked successfully! It will be automatically added to your Google Calendar once confirmed by the professor.')
             return redirect('consultations_list')
             
         except User.DoesNotExist:
